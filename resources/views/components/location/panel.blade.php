@@ -6,7 +6,7 @@
         <main class="content-table col-12 p-md-0">
             <table id="ubicaciones-table" class="table">
                 {{-- <thead>
-                    <tr class="background background-uno color-tres">
+                    <tr class="background bg-one color-white">
                         <th scope="col" class="Work-Sans h4">Id</th>
                         <th scope="col" class="Work-Sans h4">Nombre</th>
                         <th scope="col" class="Work-Sans h4">Última vez actualizada</th>

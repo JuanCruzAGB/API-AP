@@ -1,19 +1,11 @@
-/* * External components */
-
-/* ? Repositorie components */
-@import '../components/nav.css';
-@import '../components/banner.css';
-@import '../components/property/list.css';
-@import '../components/property/info.css';
-
-.main{
+.main {
     min-height: 0;
 }
 
 .title a {
     position: relative;
     display: block;
-    color: var(--color-cuatro);
+    color: var(--color-black);
 }
 
 .title a h3 {
@@ -30,7 +22,7 @@
     opacity: 0;
     transition: 500ms;
     font-size: 1.2rem;
-    color: var(--color-cuatro);
+    color: var(--color-black);
 }
 
 .title a:hover h3 {
@@ -39,20 +31,30 @@
 
 .title a:hover .icon {
     opacity: 1;
-    color: var(--color-uno-alternativo);
+    color: var(--color-red-alt);
 }
 
-/* * MD */
-@media(min-width: 768px){
-    /**/
+/* ? MD */
+@media(min-width: 768px) {
+    /*  */
 }
 
-/* * LG */
-@media(min-width: 1024px){
-    /**/
+/* ? LG */
+@media(min-width: 1024px) {
+    /*  */
 }
 
-/* * XL */
-@media(min-width: 1200px){
-    /**/
+/* ? XL */
+@media(min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media(min-width: 1536px){
+    /*  */
+}
+
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
 }

@@ -55,7 +55,7 @@
 }
 
 .gallery .files .gallery-button.selected {
-    border: 2px solid var(--color-uno-alternativo);
+    border: 2px solid var(--color-red-alt);
 }
 
 .gallery .files .gallery-button.selected img {
@@ -139,18 +139,18 @@
     }
     
     .gallery .files::-webkit-scrollbar-track {
-        background: var(--color-dos-alternativo);
+        background: var(--color-grey-alt);
         border-radius: .25rem;
     }
      
     .gallery .files::-webkit-scrollbar-thumb {
-        background: var(--color-uno);
+        background: var(--color-red);
         border-radius: .25rem;
         transition: 500ms;
     }
     
     .gallery .files::-webkit-scrollbar-thumb:hover {
-        background: var(--color-uno-alternativo);
+        background: var(--color-red-alt);
     }
 
     .gallery .selected:not(.gallery-button) {

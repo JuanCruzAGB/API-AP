@@ -1,5 +1,5 @@
 body {
-    --invalid-color: var(--color-uno);
+    --invalid-color: var(--color-red);
 }
 
 .support-box {

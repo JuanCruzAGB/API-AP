@@ -1,10 +1,10 @@
 @extends('layouts.index')
 
 @section('head')
-    <!-- Layout CSS -->
+    {{-- Layout CSS --}}
     <link href={{ asset('css/layouts/property.css') }} rel="stylesheet">
 
-    <!-- Section CSS -->
+    {{-- Section CSS --}}
     @yield('css')
 
     <title>@yield('title')</title>
@@ -32,9 +32,9 @@
 @endsection
 
 @section('extras')
-    <!-- Layout CSS -->
+    {{-- Layout CSS --}}
     <script type="module" src={{ asset('js/layouts/property.js') }}></script>
 
-    <!-- Section JS -->
+    {{-- Section JS --}}
     @yield('js')
 @endsection

@@ -9,7 +9,7 @@
     max-width: fit-content;
     display: block;
     background: transparent;
-    color: var(--color-uno);
+    color: var(--color-red);
     font-weight: 500;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .table td, .table th {
-    border-color: var(--color-dos-alternativo);
+    border-color: var(--color-grey-alt);
     vertical-align: 1px;
 }
 
@@ -89,7 +89,7 @@ table tr {
 }
 
 table tr:hover {
-    background-color: var(--color-dos-alternativo);
+    background-color: var(--color-grey-alt);
 }
 
 table tr.deleting td {
@@ -99,12 +99,12 @@ table tr.deleting td {
 table tr.deleting td input[disabled],
 table tr.deleting td select[disabled],
 table tr.deleting td:not(:last-child) {
-    color: var(--color-dos);
+    color: var(--color-grey);
 }
 
 table td input,
 table td select {
-    border: 1px solid var(--color-dos-alternativo);
+    border: 1px solid var(--color-grey-alt);
     border-radius: .25rem;
     transition: 500ms;
 }
@@ -126,8 +126,8 @@ textarea.title {
     font-size: 1.75rem;
     width: 100%;
     background: white;
-    border: 1px solid var(--color-cuatro);
-    color: var(--color-cuatro);
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
     padding: calc(.5rem + 1px) 1rem;
     resize: none;
     min-height: 3.6rem;
@@ -142,13 +142,13 @@ textarea.title[disabled] {
     background-color: transparent;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid var(--color-dos);
+    border-bottom: 1px solid var(--color-grey);
     height: 2.5rem;
     overflow: hidden;
 }
 
 textarea.title[disabled]::placeholder {
-    color: var(--color-cuatro);
+    color: var(--color-black);
 }
 
 .property .gallery .files button {
@@ -157,9 +157,9 @@ textarea.title[disabled]::placeholder {
     height: 4rem;
     overflow: hidden;
     border: 2px solid transparent;
-    background-color: var(--color-uno);
+    background-color: var(--color-red);
     border-radius: .25rem;
-    color: var(--color-tres);
+    color: var(--color-white);
     font-size: 1.5rem;
 }
 
@@ -176,7 +176,7 @@ textarea.title[disabled]::placeholder {
     text-transform: uppercase;
     border-radius: .25rem;
     background: white;
-    border: 1px solid var(--color-cuatro);
+    border: 1px solid var(--color-black);
     padding: calc(.5rem + 1px) 1rem;
     resize: none;
 }
@@ -201,8 +201,8 @@ textarea.description {
     border-radius: .25rem;
     width: 100%;
     background: white;
-    border: 1px solid var(--color-cuatro);
-    color: var(--color-cuatro);
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
     padding: calc(.5rem + 1px) 1rem;
     resize: none;
 }

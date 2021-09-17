@@ -13,7 +13,7 @@
          */
         protected function redirectTo($request){
             if (! $request->expectsJson()) {
-                return route('auth.showLogIn');
+                return route('auth.showLogin');
             }
         }
     }

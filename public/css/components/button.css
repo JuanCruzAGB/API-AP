@@ -25,36 +25,36 @@
 }
 
 .btn.btn-uno {
-    background-color: var(--color-uno);
-    color: var(--color-tres);
+    background-color: var(--color-red);
+    color: var(--color-white);
 }
 .btn.btn-uno.active,
 .btn.btn-uno:hover {
-    background-color: var(--color-uno-alternativo);
-    color: var(--color-tres);
+    background-color: var(--color-red-alt);
+    color: var(--color-white);
 }
 
 .btn.btn-uno-transparent {
     background-color: transparent;
-    color: var(--color-uno);
+    color: var(--color-red);
 }
 .btn.btn-uno-transparent.active,
 .btn.btn-uno-transparent:hover {
-    background-color: var(--color-uno);
-    color: var(--color-tres);
+    background-color: var(--color-red);
+    color: var(--color-white);
 }
 
 .btn.btn-dos-transparent {
-    --color-one: var(--color-dos-alternativo);
-    --color-two: var(--color-dos);
-    color: var(--color-tres);
+    --color-red: var(--color-grey-alt);
+    --color-grey: var(--color-grey);
+    color: var(--color-white);
     border: 1px solid transparent;
     font-weight: bold;
     z-index: 3;
 }
 .btn.btn-dos-transparent:hover {
-    border: 1px solid var(--color-dos-alternativo);
-    background-color: var(--color-dos-alternativo);
+    border: 1px solid var(--color-grey-alt);
+    background-color: var(--color-grey-alt);
 }
 
 /* * MD */

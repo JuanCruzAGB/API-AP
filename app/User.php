@@ -14,7 +14,7 @@
         /** @var string - The table name. */
         protected $table = 'users';
         
-        /** @var string - The PK name. */
+        /** @var string - The table primary key name. */
         protected $primaryKey = 'id_user';
 
         /**

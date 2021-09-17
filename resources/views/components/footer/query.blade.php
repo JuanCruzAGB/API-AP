@@ -12,8 +12,8 @@
         <div class="personal-data col-12 col-md-7 col-xl-6 p-5">
             <header class="py-3">
                 <h3 class="h5 mb-0 text-center MontereyFLF">
-                    <span class="color-uno">Información</span> 
-                    <span class="color-dos">de contacto</span>
+                    <span class="color-red">Información</span> 
+                    <span class="color-grey">de contacto</span>
                 </h3>
             </header>
             <main class="p-3">

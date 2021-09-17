@@ -5,7 +5,7 @@
 		<title>{{ $data->name }} quiere contactarte</title>
 	</head>
 	<body>
-		<img src="{{ asset('img/resources/logo_Regular.png') }}" style=" width: 100%; height: 10rem; object-fit: contain;" alt="Mutualcoop">
+		<img src="{{ asset('img/resources/logo/logo_Regular.png') }}" style=" width: 100%; height: 10rem; object-fit: contain;" alt="Mutualcoop">
 		<table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
 			<tr>
 				<td style="background-color: #fff">

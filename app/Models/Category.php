@@ -11,7 +11,7 @@
         /** @var string - The table name. */
         protected $table = 'categories';
         
-        /** @var string - The PK name. */
+        /** @var string - The table primary key name. */
         protected $primaryKey = 'id_category';
 
         /**

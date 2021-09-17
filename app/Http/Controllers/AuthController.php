@@ -1,8 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\Auth as AuthModel;
-    use Auth;
+    use App\Models\Auth;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Validator;
 
@@ -11,11 +10,11 @@
          * * Control the "log in" page.
          * @return [type]
          */
-        function showLogIn(){
+        function showLogin () {
             if (Auth::check()) {
-                return redirect('/panel');
+                return redirect("/panel");
             } else {
-                return view('auth.login', [
+                return view("auth.login", [
                     // ? Return variables.
                 ]);
             }
@@ -26,37 +25,38 @@
          * @param Request $request
          * @return [type]
          */
-        function doLogIn(Request $request){
+        function doLogin (Request $request) {
             $input = (object) $request->all();
 
-            $validator = Validator::make($request->all(), AuthModel::$validation['login']['rules'], AuthModel::$validation['login']['messages']['es']);
+            $validator = Validator::make($request->all(), Auth::$validation["login"]["rules"], Auth::$validation["login"]["messages"]["es"]);
 
-            if($validator->fails()){
-                return redirect('/iniciar-sesion')->withErrors($validator)->withInput();
+            if ($validator->fails()) {
+                return redirect("/iniciar-sesion")->withErrors($validator)->withInput();
             }
 
-            if(!Auth::attempt(['password' => $input->password, 'email' => $input->email], true)){
-                return redirect('/iniciar-sesion')->withInput()->with('status', [
-                    'code' => 401,
-                    'message' => 'Correo y/o contraseña incorrectos.',
+            if (!Auth::attempt([
+                "email" => $input->email,
+                "password" => $input->password,
+            ], true)) {
+                return redirect("/iniciar-sesion")->withInput()->with("status", [
+                    "code" => 401,
+                    "message" => "Correo y/o contraseña incorrectos.",
                 ]);
             }
 
-            $user = Auth::user();
-
-            return redirect('/panel');
+            return redirect("/panel");
         }
 
         /**
          * * Executes the "log out".
          * @return [type]
          */
-        function doLogOut(){
+        function doLogout () {
             Auth::logout();
 
-            return redirect()->route('web.home')->with('status', [
-                'code' => 200,
-                'message' => 'Sesión Cerrada.',
+            return redirect()->route("web.home")->with("status", [
+                "code" => 200,
+                "message" => "Sesión Cerrada.",
             ]);
         }
     }

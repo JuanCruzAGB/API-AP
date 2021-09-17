@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(e){
             properties: {
                 id: html.id,
                 trClasses: {
-                    thead: ['background', 'background-uno', 'color-tres'],
+                    thead: ['background', 'bg-one', 'color-white'],
                     tbody: [],
             }}, cells: element.cells,
             data: element.data,

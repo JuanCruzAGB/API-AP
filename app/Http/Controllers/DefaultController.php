@@ -8,7 +8,7 @@
     use Auth;
     use Illuminate\Http\Request;
 
-    class WebController extends Controller{
+    class DefaultController extends Controller{
         /** @var string - The Controller language. */
         protected $lang = 'es';
 

@@ -1,15 +1,11 @@
-@if(Route::current()->getName() === 'web.home')
-    <ul class="cards no-wrap row">
-@else
-    <ul class="cards row">
-@endif
-    @component('components.property.info', [
-        'properties' => $properties,
+<ul class="properties cards grid gap-4">
+    @component("components.property.item", [
+        "properties" => $properties,
     ])
     @endcomponent
 </ul>
 
-@if(Route::current()->getName() === 'property.list')
+{{-- @if(Route::current()->getName() === "property.list")
     <ul class="filter-paginator d-flex justify-content-center align-items-center">
         <li>
             <a href="#" class="filter-page btn btn-uno-transparent mx-2">
@@ -37,4 +33,4 @@
             </a>
         </li>
     </ul>
-@endif
+@endif --}}

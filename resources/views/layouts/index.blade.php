@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        {{-- Meta --}}
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="csrf-token" content="{{ csrf_token() }}"/>
+        <meta name="asset" content="{{ asset("") }}">
 
-        <!-- Font Awesome -->
+        {{-- Font Awesome --}}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
-        <!-- Material Design Bootstrap -->
-        <link href={{ asset('css/mdb/bootstrap.min.css') }} rel="stylesheet">
-        <link href={{ asset('css/mdb/mdb.min.css') }} rel="stylesheet">
+        {{-- App CSS --}}
+        <link href={{ asset("css/app.css") }} rel="stylesheet">
 
-        <!-- External Repositories CSS -->
-        <link href={{ asset('submodules/TabMenuJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/FloatingMenuJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/DropdownJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/SidebarJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/NavMenuJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/NotificationJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/ValidationJS/css/styles.css') }} rel="stylesheet">
-        <link href={{ asset('submodules/GalleryJS/css/styles.css') }} rel="stylesheet">
+        {{-- External Repositories CSS --}}
+        <link href={{ asset("submodules/TabMenuJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/FloatingMenuJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/DropdownJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/SidebarJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/NavMenuJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/NotificationJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/ValidationJS/css/styles.css") }} rel="stylesheet">
+        <link href={{ asset("submodules/GalleryJS/css/styles.css") }} rel="stylesheet">
 
-        <!-- Global layout CSS -->
-        <link href={{ asset('css/layouts/index.css') }} rel="stylesheet">
+        {{-- Global layout CSS --}}
+        <link href={{ asset("css/styles.css") }} rel="stylesheet">
 
-        <!-- Section CSS -->
-        @yield('head')
+        {{-- Section CSS --}}
+        @yield("head")
     </head>
     <body>
-        @yield('body')
-        <!-- Material Design Bootstrap & JQuery -->
-        <script src={{ asset('js/mdb/jquery.min.js') }}></script>
-        <script src={{ asset('js/mdb/popper.min.js') }}></script>
-        <script src={{ asset('js/mdb/bootstrap.min.js') }}></script>
-        <script src={{ asset('js/mdb/mdb.min.js') }}></script>
+        @yield("body")
+        {{-- JQuery --}}
+        <script src={{ asset("js/mdb/jquery.min.js") }}></script>
 
-        <!-- Node modules -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        {{-- App modules --}}
+        {{-- <script src="{{ asset("js/app.js") }}"></script> --}}
 
-        <!-- External Repositories js -->
+        {{-- External Repositories js --}}
 
-        <!-- Global layout JS -->
-        <script type="module" src={{ asset('js/layouts/index.js') }}></script>
+        {{-- Global layout JS --}}
+        <script type="module" src={{ asset("js/script.js") }}></script>
 
-        <!-- Added extras section -->
-        @yield('extras')
+        {{-- Added extras section --}}
+        @yield("extras")
     </body>
 </html>

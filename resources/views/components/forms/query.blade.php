@@ -11,7 +11,7 @@
             @endif
         </div>
         <div class="input-group col-12 mb-3 p-0" title="El Correo es obligatorio">
-            <label for="email" class="input-name Work-Sans"><span class="first-letter">C</span>orreo <span class="asterisk color-uno">*</span></label>
+            <label for="email" class="input-name Work-Sans"><span class="first-letter">C</span>orreo <span class="asterisk color-red">*</span></label>
             <input class="form-input input-field" type="text" name="email" id="email">
             @if($errors->has('email'))
                 <span class="Work-Sans support support-box support-email hidden">{{ $errors->first('email') }}</span>
@@ -20,7 +20,7 @@
             @endif
         </div>
         <div class="input-group col-12 mb-3 p-0" title="El Teléfono es obligatorio">
-            <label for="phone" class="input-name Work-Sans"><span class="first-letter">T</span>eléfono <span class="asterisk color-uno">*</span></label>
+            <label for="phone" class="input-name Work-Sans"><span class="first-letter">T</span>eléfono <span class="asterisk color-red">*</span></label>
             <input class="form-input input-field" type="text" name="phone" id="phone">
             @if($errors->has('phone'))
                 <span class="Work-Sans support support-box support-phone hidden">{{ $errors->first('phone') }}</span>
@@ -29,7 +29,7 @@
             @endif
         </div>
         <div class="input-group col-12 mb-3 p-0" title="La Consulta es obligatoria">
-            <label for="message" class="input-name Work-Sans"><span class="first-letter">C</span>onsulta <span class="asterisk color-uno">*</span></label>
+            <label for="message" class="input-name Work-Sans"><span class="first-letter">C</span>onsulta <span class="asterisk color-red">*</span></label>
             <textarea class="form-input input-field" name="message" id="message" cols="30" rows="10"></textarea>
             @if($errors->has('message'))
                 <span class="Work-Sans support support-box support-message hidden">{{ $errors->first('message') }}</span>

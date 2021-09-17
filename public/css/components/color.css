@@ -1,38 +1,23 @@
-.color-uno {
-    color: var(--color-uno);
+.color-red {
+    color: var(--color-red);
 }
 
-.color-uno-alternativo {
-    color: var(--color-uno-alternativo);
+.color-red-alt {
+    color: var(--color-red-alt);
 }
 
-.color-dos {
-    color: var(--color-dos);
+.color-grey {
+    color: var(--color-grey);
 }
 
-.color-dos-alternativo {
-    color: var(--color-dos-alternativo);
+.color-grey-alt {
+    color: var(--color-grey-alt);
 }
 
-.color-tres {
-    color: var(--color-tres);
+.color-white {
+    color: var(--color-white);
 }
 
-.color-cuatro {
-    color: var(--color-cuatro);
-}
-
-/* * MD */
-@media(min-width: 768px){
-    /**/
-}
-
-/* * LG */
-@media(min-width: 1024px){
-    /**/
-}
-
-/* * XL */
-@media(min-width: 1200px){
-    /**/
+.color-black {
+    color: var(--color-black);
 }

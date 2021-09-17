@@ -1,18 +1,23 @@
-.background.background-uno {
-    background-color: var(--color-uno);
+.bg-one {
+    background-color: var(--color-red);
 }
 
-/* * MD */
-@media(min-width: 768px){
-    /**/
+.bg-one-alt {
+    background-color: var(--color-red-alt);
 }
 
-/* * LG */
-@media(min-width: 1024px){
-    /**/
+.bg-two {
+    background-color: var(--color-grey);
 }
 
-/* * XL */
-@media(min-width: 1200px){
-    /**/
+.bg-two-alt {
+    background-color: var(--color-grey-alt);
+}
+
+.bg-three {
+    background-color: var(--color-white);
+}
+
+.bg-four {
+    background-color: var(--color-black);
 }

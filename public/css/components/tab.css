@@ -1,9 +1,9 @@
 .tab-menu {
     --tabmenu-title-color: #222;
-    --tabmenu-button-color: var(--color-tres);
-    --tabmenu-button-color-alternative: var(--color-tres);
-    --tabmenu-background-color: var(--color-uno);
-    --tabmenu-background-color-alternative: var(--color-uno-alternativo);
+    --tabmenu-button-color: var(--color-white);
+    --tabmenu-button-color-alternative: var(--color-white);
+    --tabmenu-background-color: var(--color-red);
+    --tabmenu-background-color-alternative: var(--color-red-alt);
     --tabmenu-border-color: #ddd;
     --tabmenu-border-color-alternative: #ddd;
     --tabmenu-icon-color: #ddd;
@@ -21,7 +21,7 @@
 
 .tab-menu .tabs .tab-header {
     display: block;
-    background-color: var(--color-uno);
+    background-color: var(--color-red);
     padding: 0;
 }
 
@@ -39,10 +39,10 @@ a.waves-effect, a.waves-light {
 @media (min-width: 768px) {
     .tab-menu {
         --tabmenu-title-color: #222;
-        --tabmenu-button-color: var(--color-tres);
-        --tabmenu-button-color-alternative: var(--color-tres);
-        --tabmenu-background-color: var(--color-uno);
-        --tabmenu-background-color-alternative: var(--color-uno-alternativo);
+        --tabmenu-button-color: var(--color-white);
+        --tabmenu-button-color-alternative: var(--color-white);
+        --tabmenu-background-color: var(--color-red);
+        --tabmenu-background-color-alternative: var(--color-red-alt);
         --tabmenu-border-color: #ddd;
         --tabmenu-border-color-alternative: #ddd;
         --tabmenu-icon-color: #ddd;

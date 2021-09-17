@@ -1,0 +1,31 @@
+.property.card .card-image img {
+    width: 100vw;
+    height: 50vmin;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* ? MD */
+@media(min-width: 768px) {
+    /*  */
+}
+
+/* ? LG */
+@media(min-width: 1024px) {
+    /*  */
+}
+
+/* ? XL */
+@media(min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media(min-width: 1536px){
+    /*  */
+}
+
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
+}

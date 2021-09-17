@@ -47,9 +47,9 @@
                     <section class="details col-12 col-md-6 px-3">
                         <header class="header mb-3">
                             <h3 class="h5 text-left MontereyFLF mb-0 mt-4 mt-md-0">
-                                <span class="category color-uno">{{ $property->category->name }}</span>
+                                <span class="category color-red">{{ $property->category->name }}</span>
                                 <br>
-                                <span class="location color-dos">{{ $property->location->name }}</span>
+                                <span class="location color-grey">{{ $property->location->name }}</span>
                             </h3>
                         </header>
                         <main>

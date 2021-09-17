@@ -65,13 +65,13 @@
                 <section class="details col-12 col-md-6 px-3">
                     <header class="header mb-3">
                         <div class="h5 text-left MontereyFLF mb-0 mt-4 mt-md-0">
-                            <select name="id_category" disabled class="form-input category d-block color-uno">
+                            <select name="id_category" disabled class="form-input category d-block color-red">
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id_category }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                             <span class="Work-Sans support support-box support-id_category hidden"></span>
-                            <select name="id_location" disabled class="form-input location d-block color-dos">
+                            <select name="id_location" disabled class="form-input location d-block color-grey">
                                 @foreach ($locations as $location)
                                 <option value="{{ $location->id_location }}">{{ $location->name }}</option>
                                 @endforeach

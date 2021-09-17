@@ -34,7 +34,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-uno-alternativo);
+    color: var(--color-red-alt);
     transition: 500ms;
     font-weight: bold;
     font-family: 'Work Sans';
@@ -47,12 +47,12 @@ p{
 }
 
 .social-media a:hover{
-    color: var(--color-uno);
+    color: var(--color-red);
 }
 
 .social-icon{
     font-size: 1.5rem;
-    color: var(--color-dos-alternativo);
+    color: var(--color-grey-alt);
 }
 
 /* * MD */

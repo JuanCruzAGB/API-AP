@@ -34,11 +34,11 @@
 	path = public/submodules/ValidationJS
 	url = https://github.com/JuanCruzAGB/ValidationJS.git
 	branch = master
-[submodule ".\\public\\submodules\\FloatingMenuJS"]
-	path = public/submodules/FloatingMenuJS
-	url = https://github.com/JuanCruzAGB/FloatingMenuJS.git
-	branch = master
 [submodule ".\\public\\submodules\\ProvidersJS"]
 	path = public/submodules/ProvidersJS
 	url = https://github.com/JuanCruzAGB/ProvidersJS.git
+	branch = master
+[submodule ".\\public\\submodules\\FloatingMenuJS"]
+	path = public/submodules/FloatingMenuJS
+	url = https://github.com/JuanCruzAGB/FloatingMenuJS.git
 	branch = master

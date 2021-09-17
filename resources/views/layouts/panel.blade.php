@@ -1,33 +1,30 @@
-@extends('layouts.index')
+@extends("layouts.index")
 
-@section('head')
-    <meta name="csrf_token" content="{{ csrf_token() }}">
-    <meta name="asset" content="{{ asset('storage') }}">
+@section("head")
+    {{-- Layout CSS --}}
+    <link href={{ asset("css/layouts/panel.css") }} rel="stylesheet">
 
-    <!-- Layout CSS -->
-    <link href={{ asset('css/layouts/web.css') }} rel="stylesheet">
+    {{-- Section CSS --}}
+    @yield("css")
 
-    <!-- Section CSS -->
-    @yield('css')
-
-    <title>@yield('title')</title>
+    <title>@yield("title")</title>
 @endsection
 
-@section('body')
-    <main id="tab-panel" class="tab-menu vertical relative col-12 p-0">
-        <section class="tabs background background-one mb-4 mb-md-0">
+@section("body")
+    <main id="tab-panel" class="tab-menu vertical relative grid">
+        <section class="tabs background bg-one mb-4 mb-md-0">
             <a href="/inicio" class="tab-header logo">
                 <picture>
-                    <source srcset="{{asset('img/resources/logo_regular_white.png')}}"
+                    <source srcset="{{asset("img/resources/logo/01-regular_white.png")}}"
                         media="(min-width: 768px)"/>
-                    <img src="{{asset('img/resources/logo_small_white.png')}}" 
+                    <img src="{{asset("img/resources/logo/03-small_white.png")}}" 
                         alt="Armentia Propiedades Logo"/>
                 </picture>
                 <h1 class="mb-0">Armentia Propiedades</h1>
             </a>
             
             <ul class="tab-menu-list mb-0 mt-md-3">
-                @yield('tab-menu-list')
+                @yield("menu")
             </ul>
             
             <footer class="tab-footer d-flex justify-content-center">
@@ -39,15 +36,15 @@
         </section>
 
         <section class="tab-content-list mx-auto">
-            @yield('tab-content-list')
+            @yield("content")
         </section>
     </main>
 @endsection
 
-@section('extras')
-    <!-- Layout CSS -->
-    <script src={{ asset('js/layouts/web.js') }}></script>
+@section("extras")
+    {{-- Layout CSS --}}
+    <script src={{ asset("js/layouts/panel.js") }}></script>
 
-    <!-- Section JS -->
-    @yield('js')
+    {{-- Section JS --}}
+    @yield("js")
 @endsection

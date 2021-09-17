@@ -1,69 +1,77 @@
-.banner{
+.banner {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 50vmin;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    min-height: var(--banner-height, 50vmin);
+    isolation: isolate;
     overflow: hidden;
 }
 
-.banner .banner-img{
-    --background-img: url('/img/resources/banner.jpg');
+.banner.banner-title .banner-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background-img) no-repeat center center;
+    inset: 0;
+    z-index: -1;
+    background: var(--banner-image, url("/img/resources/banner.jpg")) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    transition: 500ms;
+    object-fit: cover;
+    object-position: center;
 }
 
-a.banner:hover .banner-img{
-    transform: scale(1.05);
+.banner.banner-title .banner-background img {
+    visibility: hidden;
 }
 
-.banner .banner-body{
+.banner.banner-title .banner-body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--banner-padding, 1rem);
+}
+
+.banner.banner-title .banner-body .banner-header {
     flex-basis: 100%;
-}
-
-.banner .banner-title{
-    color: var(--color-tres);
+    font-size: 1.5rem;
     text-align: center;
 }
 
-.banner .banner-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: .5rem 1rem;
-    background-color: var(--color-dos);
-    color: var(--color-cinco);
-    border-radius: .25rem;
+/* ? MD */
+@media(min-width: 768px) {
+    /*  */
 }
 
-.banner .banner-btn .btn-icon{
-    margin-right: 1rem;
+/* ? LG */
+@media(min-width: 1024px) {
+    .banner {
+        --banner-height: calc(75vh - 4.6rem);
+    }
+
+    .banner.banner-title .banner-body {
+        --banner-padding: 11rem;
+    }
+
+    .banner.banner-title .banner-body .banner-header {
+        font-size: 3rem;
+    }
+
+    .banner.banner-title .banner-body .banner-main p {
+        font-size: 1.5rem;
+    }
 }
 
-.banner-content{
-    color: var(--color-tres);
+/* ? XL */
+@media(min-width: 1200px) {
+    /*  */
 }
 
-/* * MD */
-@media(min-width: 768px){
-    /**/
+/* ? 2XL */
+@media(min-width: 1536px){
+    /*  */
 }
 
-/* * LG */
-@media(min-width: 1024px){
-    /**/
-}
-
-/* * XL */
-@media(min-width: 1200px){
-    /**/
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
 }

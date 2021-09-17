@@ -1,4 +1,4 @@
-<div id="filters" class="sidebar right closed push-body">
+<div id="filters" class="sidebar right closed">
     <div class="sidebar-header">
         <a href="#" class="sidebar-button close-btn right">
             <i class="sidebar-icon fas fa-times"></i>
@@ -10,7 +10,7 @@
 
     <div class="sidebar-content">
         <ul class="sidebar-menu-list">
-            <!-- <li id="dropdown-3" class="dropdown closed">
+            {{-- <li id="dropdown-3" class="dropdown closed">
                 <a href="/panel" class="sidebar-link dropdown-title nav-link">
                     <span class="text">Tipo de Propiedad</span>
                     <button class="dropdown-button">
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                 </ul>
-            </li> -->
+            </li> --}}
         </ul>
     </div>
 </div>

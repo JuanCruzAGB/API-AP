@@ -1,6 +1,6 @@
-<div id="filters" class="sidebar right closed">
+<div id="sidebar-filters" class="sidebar right closed">
     <div class="sidebar-header">
-        <a href="#" class="sidebar-button close-btn right">
+        <a href="#" class="filters sidebar-button close">
             <i class="sidebar-icon fas fa-times"></i>
         </a>
         <div class="sidebar-title">

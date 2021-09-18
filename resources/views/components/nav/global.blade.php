@@ -1,6 +1,6 @@
 <nav id="nav-global" class="nav-menu">
     <header class="nav-row">
-        <a href="#menu" class="sidebar-button left">
+        <a href="#menu" class="sidebar-menu sidebar-button open">
             <i class="fas fa-bars"></i>
         </a>
         

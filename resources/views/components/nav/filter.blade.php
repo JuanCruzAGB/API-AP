@@ -1,6 +1,6 @@
 <nav id="nav-filter" class="nav-menu p-0">
     <div class="nav-row">
-        <a href="#menu" class="sidebar-button open-btn left sidebar-button">
+        <a href="#menu" class="sidebar-menu sidebar-button open">
             <i class="sidebar-icon fas fa-bars"></i>
         </a>
         
@@ -14,7 +14,7 @@
             <h1>Armentia Propiedades</h1>
         </a>
         
-        <a href="#filters" class="sidebar-button open-btn right">
+        <a href="#filters" class="filters sidebar-button open">
             <i class="sidebar-icon fas fa-filter"></i>
         </a>
     </div>

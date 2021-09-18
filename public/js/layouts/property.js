@@ -1,20 +1,29 @@
-import { NavMenu as NavMenuJS} from '../../submodules/NavMenuJS/js/NavMenu.js';
-import { Dropdown as DropdownJS } from "../../submodules/DropdownJS/js/Dropdown.js";
+// ? External repository
+import NavMenu from "../../submodules/NavMenuJS/js/NavMenu.js";
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    if(document.querySelector('#nav-filter')){
-        let navmenu = new NavMenuJS({
-            id: 'nav-filter',
-            sidebar: {
-                id: ['menu', 'filters'],
-                position: ['left', 'right'],
-            }, dropdown:{
-                //
+document.addEventListener("DOMContentLoaded", (e) => {
+    if (document.querySelector("#nav-filter")) {
+        new NavMenu({
+            props: {
+                id: "nav-filter",
+                sidebar: [
+                    {
+                        props: {
+                            id: "sidebar-filters",
+                        }, state: {
+                            open: false,
+                        },
+                    }, {
+                        props: {
+                            id: "sidebar-menu",
+                        }, state: {
+                            open: false,
+                        },
+                    },
+                ],
+            }, state: {
+                current: false,
             },
-        }, {
-            fixed: true,
-            hideOnScrollDown: true,
-            current: false,
         });
     }
 });

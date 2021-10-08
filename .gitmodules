@@ -30,6 +30,14 @@
 	path = public/submodules/InputFileMakerJS
 	url = https://github.com/JuanCruzAGB/InputFileMakerJS.git
 	branch = master
+[submodule ".\\public\\submodules\\ProvidersJS"]
+	path = public/submodules/ProvidersJS
+	url = https://github.com/JuanCruzAGB/ProvidersJS.git
+	branch = master
+[submodule ".\\public\\submodules\\JuanCruzAGB"]
+	path = public/submodules/JuanCruzAGB
+	url = https://github.com/JuanCruzAGB/JuanCruzAGB.git
+	branch = master
 [submodule ".\\public\\submodules\\HTMLCreatorJS"]
 	path = public/submodules/HTMLCreatorJS
 	url = https://github.com/JuanCruzAGB/HTMLCreatorJS.git
@@ -41,14 +49,6 @@
 [submodule ".\\public\\submodules\\ValidationJS"]
 	path = public/submodules/ValidationJS
 	url = https://github.com/JuanCruzAGB/ValidationJS.git
-	branch = master
-[submodule ".\\public\\submodules\\ProvidersJS"]
-	path = public/submodules/ProvidersJS
-	url = https://github.com/JuanCruzAGB/ProvidersJS.git
-	branch = master
-[submodule ".\\public\\submodules\\JuanCruzAGB"]
-	path = public/submodules/JuanCruzAGB
-	url = https://github.com/JuanCruzAGB/JuanCruzAGB.git
 	branch = master
 [submodule ".\\public\\submodules\\ScrollDetectionJS"]
 	path = public/submodules/ScrollDetectionJS

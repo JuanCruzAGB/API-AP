@@ -1,4 +1,4 @@
-<ul class="properties cards grid gap-4">
+<ul class="properties cards">
     @component("components.property.item", [
         "properties" => $properties,
     ])

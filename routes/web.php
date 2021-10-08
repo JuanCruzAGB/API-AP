@@ -24,7 +24,7 @@
 
 // * PropertyController - Controls the Property.
     Route::get("/propiedades", "PropertyController@list")->name("property.list");
-    Route::get("/propiedad/{slug}/detalles", "PropertyController@info")->name("property.info");
+    Route::get("/propiedad/{slug}/detalles", "PropertyController@item")->name("property.item");
     Route::middleware("auth")->group(function () {
         Route::post("/propiedad/crear", "PropertyController@doCreate")->name("property.doCreate");
         Route::put("/propiedad/{slug}/actualizar", "PropertyController@doUpdate")->name("property.doUpdate");

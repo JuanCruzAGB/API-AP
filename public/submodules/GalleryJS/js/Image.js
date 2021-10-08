@@ -1,206 +1,84 @@
+// ? JuanCruzAGB repository
+import Class from "../../JuanCruzAGB/js/Class.js";
+
 /**
  * * Image controls the Gallery selected Image.
  * @export
  * @class Gallery
  * @author Juan Cruz Armentia <juancarmentia@gmail.com>
+ * @extends Class
  */
-export class Image{
+export default class Image extends Class {
     /**
      * * Creates an instance of Image.
-     * @param {Object} [properties] Image properties:
-     * @param {String} [properties.id] Image ID.
-     * @param {String} [properties.source] Image Image source.
-     * @param {Object} [states] Image states:
-     * @param {Boolean} [states.selected] Image selected status.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id] Image primary key.
+     * @param {string} [data.props.source] Image source.
      * @param {HTMLElement} html Image HTML Element.
      * @memberof Image
      */
-    constructor(properties = {
-        id: 'image-1',
-        source: undefined,
-    }, html, gallery){
-        this.setProperties(properties);
-        this.setHTML(html);
-        this.setNotFound(gallery);
+    constructor (data = {
+        props: {
+            id: "image-1",
+            source: false,
+        }, html,
+    }) {
+        super({ ...Image.props, ...((data && data.hasOwnProperty("props")) ? data.props : {}) });
+        this.setHTML(data.html);
     }
 
     /**
-     * * Set the Image properties.
-     * @param {Object} [properties] Image properties:
-     * @param {String} [properties.id] Image ID.
-     * @param {String} [properties.source] Image Image source.
+     * * Change the Image source.
+     * @param {string} source
      * @memberof Image
      */
-    setProperties(properties = {
-        id: 'image-1',
-        source: undefined,
-    }){
-        this.properties = {};
-        this.setIDProperty(properties);
-        this.setSourceProperty(properties);
+    change (source) {
+        this.setProps("source", source);
+        this.html.src = source;
     }
 
     /**
-     * * Returns the Image properties or an specific property.
-     * @param {String} [name] Property name.
-     * @returns {Object|*}
-     * @memberof Image
-     */
-    getProperties(name = ''){
-        if (name && name != '') {
-            return this.properties[name];
-        } else {
-            return this.properties;
-        }
-    }
-
-    /**
-     * * Check if there is a property.
-     * @param {String} name Property name.
-     * @returns {Boolean}
-     * @memberof Image
-     */
-    hasProperty(name = ''){
-        if (this.properties.hasOwnProperty(name)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * * Change a property value.
-     * @param {String} name Property name.
-     * @param {*} value Property value.
-     * @memberof Image
-     */
-    changeProperty(name = '', value = ''){
-        if (this.hasProperty(name)) {
-            this.properties[name] = value;
-        }
-        switch (name) {
-            case 'source':
-                if (this.getProperties('source')) {
-                    this.getHTML().src = this.getProperties('source');
-                } else {
-                    this.getHTML().classList.add('hidden');
-                    this.getNotFound().classList.remove('hidden');
-                }
-                break;
-        }
-    }
-
-    /**
-     * * Set the Image ID.
-     * @param {Object} [properties] Image properties:
-     * @param {String} [properties.id] Image ID.
-     * @memberof Image
-     */
-    setIDProperty(properties = {
-        id: 'image-1',
-    }){
-        if (properties.hasOwnProperty('id')) {
-            this.properties.id = properties.id;
-        } else {
-            this.properties.id = 'image-1';
-        }
-    }
-
-    /**
-     * * Returns the Image ID.
-     * @returns {String}
-     * @memberof Image
-     */
-    getIDProperty(){
-        return this.properties.id;
-    }
-
-    /**
-     * * Set the Image Image source.
-     * @param {Object} [properties] Image properties:
-     * @param {String} [properties.source] Image Image source.
-     * @memberof Image
-     */
-    setSourceProperty(properties = {
-        source: undefined,
-    }){
-        if (properties.hasOwnProperty('source')) {
-            this.properties.source = properties.source;
-        } else {
-            this.properties.source = undefined;
-        }
-    }
-
-    /**
-     * * Returns the Image Image source.
-     * @returns {String}
-     * @memberof Image
-     */
-    getSourceProperty(){
-        return this.properties.source;
-    }
-
-    /**
-     * * Set the Image HTML Element.
-     * @param {HTMLElement} html Image HTML Element.
-     * @memberof Image
-     */
-    setHTML(html){
-        this.html = html;
-    }
-
-    /**
-     * * Returns the Image HTML Element.
-     * @returns {HTMLElement}
-     * @memberof Image
-     */
-    getHTML(){
-        return this.html;
-    }
-
-    /**
-     * * Set the not found image.
-     * @memberof Image
-     */
-    setNotFound(gallery){
-        this.notFound = document.querySelector(`#${ gallery.getProperties('id') }.gallery .selected:not(.gallery-button) .not-found`);
-    }
-
-    /**
-     * * Returns the Image not found HTML Element.
-     * @returns {HTMLElement}
-     * @memberof Image
-     */
-    getNotFound(){
-        return this.notFound;
-    }
-
-    /**
-     * * Get all the Gallery Images.
+     * * Get the Gallery Image.
      * @static
-     * @param {Gallery} gallery Button Gallery parent.
+     * @param {Gallery} Gallery
      * @returns {Image}
      * @memberof Image
      */
-    static getDomHTML(gallery){
-        let html = document.querySelector(`#${ gallery.getProperties('id') }.gallery .selected:not(.gallery-button) .gallery-image`);
-        let properties = Image.generateProperties(html);
-        let image = new this(properties, html, gallery);
-        return image;
+    static generate (Gallery) {
+        let html = Image.querySelector(Gallery.props.id);
+        return new this({
+            props: {
+                id: "image-1",
+                source: html.src,
+            }, html: html,
+        });
     }
 
     /**
-     * * Returns the Image properties genereted from a HTML Element.
+     * * Returns the Gallery Image HTMLElements.
      * @static
-     * @param {HTMLElement} html Image HTML Element
-     * @returns {Object}
+     * @param {string} id Gallery primary key.
+     * @returns {HTMLElement}
      * @memberof Image
      */
-    static generateProperties(html){
-        let properties = {
-            id: `image-selected`,
-            source: html.src,
-        };
-        return properties;
+    static querySelector (id = false) {
+        if (id) {
+            return document.querySelector(`.${ id }.gallery-image`);
+        }
+        if (!id) {
+            console.error("ID param is required to get the Gallery Image");
+            return false;
+        }
+    }
+    
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Image
+     */
+    static props = {
+        id: "image-1",
+        source: undefined,
     }
 }

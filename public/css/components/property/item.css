@@ -1,13 +1,61 @@
-.property.card .card-image img {
-    width: 100vw;
+.properties.cards .property.card .card-body {
+    position: relative;
+}
+
+.properties.cards .property.card .card-image img {
+    width: 100%;
     height: 50vmin;
     object-fit: cover;
     object-position: top center;
 }
 
+.properties.cards .property.card .card-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vmin;
+    font-size: 4rem;
+    isolation: isolate;
+}
+
+.properties.cards .property.card .card-icon i {
+    opacity: 0;
+    transition: 500ms;
+}
+
+.properties.cards .property.card:hover .card-icon i {
+    animation: rotate 500ms normal forwards ease-in-out;
+    opacity: 1;
+}
+
+.properties.cards .property.card .card-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vmin;
+    background-color: var(--color-white);
+    opacity: 0;
+    transition: 500ms;
+    z-index: -1;
+}
+
+.properties.cards .property.card:hover .card-icon::before {
+    opacity: .8;
+}
+
 /* ? MD */
 @media(min-width: 768px) {
-    /*  */
+    .properties.cards .property.card .card-image img,
+    .properties.cards .property.card .card-icon,
+    .properties.cards .property.card .card-icon::before {
+        height: 25vmin;
+    }
 }
 
 /* ? LG */

@@ -87,7 +87,7 @@ export function confirmImage(){
     gallery.reloadButton();
     let none = true, selected;
     for (const btn of gallery.getButtons()) {
-        if (!btn.getHTML().classList.contains('d-none')) {
+        if (!btn.getHTML().classList.contains('hidden')) {
             none = false;
             selected = btn;
             break;
@@ -145,7 +145,7 @@ function removeDomImage(){
 function removeADomImage(route){
     for (const img of document.querySelectorAll('.gallery .files .gallery-button img')) {
         if (img.src == route) {
-            img.parentNode.classList.add('d-none');
+            img.parentNode.classList.add('hidden');
         }
     }
 }

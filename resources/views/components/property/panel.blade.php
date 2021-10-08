@@ -18,10 +18,10 @@
             <a href="#propiedades?" title="Editar" class="edit-data floating-button btn btn-uno-transparent btn-icon">
                 <i class="icon fas fa-pen"></i>
             </a>
-            <a href="#propiedades?" title="Aceptar" class="form-submit property-form confirm-data d-none floating-button btn btn-uno-transparent btn-icon">
+            <a href="#propiedades?" title="Aceptar" class="form-submit property-form confirm-data hidden floating-button btn btn-uno-transparent btn-icon">
                 <i class="icon fas fa-check"></i>
             </a>
-            <a href="#propiedades?" title="Cancelar" class="cancel-data d-none floating-button btn btn-uno-transparent btn-icon">
+            <a href="#propiedades?" title="Cancelar" class="cancel-data hidden floating-button btn btn-uno-transparent btn-icon">
                 <i class="icon fas fa-times"></i>
             </a>
         </aside>

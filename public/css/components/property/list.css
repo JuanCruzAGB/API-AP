@@ -1,24 +1,25 @@
-.cards{
-    width: auto;
-    overflow: auto;
-    margin-bottom: 0;
+
+/* ? MD */
+@media(min-width: 768px) {
+    /*  */
 }
 
-.cards.no-wrap{
-    flex-wrap: nowrap;
+/* ? LG */
+@media(min-width: 1024px) {
+    /*  */
 }
 
-/* * MD */
-@media(min-width: 768px){
-    /**/
+/* ? XL */
+@media(min-width: 1200px) {
+    /*  */
 }
 
-/* * LG */
-@media(min-width: 1024px){
-    /**/
+/* ? 2XL */
+@media(min-width: 1536px){
+    /*  */
 }
 
-/* * XL */
-@media(min-width: 1200px){
-    /**/
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
 }

@@ -1,4 +1,6 @@
-@extends("layouts.default")
+@extends("layouts.default", [
+    "name" => "home",
+])
 
 @section("title")
     Armentia Propiedades | En los negocios no se consigue lo que se merece, se consigue lo que se negocia. Negocie con nosotros.

@@ -1,0 +1,94 @@
+.cards {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+}
+
+.cards .card {
+    min-width: 100%;
+}
+
+.cards::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.cards::-webkit-scrollbar-button {
+    width: 15%;
+    height: 15%;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background: var(--color-red);
+    border-radius: 100vh;
+}
+
+.cards::-webkit-scrollbar-thumb:hover,
+.cards::-webkit-scrollbar-thumb:active {
+    background: var(--color-red-alt);
+}
+
+.cards::-webkit-scrollbar-track {
+    background: var(--color-grey);
+    border-radius: 100vh;
+}
+
+.cards::-webkit-scrollbar-track:hover,
+.cards::-webkit-scrollbar-track:active {
+    background: var(--color-grey-alt);
+}
+
+.cards::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* ? MD */
+@media(min-width: 768px) {
+    .cards .card {
+        min-width: 50%;
+    }
+
+    .cards .card:first-child {
+        margin-left: 1rem;
+    }
+
+    .cards .card:last-child {
+        margin-right: 1rem;
+    }
+}
+
+/* ? LG */
+@media(min-width: 1024px) {
+    .cards .card {
+        min-width: 33%;
+    }
+}
+
+/* ? XL */
+@media(min-width: 1200px) {
+    .cards .card {
+        min-width: 30%;
+    }
+
+    .cards .card:first-child {
+        margin-left: 8rem;
+    }
+
+    .cards .card:last-child {
+        margin-right: 8rem;
+    }
+}
+
+/* ? 2XL */
+@media(min-width: 1536px){
+    .cards .card {
+        min-width: 25%;
+    }
+}
+
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
+}

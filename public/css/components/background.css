@@ -1,23 +1,23 @@
-.bg-one {
+.bg-red {
     background-color: var(--color-red);
 }
 
-.bg-one-alt {
+.bg-red-alt {
     background-color: var(--color-red-alt);
 }
 
-.bg-two {
+.bg-grey {
     background-color: var(--color-grey);
 }
 
-.bg-two-alt {
+.bg-grey-alt {
     background-color: var(--color-grey-alt);
 }
 
-.bg-three {
+.bg-white {
     background-color: var(--color-white);
 }
 
-.bg-four {
+.bg-black {
     background-color: var(--color-black);
 }

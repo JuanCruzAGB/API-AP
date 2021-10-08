@@ -2,7 +2,7 @@
 
 @section("head")
     {{-- Layout CSS --}}
-    {{-- <link href={{ asset("css/layouts/default.css") }} rel="stylesheet"> --}}
+    <link href={{ asset("css/layouts/default.css") }} rel="stylesheet">
 
     {{-- Section CSS --}}
     @yield("css")
@@ -15,11 +15,11 @@
         @yield("nav")
     </header>
             
-    <main class="main grid gap-8">
+    <main id="{{ $name }}" class="main grid gap-8">
         @yield("main")
     </main>
 
-    <footer class="footer"> 
+    <footer class="footer mt-8"> 
         @yield("footer")
     </footer>
 

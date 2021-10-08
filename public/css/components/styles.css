@@ -1,0 +1,20 @@
+/* ? External components */
+/* @import './filter.css'; */
+/* @import './floating.css'; */
+/* @import './validation.css'; */
+/* @import './tab.css'; */
+@import './nav.css';
+@import './sidebar.css';
+@import './banner.css';
+
+/* ? Local components */
+@import './animation.css';
+@import './background.css';
+@import './border.css';
+@import './button.css';
+@import './cards.css';
+@import './color.css';
+@import './font.css';
+@import './footer.css';
+@import './recommended.css';
+@import './property/styles.css';

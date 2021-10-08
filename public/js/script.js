@@ -1,6 +1,6 @@
 // ? External repository
-import NavMenu from "../../submodules/NavMenuJS/js/NavMenu.js";
-import { Dropdown as DropdownJS } from "../../submodules/DropdownJS/js/Dropdown.js";
+import Dropdown from "../submodules/DropdownJS/js/Dropdown.js";
+import NavMenu from "../submodules/NavMenuJS/js/NavMenu.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
     if (document.querySelector("#nav-global")) {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
     if (document.querySelectorAll(".dropdown").length) {
         for (const html of document.querySelectorAll(".dropdown")) {
-            new DropdownJS({
+            new Dropdown({
                 id: html.id,
             }, {
                 open: false,

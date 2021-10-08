@@ -4,7 +4,7 @@
             <ul class="locations grid gap-4">
                 @foreach ($locations as $location)
                     <li class="location grid gap-4">
-                        <header class="title mx-4 pb-2">
+                        <header class="title mx-4 xl:mx-32 pb-2">
                             <a href="/propiedades?ubicaciones={{ $location->slug }}" class="flex items-center">
                                 <i class="fas fa-angle-right"></i>
                                 <h3 class="MontereyFLF">{{ $location->name }}</h3>

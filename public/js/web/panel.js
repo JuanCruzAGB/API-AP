@@ -80,14 +80,14 @@ tables.ubicaciones.data = locations;
  * * Show the add button
  */
 function showAddButton(){
-    document.querySelector('.add-data').classList.remove('d-none');
+    document.querySelector('.add-data').classList.remove('hidden');
 }
 
 /**
  * * Hide the add button
  */
 function hideAddButton(){
-    document.querySelector('.add-data').classList.add('d-none');
+    document.querySelector('.add-data').classList.add('hidden');
 }
 
 /**

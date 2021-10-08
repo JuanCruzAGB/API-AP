@@ -1,0 +1,50 @@
+.recommended .location .title a {
+    position: relative;
+}
+
+.recommended .location .title h3 {
+    transition: 500ms;
+    padding-left: 0;
+}
+
+.recommended .location .title a:hover h3 {
+    padding-left: 5%;
+}
+
+.recommended .location .title i {
+    position: absolute;
+    left: -15%;
+    opacity: 0;
+    transition: 500ms;
+    color: var(--color-red);
+}
+
+.recommended .location .title a:hover i {
+    left: 0%;
+    opacity: 1;
+}
+
+/* ? MD */
+@media(min-width: 768px) {
+    /*  */
+}
+
+/* ? LG */
+@media(min-width: 1024px) {
+    /*  */
+}
+
+/* ? XL */
+@media(min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media(min-width: 1536px){
+    /*  */
+}
+
+/* ? 3XL */
+@media(min-width: 1920px){
+    /*  */
+}

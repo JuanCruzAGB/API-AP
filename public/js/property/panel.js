@@ -200,9 +200,9 @@ function showConfirmBtns(html){
     for (const btn of html.children) {
         if (btn.nodeName == 'A') {
             if (btn.classList.contains('confirm-button') || btn.classList.contains('cancel-button') || btn.classList.contains('confirm-data') || btn.classList.contains('cancel-data')) {
-                btn.classList.remove('d-none');
+                btn.classList.remove('hidden');
             } else {
-                btn.classList.add('d-none');
+                btn.classList.add('hidden');
             }
         }
     }
@@ -216,9 +216,9 @@ function hideConfirmBtns(html){
     for (const btn of html.children) {
         if (btn.nodeName == 'A') {
             if (btn.classList.contains('confirm-button') || btn.classList.contains('cancel-button') || btn.classList.contains('confirm-data') || btn.classList.contains('cancel-data')) {
-                btn.classList.add('d-none');
+                btn.classList.add('hidden');
             } else {
-                btn.classList.remove('d-none');
+                btn.classList.remove('hidden');
             }
         }
     }
@@ -228,14 +228,14 @@ function hideConfirmBtns(html){
  * * Show the add button
  */
 function showAddButton(){
-    document.querySelector('.add-data').classList.remove('d-none');
+    document.querySelector('.add-data').classList.remove('hidden');
 }
 
 /**
  * * Hide the add button
  */
 function hideAddButton(){
-    document.querySelector('.add-data').classList.add('d-none');
+    document.querySelector('.add-data').classList.add('hidden');
 }
 
 /**
@@ -312,9 +312,9 @@ function showConfirmForm(html){
     for (const btn of html.children) {
         if (btn.nodeName == 'FORM') {
             if (btn.classList.contains('confirm-form')) {
-                btn.classList.remove('d-none');
+                btn.classList.remove('hidden');
             } else {
-                btn.classList.add('d-none');
+                btn.classList.add('hidden');
             }
         }
     }
@@ -328,9 +328,9 @@ function hideConfirmForm(html){
     for (const btn of html.children) {
         if (btn.nodeName == 'FORM') {
             if (btn.classList.contains('confirm-form')) {
-                btn.classList.add('d-none');
+                btn.classList.add('hidden');
             } else {
-                btn.classList.remove('d-none');
+                btn.classList.remove('hidden');
             }
         }
     }
@@ -468,7 +468,7 @@ function createConfirmActionBtn(properties = {
             properties: {
             id: `property-${ properties.key }-button`,
             title: 'Confirmar',
-            classes: ['form-submit', `property-form-${ properties.key }`, 'confirm-button', 'btn', 'btn-uno-transparent', 'btn-icon', 'mr-md-1', 'd-none'],
+            classes: ['form-submit', `property-form-${ properties.key }`, 'confirm-button', 'btn', 'btn-uno-transparent', 'btn-icon', 'mr-md-1', 'hidden'],
         }, states: {
             preventDefault: true,
         }, callback: {
@@ -497,7 +497,7 @@ function createCancelActionBtn(properties = {
             id: `property-${ properties.key }-button`,
             title: 'Cancelar',
             href: `#propiedades`,
-            classes: ['cancel-button', 'btn', 'btn-uno-transparent', 'btn-icon', 'mr-md-1', 'd-none'],
+            classes: ['cancel-button', 'btn', 'btn-uno-transparent', 'btn-icon', 'mr-md-1', 'hidden'],
         }, states: {}, callback: {
             function: cancel,
             params: {
@@ -599,7 +599,7 @@ function makeActions(property, key, table, seeMoreFunction) {
         id: `property-confirm-form-${ key }`,
         action: `/propiedad/${ property.slug }/borrar`,
         method: 'DELETE',
-        classes: ['confirm-form', 'd-none', 'mr-md-1'],
+        classes: ['confirm-form', 'hidden', 'mr-md-1'],
         inputs: [{
             properties: {
                 id: `property-message-${ key }`,

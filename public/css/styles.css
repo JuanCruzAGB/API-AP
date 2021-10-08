@@ -1,20 +1,4 @@
-/* ? Local components */
-/* @import './components/animation.css'; */
-/* @import './components/background.css'; */
-@import './components/banner.css';
-/* @import './components/button.css'; */
-@import './components/color.css';
-@import './components/font.css';
-/* @import './components/footer.css'; */
-@import './components/property/item.css';
-
-/* ? External components */
-/* @import './components/filter.css'; */
-/* @import './components/floating.css'; */
-/* @import './components/validation.css'; */
-/* @import './components/tab.css'; */
-@import './components/nav.css';
-@import './components/sidebar.css';
+@import url("./components/styles.css");
 
 :root {
     --color-red: #C11B34;
@@ -42,17 +26,18 @@ body {
 
 .main {
     min-height: calc(100vh - 4.6rem);
+    /* overflow: hidden; */
 }
 
-/* .input-group .input-field {
-    background: white;
-    border: 1px solid var(--color-black);
+.input-group .input-field {
+    min-height: 3rem;
+    background-color: var(--color-grey-alt);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
     color: var(--color-black);
-    padding: calc(.5rem + 1px) 1rem;
-    resize: none;
 }
 
-.input-group .input-field:focus {
+/* .input-group .input-field:focus {
     border-width: 2px;
     padding: .5rem 1rem;
 } */

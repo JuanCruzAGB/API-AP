@@ -15,7 +15,7 @@
         @yield('nav')
     </header>
 
-    <aside class="notification d-none"></aside>
+    <aside class="notification hidden"></aside>
             
     <main class="main container-fluid">
         <div class="row">

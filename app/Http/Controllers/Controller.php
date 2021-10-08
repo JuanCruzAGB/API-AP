@@ -10,6 +10,12 @@
 
     class Controller extends BaseController{
         use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+        
+        /**
+         * * The Controller language.
+         * @var string $lang
+         */
+        protected $lang = "es";
 
         /**
          * * Control the index page.

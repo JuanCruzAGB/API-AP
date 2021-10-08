@@ -1,18 +1,18 @@
-.main {
+#home.main {
     min-height: 0;
 }
 
-.title a {
+#home .title a {
     position: relative;
     display: block;
     color: var(--color-black);
 }
 
-.title a h3 {
+#home .title a h3 {
     transition: 500ms;
 }
 
-.title a .icon {
+#home .title a .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,11 +25,11 @@
     color: var(--color-black);
 }
 
-.title a:hover h3 {
+#home .title a:hover h3 {
     transform: translateX(1rem);
 }
 
-.title a:hover .icon {
+#home .title a:hover .icon {
     opacity: 1;
     color: var(--color-red-alt);
 }

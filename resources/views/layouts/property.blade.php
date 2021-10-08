@@ -1,40 +1,38 @@
-@extends('layouts.index')
+@extends("layouts.index")
 
-@section('head')
+@section("head")
     {{-- Layout CSS --}}
-    <link href={{ asset('css/layouts/property.css') }} rel="stylesheet">
+    <link href={{ asset("css/layouts/property.css") }} rel="stylesheet">
 
     {{-- Section CSS --}}
-    @yield('css')
+    @yield("css")
 
-    <title>@yield('title')</title>
+    <title>@yield("title")</title>
 @endsection
 
-@section('body')
+@section("body")
     <header class="header">
-        @yield('nav')
+        @yield("nav")
     </header>
-
-    <aside class="notification d-none"></aside>
             
-    <main class="main container-fluid">
-        <div class="row">
-            @yield('main')
-        </div>
+    <main id="{{ $name }}" class="main grid gap-8">
+        @yield("main")
     </main>
 
-    <footer class="footer"> 
-        @yield('footer')
+    <footer class="footer mt-8"> 
+        @yield("footer")
     </footer>
-        
-    @component('components.floating.whatsapp')
-    @endcomponent
+
+    <aside class="aside">
+        @component("components.floating.whatsapp")
+        @endcomponent
+    </aside>
 @endsection
 
-@section('extras')
+@section("extras")
     {{-- Layout CSS --}}
-    <script type="module" src={{ asset('js/layouts/property.js') }}></script>
+    <script type="module" src={{ asset("js/layouts/property.js") }}></script>
 
     {{-- Section JS --}}
-    @yield('js')
+    @yield("js")
 @endsection

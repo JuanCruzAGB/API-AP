@@ -17,7 +17,9 @@
                 $table->string('folder')->nullable();
                 $table->unsignedInteger('id_category');
                 $table->unsignedInteger('id_location');
+                $table->boolean('favorite')->default(false);
                 $table->string('slug');
+                $table->unsignedInteger('id_created_by');
                 $table->timestamps();
             });
         }

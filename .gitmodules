@@ -30,10 +30,6 @@
 	path = public/submodules/InputFileMakerJS
 	url = https://github.com/JuanCruzAGB/InputFileMakerJS.git
 	branch = master
-[submodule ".\\public\\submodules\\ProvidersJS"]
-	path = public/submodules/ProvidersJS
-	url = https://github.com/JuanCruzAGB/ProvidersJS.git
-	branch = master
 [submodule ".\\public\\submodules\\JuanCruzAGB"]
 	path = public/submodules/JuanCruzAGB
 	url = https://github.com/JuanCruzAGB/JuanCruzAGB.git

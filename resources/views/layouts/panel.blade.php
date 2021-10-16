@@ -11,32 +11,57 @@
 @endsection
 
 @section("body")
-    <main id="tab-panel" class="tab-menu vertical relative grid">
-        <section class="tabs background bg-one mb-4 mb-md-0">
-            <a href="/inicio" class="tab-header logo">
+    <main id="panel-tab-menu" class="tab-menu vertical">
+        <header class="tab-header md:hidden">
+            <a href="#panel-sidebar" class="sidebar-button panel-sidebar open left">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="/inicio">
                 <picture>
-                    <source srcset="{{asset("img/resources/logo/01-regular_white.png")}}"
+                    <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
                         media="(min-width: 768px)"/>
-                    <img src="{{asset("img/resources/logo/03-small_white.png")}}" 
+                    <img src="{{ asset("img/resources/logo/04-small-white.png") }}" 
                         alt="Armentia Propiedades Logo"/>
                 </picture>
-                <h1 class="mb-0">Armentia Propiedades</h1>
+                <h1 class="hidden">Armentia Propiedades</h1>
             </a>
-            
-            <ul class="tab-menu-list mb-0 mt-md-3">
-                @yield("menu")
-            </ul>
-            
-            <footer class="tab-footer d-flex justify-content-center">
-                <a href="/cerrar-sesion" class="btn btn-uno btn-small p-md-3">
-                    <i class="link-icon left fas fa-sign-out-alt"></i>
-                    <span class="link-text">Cerrar Sesión</span>
-                </a>
-            </footer>
+        </header>
+
+        <section id="panel-sidebar" class="tabs sidebar left">
+            <main class="tab-body sidebar-body">
+                <header class="tab-header sidebar-header">
+                    <a href="/inicio" class="sidebar-title">
+                        <picture>
+                            <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
+                                media="(min-width: 768px)"/>
+                            <img src="{{ asset("img/resources/logo/04-small-white.png") }}" 
+                                alt="Armentia Propiedades Logo"/>
+                        </picture>
+                        <h1 class="hidden">Armentia Propiedades</h1>
+                    </a>
+                    <a href="#_" class="sidebar-button panel-sidebar close left hidden">
+                        <span>Close</span>
+                    </a>
+                </header>
+                
+                <section class="tab-content sidebar-content">
+                    <ul class="tab-menu-list sidebar-menu-list">
+                        @yield("tab-menu-list")
+
+                        <li class="tab">
+                            <a href="/cerrar-sesion" class="tab-button sidebar-link Work-Sans">
+                                <span>Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </main>
         </section>
 
-        <section class="tab-content-list mx-auto">
-            @yield("content")
+        <section class="tab-content-list">
+            <ul class="py-8 lg:py-20">
+                @yield("tab-content-list")
+            </ul>
         </section>
     </main>
 @endsection

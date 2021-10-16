@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="#contact" class="nav-link Work-Sans">
+                <a href="/#contact" class="nav-link Work-Sans">
                     <span>Contacto</span>
                 </a>
             </li>

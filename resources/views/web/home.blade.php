@@ -23,7 +23,7 @@
     ])
     @endcomponent
 
-    @component("components.property.recommended", [
+    @component("components.location.favorites", [
         "locations" => $locations,
     ])
     @endcomponent

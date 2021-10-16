@@ -45,12 +45,34 @@
     color: var(--color-white);
 } */
 
+/* ? Types */
 .btn.btn-background {
-    background-color: var(--color-red);
-    color: var(--color-white);
+    background-color: var(--bg-color, var(---color-red));
+    color: var(--color, var(--color-white));
     font-weight: bold;
     transition: 500ms;
 }
 .btn.btn-background:hover {
-    background-color: var(--color-red-alt);
+    background-color: var(--bg-color-alt, var(--color-red-alt));
+}
+
+.btn.btn-icon {
+    min-width: revert;
+    background-color: transparent;
+    border-radius: 100vh;
+    color: var(--color-alt, var(--color-red));
+    font-size: 1.2rem;
+    transition: 500ms;
+}
+.btn.btn-icon:hover {
+    background-color: var(--bg-color, var(---color-red));
+    color: var(--color, var(--color-white));
+}
+
+/* ? Colors */
+.btn.btn-red {
+    --bg-color: var(--color-red);
+    --bg-color-alt: var(--color-red-alt);
+    --color: var(--color-white);
+    --color-alt: var(--color-red);
 }

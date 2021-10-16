@@ -57,7 +57,7 @@
             $objDemo->email = $input['email'];
             $objDemo->phone = $input['phone'];
             $objDemo->message = ((isset($input['message']) && $input['message']) ? $input['message'] : 'No ha dejado un mensaje...');
-            $objDemo->property = Property::findBySlug($slug);
+            $objDemo->property = Property::bySlug($slug);
 
             Mail::to('example@mail.com')->send(new Query($objDemo));
 

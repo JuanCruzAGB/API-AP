@@ -10,25 +10,18 @@
 
     class Controller extends BaseController{
         use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-        
-        /**
-         * * The Controller language.
-         * @var string $lang
-         */
-        protected $lang = "es";
 
         /**
          * * Control the index page.
-         * @return [*]
+         * @return \Illuminate\Http\Response
          */
         public function index () {
-            $locations = Location::getFavorites()->with("properties")->get();
+            $locations = Location::favorites()->get();
 
-            return view("web.home", [
-                "locations" => $locations,
-                "validation" => (object) [
-                    "rules" => Mail::$validation["contact"]["rules"],
-                    "messages" => Mail::$validation["contact"]["messages"]["es"],
+            return view('web.home', [
+                'locations' => $locations,
+                'validation' => (object) [
+                    'mail' => Mail::$validation,
                 ],
             ]);
         }

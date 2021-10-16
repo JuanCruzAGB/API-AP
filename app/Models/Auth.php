@@ -6,6 +6,7 @@
     class Auth extends Model {
         /**
          * * Validation messages and rules.
+         * @static
          * @var array
          */
         public static $validation = [

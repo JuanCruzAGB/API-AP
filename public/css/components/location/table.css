@@ -1,3 +1,7 @@
+#panel-tab-menu.tab-menu .tab-content-list #ubicaciones.tab-content section.content-table tr :where(td.actions, th.actions) {
+    max-width: 6rem;
+    min-width: 6rem;
+}
 
 /* ? MD */
 @media (min-width: 768px) {

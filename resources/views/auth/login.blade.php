@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('title')
-    Armentia Propiedades - Iniciar Sesión
+    Iniciar Sesión | Armentia Propiedades
 @endsection
 
 @section('css')
@@ -14,20 +14,22 @@
 @endsection
 
 @section('main')
-    <section id="login" class="form col-12 col-md-8 col-xl-6 p-5">
-        <form action="/login" method="post">
+    <section id="login" class="form flex justify-center">
+        <form id="login-form" action="/login" method="post" class="w-1/3">
             @csrf
-            <div class="row px-xl-5">
-                <div class="input-group col-12 mb-3 p-0" title="El Correo es obligatorio">
-                    <label for="email" class="input-name Work-Sans"><span class="first-letter">C</span>orreo <span class="required color-red">*</span></label>
-                    <input class="input-field" type="email" name="email" id="email" value="{{ old('email') }}">
+            <div class="grid gap-4 p-4 py-8">
+                <div class="input-group grid gap-4" title="El Correo es obligatorio">
+                    <label for="email" class="input-name Work-Sans">Correo <span class="required color-red">*</span></label>
+                    <input class="input-field" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="example@mail.com">
                 </div>
-                <div class="input-group col-12 mb-3 p-0" title="La Contraseña es obligatorio">
-                    <label for="password" class="input-name Work-Sans"><span class="first-letter">C</span>ontraseña <span class="required color-red">*</span></label>
-                    <input class="input-field" type="password" name="password" id="password">
+                <div class="input-group grid gap-4" title="La Contraseña es obligatorio">
+                    <label for="password" class="input-name Work-Sans">Contraseña <span class="required color-red">*</span></label>
+                    <input class="input-field" type="password" name="password" id="password" placeholder="********">
                 </div>
-                <div class="text-right col-12 mb-3 p-0">
-                    <button type="submit" class="btn btn-uno mx-0">Enviar</button>
+                <div class="text-center">
+                    <button type="submit" class="form-submit login-form btn btn-background btn-red py-2 px-4">
+                        <span>Enviar</span>
+                    </button>
                 </div>
             </div>
         </form>

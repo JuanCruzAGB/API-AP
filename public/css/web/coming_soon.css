@@ -55,21 +55,21 @@ p{
     color: var(--color-grey-alt);
 }
 
-/* * MD */
+/* ? MD */
 @media(min-width: 768px){
     .social-media ul li{
         flex-basis: initial;
     }
 }
 
-/* * LG */
+/* ? LG */
 @media(min-width: 1024px){
     .main > .row{
         width: 50%;
     }
 }
 
-/* * XL */
+/* ? XL */
 @media(min-width: 1200px){
     /**/
 }

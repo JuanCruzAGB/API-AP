@@ -1,6 +1,6 @@
 .sidebar {
     --sidebar-button-color: var(--color-grey);
-    --sidebar-button-color-alternative: var(--color-red);
+    --sidebar-button-color-alt: var(--color-red);
 }
 
 /* ? MD */

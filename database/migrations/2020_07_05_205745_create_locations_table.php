@@ -13,7 +13,9 @@
             Schema::create('locations', function (Blueprint $table) {
                 $table->bigIncrements('id_location');
                 $table->string('name');
+                $table->boolean('favorite')->default(false);
                 $table->string('slug');
+                $table->unsignedInteger('id_created_by');
                 $table->timestamps();
             });
         }

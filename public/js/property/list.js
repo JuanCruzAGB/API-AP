@@ -86,5 +86,5 @@
 //     //     target: 'id_location',
 //     // }], properties);
 
-//     document.querySelector('#recommended main').appendChild(list.getHTML());
+//     document.querySelector('#favorites main').appendChild(list.getHTML());
 // });

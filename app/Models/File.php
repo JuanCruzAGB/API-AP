@@ -7,11 +7,12 @@
     class File extends Model {       
         /**
          * * Get all the files from a route
+         * @static
          * @param string $route
          * @param array $conf
          * @return [string[]]
          */
-        static public function getAll (string $route, array $conf = [
+        static public function all (string $route, array $conf = [
             "disk" => "public",
             "storage" => true,
         ]) {
@@ -36,6 +37,7 @@
 
         /**
          * * Default configuration.
+         * @static
          * @var array
          */
         static public $conf = [

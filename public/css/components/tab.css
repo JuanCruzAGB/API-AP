@@ -1,13 +1,13 @@
 .tab-menu {
     --tabmenu-title-color: #222;
     --tabmenu-button-color: var(--color-white);
-    --tabmenu-button-color-alternative: var(--color-white);
+    --tabmenu-button-color-alt: var(--color-white);
     --tabmenu-background-color: var(--color-red);
-    --tabmenu-background-color-alternative: var(--color-red-alt);
+    --tabmenu-background-color-alt: var(--color-red-alt);
     --tabmenu-border-color: #ddd;
-    --tabmenu-border-color-alternative: #ddd;
+    --tabmenu-border-color-alt: #ddd;
     --tabmenu-icon-color: #ddd;
-    --tabmenu-icon-color-alternative: #ddd;
+    --tabmenu-icon-color-alt: #ddd;
     --tabmenu-shadow-color: #32B1DA;
 }
 
@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-.tab-menu .tabs .tab-menu-list .tab .tab-link {
+.tab-menu .tabs .tab-menu-list .tab .tab-button {
     border-radius: 0;
 }
 
@@ -35,18 +35,18 @@ a.waves-effect, a.waves-light {
     display: inline-flex;
 }
 
-/* * MD */
+/* ? MD */
 @media (min-width: 768px) {
     .tab-menu {
         --tabmenu-title-color: #222;
         --tabmenu-button-color: var(--color-white);
-        --tabmenu-button-color-alternative: var(--color-white);
+        --tabmenu-button-color-alt: var(--color-white);
         --tabmenu-background-color: var(--color-red);
-        --tabmenu-background-color-alternative: var(--color-red-alt);
+        --tabmenu-background-color-alt: var(--color-red-alt);
         --tabmenu-border-color: #ddd;
-        --tabmenu-border-color-alternative: #ddd;
+        --tabmenu-border-color-alt: #ddd;
         --tabmenu-icon-color: #ddd;
-        --tabmenu-icon-color-alternative: #ddd;
+        --tabmenu-icon-color-alt: #ddd;
         --tabmenu-shadow-color: #32B1DA;
     }
 
@@ -67,7 +67,7 @@ a.waves-effect, a.waves-light {
     }
 }
 
-/* * LG */
+/* ? LG */
 @media (min-width: 1024px) {
     .tab-menu.vertical .tabs {
         width: 15%;
@@ -78,7 +78,7 @@ a.waves-effect, a.waves-light {
     }
 }
 
-/* * XL */
+/* ? XL */
 @media (min-width: 1200px) {
     /**/
 }

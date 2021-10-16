@@ -5,13 +5,19 @@
     use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
     use Illuminate\Database\Eloquent\Model;
 
-    class Category extends Model{
+    class Category extends Model {
         use Sluggable, SluggableScopeHelpers;
 
-        /** @var string - The table name. */
+        /**
+         * * The table name.
+         * @var string
+         */
         protected $table = 'categories';
         
-        /** @var string - The table primary key name. */
+        /**
+         * * The table primary key name.
+         * @var string
+         */
         protected $primaryKey = 'id_category';
 
         /**
@@ -19,38 +25,14 @@
          * @var array
          */
         protected $fillable = [
-            'name', 'slug',
-        ];
-        
-        /** @var array - Validation messages and rules. */
-        public static $validation = [
-            'adding' => [
-                'rules' => [
-                    'name' => 'required',
-                ], 'messages' => [
-                    'es' => [
-                        'name.required' => 'El Nombre es obligatorio.',
-            ],],], 'updating' => [
-                'rules' => [
-                    'name' => 'required',
-                ], 'messages' => [
-                    'es' => [
-                        'name.required' => 'El Nombre es obligatorio.',
-            ],],], 'deleting' => [
-                'rules' => [
-                    'message' => 'required|regex:/^BORRAR$/',
-                ], 'messages' => [
-                    'es' => [
-                        'message.required' => 'El Mensaje de confirmación es obligatorio.',
-                        'message.regex' => 'El Mensaje no es correcto.',
-            ],],]
+            'name', 'slug', 'id_created_by',
         ];
         
         /**
          * * The Sluggable configuration for the Model.
          * @return array
          */
-        public function sluggable(){
+        public function sluggable () {
             return [
                 'slug' => [
                     'source'	=> 'name',
@@ -58,4 +40,38 @@
                 ]
             ];
         }
+        
+        /**
+         * * Validation messages and rules.
+         * @static
+         * @var array
+         */
+        public static $validation = [
+            'adding' => [
+                'rules' => [
+                    'name' => 'required',
+                ], 'messages' => [
+                    'es' => [
+                        'name.required' => 'El Nombre es obligatorio.',
+                    ],
+                ],
+            ], 'updating' => [
+                'rules' => [
+                    'name' => 'required',
+                ], 'messages' => [
+                    'es' => [
+                        'name.required' => 'El Nombre es obligatorio.',
+                    ],
+                ],
+            ], 'deleting' => [
+                'rules' => [
+                    'message' => 'required|regex:/^BORRAR$/',
+                ], 'messages' => [
+                    'es' => [
+                        'message.required' => 'El Mensaje de confirmación es obligatorio.',
+                        'message.regex' => 'El Mensaje no es correcto.',
+                    ],
+                ],
+            ],
+        ];
     }

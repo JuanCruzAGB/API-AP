@@ -15,6 +15,7 @@
                 $table->string('name');
                 $table->unsignedInteger('id_parent')->nullable();
                 $table->string('slug');
+                $table->unsignedInteger('id_created_by');
                 $table->timestamps();
             });
         }
@@ -25,6 +26,6 @@
          * @return void
          */
         public function down(){
-            Schema::dropIfExists('caterories');
+            Schema::dropIfExists('categories');
         }
     }

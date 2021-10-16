@@ -1,5 +1,5 @@
 <?php
-    namespace App;
+    namespace App\Models;
 
     use Auth;
     use Cviebrock\EloquentSluggable\Sluggable;
@@ -8,13 +8,19 @@
     use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
 
-    class User extends Authenticatable{
+    class User extends Authenticatable {
         use Notifiable, Sluggable, SluggableScopeHelpers;
 
-        /** @var string - The table name. */
+        /**
+         * * The table name.
+         * @var string
+         */
         protected $table = 'users';
         
-        /** @var string - The table primary key name. */
+        /**
+         * * The table primary key name.
+         * @var string
+         */
         protected $primaryKey = 'id_user';
 
         /**
@@ -41,7 +47,24 @@
             'email_verified_at' => 'datetime',
         ];
         
-        /** @var array - Validation messages and rules. */
+        /**
+         * * The Sluggable configuration for the Model.
+         * @return array
+         */
+        public function sluggable(){
+            return [
+                'slug' => [
+                    'source'	=> 'name',
+                    'onUpdate'	=> true,
+                ]
+            ];
+        }
+        
+        /**
+         * * Validation messages and rules.
+         * @static
+         * @var array
+         */
         public static $validation = [
             'log-in' => [
                 'rules' => [
@@ -70,17 +93,4 @@
                 //
             ],
         ];
-        
-        /**
-         * * The Sluggable configuration for the Model.
-         * @return array
-         */
-        public function sluggable(){
-            return [
-                'slug' => [
-                    'source'	=> 'name',
-                    'onUpdate'	=> true,
-                ]
-            ];
-        }
     }

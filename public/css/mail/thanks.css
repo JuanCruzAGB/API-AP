@@ -21,17 +21,17 @@
     --background-img: url('/img/resources/thanks.jpg');
 }
 
-/* * MD */
+/* ? MD */
 @media(min-width: 768px){
     /**/
 }
 
-/* * LG */
+/* ? LG */
 @media(min-width: 1024px){
     /**/
 }
 
-/* * XL */
+/* ? XL */
 @media(min-width: 1200px){
     /**/
 }

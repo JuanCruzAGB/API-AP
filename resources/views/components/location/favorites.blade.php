@@ -1,4 +1,4 @@
-<section id="recommended" class="recommended">
+<section id="favorites" class="favorites">
     <main>
         @if (count($locations))
             <ul class="locations grid gap-4">
@@ -11,7 +11,7 @@
                             </a>
                         </header>
                         @component("components.property.list", [
-                            "properties" => $location->properties,
+                            "properties" => $location->favorite_properties,
                         ])
                         @endcomponent
                     </li>

@@ -4,8 +4,12 @@
     use Illuminate\Database\Eloquent\Model;
     use Storage;
 
-    class Mail extends Model{
-        /** @var array Validation messages and rules. */
+    class Mail extends Model {
+        /**
+         * * Validation messages and rules.
+         * @static
+         * @var array
+         */
         public static $validation = [
             'contact' => [
                 'rules' => [

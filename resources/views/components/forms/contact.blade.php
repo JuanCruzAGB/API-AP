@@ -44,7 +44,7 @@
             <span class="Work-Sans support support-box support-message hidden"></span>
         @endif
         <div class="text-center xl:text-right">
-            <button type="submit" class="form-submit contact-form btn btn-background py-2 px-4">
+            <button type="submit" class="form-submit contact-form btn btn-background btn-red py-2 px-4">
                 <span>Enviar</span>
             </button>
         </div>

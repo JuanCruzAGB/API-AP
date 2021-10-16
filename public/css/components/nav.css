@@ -1,6 +1,6 @@
 .nav-menu {
     --nav-menu-button-color: var(--color-grey);
-    --nav-menu-button-color-alternative: var(--color-red);
+    --nav-menu-button-color-alt: var(--color-red);
     --nav-menu-image-height: 6rem;
 }
 

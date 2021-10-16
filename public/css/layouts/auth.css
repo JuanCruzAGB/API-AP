@@ -19,7 +19,7 @@ label, input {
     flex-basis: 100%;
 }
 
-/* * MD */
+/* ? MD */
 @media(min-width: 768px){
     .nav-menu .nav-title {
         padding: 5%;
@@ -31,14 +31,14 @@ label, input {
     }
 }
 
-/* * LG */
+/* ? LG */
 @media(min-width: 1024px){
     .nav-menu .nav-row {
         height: 8rem;
     }
 }
 
-/* * XL */
+/* ? XL */
 @media(min-width: 1200px){
     /**/
 }

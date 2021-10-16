@@ -20,19 +20,19 @@
     padding: .25rem .75rem;
 }
 
-/* * MD */
+/* ? MD */
 @media(min-width: 768px) {
     /**/
 }
 
-/* * LG */
+/* ? LG */
 @media(min-width: 1024px) {
     .filters{
         display: block;
     }
 }
 
-/* * XL */
+/* ? XL */
 @media(min-width: 1200px) {
     /**/
 }

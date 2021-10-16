@@ -16,5 +16,5 @@
 @import './color.css';
 @import './font.css';
 @import './footer.css';
-@import './recommended.css';
+@import './location/favorites.css';
 @import './property/styles.css';

@@ -1,17 +1,17 @@
-.recommended .location .title a {
+.favorites .location .title a {
     position: relative;
 }
 
-.recommended .location .title h3 {
+.favorites .location .title h3 {
     transition: 500ms;
     padding-left: 0;
 }
 
-.recommended .location .title a:hover h3 {
+.favorites .location .title a:hover h3 {
     padding-left: 5%;
 }
 
-.recommended .location .title i {
+.favorites .location .title i {
     position: absolute;
     left: -15%;
     opacity: 0;
@@ -19,7 +19,7 @@
     color: var(--color-red);
 }
 
-.recommended .location .title a:hover i {
+.favorites .location .title a:hover i {
     left: 0%;
     opacity: 1;
 }

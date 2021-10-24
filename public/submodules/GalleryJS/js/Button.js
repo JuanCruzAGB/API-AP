@@ -1,5 +1,6 @@
-// ? JuanCruzAGB repository
+// ? External repository
 import Class from "../../JuanCruzAGB/js/Class.js";
+import HTMLCreator from "../../HTMLCreatorJS/js/HTMLCreator.js";
 
 /**
  * * Button controls the Gallery Buttons.

@@ -1,4 +1,4 @@
-// ? JuanCruzAGB repository
+// ? External repositories
 import Class from "../../JuanCruzAGB/js/Class.js";
 
 // ? GalleryJS repository
@@ -18,7 +18,11 @@ export default class Gallery extends Class {
      * @param {object} [data]
      * @param {object} [data.props]
      * @param {string} [data.props.id] Gallery primary key.
+     * @param {object} [data.props.classes]
+     * @param {string[]} [data.props.classes.button]
+     * @param {string[]} [data.props.images]
      * @param {object} [data.state]
+     * @param {string} [data.state.generate] If the Gallery Images should be generated.
      * @param {string} [data.state.selected] What Gallery Image is selected.
      * @param {object} [data.callbacks] Gallery selected callbacks.
      * @param {function} [data.callbacks.function] Gallery select callback function.
@@ -28,7 +32,11 @@ export default class Gallery extends Class {
     constructor (data = {
         props: {
             id: "gallery-1",
+            classes: {
+                button: [],
+            }, images: [],
         }, state: {
+            generate: false,
             selected: false,
         }, callbacks: {
             select: {
@@ -107,6 +115,23 @@ export default class Gallery extends Class {
         });
         return false;
     }
+
+    /**
+     * * Return the Gallery menu.
+     * @static
+     * @param {string} id Gallery primary key.
+     * @returns {HTMLElement}
+     * @memberof Gallery
+     */
+    static menuQuerySelector (id = false) {
+        if (id) {
+            return document.querySelector(`#${ id }.gallery .gallery-menu-list`);
+        }
+        if (!id) {
+            console.error("ID param is required to get the Gallery menu");
+            return false;
+        }
+    }
     
     /**
      * @static
@@ -115,6 +140,10 @@ export default class Gallery extends Class {
      */
     static props = {
         id: "gallery-1",
+        classes: {
+            button: [],
+        },
+        images: [],
     }
     
     /**
@@ -124,6 +153,7 @@ export default class Gallery extends Class {
      */
     static state = {
         selected: false,
+        generate: false,
     }
     
     /**

@@ -1,11 +1,13 @@
 // ? External repositories
+import Gallery from "../../submodules/GalleryJS/js/Gallery.js";
 import Filter from "../../submodules/FilterJS/js/Filter.js";
-import HTMLCreator from '../../submodules/HTMLCreatorJS/js/HTMLCreator.js';
+import { default as Html } from '../../submodules/HTMLCreatorJS/js/HTMLCreator.js';
 import Sidebar from '../../submodules/SidebarJS/js/Sidebar.js';
 import TabMenu from '../../submodules/TabMenuJS/js/TabMenu.js';
 import { default as URL } from '../../submodules/JuanCruzAGB/js/providers/URLServiceProvider.js';
 
 // ? Local repository
+import Asset from "../components/Asset.js";
 // import { removeImages, confirmImage, cancelImage, deleteImage, showTrashBtn, hideTrashBtn } from '../gallery.js';
 // import { makeHTML as categoryGenerator, enableAdd as enableAddCategory, enableUpdate as enableUpdateCategory, enableDelete as enableDeleteCategory } from '../category/panel.js';
 // import { makeHTML as propertyGenerator, enableAdd as enableAddProperty, enableUpdate as enableUpdateProperty, enableDelete as enableDeleteProperty, disableAdd as disableAddProperty, disableUpdate as disableUpdateProperty, confirm as confirmProperty } from '../property/panel.js';
@@ -100,6 +102,35 @@ function changeCategoryData (slug = false) {
 }
 
 /**
+ * * Change the <form> <inputs> value data.
+ * @param {string} query
+ * @param {object} data
+ */
+function changeFormData (query, data) {
+    for (const key in data) {
+        if (Object.hasOwnProperty.call(data, key)) {
+            if (key == 'action') {
+                document.querySelector(query).action = data[key];
+            } else {
+                let input = document.querySelector(`${ query } [name=${ key }]`);
+                switch (input.nodeName) {
+                    case 'SELECT':
+                        for (const option of input.options) {
+                            if (option.value && option.value == data[key]) {
+                                option.selected = true;
+                            }
+                        }
+                        break;
+                    default:
+                        input.value = data[key];
+                        break;
+                }
+            }
+        }
+    }
+}
+
+/**
  * * Change the Location form data.
  * @param {boolean} [slug=false]
  */
@@ -128,20 +159,47 @@ function changePropertyData (slug = false) {
     if (slug) {
         for (const property of properties) {
             if (property.slug == slug) {
-                document.querySelector('#propiedad form').action = `/properties/${ property.slug }/update`;
-                document.querySelector('#propiedad form input[name=_method]').value = 'PUT';
-                document.querySelector('#propiedad form input[name=name]').value = property.name;
-                document.querySelector('#propiedad form textarea[name=description]').value = property.description;
-                for (const option of document.querySelector('#propiedad form select[name=id_category]').options) {
-                    if (option.value && option.value == property.id_category) {
-                        option.selected = true;
+                changeFormData('#propiedad form', {
+                    'action': `/properties/${ property.slug }/update`,
+                    '_method': 'PUT',
+                    'name': property.name,
+                    'description': property.description,
+                    'id_category': property.id_category,
+                    'id_location': property.id_location,
+                });
+                for (const key in property.files) {
+                    if (Object.hasOwnProperty.call(property.files, key)) {
+                        property.files[key] = new Asset('storage/' + property.files[key]).route;
                     }
                 }
-                for (const option of document.querySelector('#propiedad form select[name=id_location]').options) {
-                    if (option.value && option.value == property.id_location) {
-                        option.selected = true;
-                    }
-                }
+                createGalleryInputs(property.files);
+                new Gallery({
+                    props: {
+                        id: "gallery-item",
+                        images: property.files,
+                        classes: {
+                            button: ['gallery-item', 'gallery-button'],
+                        },
+                    }, state: {
+                        selected: 'button-0',
+                    },
+                });
+                // <nav class="gallery-menu-list">
+                //     <ul>
+                //         @foreach ($property->files as $key => $image)
+                //             <li>
+                //                 @if ($key == 0)
+                //                     <button class="gallery-item gallery-button active">
+                //                 @else
+                //                     <button class="gallery-item gallery-button">
+                //                 @endif
+                //                     <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
+                //                 </button>
+                //             </li>
+                //         @endforeach
+                //     </ul>
+                // </nav>
+                // <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ asset("storage/" . $property->files[0]) }}" alt="{{ $property->name }} - Image selected">
             }
         }
     }
@@ -157,20 +215,6 @@ function changePropertyData (slug = false) {
             option.selected = false;
         }
     }
-}
-
-/**
- * * Show the add button
- */
-function showAddButton () {
-    document.querySelector('.add-data').classList.remove('hidden');
-}
-
-/**
- * * Hide the add button
- */
-function hideAddButton () {
-    document.querySelector('.add-data').classList.add('hidden');
 }
 
 /**
@@ -213,6 +257,39 @@ function changeSection (params) {
         document.querySelector('.add-data').href = `#${ section }`;
         showAddButton();
     }
+}
+
+function createGalleryInputs (files) {
+    let list = document.querySelector('#propiedad ul.gallery-menu-list');
+    console.log(list);
+    for (const file of files) {
+        let item = new Html('aside', {
+            children: [],
+        });
+        // <li>
+        //     @if ($key == 0)
+        //         <button class="gallery-item gallery-button active">
+        //     @else
+        //         <button class="gallery-item gallery-button">
+        //     @endif
+        //         <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
+        //     </button>
+        // </li>
+    }
+}
+
+/**
+ * * Hide the add button
+ */
+function hideAddButton () {
+    document.querySelector('.add-data').classList.add('hidden');
+}
+
+/**
+ * * Show the add button
+ */
+function showAddButton () {
+    document.querySelector('.add-data').classList.remove('hidden');
 }
 
 /**
@@ -260,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
     // for (const html of document.querySelectorAll('table')) {
     //     let element = tables[html.id.split('-table').shift()];
-    //     element.table = new HTMLCreator('table', {
+    //     element.table = new Html('table', {
     //         props: {
     //             id: html.id,
     //             classes: [],

@@ -61,10 +61,11 @@
         /**
          * * Returns all the favorite Locations.
          * @static
-         * @return \App\Models\Location[]
+         * @param  \Illuminate\Database\Eloquent\Builder  $query
+         * @return \Illuminate\Database\Eloquent\Builder
          */
-        public static function favorites () {
-            return Location::where('favorite', '=', 1);
+        public static function scopeFavorites ($query) {
+            return $query->where('favorite', 1);
         }
         
         /**

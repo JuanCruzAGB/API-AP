@@ -22,8 +22,8 @@
         </header>
         <main class="grid gap-4">
             <section id="gallery-item" class="gallery vertical">
-                <nav class="gallery-menu-list">
-                    <ul>
+                <nav class="gallery-nav">
+                    <ul class="gallery-menu-list">
                         @foreach ($property->files as $key => $image)
                             <li>
                                 @if ($key == 0)

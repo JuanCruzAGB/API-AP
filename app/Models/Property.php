@@ -72,21 +72,23 @@
         /**
          * * Returns the Properties by the Location foreign key.
          * @static
-         * @param int $id_location
-         * @return \App]Models\Property[]
+         * @param  \Illuminate\Database\Eloquent\Builder  $query
+         * @param  int $id_location
+         * @return \Illuminate\Database\Eloquent\Builder
          */
-        public static function byLocation (int $id_location) {
-            return Property::where('id_location', '=', $id_location);
+        public static function scopeByLocation ($query, int $id_location) {
+            return $query->where('id_location', $id_location);
         }
 
         /**
          * * Returns the Property by the slug.
          * @static
-         * @param int $id_location
-         * @return \App]Models\Property
+         * @param  \Illuminate\Database\Eloquent\Builder  $query
+         * @param  string $slug
+         * @return \Illuminate\Database\Eloquent\Builder
          */
-        public static function bySlug (string $slug) {
-            return Property::where('slug', '=', $slug)->first();
+        public static function scopeBySlug ($query, string $slug) {
+            return $query->where('slug', $slug);
         }
         
         /**

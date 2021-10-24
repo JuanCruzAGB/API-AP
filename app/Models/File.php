@@ -13,20 +13,20 @@
          * @return [string[]]
          */
         static public function all (string $route, array $conf = [
-            "disk" => "public",
-            "storage" => true,
+            'disk' => 'public',
+            'storage' => true,
         ]) {
             $conf = array_merge($conf, File::$conf);
 
             $files = collect();
 
-            if ($conf["storage"]) {
-                if (count(Storage::disk($conf["disk"])->allFiles($route))) {
-                    $files = Storage::disk($conf["disk"])->allFiles($route);
+            if ($conf['storage']) {
+                if (count(Storage::disk($conf['disk'])->allFiles($route))) {
+                    $files = Storage::disk($conf['disk'])->allFiles($route);
                 }
             }
 
-            if (!$conf["storage"]) {
+            if (!$conf['storage']) {
                 foreach (File::files("img/$route") as $file) {
                     $files->push($file->getPathname());
                 }
@@ -41,7 +41,7 @@
          * @var array
          */
         static public $conf = [
-            "disk" => "public",
-            "storage" => true,
+            'disk' => 'public',
+            'storage' => true,
         ];
     }

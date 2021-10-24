@@ -43,6 +43,10 @@
             $locations = Location::orderBy('name')->get();
             $properties = Property::orderBy('name')->get();
 
+            foreach ($properties as $property) {
+                $property->files;
+            }
+
             return view('web.panel', [
                 'categories' => $categories,
                 'locations' => $locations,

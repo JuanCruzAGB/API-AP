@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     new Gallery({
         props: {
             id: "gallery-item",
-            selected: 0,
         }, callbacks: {
             function: selectImage,
         },

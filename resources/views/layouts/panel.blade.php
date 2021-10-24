@@ -59,7 +59,7 @@
         </section>
 
         <section class="tab-content-list">
-            <ul class="py-8 lg:py-20">
+            <ul class="py-8 lg:py-20 overflow-x-hidden">
                 @yield("tab-content-list")
             </ul>
         </section>

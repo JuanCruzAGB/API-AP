@@ -4,37 +4,37 @@
     gap: 1rem;
 }
 
-.gallery .gallery-menu-list {
+.gallery .gallery-nav {
     width: 100%;
     overflow-x: scroll;
 }
 
-.gallery .gallery-menu-list ul {
+.gallery .gallery-nav ul {
     display: flex;
     flex-wrap: nowrap;
     gap: 1rem;
     width: 100%;
 }
 
-.gallery .gallery-menu-list li {
+.gallery .gallery-nav li {
     max-width: var(--gallery-button-width, 25%);
     min-width: var(--gallery-button-width, 25%);
     height: var(--gallery-image-height, 3.5rem);
 }
 
-.gallery .gallery-menu-list .gallery-button {
+.gallery .gallery-nav .gallery-button {
     display: block;
     width: 100%;
     transition: 500ms;
 }
 
-.gallery .gallery-menu-list .gallery-button img {
+.gallery .gallery-nav .gallery-button img {
     width: 100%;
     height: var(--gallery-image-height, 3.5rem);
     object-fit: cover;
 }
 
-.gallery .gallery-menu-list .gallery-button.active img {
+.gallery .gallery-nav .gallery-button.active img {
     opacity: .2;
 }
 
@@ -48,6 +48,40 @@
     object-fit: cover;
 }
 
+.gallery .gallery-nav::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-button {
+    width: 15%;
+    height: 15%;
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-thumb {
+    background: var(--gallery-thumb-background-color, #DDD);
+    border-radius: 100vh;
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-thumb:hover,
+.gallery .gallery-nav::-webkit-scrollbar-thumb:active {
+    background: var(--gallery-thumb-background-color-alt, #FFF);
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-track {
+    background: var(--gallery-track-background-color, #000);
+    border-radius: 100vh;
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-track:hover,
+.gallery .gallery-nav::-webkit-scrollbar-track:active {
+    background: var(--gallery-track-background-color-alt, #222);
+}
+
+.gallery .gallery-nav::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 /* ? MD */
 @media (min-width: 768px) {
     .gallery {
@@ -59,21 +93,14 @@
         flex-wrap: nowrap;
     }
 
-    .gallery.vertical .gallery-menu-list {
+    .gallery.vertical .gallery-nav {
+        overflow-x: revert;
         overflow-y: scroll;
-    }
-
-    .gallery.vertical .gallery-menu-list {
         width: 25%;
         height: var(--gallery-image-height, 20rem);
     }
 
-    .gallery.vertical .gallery-menu-list {
-        height: 100%;
-        overflow-y: scroll;
-    }
-
-    .gallery.vertical .gallery-menu-list ul {
+    .gallery.vertical .gallery-nav ul {
         flex-wrap: wrap;
     }
 
@@ -84,11 +111,11 @@
 
 /* ? LG */
 @media (min-width: 1024px) {
-    .gallery .gallery-menu-list li {
+    .gallery .gallery-nav li {
         --gallery-button-width: 10%;
     }
 
-    .gallery.vertical .gallery-menu-list li {
+    .gallery.vertical .gallery-nav li {
         --gallery-button-width: 100%;
     }
 }
@@ -100,7 +127,7 @@
 
 /* ? 2XL */
 @media(min-width: 1536px){
-    .gallery .gallery-menu-list li {
+    .gallery .gallery-nav li {
         --gallery-button-width: 7.5%;
     }
 }

@@ -4,8 +4,9 @@
 /* @import './validation.css'; */
 /* @import './tab.css'; */
 @import './nav.css';
-@import './sidebar.css';
 @import './banner.css';
+@import './gallery.css';
+@import './sidebar.css';
 
 /* ? Local components */
 @import './animation.css';

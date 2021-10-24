@@ -8,6 +8,12 @@
                 @csrf
                 @method('POST')
                 <main class="grid lg:grid-cols-2 gap-4">
+                    <section id="gallery-item" class="gallery lg:col-span-2">
+                        <nav class="gallery-nav">
+                            <ul class="gallery-menu-list pb-4"></ul>
+                        </nav>
+                        <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ asset("storage/property/null.jpg") }}" alt="Image selected">
+                    </section>
                     <div class="input-group grid lg:col-span-2 gap-4">
                         <label for="property-name" class="input-name Work-Sans">Nombre:</label>
                         <input class="form-input input-field" type="text" name="name" id="property-name" placeholder="Example">

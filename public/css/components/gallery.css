@@ -1,0 +1,6 @@
+.gallery {
+    --gallery-thumb-background-color: var(--color-red);
+    --gallery-thumb-background-color-alt: var(--color-red-alt);
+    --gallery-track-background-color: var(--color-grey);
+    --gallery-track-background-color-alt: var(--color-grey-alt);
+}

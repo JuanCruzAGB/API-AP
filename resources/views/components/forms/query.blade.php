@@ -1,4 +1,4 @@
-<form id="query-form" action="/consultar/propiedad/{{ $property->slug }}" method="post">
+<form id="query-form" action="/query/properties/{{ $property->slug }}" method="post">
     @csrf
     <div class="grid gap-4">
         <div class="input-group grid gap-4">

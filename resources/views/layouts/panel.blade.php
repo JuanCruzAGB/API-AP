@@ -16,7 +16,7 @@
             <a href="#panel-sidebar" class="sidebar-button panel-sidebar open left">
                 <i class="fas fa-bars"></i>
             </a>
-            <a href="/inicio">
+            <a href="/home">
                 <picture>
                     <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
                         media="(min-width: 768px)"/>
@@ -30,7 +30,7 @@
         <section id="panel-sidebar" class="tabs sidebar left">
             <main class="tab-body sidebar-body">
                 <header class="tab-header sidebar-header">
-                    <a href="/inicio" class="sidebar-title">
+                    <a href="/home" class="sidebar-title">
                         <picture>
                             <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
                                 media="(min-width: 768px)"/>
@@ -49,7 +49,7 @@
                         @yield("tab-menu-list")
 
                         <li class="tab">
-                            <a href="/cerrar-sesion" class="tab-button sidebar-link Work-Sans">
+                            <a href="/logout" class="tab-button sidebar-link Work-Sans">
                                 <span>Cerrar Sesión</span>
                             </a>
                         </li>

@@ -1,15 +1,15 @@
 // ? External repositories
-import Class from "../../JuanCruzAGB/js/Class.js";
+import Class from '../../JuanCruzAGB/js/Class.js';
 
 // ? GalleryJS repository
-import Button from "./Button.js";
-import Image from "./Image.js";
+import Button from './Button.js';
+import Image from './Image.js';
 
 /**
  * * Gallery makes an excellent gallery of files.
  * @export
  * @class Gallery
- * @author Juan Cruz Armentia <juancarmentia@gmail.com>
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
  * @extends Class
  */
 export default class Gallery extends Class {
@@ -18,26 +18,29 @@ export default class Gallery extends Class {
      * @param {object} [data]
      * @param {object} [data.props]
      * @param {string} [data.props.id] Gallery primary key.
-     * @param {object} [data.props.classes]
-     * @param {string[]} [data.props.classes.button]
+     * @param {object} [data.props.classList]
+     * @param {string[]} [data.props.classList.button]
      * @param {string[]} [data.props.images]
      * @param {object} [data.state]
      * @param {string} [data.state.generate] If the Gallery Images should be generated.
      * @param {string} [data.state.selected] What Gallery Image is selected.
-     * @param {object} [data.callbacks] Gallery selected callbacks.
-     * @param {function} [data.callbacks.function] Gallery select callback function.
-     * @param {object} [data.callbacks.params] Gallery select callback function params.
+     * @param {boolean} [data.state.preventDefault=true] If the Button click event should execut prevent default.
+     * @param {object} [data.callbacks]
+     * @param {object} [data.callbacks.select]
+     * @param {function} [data.callbacks.select.function]
+     * @param {object} [data.callbacks.select.params]
      * @memberof Gallery
      */
     constructor (data = {
         props: {
-            id: "gallery-1",
-            classes: {
+            id: 'gallery-1',
+            classList: {
                 button: [],
             }, images: [],
         }, state: {
             generate: false,
             selected: false,
+            preventDefault: true,
         }, callbacks: {
             select: {
                 function: (params) => { /* console.log(params) */ },
@@ -45,12 +48,21 @@ export default class Gallery extends Class {
             },
         },
     }) {
-        super({ ...Gallery.props, ...((data && data.hasOwnProperty("props")) ? data.props : {}) }, { ...Gallery.state, ...((data && data.hasOwnProperty("state")) ? data.state : {}) });
-        this.setCallbacks({ ...Gallery.callbacks, ...((data && data.hasOwnProperty("callbacks")) ? data.callbacks : {}) });
+        super({
+            props: {
+                ...Gallery.props,
+                ...(data && data.hasOwnProperty("props")) ? data.props : {},
+            }, state: {
+                ...Gallery.state,
+                ...(data && data.hasOwnProperty("state")) ? data.state : {},
+            },
+        });
+        this.setCallbacks({ ...Gallery.callbacks, ...((data && data.hasOwnProperty('callbacks')) ? data.callbacks : {}) });
         this.setHTML(`#${ this.props.id }.gallery`);
         this.setButtons();
         this.setImage();
         this.checkState();
+        console.log(this);
     }
 
     /**
@@ -67,6 +79,7 @@ export default class Gallery extends Class {
      */
     setImage () {
         this.image = Image.generate(this);
+        console.log(this.image);
     }
 
     /**
@@ -93,8 +106,8 @@ export default class Gallery extends Class {
      * @memberof Gallery
      */
     select (id = false, params = {}) {
+        let found = false;
         if (id) {
-            let found = false;
             for (const btn of this.buttons) {
                 btn.inactive();
                 if (btn.props.id == id) {
@@ -107,7 +120,7 @@ export default class Gallery extends Class {
                 return true;
             }
         }
-        this.execute("select", {
+        this.execute('select', {
             ...params,
             ...this.callbacks.select.params,
             selected: found,
@@ -126,9 +139,8 @@ export default class Gallery extends Class {
     static menuQuerySelector (id = false) {
         if (id) {
             return document.querySelector(`#${ id }.gallery .gallery-menu-list`);
-        }
-        if (!id) {
-            console.error("ID param is required to get the Gallery menu");
+        } else {
+            console.error('ID param is required to get the Gallery menu');
             return false;
         }
     }
@@ -139,11 +151,10 @@ export default class Gallery extends Class {
      * @memberof Gallery
      */
     static props = {
-        id: "gallery-1",
-        classes: {
+        id: 'gallery-1',
+        classList: {
             button: [],
-        },
-        images: [],
+        }, images: [],
     }
     
     /**
@@ -154,6 +165,7 @@ export default class Gallery extends Class {
     static state = {
         selected: false,
         generate: false,
+        preventDefault: true,
     }
     
     /**

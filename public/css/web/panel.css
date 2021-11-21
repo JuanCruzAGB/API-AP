@@ -1,6 +1,6 @@
-@import url('../components/category/table.css');
-@import url('../components/location/table.css');
-@import url('../components/property/table.css');
+@import url('../components/category/panel.css');
+@import url('../components/location/panel.css');
+@import url('../components/property/panel.css');
 
 #panel-tab-menu.tab-menu {
     --tab-menu-header-background-color: var(--color-red);

@@ -4,7 +4,7 @@
             <h2 class="Work-Sans mb-0 color-white">¿No encontrás lo que buscás?</h2>
         </section>
         <section class="flex justify-center items-center lg:justify-start">
-            <a href="/propiedades" class="btn btn-background btn-red py-2 px-4">
+            <a href="/properties" class="btn btn-background btn-red py-2 px-4">
                 <i class="fas fa-chevron-right"></i>
                 <span>Ver propiedades</span>
             </a>

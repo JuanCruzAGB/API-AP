@@ -1,11 +1,11 @@
 // ? JuanCruzAGB repository
-import Class from "../../JuanCruzAGB/js/Class.js";
+import Class from '../../JuanCruzAGB/js/Class.js';
 
 /**
  * * Image controls the Gallery selected Image.
  * @export
  * @class Gallery
- * @author Juan Cruz Armentia <juancarmentia@gmail.com>
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
  * @extends Class
  */
 export default class Image extends Class {
@@ -20,11 +20,19 @@ export default class Image extends Class {
      */
     constructor (data = {
         props: {
-            id: "image-1",
+            id: 'image-1',
             source: false,
         }, html,
     }) {
-        super({ ...Image.props, ...((data && data.hasOwnProperty("props")) ? data.props : {}) });
+        super({
+            props: {
+                ...Image.props,
+                ...(data && data.hasOwnProperty("props")) ? data.props : {},
+            }, state: {
+                ...Image.state,
+                ...(data && data.hasOwnProperty("state")) ? data.state : {},
+            },
+        });
         this.setHTML(data.html);
     }
 
@@ -34,7 +42,7 @@ export default class Image extends Class {
      * @memberof Image
      */
     change (source) {
-        this.setProps("source", source);
+        this.setProps('source', source);
         this.html.src = source;
     }
 
@@ -49,7 +57,7 @@ export default class Image extends Class {
         let html = Image.querySelector(Gallery.props.id);
         return new this({
             props: {
-                id: "image-1",
+                id: 'image-1',
                 source: html.src,
             }, html: html,
         });
@@ -67,7 +75,7 @@ export default class Image extends Class {
             return document.querySelector(`.${ id }.gallery-image`);
         }
         if (!id) {
-            console.error("ID param is required to get the Gallery Image");
+            console.error('ID param is required to get the Gallery Image');
             return false;
         }
     }
@@ -78,7 +86,15 @@ export default class Image extends Class {
      * @memberof Image
      */
     static props = {
-        id: "image-1",
+        id: 'image-1',
         source: undefined,
+    }
+    
+    /**
+     * @static
+     * @var {object} state Default state.
+     */
+    static state = {
+        // 
     }
 }

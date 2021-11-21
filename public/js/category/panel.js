@@ -88,7 +88,7 @@ export function enableAdd(params){
     let form = createForm({
         key: params.table.getData().length + 1,
         id: `category-form-${ params.table.getData().length }`,
-        action: `/categoria/crear`,
+        action: `/category/create`,
         method: 'POST',
         classes: [],
         inputs: [{
@@ -520,7 +520,7 @@ function makeNameHTML(category, key) {
     let form = createForm({
         key: key,
         id: `category-form-${ key }`,
-        action: `/categoria/${ category.slug }/actualizar`,
+        action: `/category/${ category.slug }/update`,
         method: 'PUT',
         classes: [],
         inputs: [{
@@ -573,7 +573,7 @@ function makeActions(category, key, table) {
     div.appendChild(createForm({
         key: key,
         id: `category-confirm-form-${ key }`,
-        action: `/categoria/${ category.slug }/borrar`,
+        action: `/category/${ category.slug }/delete`,
         method: 'DELETE',
         classes: ['confirm-form', 'hidden', 'mr-md-1'],
         inputs: [{

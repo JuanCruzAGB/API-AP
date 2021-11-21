@@ -4,7 +4,7 @@
             <i class="fas fa-bars"></i>
         </a>
         
-        <a href="/inicio" class="nav-title">
+        <a href="/home" class="nav-title">
             <picture>
                 <source srcset="{{ asset('img/resources/logo/01-regular.png') }}"
                     media="(min-width: 768px)"/>
@@ -22,12 +22,12 @@
     <section class="nav-row">
         <ul class="nav-menu-list">
             <li>
-                <a href="/inicio" class="nav-link Work-Sans">
+                <a href="/home" class="nav-link Work-Sans">
                     <span>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="/propiedades" class="nav-link Work-Sans">
+                <a href="/properties" class="nav-link Work-Sans">
                     <span>Propiedades</span>
                 </a>
             </li>
@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/cerrar-sesion" class="nav-link Work-Sans">
+                    <a href="/logout" class="nav-link Work-Sans">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Cerrar Sesión</span>
                     </a>

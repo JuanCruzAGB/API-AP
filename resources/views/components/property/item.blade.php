@@ -1,7 +1,7 @@
 @if (count($properties))
     @foreach ($properties as $property)
         <li class="property card">
-            <a href="/propiedad/{{ $property->slug }}/detalles" class="card-body grid">
+            <a href="/properties/{{ $property->slug }}/details" class="card-body grid">
                 <figure class="card-image">
                     <img src="{{ asset('storage/' . $property->files[0]) }}" alt="{{ $property->name }}">
                 </figure>

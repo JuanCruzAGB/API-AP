@@ -1,3 +1,20 @@
+
+[submodule ".\\public\\submodules\\HTMLCreatorJS"]
+	path = public/submodules/HTMLCreatorJS
+	url = https://github.com/JuanCruzAGB/HTMLCreatorJS.git
+	branch = master
+[submodule ".\\public\\submodules\\FilterJS"]
+	path = public/submodules/FilterJS
+	url = https://github.com/JuanCruzAGB/FilterJS.git
+	branch = master
+[submodule ".\\public\\submodules\\ValidationJS"]
+	path = public/submodules/ValidationJS
+	url = https://github.com/JuanCruzAGB/ValidationJS.git
+	branch = master
+[submodule ".\\public\\submodules\\ScrollDetectionJS"]
+	path = public/submodules/ScrollDetectionJS
+	url = https://github.com/JuanCruzAGB/ScrollDetectionJS.git
+	branch = master
 [submodule ".\\public\\submodules\\NavMenuJS"]
 	path = public/submodules/NavMenuJS
 	url = https://github.com/JuanCruzAGB/NavMenuJS.git
@@ -33,20 +50,4 @@
 [submodule ".\\public\\submodules\\JuanCruzAGB"]
 	path = public/submodules/JuanCruzAGB
 	url = https://github.com/JuanCruzAGB/JuanCruzAGB.git
-	branch = master
-[submodule ".\\public\\submodules\\HTMLCreatorJS"]
-	path = public/submodules/HTMLCreatorJS
-	url = https://github.com/JuanCruzAGB/HTMLCreatorJS.git
-	branch = master
-[submodule ".\\public\\submodules\\FilterJS"]
-	path = public/submodules/FilterJS
-	url = https://github.com/JuanCruzAGB/FilterJS.git
-	branch = master
-[submodule ".\\public\\submodules\\ValidationJS"]
-	path = public/submodules/ValidationJS
-	url = https://github.com/JuanCruzAGB/ValidationJS.git
-	branch = master
-[submodule ".\\public\\submodules\\ScrollDetectionJS"]
-	path = public/submodules/ScrollDetectionJS
-	url = https://github.com/JuanCruzAGB/ScrollDetectionJS.git
 	branch = master

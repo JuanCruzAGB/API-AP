@@ -1,12 +1,11 @@
-// ? External repository
-import Class from "../../JuanCruzAGB/js/Class.js";
-import HTMLCreator from "../../HTMLCreatorJS/js/HTMLCreator.js";
+// ? JuanCruzAGB repository
+import Class from '../../JuanCruzAGB/js/Class.js';
 
 /**
  * * Button controls the Gallery Buttons.
  * @export
  * @class Gallery
- * @author Juan Cruz Armentia <juancarmentia@gmail.com>
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
  */
 export default class Button extends Class {
     /**
@@ -17,23 +16,44 @@ export default class Button extends Class {
      * @param {string} [data.props.source] Button Image source.
      * @param {object} [data.state] Button state:
      * @param {boolean} [data.state.active] If the Button should be active.
+     * @param {boolean} [data.state.preventDefault=true] If the Button click event should execut prevent default.
      * @param {HTMLElement} html Button HTML Element.
      * @param {Gallery} Gallery Button Gallery parent.
      * @memberof Button
      */
     constructor (data = {
         props: {
-            id: "button-1",
+            id: 'button-1',
             source: false,
         }, state: {
             active: false,
+            preventDefault: true,
         }, html, Gallery
     }) {
-        super({ ...Button.props, ...((data && data.hasOwnProperty("props")) ? data.props : {}) }, { ...Button.state, ...((data && data.hasOwnProperty("state")) ? data.state : {}) });
+        super({
+            props: {
+                ...Button.props,
+                ...(data && data.hasOwnProperty("props")) ? data.props : {},
+            }, state: {
+                ...Button.state,
+                ...(data && data.hasOwnProperty("state")) ? data.state : {},
+            },
+        });
+        this.Gallery = data.Gallery;
         this.setHTML(data.html);
-        this.html.addEventListener("click", (e) => {
-            e.preventDefault();
-            data.Gallery.select(this.props.id);
+        this.setEventListener();
+    }
+    
+    /**
+     * * Set the Button event listener.
+     * @memberof Button
+     */
+    setEventListener () {
+        this.html.addEventListener('click', (e) => {
+            if (this.state.preventDefault) {
+                e.preventDefault();
+            }
+            this.click();
         });
     }
 
@@ -42,8 +62,19 @@ export default class Button extends Class {
      * @memberof Button
      */
     active () {
-        this.setState("active", true);
-        this.html.classList.add("active");
+        this.setState('active', true);
+        this.html.classList.add('active');
+    }
+
+    /**
+     * * Button click callback.
+     * @param {*} [params={}] Click callback function optional params
+     * @memberof Html
+     */
+    click (params = {}) {
+        this.Gallery.select(this.props.id, {
+            ...params,
+        });
     }
 
     /**
@@ -51,8 +82,8 @@ export default class Button extends Class {
      * @memberof Button
      */
     inactive () {
-        this.setState("active", false);
-        this.html.classList.remove("active");
+        this.setState('active', false);
+        this.html.classList.remove('active');
     }
 
     /**
@@ -71,14 +102,15 @@ export default class Button extends Class {
                     id: `button-${ key }`,
                     source: (() => {
                         for (const child of html.children) {
-                            if (child.nodeName == "IMG") {
+                            if (child.nodeName == 'IMG') {
                                 return child.src;
                             }
                         }
                         return false;
                     })(),
                 }, state: {
-                    active: html.classList.contains("active"),
+                    active: html.classList.contains('active'),
+                    preventDefault: Gallery.state.preventDefault,
                 }, html: html,
                 Gallery: Gallery,
             }));
@@ -99,7 +131,7 @@ export default class Button extends Class {
             return document.querySelectorAll(`.${ id }.gallery-button`);
         }
         if (!id) {
-            console.error("ID param is required to get the Gallery Buttons");
+            console.error('ID param is required to get the Gallery Buttons');
             return [];
         }
     }
@@ -110,7 +142,7 @@ export default class Button extends Class {
      * @memberof Button
      */
     static props = {
-        id: "button-1",
+        id: 'button-1',
         source: false,
     }
     
@@ -121,5 +153,6 @@ export default class Button extends Class {
      */
     static state = {
         active: false,
+        preventDefault: true,
     }
 }

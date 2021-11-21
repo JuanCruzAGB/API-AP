@@ -1,19 +1,19 @@
 <li id="propiedad" class="tab-content">
     <main class="grid gap-4">
         <header class="title mx-4">
-            <h3 class="MontereyFLF">Propiedad</h3>
+            <h3 class="MontereyFLF">
+                <a href="#" class="btn btn-text btn-black">
+                    <span>Propiedad</span>
+                    <i class="fas fa-eye"></i>
+                </a>
+            </h3>
         </header>
         <section class="content-form pb-4 mx-4">
             <form action="#">
                 @csrf
                 @method('POST')
                 <main class="grid lg:grid-cols-2 gap-4">
-                    <section id="gallery-item" class="gallery lg:col-span-2">
-                        <nav class="gallery-nav">
-                            <ul class="gallery-menu-list pb-4"></ul>
-                        </nav>
-                        <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ asset("storage/property/null.jpg") }}" alt="Image selected">
-                    </section>
+                    <section class="property-gallery lg:col-span-2"></section>
                     <div class="input-group grid lg:col-span-2 gap-4">
                         <label for="property-name" class="input-name Work-Sans">Nombre:</label>
                         <input class="form-input input-field" type="text" name="name" id="property-name" placeholder="Example">

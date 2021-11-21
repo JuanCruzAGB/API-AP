@@ -1,4 +1,4 @@
-<form id="contact-form" action="/contactar" method="post">
+<form id="contact-form" action="/contact" method="post">
     @csrf
     <div class="grid gap-4">
         <div class="input-group grid gap-4">

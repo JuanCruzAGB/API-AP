@@ -22,7 +22,7 @@
             </header>
             <main class="banner-content col-12">
                 <p class="Work-Sans mb-0 text-center">Le responderemos en la brevedad</p>
-                <a href="/inicio" class="btn btn-uno mt-3">Regresar al inicio</a>
+                <a href="/home" class="btn btn-uno mt-3">Regresar al inicio</a>
             </main>
         </div>
     </section>

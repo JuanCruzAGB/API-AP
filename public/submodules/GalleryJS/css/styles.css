@@ -7,6 +7,7 @@
 .gallery .gallery-nav {
     width: 100%;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .gallery .gallery-nav ul {
@@ -19,7 +20,7 @@
 .gallery .gallery-nav li {
     max-width: var(--gallery-button-width, 25%);
     min-width: var(--gallery-button-width, 25%);
-    height: var(--gallery-image-height, 3.5rem);
+    min-height: var(--gallery-image-height, 3.5rem);
 }
 
 .gallery .gallery-nav .gallery-button {

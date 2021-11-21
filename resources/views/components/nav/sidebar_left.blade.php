@@ -12,12 +12,12 @@
         <nav class="sidebar-content">
             <ul class="sidebar-menu-list">
                 <li>
-                    <a href="/inicio" class="sidebar-link nav-link Work-Sans">
+                    <a href="/home" class="sidebar-link nav-link Work-Sans">
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/propiedades" class="sidebar-link nav-link Work-Sans">
+                    <a href="/properties" class="sidebar-link nav-link Work-Sans">
                         <span>Propiedades</span>
                     </a>
                 </li>
@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/cerrar-sesion" class="sidebar-link nav-link Work-Sans">
+                        <a href="/logout" class="sidebar-link nav-link Work-Sans">
                             <span>Cerrar Sesión</span>
                         </a>
                     </li>

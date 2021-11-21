@@ -36,7 +36,7 @@
          * @return \Illuminate\Http\Response
          */
         public function item ($slug) {
-            $property = Property::bySlug($slug);
+            $property = Property::bySlug($slug)->first();
             if (!$property) {
                 abort(404, 'Property does not exist.');
             }

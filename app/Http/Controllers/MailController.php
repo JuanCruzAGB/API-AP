@@ -49,7 +49,7 @@
             
             $validator = Validator::make($request->all(), MailModel::$validation['query']['rules'], MailModel::$validation['query']['messages']['es']);
             if($validator->fails()){
-                return redirect("/propiedad/$slug/detalles#consultar")->withErrors($validator)->withInput();
+                return redirect("/properties/$slug/details#consultar")->withErrors($validator)->withInput();
             }
 
             $objDemo = new \stdClass();
@@ -57,7 +57,7 @@
             $objDemo->email = $input['email'];
             $objDemo->phone = $input['phone'];
             $objDemo->message = ((isset($input['message']) && $input['message']) ? $input['message'] : 'No ha dejado un mensaje...');
-            $objDemo->property = Property::bySlug($slug);
+            $objDemo->property = Property::bySlug($slug)->first();
 
             Mail::to('example@mail.com')->send(new Query($objDemo));
 

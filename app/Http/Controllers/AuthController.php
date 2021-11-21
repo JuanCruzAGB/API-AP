@@ -34,7 +34,7 @@
                 'email' => $input->email,
                 'password' => $input->password,
             ], true)) {
-                return redirect('/iniciar-sesion')->withInput()->with('status', [
+                return redirect('/login')->withInput()->with('status', [
                     'code' => 404,
                     'message' => 'Correo y/o contraseña incorrectos.',
                 ]);

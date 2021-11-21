@@ -28,7 +28,7 @@
                 </div>
                 <div class="text-center">
                     <button type="submit" class="form-submit login-form btn btn-background btn-red py-2 px-4">
-                        <span>Enviar</span>
+                        <span>Ingresar</span>
                     </button>
                 </div>
             </div>

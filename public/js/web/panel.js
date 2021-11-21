@@ -1,84 +1,13 @@
 // ? External repositories
-import Gallery from "../../submodules/GalleryJS/js/Gallery.js";
-import Filter from "../../submodules/FilterJS/js/Filter.js";
+import Gallery from '../../submodules/GalleryJS/js/Gallery.js';
+import Filter from '../../submodules/FilterJS/js/Filter.js';
 import { default as Html } from '../../submodules/HTMLCreatorJS/js/HTMLCreator.js';
 import Sidebar from '../../submodules/SidebarJS/js/Sidebar.js';
 import TabMenu from '../../submodules/TabMenuJS/js/TabMenu.js';
 import { default as URL } from '../../submodules/JuanCruzAGB/js/providers/URLServiceProvider.js';
 
 // ? Local repository
-import Asset from "../components/Asset.js";
-// import { removeImages, confirmImage, cancelImage, deleteImage, showTrashBtn, hideTrashBtn } from '../gallery.js';
-// import { makeHTML as categoryGenerator, enableAdd as enableAddCategory, enableUpdate as enableUpdateCategory, enableDelete as enableDeleteCategory } from '../category/panel.js';
-// import { makeHTML as propertyGenerator, enableAdd as enableAddProperty, enableUpdate as enableUpdateProperty, enableDelete as enableDeleteProperty, disableAdd as disableAddProperty, disableUpdate as disableUpdateProperty, confirm as confirmProperty } from '../property/panel.js';
-// import { makeHTML as locationGenerator, enableAdd as enableAddLocation, enableUpdate as enableUpdateLocation, enableDelete as enableDeleteLocation } from '../location/panel.js';
-// import { View } from '../views.js';
-
-// let view;
-// let tables = {
-//     categorias: {
-//         table: undefined,
-//         cells: [{
-//             id: 'category-cell-1', type: 'td', name: '', innerHTML: 'id_category:html', tdClasses: ['td-id_category'],
-//         }, {
-//             id: 'category-cell-2', type: 'td', name: 'Nombre', innerHTML: 'name:html', tdClasses: ['td-name'],
-//         }, {
-//             id: 'category-cell-3', type: 'td', name: 'Última vez actualizado', innerHTML: 'updated_at:html', tdClasses: ['td-updated_at'],
-//         }, {
-//             id: 'category-cell-4', type: 'td', name: '', innerHTML: 'actions:html', tdClasses: ['actions', 'px-0'],
-//         }],
-//         data: categories,
-//     }, propiedades: {
-//         table: undefined,
-//         cells: [{
-//             id: 'property-cell-1', type: 'td', name: '', innerHTML: 'id_property:html', tdClasses: ['td-id_property'],
-//         }, {
-//             id: 'property-cell-2', type: 'td', name: 'Nombre', innerHTML: 'name:html', tdClasses: ['td-name'],
-//         }, {
-//             id: 'property-cell-3', type: 'td', name: 'Categoría', innerHTML: 'category:name:html', tdClasses: ['td-id_category'],
-//         }, {
-//             id: 'property-cell-4', type: 'td', name: 'Ubicación', innerHTML: 'location:name:html', tdClasses: ['td-id_location'],
-//         }, {
-//             id: 'property-cell-5', type: 'td', name: 'Última vez actualizada', innerHTML: 'updated_at:html', tdClasses: ['td-updated_at'],
-//         }, {
-//             id: 'property-cell-6', type: 'td', name: '', innerHTML: 'actions:html', tdClasses: ['actions', 'px-0'],
-//         }],
-//         data: properties,
-//     }, ubicaciones: {
-//         table: undefined,
-//         cells: [{
-//             id: 'location-cell-1', type: 'td', name: '', innerHTML: 'id_location:html', tdClasses: ['td-id_location'],
-//         }, {
-//             id: 'location-cell-2', type: 'td', name: 'Nombre', innerHTML: 'name:html', tdClasses: ['td-name'],
-//         }, {
-//             id: 'location-cell-3', type: 'td', name: 'Última vez actualizada', innerHTML: 'updated_at:html', tdClasses: ['td-updated_at'],
-//         }, {
-//             id: 'location-cell-4', type: 'td', name: '', innerHTML: 'actions:html', tdClasses: ['actions', 'px-0'],
-//         }],
-//         data: locations,
-// }, };
-
-// /**
-//  * * Open the details view.
-//  */
-// function seeMore(params) {
-//     removeImages();
-//     view.change({
-//         name: 'propiedades',
-//         type: 'details'
-//     })
-//     view.setDetailsData(properties, params.property);
-//     hideAddButton();
-// }
-
-// categoryGenerator(categories, tables.categorias.table);
-// tables.categorias.data = categories;
-
-// propertyGenerator(properties, tables.propiedades.table, seeMore);
-// tables.propiedades.data = properties;
-
-// locationGenerator(locations, tables.ubicaciones.table);
-// tables.ubicaciones.data = locations;
+import Asset from '../components/Asset.js';
 
 /**
  * * Change the Category form data.
@@ -152,6 +81,35 @@ function changeLocationData (slug = false) {
 }
 
 /**
+ * * Change the Gallery items index.
+ * @param {object} params
+ */
+function changeIndex (params = {}) {
+    for (const key in params.property.items) {
+        if (Object.hasOwnProperty.call(params.property.items, key)) {
+            const item = params.property.items[key];
+            const input = item.children[1].children[0];
+            if (params.Html.props.id == input.props.id) {
+                item.style = { 'order': input.html.value };
+            } else {
+                if (params.Html.props.prevValue < params.Html.html.value) {
+                    if (input.html.value <= params.Html.html.value && input.html.value >= params.Html.props.prevValue) {
+                        input.value = parseInt(input.html.value) - 1;
+                        item.style = { 'order': input.html.value };
+                    }
+                }
+                if (params.Html.props.prevValue > params.Html.html.value) {
+                    if (input.html.value <= params.Html.props.prevValue && input.html.value >= params.Html.html.value) {
+                        input.value = parseInt(input.html.value) + 1;
+                        item.style = { 'order': input.html.value };
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
  * * Change the Property form data.
  * @param {boolean} [slug=false]
  */
@@ -159,6 +117,7 @@ function changePropertyData (slug = false) {
     if (slug) {
         for (const property of properties) {
             if (property.slug == slug) {
+                document.querySelector('#propiedad .title a').href = `/properties/${ property.slug }/details`;
                 changeFormData('#propiedad form', {
                     'action': `/properties/${ property.slug }/update`,
                     '_method': 'PUT',
@@ -167,43 +126,27 @@ function changePropertyData (slug = false) {
                     'id_category': property.id_category,
                     'id_location': property.id_location,
                 });
+                // createPropertyGalleryInputs(property);
                 for (const key in property.files) {
                     if (Object.hasOwnProperty.call(property.files, key)) {
-                        property.files[key] = new Asset('storage/' + property.files[key]).route;
+                        property.files[key] = new Asset(`storage/${ property.files[key] }`).route;
                     }
                 }
-                createGalleryInputs(property.files);
-                new Gallery({
+                property.gallery = new Html('gallery', {
                     props: {
-                        id: "gallery-item",
+                        id: 'gallery-item',
                         images: property.files,
-                        classes: {
-                            button: ['gallery-item', 'gallery-button'],
-                        },
+                        nodeName: 'DIV',
                     }, state: {
-                        selected: 'button-0',
-                    },
+                        inputs: true,
+                        preventDefault: false,
+                    }, parentNode: document.querySelector('#propiedad form main .property-gallery'),
                 });
-                // <nav class="gallery-menu-list">
-                //     <ul>
-                //         @foreach ($property->files as $key => $image)
-                //             <li>
-                //                 @if ($key == 0)
-                //                     <button class="gallery-item gallery-button active">
-                //                 @else
-                //                     <button class="gallery-item gallery-button">
-                //                 @endif
-                //                     <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
-                //                 </button>
-                //             </li>
-                //         @endforeach
-                //     </ul>
-                // </nav>
-                // <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ asset("storage/" . $property->files[0]) }}" alt="{{ $property->name }} - Image selected">
             }
         }
     }
     if (!slug) {
+        document.querySelector('#propiedad .title a').href = `#propiedad`;
         document.querySelector('#propiedad form').action = `/properties/create`;
         document.querySelector('#propiedad form input[name=_method]').value = 'POST';
         document.querySelector('#propiedad form input[name=name]').value = '';
@@ -259,25 +202,203 @@ function changeSection (params) {
     }
 }
 
-function createGalleryInputs (files) {
+/**
+ * * Creates the Property Gallery.
+ * @param {Property} property
+ */
+function createPropertyGalleryInputs (property) {
     let list = document.querySelector('#propiedad ul.gallery-menu-list');
-    console.log(list);
-    for (const file of files) {
-        let item = new Html('aside', {
-            children: [],
-        });
-        // <li>
-        //     @if ($key == 0)
-        //         <button class="gallery-item gallery-button active">
-        //     @else
-        //         <button class="gallery-item gallery-button">
-        //     @endif
-        //         <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
-        //     </button>
-        // </li>
+    list.innerHTML = '';
+    property.items = [];
+    for (const key in property.files) {
+        if (Object.hasOwnProperty.call(property.files, key)) {
+            createPropertyGalleryItem(property, key);
+        }
     }
+    // createPropertyGalleryItemInputFile(property);
 }
 
+/**
+ * * Creates a Property Gallery item.
+ * @param {Property} property
+ * @param {number} key
+ */
+function createPropertyGalleryItem (property, key = 1) {
+    let item = new Html('li', {
+        props: {
+            id: `li-${ parseInt(key) + 1 }`,
+            classList: ['grid', 'grid-cols-2'],
+            style: { 'order': parseInt(key) + 1, },
+        }, children: (() => {
+            return createPropertyGalleryItemChildren(property, key);
+        })(), parentNode: document.querySelector('#propiedad ul.gallery-menu-list'),
+    });
+    property.items.push(item);
+}
+
+/**
+ * * Creates the Property Gallery item children.
+ * @param {*} property
+ * @param {number} key
+ * @returns {array}
+ */
+function createPropertyGalleryItemChildren (property, key = 1) {
+    return [
+        createPropertyGalleryItemChildrenButton(property, key),
+        createPropertyGalleryItemChildrenPositionInput(property, key),
+        ...createPropertyGalleryItemChildrenTrashInput(property, key),
+    ];
+}
+
+/**
+ * * Creates the Property Gallery item Button children.
+ * @param {*} property
+ * @param {number} key
+ * @returns {array}
+ */
+function createPropertyGalleryItemChildrenButton (property, key = 1) {
+    return ['button', {
+        props: {
+            classList: (() => {
+                let classList = ['gallery-item', 'gallery-button', 'col-span-2'];
+                if (key == 0) {
+                    classList.push('active');
+                }
+                return classList
+            })(),
+        }, children: [
+            ['img', {
+                props: {
+                    src: new Asset('storage/' + property.files[key]).route,
+                    name: 'Gallery image',
+                },
+            }],
+        ],
+    }];
+}
+
+/**
+ * * Creates the Property Gallery item position input children.
+ * @param {*} property
+ * @param {number} key
+ * @returns {array}
+ */
+function createPropertyGalleryItemChildrenPositionInput (property, key = 1) {
+    return ['label', {
+        props: {
+            classList: ['field'],
+        }, children: [
+            ['input', {
+                props: {
+                    name: `position[${ key }]`,
+                    type: 'number',
+                    defaultValue: parseInt(key) + 1,
+                    classList: [],
+                }, state: {
+                    checked: true,
+                }, callbacks: {
+                    change: {
+                        function: changeIndex,
+                        params: {
+                            property: property,
+                        },
+                    },
+                }, 
+            }],
+        ],
+    }];
+}
+
+/**
+ * * Creates the Property Gallery item trash input children.
+ * @param {*} property
+ * @param {number} key
+ * @returns {array}
+ */
+function createPropertyGalleryItemChildrenTrashInput (property, key = 1) {
+    return [
+        ['input', {
+            props: {
+                id: `remove-${ parseInt(key) + 1 }`,
+                name: `remove[${ property.files[key] }]`,
+                type: 'checkbox',
+                defaultValue: property.files[key],
+                classList: ['hidden'],
+            }, state: {
+                id: true,
+            },
+        }], ['label', {
+            props: {
+                for: `remove-${ parseInt(key) + 1 }`,
+                classList: ['btn', 'btn-icon-bg', 'btn-red'],
+            }, children: [
+                ['icon', {
+                    props: {
+                        classList: ['fas', 'fa-trash'],
+                    },
+                }],
+            ],
+        }],
+    ];
+}
+
+/**
+ * * Creates a Property Gallery item.
+ * @param {Property} property
+ * @param {number} key
+ */
+function createPropertyGalleryItemInputFile (property) {
+    let item = new Html('li', {
+        props: {
+            classList: ['grid', 'grid-cols-2'],
+            id: `li-custom`,
+            style: { 'order': 0, },
+        }, children: [
+            ['custominput', {
+                state: {
+                    hidden: true,
+                }, callbacks: {
+                    change: {
+                        function: (params) => { console.log(params); },
+                        params: {
+                            property: property,
+                        },
+                    },
+                }, button: {
+                    props: {
+                        classList: ['btn', 'btn-icon-bg', 'btn-red', 'col-span-2'],
+                    }, children: [
+                        ['icon', {
+                            props: {
+                                classList: ['fas', 'fa-plus'],
+                            },
+                        }],
+                    ],
+                }, image: {
+                    // parentNode: createPropertyGalleryItemInputImage(),
+                },
+                // <li class="grid grid-cols-2" style="order: 2;">
+                //     <button class="gallery-item gallery-button col-span-2">
+                //         <img src="http://localhost:8000/storage/property/2/02.jpg" alt="Gallery image">
+                //     </button>
+                //     <label class="field">
+                //         <input name="position[1]" type="number" value="2" placeholder="" checked="">
+                //     </label>
+                //     <input id="remove-2" class="hidden" name="remove[property/2/02.jpg]" type="checkbox" value="property/2/02.jpg" placeholder="">
+                //     <label class="btn btn-icon-bg btn-red" for="remove-2">
+                //         <i class="fas fa-trash"></i>
+                //     </label>
+                // </li>
+            }],
+        ], parentNode: document.querySelector('#propiedad ul.gallery-menu-list'),
+    });
+}
+
+function createPropertyGalleryItemInputImage () {
+    return ['li', {
+        
+    }];
+}
 /**
  * * Hide the add button
  */
@@ -292,20 +413,9 @@ function showAddButton () {
     document.querySelector('.add-data').classList.remove('hidden');
 }
 
-/**
- * * Removes the <tr> Validation Messages.
- * @param {HTMLElement[]} supports
- */
-// function removeValidationMessages(supports) {
-//     for (const support of supports) {
-//         support.innerHTML = '';
-//         support.classList.add('hidden');
-//     }
-// }
-
 var panel = {};
 
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', async function (e) {
     new Sidebar({
         props: {
            id: 'panel-sidebar', 
@@ -334,194 +444,4 @@ document.addEventListener('DOMContentLoaded', function (e) {
         changeCategoryData();
         changePropertyData();
     });
-
-    // for (const html of document.querySelectorAll('table')) {
-    //     let element = tables[html.id.split('-table').shift()];
-    //     element.table = new Html('table', {
-    //         props: {
-    //             id: html.id,
-    //             classes: [],
-    //         }, structure: element.cells,
-    //     });
-    // }
-
-    // view = new View({
-    //     name: 'propiedades',
-    //     type: 'table',
-    // });
-    // view.change({
-    //     name: 'ubicaciones',
-    //     type: 'table',
-    // });
-    // view.change({
-    //     name: 'categorias',
-    //     type: 'table',
-    // });
-    // showAddButton();
-    // switch (URL.hash()) {
-    //     case 'propiedades':
-    //         if (URL.findGetParameter('name')) {
-    //             let slug = URL.findGetParameter('name'),
-    //                 key = 0;
-    //             for (const property of properties) {
-    //                 if (property.slug == slug) {
-    //                     if (!URL.findGetParameter('deleting')) {
-    //                         view.change({
-    //                             name: 'propiedades',
-    //                             type: 'details'
-    //                         })
-    //                         hideAddButton();
-    //                         removeImages();
-    //                         view.setDetailsData(properties, property);
-    //                     }
-    //                     key = property.id_property.text - 1;
-    //                 }
-    //             }
-    //             if (URL.findGetParameter('updating')) {
-    //                 enableUpdateProperty();
-    //             } else if (URL.findGetParameter('deleting')) {
-    //                 enableDeleteProperty(key);
-    //             }
-    //         } else if (URL.findGetParameter('adding')) {
-    //             enableAddProperty({
-    //                 view: view,
-    //                 properties: properties,
-    //             });
-    //         }
-    //         break;
-    //     case 'ubicaciones':
-    //         if (URL.findGetParameter('adding')) {
-    //             enableAddLocation({
-    //                 table: tables.ubicaciones.table,
-    //             });
-    //         } else {
-    //             if (URL.findGetParameter('name')) {
-    //                 let slug = URL.findGetParameter('name');
-    //                 for (const key in locations) {
-    //                     const location = locations[key];
-    //                     if (location.slug == slug) {
-    //                         if (URL.findGetParameter('updating')) {
-    //                             enableUpdateLocation({
-    //                                 key: key,
-    //                             });
-    //                         } else {
-    //                             enableDeleteLocation({
-    //                                 key: key,
-    //                             });
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     default:
-    //         if (URL.findGetParameter('adding')) {
-    //             enableAddCategory({
-    //                 table: tables.categorias.table,
-    //             });
-    //         } else {
-    //             if (URL.findGetParameter('name')) {
-    //                 let slug = URL.findGetParameter('name');
-    //                 for (const key in categories) {
-    //                     const category = categories[key];
-    //                     if (category.slug == slug) {
-    //                         if (URL.findGetParameter('updating')) {
-    //                             enableUpdateCategory({
-    //                                 key: key,
-    //                             });
-    //                         } else {
-    //                             enableDeleteCategory({
-    //                                 key: key,
-    //                             });
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         break;
-    // }
-
-    // document.querySelector('.add-data').addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     let section = URL.hash();
-    //     window.location.href = `#${ section }?adding`;
-    //     switch (section) {
-    //         case 'propiedades':
-    //             enableAddProperty({
-    //                 view: view,
-    //                 properties: properties,
-    //             });
-    //             break;
-    //         case 'ubicaciones':
-    //             enableAddLocation({
-    //                 table: tables.ubicaciones.table,
-    //             });
-    //             break;
-    //         default:
-    //             enableAddCategory({
-    //                 table: tables.categorias.table,
-    //             });
-    //             break;
-    //     }
-    // });
-
-    // document.querySelector('.return-data').addEventListener('click', function(e) {
-    //     if (URL.findGetParameter().hasOwnProperty('adding')) {
-    //         disableAddProperty(view);
-    //     } else {
-    //         disableUpdateProperty();
-    //     }
-    //     view.change({
-    //         name: 'propiedades',
-    //         type: 'table'
-    //     })
-    //     showAddButton();
-    //     removeValidationMessages(document.querySelectorAll('#propiedades .details-data .support'));
-    // });
-
-    // document.querySelector('.details-data .edit-data').addEventListener('click', function(e) {
-    //     enableUpdateProperty();
-    // });
-
-    // document.querySelector('.details-data .confirm-data').addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     if (document.querySelector('.details-data').classList.contains('adding')) {
-    //         confirmProperty({
-    //             mode: 'add'
-    //         });
-    //     } else {
-    //         confirmProperty({
-    //             mode: 'update'
-    //         });
-    //     }
-    // });
-
-    // document.querySelector('.details-data .cancel-data').addEventListener('click', function(e) {
-    //     if (document.querySelector('.details-data').classList.contains('adding')) {
-    //         disableAddProperty(view);
-    //         removeValidationMessages(document.querySelectorAll('#propiedades .details-data .support'));
-    //     } else {
-    //         disableUpdateProperty();
-    //     }
-    // });
-
-    // document.querySelector('.confirm-image').addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     confirmImage();
-    // });
-
-    // document.querySelector('.cancel-image').addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     cancelImage();
-    // });
-
-    // document.querySelector('.delete-image').addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     deleteImage();
-    // });
-
-    // document.querySelector('.gallery .selected:not(.gallery-button)').addEventListener('click', function(e) {
-    //     if (this.classList.contains('disabled')) {
-    //         e.preventDefault();
-    //     }
-    // });
 });

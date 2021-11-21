@@ -28,7 +28,7 @@
 //         let link = new HTMLCreatorJS('a', {
 //             properties: {
 //                 id: `property-${ property.id_property }`,
-//                 href: `/propiedad/${ property.slug }/detalles`,
+//                 href: `/properties/${ property.slug }/details`,
 //                 title: false,
 //                 classes: ['card-body', 'row', 'p-0'],
 //             }, states: {}, callback: {}, innerHTML: new HTMLCreatorJS('figure', {

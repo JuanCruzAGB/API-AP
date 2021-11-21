@@ -88,7 +88,7 @@ export function enableAdd(params){
     let form = createForm({
         key: params.table.getData().length + 1,
         id: `location-form-${ params.table.getData().length }`,
-        action: `/ubicacion/crear`,
+        action: `/location/create`,
         method: 'POST',
         classes: [],
         inputs: [{
@@ -552,7 +552,7 @@ function makeNameHTML(location, key) {
     let form = createForm({
         key: key,
         id: `location-form-${ key }`,
-        action: `/ubicacion/${ location.slug }/actualizar`,
+        action: `/location/${ location.slug }/update`,
         method: 'PUT',
         classes: [],
         inputs: [{
@@ -597,7 +597,7 @@ function makeActions(location, key, table) {
     div.appendChild(createForm({
         key: key,
         id: `location-fav-form-${ key }`,
-        action: `/ubicacion/${ location.slug }/favorito`,
+        action: `/location/${ location.slug }/favorite`,
         method: 'PUT',
         classes: ['fav-form', 'hidden'],
         inputs: [],
@@ -617,7 +617,7 @@ function makeActions(location, key, table) {
     div.appendChild(createForm({
         key: key,
         id: `location-confirm-form-${ key }`,
-        action: `/ubicacion/${ location.slug }/borrar`,
+        action: `/location/${ location.slug }/delete`,
         method: 'DELETE',
         classes: ['confirm-form', 'hidden', 'mr-md-1'],
         inputs: [{

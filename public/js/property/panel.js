@@ -259,7 +259,7 @@ export function confirm(params) {
             form = document.querySelector('#propiedades > form');
             input = document.querySelector('#propiedades > form [name=_method]');
             let slug = URL.findGetParameter('name');
-            form.action = `/propiedad/${ slug }/actualizar`;
+            form.action = `/properties/${ slug }/update`;
             input.value = "PUT";
             Validation = new ValidationJS({
                 id: form.id,
@@ -284,7 +284,7 @@ export function confirm(params) {
         default:
             form = document.querySelector('#propiedades > form');
             input = document.querySelector('#propiedades > form [name=_method]');
-            form.action = '/propiedad/crear';
+            form.action = '/properties/create';
             input.value = "POST";
             Validation = new ValidationJS({
                 id: form.id,
@@ -597,7 +597,7 @@ function makeActions(property, key, table, seeMoreFunction) {
     div.appendChild(createForm({
         key: key,
         id: `property-confirm-form-${ key }`,
-        action: `/propiedad/${ property.slug }/borrar`,
+        action: `/properties/${ property.slug }/delete`,
         method: 'DELETE',
         classes: ['confirm-form', 'hidden', 'mr-md-1'],
         inputs: [{

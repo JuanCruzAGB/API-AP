@@ -1,6 +1,6 @@
 <nav id="nav-auth" class="nav-menu">
     <div class="nav-row">
-        <a href="/inicio" class="nav-title">
+        <a href="/home" class="nav-title">
             <picture>
                 <source srcset="{{ asset('img/resources/logo/01-regular.png') }}"
                     media="(min-width: 768px)"/>

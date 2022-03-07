@@ -1,17 +1,32 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\Auth;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Validator;
 
-    class AuthController extends Controller{
+    class AuthController extends Controller {
         /**
-         * * Control the 'log in' page.
+         * * The Controller Model.
+         * @var \App\Models\Auth
+         */
+        protected $model = \App\Models\Auth::class;
+
+        /**
+         * * Control the Auth "dashboard" panel.
+         * @return \Illuminate\Http\Response
+         */
+        public function dashboard () {
+            return view('auth.dashboard', [
+                // ?
+            ]);
+        }
+
+        /**
+         * * Control the "log in" page.
          * @return \Illuminate\Http\Response
          */
         function showLogin () {
-            if (Auth::check()) {
+            if ($this->model::check()) {
                 return redirect('/panel');
             } else {
                 return view('auth.login', [
@@ -21,16 +36,16 @@
         }
 
         /**
-         * * Executes the 'log in'.
-         * @param Request $request
+         * * Executes the "log in".
+         * @param \Illuminate\Http\Request $request
          * @return \Illuminate\Http\Response
          */
         function doLogin (Request $request) {
             $input = (object) $request->all();
 
-            $request->validate(Auth::$validation['login']['rules'], Auth::$validation['login']['messages']['es']);
+            $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][$this->lang]);
 
-            if (!Auth::attempt([
+            if (!$this->model::attempt([
                 'email' => $input->email,
                 'password' => $input->password,
             ], true)) {
@@ -44,11 +59,11 @@
         }
 
         /**
-         * * Executes the 'log out'.
+         * * Executes the "log out".
          * @return \Illuminate\Http\Response
          */
         function doLogout () {
-            Auth::logout();
+            $this->model::logout();
 
             return redirect()->route('web.home')->with('status', [
                 'code' => 200,

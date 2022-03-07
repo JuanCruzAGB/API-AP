@@ -2,18 +2,19 @@
     namespace App\Http\Controllers;
 
     use App\Models\Category;
-    use App\Models\File as FileModel;
     use App\Models\Location;
-    use App\Models\Property;
-    use App\Models\Mail;
     use Cviebrock\EloquentSluggable\Services\SlugService;
     use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\File;
-    use Illuminate\Support\Facades\Validator;
     use Intervention\Image\ImageManagerStatic as Image;
     use Storage;
 
     class PropertyController extends Controller {
+        /**
+         * * The Controller Model.
+         * @var \App\Models\Property
+         */
+        protected $model = \App\Models\Property::class;
+
         /**
          * * Control the list page of Properties.
          * @return \Illuminate\Http\Response
@@ -21,7 +22,7 @@
         public function list () {
             $categories = Category::all();
             $locations = Location::all();
-            $properties = Property::all();
+            $properties = $this->model::all();
 
             return view('property.list', [
                 'categories' => $categories,
@@ -32,142 +33,138 @@
 
         /**
          * * Control the detail page of Property.
-         * @param mixed $slug
+         * @param string $slug
          * @return \Illuminate\Http\Response
          */
-        public function item ($slug) {
-            $property = Property::bySlug($slug)->first();
-            if (!$property) {
-                abort(404, 'Property does not exist.');
-            }
+        public function item (string $slug) {
+            $property = $this->model::bySlug($slug)->first();
 
             return view('property.item', [
                 'property' => $property,
-                'validation' => (object) [
-                    'rules' => Mail::$validation['query']['rules'],
-                    'messages' => Mail::$validation['query']['messages']['es'],
-                ],
             ]);
         }
 
         /**
-         * * Control the Property creation.
-         * @param Request $request
+         * * Control the "show create" page of Property.
+         * @return \Illuminate\Http\Response
+         */
+        public function showCreate () {
+            return view('property.create', [
+                // ?
+            ]);
+        }
+
+        /**
+         * * Execute the Property creation.
+         * @param \Illuminate\Http\Request $request
          * @return \Illuminate\Http\Response
          */
         public function doCreate (Request $request) {
             $input = (object) $request->all();
             
-            $validator = Validator::make($request->all(), Property::$validation['adding']['rules'], Property::$validation['adding']['messages']['es']);
-            if ($validator->fails()) {
-                dd($validator);
-                return redirect('/panel#propiedades?adding')->withErrors($validator)->withInput();
-            }
+            $request->validate($this->model::$validation['create']['rules'], $this->model::$validation['create']['messages'][$this->lang]);
             
-            $input->slug = SlugService::createSlug(Property::class, 'slug', $input->name);
+            $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
+
             $input->folder = 0;
 
-            if ($request->hasFile('files')) {
-                $property = Property::create((array) $input);
-                $property->update(['folder' => $property->id_property]);
+            ddd('check files');
 
-                foreach ($request->file('files') as $file) {
-                    $filepath = $file->hashName('property/$property->folder');
-                    $file = Image::make($file)
-                            ->resize(500, 400, function($constrait) {
-                                $constrait->aspectRatio();
-                                $constrait->upsize();
-                            });
-    
-                    Storage::put($filepath, (string) $file->encode());
-                }
-            } else {
-                return redirect('/panel#propiedades?adding')->withInput()->with('status', [
-                    'code' => 404,
-                    'message' => 'No se adjuntaron imagenes.',
-                ]);
+            $property = $this->model::create((array) $input);
+
+            $property->update([
+                'folder' => "property/$property->id_property",
+            ]);
+
+            foreach ($request->file('files') as $file) {
+                $filepath = $file->hashName('property/$property->folder');
+
+                $file = Image::make($file)
+                        ->resize(500, 400, function($constrait) {
+                            $constrait->aspectRatio();
+                            $constrait->upsize();
+                        });
+
+                Storage::put($filepath, (string) $file->encode());
             }
             
             return redirect('/panel#propiedades')->with('status', [
                 'code' => 200,
-                'message' => 'Propiedad: \'$property->name\' creada correctamente.',
+                'message' => "Propiedad: \"$property->name\" creada correctamente.",
             ]);
         }
 
         /**
-         * * Control the Property updating.
-         * @param Request $request
-         * @param string $slug Property slug.
+         * * Control the "show update" page of Property.
+         * @param string $slug
          * @return \Illuminate\Http\Response
          */
-        public function doUpdate (Request $request, $slug) {
+        public function showUpdate (string $slug) {
+            $property = $this->model::bySlug($slug)->first();
+
+            return view('property.update', [
+                'property' => $property,
+            ]);
+        }
+
+        /**
+         * * Execute the Property update.
+         * @param \Illuminate\Http\Request $request
+         * @param string $slug
+         * @return \Illuminate\Http\Response
+         */
+        public function doUpdate (Request $request, string $slug) {
             $input = (object) $request->all();
-            $property = Property::where('slug', '=', $slug)->get()[0];
+
+            $request->validate($this->model::$validation['update']['rules'], $this->model::$validation['update']['messages'][$this->lang]);
             
-            $validator = Validator::make($request->all(), Property::$validation['updating']['rules'], Property::$validation['updating']['messages']['es']);
-            if ($validator->fails()) {
-                return redirect('/panel#propiedades?name=$slug&updating')->withErrors($validator)->withInput();
+            $property = Property::bySlug($slug)->first();
+
+            ddd($input);
+
+            foreach ($property->files as $file) {
+                ddd($file);
+
+                Storage::delete($file);
             }
 
-            if (isset($input->deleted_files) && count($input->deleted_files)) {
-                if (count($input->deleted_files) == count(FileModel::getAll('property/$property->folder'))) {
-                    if (!$request->hasFile('files') || !count($request->file('files'))) {
-                        return redirect('/panel#propiedades?name=$slug&updating')->with('status', [
-                            'code' => 404,
-                            'message' => 'No se cargaron nuevas imagenes.',
-                        ]);
-                    }
-                }
-            }
-            
-            if ($input->name != $property->name) {
-                $input->slug = SlugService::createSlug(Property::class, 'slug', $input->name);
-            } else {
-                $input->slug = $property->slug;
-            }
-            $input->folder = $property->folder;
+            foreach ($request->file('files') as $file) {
+                $filepath = $file->hashName('property/$property->folder');
 
-            if ($request->hasFile('files')) {
-                foreach ($request->file('files') as $file) {
-                    $filepath = $file->hashName('property/$property->folder');
-                    $file = Image::make($file)
-                            ->resize(500, 400, function($constrait) {
-                                $constrait->aspectRatio();
-                                $constrait->upsize();
-                            });
-    
-                    Storage::put($filepath, (string) $file->encode());
-                }
+                $file = Image::make($file)
+                        ->resize(500, 400, function($constrait) {
+                            $constrait->aspectRatio();
+                            $constrait->upsize();
+                        });
 
-                if (isset($input->deleted_files) && count($input->deleted_files)) {
-                    foreach ($input->deleted_files as $file) {
-                        if (Storage::has($file)) {
-                            Storage::delete($file);
-                        }
-                    }
-                }
+                Storage::put($filepath, (string) $file->encode());
             }
+
+            $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
 
             $property->update((array) $input);
             
             return redirect('/panel#propiedades')->with('status', [
                 'code' => 200,
-                'message' => 'Propiedad: \'$property->name\' actualizada correctamente.',
+                'message' => "Propiedad: \"$property->name\" actualizada correctamente.",
             ]);
         }
 
         /**
-         * * Control the Property deletion.
-         * @param Request $request
-         * @param string $slug Property slug.
+         * * Execute the Property deletion.
+         * @param \Illuminate\Http\Request $request
+         * @param string $slug
          * @return \Illuminate\Http\Response
          */
-        public function doDelete (Request $request, $slug) {
+        public function doDelete (Request $request, string $slug) {
             $input = (object) $request->all();
-            $property = Property::where('slug', '=', $slug)->get()[0];
 
-            if (Storage::exists('property/$property->folder')) {
-                Storage::deleteDirectory('property/$property->folder');
+            $request->validate($this->model::$validation['delete']['rules'], $this->model::$validation['delete']['messages'][$this->lang]);
+
+            $property = Property::bySlug($slug)->first();
+
+            if (Storage::exists("property/$property->folder")) {
+                Storage::deleteDirectory("property/$property->folder");
             }
 
             $property->delete();
@@ -175,6 +172,22 @@
             return redirect('/panel#propiedades')->with('status', [
                 'code' => 200,
                 'message' => 'Propiedad eliminada correctamente.',
+            ]);
+        }
+
+        /**
+         * * Control the table page.
+         * @return \Illuminate\Http\Response
+         */
+        public function table () {
+            $properties = $this->model::orderBy('name')->get();
+
+            foreach ($properties as $property) {
+                $property->files;
+            }
+
+            return view('property.table', [
+                'properties' => $properties,
             ]);
         }
     }

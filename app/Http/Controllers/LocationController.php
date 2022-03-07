@@ -1,96 +1,135 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\Location;
     use Cviebrock\EloquentSluggable\Services\SlugService;
     use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Validator;
 
     class LocationController extends Controller{
         /**
-         * * Control the Location creation.
-         * @param Request $request
-         * @return [*]
+         * * The Controller Model.
+         * @var \App\Models\Location
          */
-        public function doCreate(Request $request){
+        protected $model = \App\Models\Location::class;
+
+        /**
+         * * Control the "show create" page of Location.
+         * @return \Illuminate\Http\Response
+         */
+        public function showCreate () {
+            return view('location.create', [
+                // ?
+            ]);
+        }
+
+        /**
+         * * Execute the Location creation.
+         * @param \Illuminate\Http\Request $request
+         * @return \Illuminate\Http\Response
+         */
+        public function doCreate (Request $request) {
             $input = (object) $request->all();
             
-            $validator = Validator::make($request->all(), Location::$validation['adding']['rules'], Location::$validation['adding']['messages']['es']);
-            if ($validator->fails()) {
-                return redirect("/panel#ubicaciones?adding")->withErrors($validator)->withInput();
-            }
+            $request->validate($this->model::$validation['create']['rules'], $this->model::$validation['create']['messages'][$this->lang]);
             
-            $input->slug = SlugService::createSlug(Location::class, 'slug', $input->name);
-            $location = Location::create((array) $input);
+            $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
+
+            $location = $this->model::create((array) $input);
             
-            return redirect("/panel#ubicaciones")->with('status', [
+            return redirect('/panel#ubicaciones')->with('status', [
                 'code' => 200,
                 'message' => "Ubicación: \"$location->name\" creada correctamente.",
             ]);
         }
 
         /**
-         * * Control the Location updating.
-         * @param Request $request
-         * @param string $slug Location slug.
-         * @return [*]
+         * * Control the "show update" page of Location.
+         * @param string $slug
+         * @return \Illuminate\Http\Response
          */
-        public function doUpdate(Request $request, $slug){
-            $input = (object) $request->all();
-            $location = Location::where('slug', '=', $slug)->get()[0];
-            
-            $validator = Validator::make($request->all(), Location::$validation['updating']['rules'], Location::$validation['updating']['messages']['es']);
-            if ($validator->fails()) {
-                return redirect("/panel#ubicaciones?name=$slug&updating")->withErrors($validator)->withInput();
-            }
-            
-            if ($input->name != $location->name) {
-                $input->slug = SlugService::createSlug(Location::class, 'slug', $input->name);
-            } else {
-                $input->slug = $location->slug;
-            }
+        public function showUpdate (string $slug) {
+            $location = $this->model::bySlug($slug)->first();
 
+            return view('location.update', [
+                'location' => $location,
+            ]);
+        }
+
+        /**
+         * * Execute the Location update.
+         * @param \Illuminate\Http\Request $request
+         * @param string $slug
+         * @return \Illuminate\Http\Response
+         */
+        public function doUpdate (Request $request, string $slug) {
+            $input = (object) $request->all();
+
+            $validator = Validator::make($request->all(), $this->model::$validation['update']['rules'], $this->model::$validation['update']['messages'][$this->lang]);
+            
+            $location = $this->model::bySlug($slug)->first();
+            
+            $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
+            
             $location->update((array) $input);
             
-            return redirect("/panel#ubicaciones")->with('status', [
+            return redirect('/panel#ubicaciones')->with('status', [
                 'code' => 200,
                 'message' => "Ubicación: \"$location->name\" actualizada correctamente.",
             ]);
         }
 
         /**
-         * * Control the Location deletion.
-         * @param Request $request
-         * @param string $slug Location slug.
-         * @return [*]
+         * * Execute the Location deletion.
+         * @param \Illuminate\Http\Request $request
+         * @param string $slug
+         * @return \Illuminate\Http\Response
          */
-        public function doDelete(Request $request, $slug){
+        public function doDelete (Request $request, string $slug) {
             $input = (object) $request->all();
-            $location = Location::where('slug', '=', $slug)->get()[0];
+
+            $validator = Validator::make($request->all(), $this->model::$validation['delete']['rules'], $this->model::$validation['delete']['messages'][$this->lang]);
+
+            $location = $this->model::bySlug($slug)->first();
 
             $location->delete();
             
-            return redirect("/panel#ubicaciones")->with('status', [
+            return redirect('/panel#ubicaciones')->with('status', [
                 'code' => 200,
-                'message' => "Ubicación eliminada correctamente.",
+                'message' => 'Ubicación eliminada correctamente.',
             ]);
         }
 
         /**
-         * * Control the Location deletion.
-         * @param Request $request
-         * @param string $slug Location slug.
-         * @return [*]
+         * * Execute the add Location to favorite.
+         * @param \Illuminate\Http\Request $request
+         * @param string $slug
+         * @return \Illuminate\Http\Response
          */
-        public function doFav(Request $request, $slug){
+        public function doFav (Request $request, string $slug) {
             $input = (object) $request->all();
-            $location = Location::where('slug', '=', $slug)->get()[0];
 
-            $location->update(['favorite' => !$location->favorite]);
+            $validator = Validator::make($request->all(), $this->model::$validation['fav']['rules'], $this->model::$validation['fav']['messages'][$this->lang]);
+
+            $location = $this->model::bySlug($slug)->first();
+
+            $location->update([
+                'favorite' => !$location->favorite,
+            ]);
             
-            return redirect("/panel#ubicaciones")->with('status', [
+            return redirect('/panel#ubicaciones')->with('status', [
                 'code' => 200,
-                'message' => (($location->favorite) ? "$location->name se agrego de favoritos" : "$location->name se quito de favoritos"),
+                'message' => $location->favorite ? "$location->name se agrego de favoritos" : "$location->name se quito de favoritos",
+            ]);
+        }
+
+        /**
+         * * Control the table page.
+         * @return \Illuminate\Http\Response
+         */
+        public function table () {
+            $locations = $this->model::orderBy('name')->get();
+
+            return view('location.table', [
+                'locations' => $locations,
             ]);
         }
     }

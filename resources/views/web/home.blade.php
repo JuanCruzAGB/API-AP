@@ -7,12 +7,11 @@
 @endsection
 
 @section("css")
-    {{-- <link rel="stylesheet" href="{{asset("css/web/home.css")}}"> --}}
+    <link rel="stylesheet" href="{{ asset("css/web/home.css") }}">
 @endsection
 
 @section("nav")
-    @component("components.nav.global")
-    @endcomponent
+    @component("components.nav.global")@endcomponent
 @endsection
 
 @section("main")
@@ -20,24 +19,27 @@
         "title" => "¿Qué buscas?",
         "description" => "En los negocios no se consigue lo que se merece, se consigue lo que se negocia. Negocie con nosotros.",
         "image" => "/img/resources/banner/01-title.jpg",
-    ])
-    @endcomponent
+    ])@endcomponent
 
     @component("components.location.favorites", [
         "locations" => $locations,
-    ])
-    @endcomponent
+    ])@endcomponent
 @endsection
 
 @section("footer")
-    @component("components.footer.global")
-    @endcomponent
+    @component("components.footer.global")@endcomponent
 @endsection
 
 @section("js")
-    {!! NoCaptcha::renderJs() !!}
+    @if (config('app.env') != 'local')
+        {!! NoCaptcha::renderJs() !!}
+    @endif
+
     <script>
-        const validation = @json($validation);
+        const validation = @json([
+            'mail' => \App\Models\Mail::$validation,
+        ]);
     </script>
-    {{-- <script type="module" src="{{asset("js/web/home.js")}}"></script> --}}
+
+    <script type="module" src="{{ asset("js/web/home.js") }}"></script>
 @endsection

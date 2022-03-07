@@ -8,6 +8,7 @@
 
 @section("css")
     <meta name="asset" content="{{ asset("storage") }}">
+    
     <link rel="stylesheet" href="{{ asset("css/property/list.css") }}">
 @endsection
 
@@ -15,25 +16,23 @@
     @component("components.nav.filter",[
         "categories" => $categories,
         "locations" => $locations,
-    ])
-    @endcomponent
+    ])@endcomponent
 @endsection
 
 @section("main")
     @component("components.property.list", [
         "properties" => $properties,
-    ])
-    @endcomponent
+    ])@endcomponent
 @endsection
 
 @section("footer")
-    @component("components.footer.properties")
-    @endcomponent
+    @component("components.footer.properties")@endcomponent
 @endsection
 
 @section("js")
     <script>
         const properties = @json($properties);
     </script>
+
     <script type="module" src="{{ asset("js/property/list.js") }}"></script>
 @endsection

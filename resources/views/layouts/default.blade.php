@@ -23,10 +23,7 @@
         @yield("footer")
     </footer>
 
-    <aside class="aside">
-        @component("components.floating.whatsapp")
-        @endcomponent
-    </aside>
+    @component("components.floating.whatsapp")@endcomponent
 @endsection
 
 @section("extras")

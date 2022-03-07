@@ -30,6 +30,14 @@
         ];
 
         /**
+         * * Get all of the Properties favorites for the Location.
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         */
+        public function favorite_properties () {
+            return $this->hasMany(Property::class, 'id_location', 'id_location')->where('favorite', '=', 1);
+        }
+
+        /**
          * * Get all of the Properties for the Location.
          * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */
@@ -38,11 +46,11 @@
         }
 
         /**
-         * * Get all of the Properties favorites for the Location.
-         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         * * Get the User that owns the Location.
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
-        public function favorite_properties () {
-            return $this->hasMany(Property::class, 'id_location', 'id_location')->where('favorite', '=', 1);
+        public function user () {
+            return $this->belongsTo(User::class, 'id_created_by', 'id_user');
         }
         
         /**
@@ -74,7 +82,7 @@
          * @var array
          */
         public static $validation = [
-            'adding' => [
+            'create' => [
                 'rules' => [
                     'name' => 'required',
                 ], 'messages' => [
@@ -82,7 +90,7 @@
                         'name.required' => 'El Nombre es obligatorio.',
                     ],
                 ],
-            ], 'deleting' => [
+            ], 'delete' => [
                 'rules' => [
                     'message' => 'required|regex:/^BORRAR$/',
                 ], 'messages' => [
@@ -91,7 +99,15 @@
                         'message.regex' => 'El Mensaje no es correcto.',
                     ],
                 ],
-            ], 'updating' => [
+            ], 'fav' => [
+                'rules' => [
+                    // ? Rules
+                ], 'messages' => [
+                    'es' => [
+                        // ? Messages
+                    ],
+                ],
+            ], 'update' => [
                 'rules' => [
                     'name' => 'required',
                 ], 'messages' => [

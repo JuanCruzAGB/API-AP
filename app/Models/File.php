@@ -24,9 +24,7 @@
                 if (count(Storage::disk($conf['disk'])->allFiles($route))) {
                     $files = Storage::disk($conf['disk'])->allFiles($route);
                 }
-            }
-
-            if (!$conf['storage']) {
+            } else {
                 foreach (File::files("img/$route") as $file) {
                     $files->push($file->getPathname());
                 }

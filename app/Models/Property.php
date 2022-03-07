@@ -34,10 +34,10 @@
         
         /**
          * * Get the files from the folder.
-         * @return [type]
+         * @return \Illuminate\Support\Collection
          */
         public function getFilesAttribute () {
-            return $this->files = File::all($this->folder);
+            return File::all($this->folder);
         }
         
         /**
@@ -54,6 +54,14 @@
          */
         public function location () {
             return $this->belongsTo(Location::class, 'id_location', 'id_location');
+        }
+
+        /**
+         * * Get the User that owns the Property.
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         */
+        public function user () {
+            return $this->belongsTo(User::class, 'id_created_by', 'id_user');
         }
         
         /**
@@ -97,7 +105,7 @@
          * @var array
          */
         public static $validation = [
-            'adding' => [
+            'create' => [
                 'rules' => [
                     'name' => 'required',
                     'description' => 'required',
@@ -115,7 +123,7 @@
                         'files.*.mimetypes' => 'Las imágenes tienen que ser formato JPEG/JPG o PNG.',
                     ],
                 ],
-            ], 'deleting' => [
+            ], 'delete' => [
                 'rules' => [
                     'message' => 'required|regex:/^BORRAR$/',
                 ], 'messages' => [
@@ -124,13 +132,13 @@
                         'message.regex' => 'El Mensaje no es correcto.',
                     ],
                 ],
-            ], 'updating' => [
+            ], 'update' => [
                 'rules' => [
                     'name' => 'required',
                     'description' => 'required',
                     'id_category' => 'required',
                     'id_location' => 'required',
-                    'files' => 'nullable',
+                    'files' => 'required',
                     'files.*' => 'mimetypes:image/jpeg,image/png',
                 ], 'messages' => [
                     'es' => [

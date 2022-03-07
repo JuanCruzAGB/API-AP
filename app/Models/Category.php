@@ -27,6 +27,14 @@
         protected $fillable = [
             'name', 'slug', 'id_created_by',
         ];
+
+        /**
+         * * Get the User that owns the Category.
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         */
+        public function user () {
+            return $this->belongsTo(User::class, 'id_created_by', 'id_user');
+        }
         
         /**
          * * The Sluggable configuration for the Model.
@@ -47,7 +55,7 @@
          * @var array
          */
         public static $validation = [
-            'adding' => [
+            'create' => [
                 'rules' => [
                     'name' => 'required',
                 ], 'messages' => [
@@ -55,7 +63,7 @@
                         'name.required' => 'El Nombre es obligatorio.',
                     ],
                 ],
-            ], 'updating' => [
+            ], 'update' => [
                 'rules' => [
                     'name' => 'required',
                 ], 'messages' => [
@@ -63,7 +71,7 @@
                         'name.required' => 'El Nombre es obligatorio.',
                     ],
                 ],
-            ], 'deleting' => [
+            ], 'delete' => [
                 'rules' => [
                     'message' => 'required|regex:/^BORRAR$/',
                 ], 'messages' => [

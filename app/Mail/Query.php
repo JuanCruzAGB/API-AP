@@ -6,30 +6,31 @@
     use Illuminate\Mail\Mailable;
     use Illuminate\Queue\SerializesModels;
 
-    class Query extends Mailable{
+    class Query extends Mailable {
         use Queueable, SerializesModels;
 
-        /** @var array - The Contact data. */
+        /**
+         * * The Contact data.
+         * @var array
+         */
         public $data;
 
         /**
          * * Create a new message instance.
-         * @param mixed $formData - The form data.
+         * @param array $data
          */
-        public function __construct($formData){
-            $this->data = $formData;
+        public function __construct ($data) {
+            $this->data = $data;
         }
 
         /**
          * * Build the message.
          * @return $this
          */
-        public function build(){
-            $email = $this->data->email;
-            $name = $this->data->name;
-            $subject = "Consulta de una propiedad a travez del formulario web";
+        public function build () {
+            $subject = 'Consulta de una propiedad a travez del formulario web';
             return $this->view('mail.query')
-                ->from($email, $name)
+                ->from($this->data['from']['email'], $this->data['from']['name'])
                 ->subject($subject);
         }
     }

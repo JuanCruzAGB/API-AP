@@ -2,9 +2,27 @@
     namespace App\Models;
 
     use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Support\Facades\Mail as Mailer;
     use Storage;
 
     class Mail extends Model {
+        /**
+         * * Sends a Mail.
+         * @param string $type
+         * @param array $data
+         * @return void
+         */
+        public function send (string $type, array $data) {
+            switch ($type) {
+                case 'contact':
+                    Mailer::to($data['to']['email'])->send(new \App\Mail\Contact($data));
+                    break;
+                case 'query':
+                    Mailer::to($data['to']['email'])->send(new \App\Mail\Query($data));
+                    break;
+            }
+        }
+
         /**
          * * Validation messages and rules.
          * @static

@@ -57,7 +57,11 @@
         const categories = @json($categories);
         const locations = @json($locations);
         const properties = @json($properties);
-        const validation = @json($validation);
+        const validation = @json([
+            'categories' => \App\Models\Category::$validation,
+            'locations' => \App\Models\Location::$validation,
+            'properties' => \App\Models\Property::$validation,
+        ]);
     </script>
     <script type="module" src="{{asset('js/web/panel.js')}}"></script>
 @endsection

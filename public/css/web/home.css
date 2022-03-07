@@ -1,38 +1,4 @@
-#home.main {
-    min-height: 0;
-}
-
-#home .title a {
-    position: relative;
-    display: block;
-    color: var(--color-black);
-}
-
-#home .title a h3 {
-    transition: 500ms;
-}
-
-#home .title a .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    opacity: 0;
-    transition: 500ms;
-    font-size: 1.2rem;
-    color: var(--color-black);
-}
-
-#home .title a:hover h3 {
-    transform: translateX(1rem);
-}
-
-#home .title a:hover .icon {
-    opacity: 1;
-    color: var(--color-red-alt);
-}
+/*  */
 
 /* ? MD */
 @media(min-width: 768px) {

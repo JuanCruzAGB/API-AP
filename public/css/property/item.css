@@ -1,4 +1,4 @@
-.main{
+.main {
     min-height: initial;
 }
 
@@ -46,7 +46,7 @@
 }
 
 /* ? MD */
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     .gallery .gallery-menu-list {
         overflow-x: hidden;
     }
@@ -58,14 +58,14 @@
 }
 
 /* ? LG */
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
     .gallery.vertical .gallery-menu-list li {
         --gallery-image-height: 5rem;
     }
 }
 
 /* ? XL */
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
     #property.property {
         padding-left: 8rem;
         padding-right: 8rem;
@@ -82,11 +82,11 @@
 }
 
 /* ? 2XL */
-@media(min-width: 1536px){
+@media (min-width: 1536px) {
     /*  */
 }
 
 /* ? 3XL */
-@media(min-width: 1920px){
+@media (min-width: 1920px) {
     /*  */
 }

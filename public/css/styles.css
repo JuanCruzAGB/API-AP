@@ -26,7 +26,6 @@ body {
 
 .main {
     min-height: calc(100vh - 4.6rem);
-    /* overflow: hidden; */
 }
 
 .input-group .input-field {
@@ -36,11 +35,6 @@ body {
     border-radius: .25rem;
     color: var(--color-black);
 }
-
-/* .input-group .input-field:focus {
-    border-width: 2px;
-    padding: .5rem 1rem;
-} */
 
 ::selection {
     background-color: var(--color-red);

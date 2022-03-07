@@ -2,14 +2,14 @@
 import Dropdown from "../submodules/DropdownJS/js/Dropdown.js";
 import NavMenu from "../submodules/NavMenuJS/js/NavMenu.js";
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    if (document.querySelector("#nav-global")) {
+document.addEventListener('DOMContentLoaded', e => {
+    if (document.querySelector('#nav-global')) {
         new NavMenu({
             props: {
-                id: "nav-global",
+                id: 'nav-global',
                 sidebar: {
                     props: {
-                        id: "sidebar-menu"
+                        id: 'sidebar-menu'
                     }, state: {
                         open: false,
                     },
@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
             },
         });
     }
-    if (document.querySelectorAll(".dropdown").length) {
-        for (const html of document.querySelectorAll(".dropdown")) {
+
+    // TODO: Dropdown
+    if (document.querySelectorAll('.dropdown').length) {
+        for (const html of document.querySelectorAll('.dropdown')) {
             new Dropdown({
                 id: html.id,
             }, {

@@ -1,7 +1,7 @@
 // ? External repositories
-import Gallery from '../../submodules/GalleryJS/js/Gallery.js';
+// import Gallery from '../../submodules/GalleryJS/js/Gallery.js';
 import Filter from '../../submodules/FilterJS/js/Filter.js';
-import { default as Html } from '../../submodules/HTMLCreatorJS/js/HTMLCreator.js';
+// import { default as Html } from '../../submodules/HTMLCreatorJS/js/HTMLCreator.js';
 import Sidebar from '../../submodules/SidebarJS/js/Sidebar.js';
 import TabMenu from '../../submodules/TabMenuJS/js/TabMenu.js';
 import { default as URL } from '../../submodules/JuanCruzAGB/js/providers/URLServiceProvider.js';
@@ -132,7 +132,7 @@ function changePropertyData (slug = false) {
                         property.files[key] = new Asset(`storage/${ property.files[key] }`).route;
                     }
                 }
-                property.gallery = new Html('gallery', {
+                property.gallery = new window.html('gallery', {
                     props: {
                         id: 'gallery-item',
                         images: property.files,

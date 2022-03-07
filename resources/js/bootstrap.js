@@ -28,3 +28,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+// ? JuanCruzAGB packages
+window.class = require('@juancruzagb/src');
+
+window.html = require('@juancruzagb/htmlcreator');
+
+window.custominput = require('@juancruzagb/custominput');
+
+window.gallery = require('@juancruzagb/gallery');

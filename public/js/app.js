@@ -1,97 +1,11 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/autosize/dist/autosize.js":
 /*!************************************************!*\
   !*** ./node_modules/autosize/dist/autosize.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	autosize 4.0.4
@@ -101,9 +15,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 (function (global, factory) {
 	if (true) {
 		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else { var mod; }
 })(this, function (module, exports) {
 	'use strict';
@@ -383,8 +297,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/lib/axios.js");
 
@@ -394,14 +307,14 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/adapters/xhr.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 var settle = __webpack_require__(/*! ./../core/settle */ "./node_modules/axios/lib/core/settle.js");
+var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/axios/lib/helpers/cookies.js");
 var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/axios/lib/helpers/buildURL.js");
 var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ "./node_modules/axios/lib/core/buildFullPath.js");
 var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
@@ -412,6 +325,7 @@ module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
     var requestData = config.data;
     var requestHeaders = config.headers;
+    var responseType = config.responseType;
 
     if (utils.isFormData(requestData)) {
       delete requestHeaders['Content-Type']; // Let the browser set it
@@ -422,7 +336,7 @@ module.exports = function xhrAdapter(config) {
     // HTTP basic authentication
     if (config.auth) {
       var username = config.auth.username || '';
-      var password = config.auth.password || '';
+      var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
       requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
     }
 
@@ -432,23 +346,14 @@ module.exports = function xhrAdapter(config) {
     // Set the request timeout in MS
     request.timeout = config.timeout;
 
-    // Listen for ready state
-    request.onreadystatechange = function handleLoad() {
-      if (!request || request.readyState !== 4) {
+    function onloadend() {
+      if (!request) {
         return;
       }
-
-      // The request errored out and we didn't get a response, this will be
-      // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-        return;
-      }
-
       // Prepare the response
       var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var responseData = !responseType || responseType === 'text' ||  responseType === 'json' ?
+        request.responseText : request.response;
       var response = {
         data: responseData,
         status: request.status,
@@ -462,7 +367,30 @@ module.exports = function xhrAdapter(config) {
 
       // Clean up request
       request = null;
-    };
+    }
+
+    if ('onloadend' in request) {
+      // Use onloadend if available
+      request.onloadend = onloadend;
+    } else {
+      // Listen for ready state to emulate onloadend
+      request.onreadystatechange = function handleLoad() {
+        if (!request || request.readyState !== 4) {
+          return;
+        }
+
+        // The request errored out and we didn't get a response, this will be
+        // handled by onerror instead
+        // With one exception: request that using file: protocol, most browsers
+        // will return status as 0 even though it's a successful request
+        if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+          return;
+        }
+        // readystate handler is calling before onerror or ontimeout handlers,
+        // so we should call onloadend on the next 'tick'
+        setTimeout(onloadend);
+      };
+    }
 
     // Handle browser request cancellation (as opposed to a manual cancellation)
     request.onabort = function handleAbort() {
@@ -492,7 +420,10 @@ module.exports = function xhrAdapter(config) {
       if (config.timeoutErrorMessage) {
         timeoutErrorMessage = config.timeoutErrorMessage;
       }
-      reject(createError(timeoutErrorMessage, config, 'ECONNABORTED',
+      reject(createError(
+        timeoutErrorMessage,
+        config,
+        config.transitional && config.transitional.clarifyTimeoutError ? 'ETIMEDOUT' : 'ECONNABORTED',
         request));
 
       // Clean up request
@@ -503,8 +434,6 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/axios/lib/helpers/cookies.js");
-
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ?
         cookies.read(config.xsrfCookieName) :
@@ -534,16 +463,8 @@ module.exports = function xhrAdapter(config) {
     }
 
     // Add responseType to request if needed
-    if (config.responseType) {
-      try {
-        request.responseType = config.responseType;
-      } catch (e) {
-        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
-        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
-        if (config.responseType !== 'json') {
-          throw e;
-        }
-      }
+    if (responseType && responseType !== 'json') {
+      request.responseType = config.responseType;
     }
 
     // Handle progress if needed
@@ -570,7 +491,7 @@ module.exports = function xhrAdapter(config) {
       });
     }
 
-    if (requestData === undefined) {
+    if (!requestData) {
       requestData = null;
     }
 
@@ -586,8 +507,7 @@ module.exports = function xhrAdapter(config) {
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/axios.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -639,10 +559,13 @@ axios.all = function all(promises) {
 };
 axios.spread = __webpack_require__(/*! ./helpers/spread */ "./node_modules/axios/lib/helpers/spread.js");
 
+// Expose isAxiosError
+axios.isAxiosError = __webpack_require__(/*! ./helpers/isAxiosError */ "./node_modules/axios/lib/helpers/isAxiosError.js");
+
 module.exports = axios;
 
 // Allow use of default import syntax in TypeScript
-module.exports.default = axios;
+module.exports["default"] = axios;
 
 
 /***/ }),
@@ -651,8 +574,7 @@ module.exports.default = axios;
 /*!*************************************************!*\
   !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
   \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -682,8 +604,7 @@ module.exports = Cancel;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/cancel/CancelToken.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -751,8 +672,7 @@ module.exports = CancelToken;
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/cancel/isCancel.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -768,8 +688,7 @@ module.exports = function isCancel(value) {
 /*!**********************************************!*\
   !*** ./node_modules/axios/lib/core/Axios.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -779,7 +698,9 @@ var buildURL = __webpack_require__(/*! ../helpers/buildURL */ "./node_modules/ax
 var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "./node_modules/axios/lib/core/InterceptorManager.js");
 var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "./node_modules/axios/lib/core/dispatchRequest.js");
 var mergeConfig = __webpack_require__(/*! ./mergeConfig */ "./node_modules/axios/lib/core/mergeConfig.js");
+var validator = __webpack_require__(/*! ../helpers/validator */ "./node_modules/axios/lib/helpers/validator.js");
 
+var validators = validator.validators;
 /**
  * Create a new instance of Axios
  *
@@ -819,20 +740,71 @@ Axios.prototype.request = function request(config) {
     config.method = 'get';
   }
 
-  // Hook up interceptors middleware
-  var chain = [dispatchRequest, undefined];
-  var promise = Promise.resolve(config);
+  var transitional = config.transitional;
 
+  if (transitional !== undefined) {
+    validator.assertOptions(transitional, {
+      silentJSONParsing: validators.transitional(validators.boolean, '1.0.0'),
+      forcedJSONParsing: validators.transitional(validators.boolean, '1.0.0'),
+      clarifyTimeoutError: validators.transitional(validators.boolean, '1.0.0')
+    }, false);
+  }
+
+  // filter out skipped interceptors
+  var requestInterceptorChain = [];
+  var synchronousRequestInterceptors = true;
   this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
-    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+    if (typeof interceptor.runWhen === 'function' && interceptor.runWhen(config) === false) {
+      return;
+    }
+
+    synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous;
+
+    requestInterceptorChain.unshift(interceptor.fulfilled, interceptor.rejected);
   });
 
+  var responseInterceptorChain = [];
   this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
-    chain.push(interceptor.fulfilled, interceptor.rejected);
+    responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
   });
 
-  while (chain.length) {
-    promise = promise.then(chain.shift(), chain.shift());
+  var promise;
+
+  if (!synchronousRequestInterceptors) {
+    var chain = [dispatchRequest, undefined];
+
+    Array.prototype.unshift.apply(chain, requestInterceptorChain);
+    chain = chain.concat(responseInterceptorChain);
+
+    promise = Promise.resolve(config);
+    while (chain.length) {
+      promise = promise.then(chain.shift(), chain.shift());
+    }
+
+    return promise;
+  }
+
+
+  var newConfig = config;
+  while (requestInterceptorChain.length) {
+    var onFulfilled = requestInterceptorChain.shift();
+    var onRejected = requestInterceptorChain.shift();
+    try {
+      newConfig = onFulfilled(newConfig);
+    } catch (error) {
+      onRejected(error);
+      break;
+    }
+  }
+
+  try {
+    promise = dispatchRequest(newConfig);
+  } catch (error) {
+    return Promise.reject(error);
+  }
+
+  while (responseInterceptorChain.length) {
+    promise = promise.then(responseInterceptorChain.shift(), responseInterceptorChain.shift());
   }
 
   return promise;
@@ -847,9 +819,10 @@ Axios.prototype.getUri = function getUri(config) {
 utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, config) {
-    return this.request(utils.merge(config || {}, {
+    return this.request(mergeConfig(config || {}, {
       method: method,
-      url: url
+      url: url,
+      data: (config || {}).data
     }));
   };
 });
@@ -857,7 +830,7 @@ utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData
 utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, data, config) {
-    return this.request(utils.merge(config || {}, {
+    return this.request(mergeConfig(config || {}, {
       method: method,
       url: url,
       data: data
@@ -874,8 +847,7 @@ module.exports = Axios;
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/core/InterceptorManager.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -894,10 +866,12 @@ function InterceptorManager() {
  *
  * @return {Number} An ID used to remove interceptor later
  */
-InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+InterceptorManager.prototype.use = function use(fulfilled, rejected, options) {
   this.handlers.push({
     fulfilled: fulfilled,
-    rejected: rejected
+    rejected: rejected,
+    synchronous: options ? options.synchronous : false,
+    runWhen: options ? options.runWhen : null
   });
   return this.handlers.length - 1;
 };
@@ -938,8 +912,7 @@ module.exports = InterceptorManager;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/buildFullPath.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -970,8 +943,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/createError.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1000,8 +972,7 @@ module.exports = function createError(message, config, code, request, response) 
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/core/dispatchRequest.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1033,7 +1004,8 @@ module.exports = function dispatchRequest(config) {
   config.headers = config.headers || {};
 
   // Transform request data
-  config.data = transformData(
+  config.data = transformData.call(
+    config,
     config.data,
     config.headers,
     config.transformRequest
@@ -1059,7 +1031,8 @@ module.exports = function dispatchRequest(config) {
     throwIfCancellationRequested(config);
 
     // Transform response data
-    response.data = transformData(
+    response.data = transformData.call(
+      config,
       response.data,
       response.headers,
       config.transformResponse
@@ -1072,7 +1045,8 @@ module.exports = function dispatchRequest(config) {
 
       // Transform response data
       if (reason && reason.response) {
-        reason.response.data = transformData(
+        reason.response.data = transformData.call(
+          config,
           reason.response.data,
           reason.response.headers,
           config.transformResponse
@@ -1091,8 +1065,7 @@ module.exports = function dispatchRequest(config) {
 /*!*****************************************************!*\
   !*** ./node_modules/axios/lib/core/enhanceError.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1117,7 +1090,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
   error.response = response;
   error.isAxiosError = true;
 
-  error.toJSON = function() {
+  error.toJSON = function toJSON() {
     return {
       // Standard
       message: this.message,
@@ -1145,8 +1118,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/mergeConfig.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1166,59 +1138,73 @@ module.exports = function mergeConfig(config1, config2) {
   config2 = config2 || {};
   var config = {};
 
-  var valueFromConfig2Keys = ['url', 'method', 'params', 'data'];
-  var mergeDeepPropertiesKeys = ['headers', 'auth', 'proxy'];
+  var valueFromConfig2Keys = ['url', 'method', 'data'];
+  var mergeDeepPropertiesKeys = ['headers', 'auth', 'proxy', 'params'];
   var defaultToConfig2Keys = [
-    'baseURL', 'url', 'transformRequest', 'transformResponse', 'paramsSerializer',
-    'timeout', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
-    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress',
-    'maxContentLength', 'validateStatus', 'maxRedirects', 'httpAgent',
-    'httpsAgent', 'cancelToken', 'socketPath'
+    'baseURL', 'transformRequest', 'transformResponse', 'paramsSerializer',
+    'timeout', 'timeoutMessage', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
+    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress', 'decompress',
+    'maxContentLength', 'maxBodyLength', 'maxRedirects', 'transport', 'httpAgent',
+    'httpsAgent', 'cancelToken', 'socketPath', 'responseEncoding'
   ];
+  var directMergeKeys = ['validateStatus'];
+
+  function getMergedValue(target, source) {
+    if (utils.isPlainObject(target) && utils.isPlainObject(source)) {
+      return utils.merge(target, source);
+    } else if (utils.isPlainObject(source)) {
+      return utils.merge({}, source);
+    } else if (utils.isArray(source)) {
+      return source.slice();
+    }
+    return source;
+  }
+
+  function mergeDeepProperties(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(config1[prop], config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
+    }
+  }
 
   utils.forEach(valueFromConfig2Keys, function valueFromConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(undefined, config2[prop]);
     }
   });
 
-  utils.forEach(mergeDeepPropertiesKeys, function mergeDeepProperties(prop) {
-    if (utils.isObject(config2[prop])) {
-      config[prop] = utils.deepMerge(config1[prop], config2[prop]);
-    } else if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (utils.isObject(config1[prop])) {
-      config[prop] = utils.deepMerge(config1[prop]);
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
-    }
-  });
+  utils.forEach(mergeDeepPropertiesKeys, mergeDeepProperties);
 
   utils.forEach(defaultToConfig2Keys, function defaultToConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(undefined, config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
+    }
+  });
+
+  utils.forEach(directMergeKeys, function merge(prop) {
+    if (prop in config2) {
+      config[prop] = getMergedValue(config1[prop], config2[prop]);
+    } else if (prop in config1) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
     }
   });
 
   var axiosKeys = valueFromConfig2Keys
     .concat(mergeDeepPropertiesKeys)
-    .concat(defaultToConfig2Keys);
+    .concat(defaultToConfig2Keys)
+    .concat(directMergeKeys);
 
   var otherKeys = Object
-    .keys(config2)
+    .keys(config1)
+    .concat(Object.keys(config2))
     .filter(function filterAxiosKeys(key) {
       return axiosKeys.indexOf(key) === -1;
     });
 
-  utils.forEach(otherKeys, function otherKeysDefaultToConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
-    }
-  });
+  utils.forEach(otherKeys, mergeDeepProperties);
 
   return config;
 };
@@ -1230,8 +1216,7 @@ module.exports = function mergeConfig(config1, config2) {
 /*!***********************************************!*\
   !*** ./node_modules/axios/lib/core/settle.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1247,7 +1232,7 @@ var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios
  */
 module.exports = function settle(resolve, reject, response) {
   var validateStatus = response.config.validateStatus;
-  if (!validateStatus || validateStatus(response.status)) {
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
     resolve(response);
   } else {
     reject(createError(
@@ -1267,13 +1252,13 @@ module.exports = function settle(resolve, reject, response) {
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/transformData.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
+var defaults = __webpack_require__(/*! ./../defaults */ "./node_modules/axios/lib/defaults.js");
 
 /**
  * Transform the data for a request or a response
@@ -1284,9 +1269,10 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
  * @returns {*} The resulting transformed data
  */
 module.exports = function transformData(data, headers, fns) {
+  var context = this || defaults;
   /*eslint no-param-reassign:0*/
   utils.forEach(fns, function transform(fn) {
-    data = fn(data, headers);
+    data = fn.call(context, data, headers);
   });
 
   return data;
@@ -1299,14 +1285,15 @@ module.exports = function transformData(data, headers, fns) {
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/defaults.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
+
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
 var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "./node_modules/axios/lib/helpers/normalizeHeaderName.js");
+var enhanceError = __webpack_require__(/*! ./core/enhanceError */ "./node_modules/axios/lib/core/enhanceError.js");
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1330,12 +1317,35 @@ function getDefaultAdapter() {
   return adapter;
 }
 
+function stringifySafely(rawValue, parser, encoder) {
+  if (utils.isString(rawValue)) {
+    try {
+      (parser || JSON.parse)(rawValue);
+      return utils.trim(rawValue);
+    } catch (e) {
+      if (e.name !== 'SyntaxError') {
+        throw e;
+      }
+    }
+  }
+
+  return (encoder || JSON.stringify)(rawValue);
+}
+
 var defaults = {
+
+  transitional: {
+    silentJSONParsing: true,
+    forcedJSONParsing: true,
+    clarifyTimeoutError: false
+  },
+
   adapter: getDefaultAdapter(),
 
   transformRequest: [function transformRequest(data, headers) {
     normalizeHeaderName(headers, 'Accept');
     normalizeHeaderName(headers, 'Content-Type');
+
     if (utils.isFormData(data) ||
       utils.isArrayBuffer(data) ||
       utils.isBuffer(data) ||
@@ -1352,20 +1362,32 @@ var defaults = {
       setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
       return data.toString();
     }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
+    if (utils.isObject(data) || (headers && headers['Content-Type'] === 'application/json')) {
+      setContentTypeIfUnset(headers, 'application/json');
+      return stringifySafely(data);
     }
     return data;
   }],
 
   transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
+    var transitional = this.transitional;
+    var silentJSONParsing = transitional && transitional.silentJSONParsing;
+    var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
+    var strictJSONParsing = !silentJSONParsing && this.responseType === 'json';
+
+    if (strictJSONParsing || (forcedJSONParsing && utils.isString(data) && data.length)) {
       try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
+        return JSON.parse(data);
+      } catch (e) {
+        if (strictJSONParsing) {
+          if (e.name === 'SyntaxError') {
+            throw enhanceError(e, this, 'E_JSON_PARSE');
+          }
+          throw e;
+        }
+      }
     }
+
     return data;
   }],
 
@@ -1379,6 +1401,7 @@ var defaults = {
   xsrfHeaderName: 'X-XSRF-TOKEN',
 
   maxContentLength: -1,
+  maxBodyLength: -1,
 
   validateStatus: function validateStatus(status) {
     return status >= 200 && status < 300;
@@ -1401,7 +1424,6 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -1409,8 +1431,7 @@ module.exports = defaults;
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/helpers/bind.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1432,8 +1453,7 @@ module.exports = function bind(fn, thisArg) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/helpers/buildURL.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1442,7 +1462,6 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
 
 function encode(val) {
   return encodeURIComponent(val).
-    replace(/%40/gi, '@').
     replace(/%3A/gi, ':').
     replace(/%24/g, '$').
     replace(/%2C/gi, ',').
@@ -1515,8 +1534,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /*!*******************************************************!*\
   !*** ./node_modules/axios/lib/helpers/combineURLs.js ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1541,8 +1559,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/helpers/cookies.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1606,8 +1623,7 @@ module.exports = (
 /*!*********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
   \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1628,12 +1644,33 @@ module.exports = function isAbsoluteURL(url) {
 
 /***/ }),
 
+/***/ "./node_modules/axios/lib/helpers/isAxiosError.js":
+/*!********************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/isAxiosError.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/**
+ * Determines whether the payload is an error thrown by Axios
+ *
+ * @param {*} payload The value to test
+ * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
+ */
+module.exports = function isAxiosError(payload) {
+  return (typeof payload === 'object') && (payload.isAxiosError === true);
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/lib/helpers/isURLSameOrigin.js":
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1712,8 +1749,7 @@ module.exports = (
 /*!***************************************************************!*\
   !*** ./node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
   \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1736,8 +1772,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/parseHeaders.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1801,8 +1836,7 @@ module.exports = function parseHeaders(headers) {
 /*!**************************************************!*\
   !*** ./node_modules/axios/lib/helpers/spread.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1836,19 +1870,132 @@ module.exports = function spread(callback) {
 
 /***/ }),
 
+/***/ "./node_modules/axios/lib/helpers/validator.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/validator.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var pkg = __webpack_require__(/*! ./../../package.json */ "./node_modules/axios/package.json");
+
+var validators = {};
+
+// eslint-disable-next-line func-names
+['object', 'boolean', 'number', 'function', 'string', 'symbol'].forEach(function(type, i) {
+  validators[type] = function validator(thing) {
+    return typeof thing === type || 'a' + (i < 1 ? 'n ' : ' ') + type;
+  };
+});
+
+var deprecatedWarnings = {};
+var currentVerArr = pkg.version.split('.');
+
+/**
+ * Compare package versions
+ * @param {string} version
+ * @param {string?} thanVersion
+ * @returns {boolean}
+ */
+function isOlderVersion(version, thanVersion) {
+  var pkgVersionArr = thanVersion ? thanVersion.split('.') : currentVerArr;
+  var destVer = version.split('.');
+  for (var i = 0; i < 3; i++) {
+    if (pkgVersionArr[i] > destVer[i]) {
+      return true;
+    } else if (pkgVersionArr[i] < destVer[i]) {
+      return false;
+    }
+  }
+  return false;
+}
+
+/**
+ * Transitional option validator
+ * @param {function|boolean?} validator
+ * @param {string?} version
+ * @param {string} message
+ * @returns {function}
+ */
+validators.transitional = function transitional(validator, version, message) {
+  var isDeprecated = version && isOlderVersion(version);
+
+  function formatMessage(opt, desc) {
+    return '[Axios v' + pkg.version + '] Transitional option \'' + opt + '\'' + desc + (message ? '. ' + message : '');
+  }
+
+  // eslint-disable-next-line func-names
+  return function(value, opt, opts) {
+    if (validator === false) {
+      throw new Error(formatMessage(opt, ' has been removed in ' + version));
+    }
+
+    if (isDeprecated && !deprecatedWarnings[opt]) {
+      deprecatedWarnings[opt] = true;
+      // eslint-disable-next-line no-console
+      console.warn(
+        formatMessage(
+          opt,
+          ' has been deprecated since v' + version + ' and will be removed in the near future'
+        )
+      );
+    }
+
+    return validator ? validator(value, opt, opts) : true;
+  };
+};
+
+/**
+ * Assert object's properties type
+ * @param {object} options
+ * @param {object} schema
+ * @param {boolean?} allowUnknown
+ */
+
+function assertOptions(options, schema, allowUnknown) {
+  if (typeof options !== 'object') {
+    throw new TypeError('options must be an object');
+  }
+  var keys = Object.keys(options);
+  var i = keys.length;
+  while (i-- > 0) {
+    var opt = keys[i];
+    var validator = schema[opt];
+    if (validator) {
+      var value = options[opt];
+      var result = value === undefined || validator(value, opt, options);
+      if (result !== true) {
+        throw new TypeError('option ' + opt + ' must be ' + result);
+      }
+      continue;
+    }
+    if (allowUnknown !== true) {
+      throw Error('Unknown option ' + opt);
+    }
+  }
+}
+
+module.exports = {
+  isOlderVersion: isOlderVersion,
+  assertOptions: assertOptions,
+  validators: validators
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/lib/utils.js":
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/utils.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-
-/*global toString:true*/
 
 // utils is a library of generic helper functions non-specific to axios
 
@@ -1952,6 +2099,21 @@ function isObject(val) {
 }
 
 /**
+ * Determine if a value is a plain Object
+ *
+ * @param {Object} val The value to test
+ * @return {boolean} True if value is a plain Object, otherwise false
+ */
+function isPlainObject(val) {
+  if (toString.call(val) !== '[object Object]') {
+    return false;
+  }
+
+  var prototype = Object.getPrototypeOf(val);
+  return prototype === null || prototype === Object.prototype;
+}
+
+/**
  * Determine if a value is a Date
  *
  * @param {Object} val The value to test
@@ -2018,7 +2180,7 @@ function isURLSearchParams(val) {
  * @returns {String} The String freed of excess whitespace
  */
 function trim(str) {
-  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+  return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');
 }
 
 /**
@@ -2107,34 +2269,12 @@ function forEach(obj, fn) {
 function merge(/* obj1, obj2, obj3, ... */) {
   var result = {};
   function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
+    if (isPlainObject(result[key]) && isPlainObject(val)) {
       result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Function equal to merge with the difference being that no reference
- * to original objects is kept.
- *
- * @see merge
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function deepMerge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = deepMerge(result[key], val);
-    } else if (typeof val === 'object') {
-      result[key] = deepMerge({}, val);
+    } else if (isPlainObject(val)) {
+      result[key] = merge({}, val);
+    } else if (isArray(val)) {
+      result[key] = val.slice();
     } else {
       result[key] = val;
     }
@@ -2165,6 +2305,19 @@ function extend(a, b, thisArg) {
   return a;
 }
 
+/**
+ * Remove byte order marker. This catches EF BB BF (the UTF-8 BOM)
+ *
+ * @param {string} content with BOM
+ * @return {string} content value without BOM
+ */
+function stripBOM(content) {
+  if (content.charCodeAt(0) === 0xFEFF) {
+    content = content.slice(1);
+  }
+  return content;
+}
+
 module.exports = {
   isArray: isArray,
   isArrayBuffer: isArrayBuffer,
@@ -2174,6 +2327,7 @@ module.exports = {
   isString: isString,
   isNumber: isNumber,
   isObject: isObject,
+  isPlainObject: isPlainObject,
   isUndefined: isUndefined,
   isDate: isDate,
   isFile: isFile,
@@ -2184,11 +2338,59 @@ module.exports = {
   isStandardBrowserEnv: isStandardBrowserEnv,
   forEach: forEach,
   merge: merge,
-  deepMerge: deepMerge,
   extend: extend,
-  trim: trim
+  trim: trim,
+  stripBOM: stripBOM
 };
 
+
+/***/ }),
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+/***/ }),
+
+/***/ "./resources/js/bootstrap.js":
+/*!***********************************!*\
+  !*** ./resources/js/bootstrap.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.autosize = __webpack_require__(/*! autosize */ "./node_modules/autosize/dist/autosize.js");
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+// import Echo from 'laravel-echo';
+// window.Pusher = require('pusher-js');
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
+// });
+// ? JuanCruzAGB packages
+
+window["class"] = __webpack_require__(/*! @juancruzagb/src */ "./node_modules/@juancruzagb/src/index.js");
+window.html = __webpack_require__(/*! @juancruzagb/htmlcreator */ "./node_modules/@juancruzagb/htmlcreator/index.js");
+window.custominput = __webpack_require__(/*! @juancruzagb/custominput */ "./node_modules/@juancruzagb/custominput/index.js");
+window.gallery = __webpack_require__(/*! @juancruzagb/gallery */ "./node_modules/@juancruzagb/gallery/index.js");
 
 /***/ }),
 
@@ -2196,10 +2398,10 @@ module.exports = {
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
   \***************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
@@ -2628,7 +2830,7 @@ module.exports = {
       freeParseInt = parseInt;
 
   /** Detect free variable `global` from Node.js. */
-  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+  var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
 
   /** Detect free variable `self`. */
   var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -2640,7 +2842,7 @@ module.exports = {
   var freeExports =  true && exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
-  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
 
   /** Detect the popular CommonJS extension `module.exports`. */
   var moduleExports = freeModule && freeModule.exports === freeExports;
@@ -19395,13 +19597,25 @@ module.exports = {
     !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
     }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -19409,8 +19623,7 @@ module.exports = {
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -19600,136 +19813,7410 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/@juancruzagb/custominput/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@juancruzagb/custominput/index.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-var g;
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CustomInput": () => (/* reexport safe */ _juancruzagb_custominput_js_CustomInput_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_custominput_js_CustomInput_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/custominput/js/CustomInput.js */ "./node_modules/@juancruzagb/custominput/js/CustomInput.js");
+// ? JuanCruzAGB | CustomInput repository
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
+/**
+ * @module CustomInput
+ */
 
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_juancruzagb_custominput_js_CustomInput_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/@juancruzagb/custominput/js/CustomInput.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/custominput/js/CustomInput.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CustomInput)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+/* harmony import */ var _juancruzagb_custominput_js_Inputs_File_File_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/custominput/js/Inputs/File/File.js */ "./node_modules/@juancruzagb/custominput/js/Inputs/File/File.js");
+// ? HTMLCreator repository
+
+
+// ? CustomInput repository
+
+
+/**
+ * * CustomInput makes an excellent input.
+ * @export
+ * @class CustomInput
+ * @extends Input
+ * @author Juan Cruz Armentia <juancarmentia@gmail.com>
+ */
+class CustomInput extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of CustomInput.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='input-1'] Primary key.
+     * @param {string} [data.props.name='input-1']
+     * @param {object} [data.props.classList] Class list.
+     * @param {object} [data.states]
+     * @param {boolean} [data.states.disabled=false] If the HTML Element should be disabled.
+     * @param {object} [data.callbacks]
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof CustomInput
+     */
+    constructor (data = {
+        props: {
+            id: 'input-1',
+            name: 'input-1',
+            classList: [],
+            type: 'file',
+        }, state: {
+            disabled: false,
+        }, callbacks: {
+            // 
+        }, parentNode: false,
+    }) {
+        super();
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('type')) {
+            data.type = 'file';
+        }
+        switch (data.type.toUpperCase()) {
+            case 'FILE':
+                return new _juancruzagb_custominput_js_Inputs_File_File_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+            default:
+                console.warn(`CustomInut does not support ${ data.type } yet`);
+                break;
+        }
+    }
 };
 
-
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/@juancruzagb/custominput/js/Inputs/File/File.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/custominput/js/Inputs/File/File.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nError: PostCSS plugin tailwindcss requires PostCSS 8.\nMigration guide for end-users:\nhttps://github.com/postcss/postcss/wiki/PostCSS-8-for-end-users\n    at Processor.normalize (D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\processor.js:153:15)\n    at new Processor (D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\processor.js:56:25)\n    at postcss (D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\postcss.js:55:10)\n    at D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\postcss-loader\\src\\index.js:140:12\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at D:\\wamp64\\www\\Laravel\\ArmentiaPropiedades\\Web\\node_modules\\postcss-loader\\src\\index.js:208:9\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ File)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Button.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Button.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Input.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Input.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Span.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Span.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Image.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js");
+// ? JuanCruzAGB repository
 
-/***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+// ? HTMLCreator repository
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-/***/ }),
 
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+
 /**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
+ * * File creates an excellent <input type='file'>.
+ * @export
+ * @class File
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Class
+ */
+class File extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of File.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='input-1'] Primary key.
+     * @param {string} [data.props.name='input-1']
+     * @param {object} [data.props.classList] Class list.
+     * @param {object} [data.states]
+     * @param {boolean} [data.state.disabled=false] If the HTML Element should be disabled.
+     * @param {boolean} [data.state.hidden=false] If the HTML Element should be hidden.
+     * @param {boolean} [data.state.multiple=false] If the HTML Element should accepts multiple files.
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object} [data.callbacks]
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @param {object} [data.button] Custom Input File Button.
+     * @param {object} [data.image] Custom Input File Image.
+     * @param {object} [data.message] Custom Input File message.
+     * @memberof File
+     */
+    constructor (data = {
+        props: {
+            accept: [],
+            classList: [],
+            id: 'input-1',
+            name: 'input-1',
+            type: 'file',
+        }, state: {
+            disabled: false,
+            hidden: false,
+            multiple: false,
+            id: false,
+        }, callbacks: {
+            change: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            }, click: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            },
+        },  parentNode: false,
+        button: {
+            props: {
+                classList: [],
+                id: 'button-1',
+                title: false,
+            }, state: {
+                disabled: false,
+                id: false,
+                preventDefault: true,
+            }, callbacks: {
+                click: {
+                    function: (params) => { /* console.log(params) */ },
+                    params: {},
+                },
+            }, children: false,
+        }, image: {
+            props: {
+                classList: [],
+                id: 'image-1',
+                name: 'Image genereted with HTMLCreator',
+                url: false,
+            }, state: {
+                id: false,
+            }, callbacks: {
+                click: {
+                    function: (params) => { /* console.log(params) */ },
+                    params: {},
+                },
+            },
+        }, message: {
+            props: {
+                id: 'span-1',
+                classList: [],
+            }, state: {
+                id: false,
+            }, callbacks: {
+                click: {
+                    function: (params) => { /* console.log(params) */ },
+                    params: {},
+                },
+            }, children: false,
+        },
+    }) {
+        super();
+        this.setCallbacks({
+            ...File.callbacks,
+            ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+        });
+        this.setInput(data);
+        if (data && data.hasOwnProperty('button') && data.button) {
+            this.setButton({
+                ...data.button,
+                parentNode: data
+                    ? (data.hasOwnProperty('parentNode') && !data.button.hasOwnProperty('parentNode'))
+                        ? data.parentNode
+                        : data.button.hasOwnProperty('parentNode')
+                            ? data.button.parentNode
+                            : false
+                    : false,
+            });
+        }
+        if (data && data.hasOwnProperty('image') && data.image) {
+            this.setImage({
+                ...data.image,
+                parentNode: data
+                    ? (data.hasOwnProperty('parentNode') && !data.image.hasOwnProperty('parentNode'))
+                        ? data.parentNode
+                        : data.image.hasOwnProperty('parentNode')
+                            ? data.image.parentNode
+                            : false
+                    : false,
+            });
+        }
+        if (data && data.hasOwnProperty('message') && data.message) {
+            this.setMessage({
+                ...data.message,
+                parentNode: data
+                    ? (data.hasOwnProperty('parentNode') && !data.message.hasOwnProperty('parentNode'))
+                        ? data.parentNode
+                        : data.message.hasOwnProperty('parentNode')
+                            ? data.message.parentNode
+                            : false
+                    : false,
+            });
+        }
+    };
+
+    /**
+     * * Saves the Input File <button>.
+     * @param {object} [data]
+     * @memberof File
+     */
+    setButton (data = {}) {
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('callbacks')) {
+            data.callbacks = {};
+        }
+        data.callbacks.click = {
+            function: (params) => { this.click(params) },
+        };
+        this.button = new _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+    }
+
+    /**
+     * * Saves the Input File <img>.
+     * @param {object} [data]
+     * @memberof File
+     */
+    setImage (data = {}) {
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('callbacks')) {
+            data.callbacks = {};
+        }
+        data.callbacks.click = {
+            function: (params) => { this.click(params) },
+        };
+        console.log(data);
+        this.image = new _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_4__["default"](data);
+        console.log(this.image);
+    }
+
+    /**
+     * * Saves the Input File <input>.
+     * @param {object} [data]
+     * @memberof File
+     */
+    setInput (data = {}) {
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('props')) {
+            data.props = {};
+        }
+        data.props.type = 'file';
+        if (!data.hasOwnProperty('callbacks')) {
+            data.callbacks = {};
+        }
+        data.callbacks.change = {
+            function: (params) => { this.change(params) },
+        };
+        this.input = new _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_2__["default"](data);
+    }
+
+    /**
+     * * Saves the Input File <span>.
+     * @param {object} [data]
+     * @memberof File
+     */
+    setMessage (data = {}) {
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('callbacks')) {
+            data.callbacks = {};
+        }
+        data.callbacks.click = {
+            function: (params) => { this.click(params) },
+        };
+        this.message = new _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_3__["default"](data);
+    }
+
+    /**
+     * * Html change callback.
+     * @param {*} [params={}] Change callback function optional params
+     * @memberof Html
+     */
+    change (params = {}) {
+        this.update(this.input.html.files[0]),
+        this.execute('change', {
+            ...params,
+            File: this,
+            files: this.input.html.files,
+        });
+    }
+
+    /**
+     * * Html click callback.
+     * @param {*} [params={}] Click callback function optional params
+     * @memberof Html
+     */
+    click (params = {}) {
+        this.input.html.click();
+        this.execute('click', {
+            ...params,
+            File: this,
+        });
+    }
+
+    update (route = false, params = {}) {
+        if (this.hasOwnProperty('image')) {
+            console.log(route);
+            // if (this.files.length === 0) {
+            //     this.removeImageURL();
+            //     this.hideImage();
+            // }
+            // if (FileReader && this.files.length) {
+            //     let reader = new FileReader();
+
+            //     if (this.props.accept.length) {
+            //         this.removeImageURL();
+            //         this.hideImage();
+            //         for (const type of this.props.accept) {
+            //             if (this.files[0].type === type) {
+            //                 reader.readAsDataURL(this.files[0]);
+            //             }
+            //         }
+            //     }
+            //     if (!this.props.accept.length) {
+            //         this.removeImageURL();
+            //         this.hideImage();
+            //         if (this.files[0].type === 'image/png' || this.files[0].type === 'image/jpeg') {
+            //             reader.readAsDataURL(this.files[0]);
+            //         }
+            //     }
+
+            //     reader.onload = function (e) {
+            //         if (instance.state.generate) {
+            //             instance.image.setProps('url', reader.result);
+            //             instance.image.html.src = reader.result;
+            //         }
+            //         if (!instance.state.generate) {
+            //             instance.image.src = reader.result;
+            //         }
+            //         instance.showImage();
+            //     };
+            // }
+        }
+    }
+
+    changeText () {
+        if (this.files.length) {
+            this.message.html.innerHTML = this.files[0].name;
+        } else {
+            this.message.html.innerHTML = this.props.message;
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof File
+     */
+    static callbacks = {
+        change: {
+            function: (params) => { /* console.log(params) */ },
+            params: {}
+        }, click: {
+            function: (params) => { /* console.log(params) */ },
+            params: {}
+        },
+    }
+
+    /**
+     * @static
+     * @var {Button} Button Button class child.
+     * @memberof File
+     */
+    static Button = _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+
+    /**
+     * @static
+     * @var {Image} Image Image class child.
+     * @memberof File
+     */
+    static Image = _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+    /**
+     * @static
+     * @var {Input} Input Input class child.
+     * @memberof File
+     */
+    static Input = _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+    /**
+     * @static
+     * @var {Span} Span Span class child.
+     * @memberof File
+     */
+    static Span = _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/gallery/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@juancruzagb/gallery/index.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Gallery": () => (/* reexport safe */ _juancruzagb_gallery_js_Gallery_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_gallery_js_Gallery_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/gallery/js/Gallery.js */ "./node_modules/@juancruzagb/gallery/js/Gallery.js");
+// ? JuanCruzAGB | Gallery repository
+
+
+/**
+ * @module Gallery
  */
 
-window.autosize = __webpack_require__(/*! autosize */ "./node_modules/autosize/dist/autosize.js");
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-// import Echo from 'laravel-echo';
-// window.Pusher = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_juancruzagb_gallery_js_Gallery_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/@juancruzagb/gallery/js/Gallery.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@juancruzagb/gallery/js/Gallery.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__(/*! D:\wamp64\www\Laravel\ArmentiaPropiedades\Web\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\wamp64\www\Laravel\ArmentiaPropiedades\Web\resources\css\app.css */"./resources/css/app.css");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Gallery)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/List.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/List.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Nav.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Nav.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Image.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repositories
 
+
+
+
+// ? Core
+
+
+/**
+ * * Gallery makes an excellent gallery of files.
+ * @export
+ * @class Gallery
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Gallery extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
+    /**
+     * * Creates an instance of Gallery.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id] Gallery primary key.
+     * @param {string[]} [data.props.classList]
+     * @param {string[]} [data.props.images]
+     * @param {string} [data.props.nodeName]
+     * @param {object} [data.state]
+     * @param {string} [data.state.generate] If the Gallery Images should be generated.
+     * @param {string} [data.state.selected] What Gallery Image is selected.
+     * @param {boolean} [data.state.preventDefault=true] If the Button click event should execut prevent default.
+     * @param {object} [data.callbacks]
+     * @param {object} [data.callbacks.select]
+     * @param {function} [data.callbacks.select.function]
+     * @param {object} [data.callbacks.select.params]
+     * @param {array} [data.children]
+     * @param {HTMLElement|false} [data.parentNode]
+     * @memberof Gallery
+     */
+    constructor (data = {
+        props: {
+            id: 'gallery-1',
+            classList: [],
+            images: [],
+            nodeName: 'SECTION',
+        }, state: {
+            generate: false,
+            id: true,
+            order: null,
+            preventDefault: true,
+            selected: false,
+        }, callbacks: {
+            select: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            },
+        }, children: [],
+        parentNode: false,
+    }) {
+        let props = {
+            ...Gallery.props,
+            ...(data && data.hasOwnProperty('props')) ? data.props : {},
+        };
+        if (props.hasOwnProperty('classList')) {
+            props.classList.unshift('gallery');
+        }
+        let state = {
+            ...Gallery.state,
+            ...(data && data.hasOwnProperty('state')) ? data.state : {},
+        };
+        super({
+            props: props,
+            state: state,
+            callbacks: {
+                ...Gallery.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Gallery.children({
+                    props: props,
+                    state: state,
+                }),
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        if (!this.children.length) {
+            this.setChildren(Gallery.children(this.props));
+        }
+        this.setButtons();
+        this.setImage();
+        this.checkState();
+    }
+
+    /**
+     * * Set the Gallery Buttons.
+     * @param {array} [buttons]
+     * @memberof Gallery
+     */
+    setButtons (buttons = []) {
+        if (!this.buttons) {
+            this.buttons = [];
+        }
+        if (!buttons.length) {
+            for (const child of this.children) {
+                if (child instanceof _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_1__["default"]) {
+                    for (const navChild of child.children) {
+                        if (navChild instanceof _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+                            for (const item of navChild.items) {
+                                for (const itemChild of item.children) {
+                                    if (itemChild.hasClassName('gallery-button')) {
+                                        itemChild.setCallbacks({
+                                            click: {
+                                                function: (params) => this.select(itemChild.props.id, params),
+                                            },
+                                        });
+                                        this.buttons.push(itemChild);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            console.log('Create buttons by array not supported yet');
+        }
+    }
+
+    /**
+     * * Set the Gallery Image.
+     * @param {string} [source]
+     * @memberof Gallery
+     */
+    setImage (source = false) {
+        if (!source) {
+            for (const child of this.children) {
+                if (child instanceof _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+                    if (child.hasClassName('gallery-image')) {
+                        this.image = child;
+                    }
+                }
+            }
+        } else {
+            console.log('Set image source not supported yet');
+        }
+    }
+
+    /**
+     * * Check the Gallery state values.
+     * @memberof Gallery
+     */
+    checkState () {
+        this.checkSelectedState();
+    }
+
+    /**
+     * * Check the Gallery selected state values.
+     * @memberof Gallery
+     */
+    checkSelectedState () {
+        if (this.state.selected) {
+            this.select(this.state.selected);
+        }
+    }
+
+    /**
+     * * Select a new Image.
+     * @param {string} id
+     * @memberof Gallery
+     */
+    select (id = false, params = {}) {
+        let found = false;
+        if (id) {
+            for (const btn of this.buttons) {
+                btn.inactive();
+                if (btn.props.id == id) {
+                    found = btn;
+                }
+            }
+            if (found) {
+                for (const child of found.children) {
+                    if (child instanceof _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+                        if (child.hasClassName('gallery-button-image')) {
+                            this.image.src = child.props.src;
+                        }
+                    }
+                }
+                found.active();
+                return true;
+            }
+        }
+        this.execute('select', {
+            ...this.hasCallback('select') ? this.callbacks.select.params : {},
+            ...params,
+            selected: found,
+            Gallery: this,
+        });
+        return false;
+    }
+    
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Gallery
+     */
+    static props = {
+        id: 'gallery-1',
+        classList: [],
+        images: [],
+        nodeName: 'SECTION',
+    }
+    
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Gallery
+     */
+    static state = {
+        generate: false,
+        id: true,
+        order: null,
+        preventDefault: true,
+        selected: false,
+    }
+    
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Gallery
+     */
+    static callbacks = {
+        select: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        },
+    }
+
+    /**
+     * * Returns the default Gallery children.
+     * @static
+     * @param {object} data Gallery data.
+     * @returns {array}
+     * @memberof Button
+     */
+    static children (data = {}) {
+        if (!data) {
+            data = {};
+        }
+        if (!data.hasOwnProperty('props')) {
+            data.props = {};
+        }
+        if (!data.hasOwnProperty('state')) {
+            data.state = {};
+        }
+        return [
+            ['nav', {
+                props: {
+                    id: `${ data.props.id }-nav`,
+                    classList: ['gallery-nav'],
+                }, children: [
+                    ['ul', {
+                        props: {
+                            id: `${ data.props.id }-menu-list`,
+                            classList: ['gallery-menu-list'],
+                        }, items: (() => {
+                            let items = [];
+                            for (const key in data.props.images) {
+                                if (Object.hasOwnProperty.call(data.props.images, key)) {
+                                    items.push({
+                                        props: {
+                                            id: `${ data.props.id }-item-${ parseInt(key) + 1 }`,
+                                            classList: ['gallery-item'],
+                                        }, children: [
+                                            ['button', {
+                                                props: {
+                                                    id: `${ data.props.id }-button-${ parseInt(key) + 1 }`,
+                                                    classList: key == 0 ? ['gallery-button', 'active'] : ['gallery-button'],
+                                                }, children: [
+                                                    ['img', {
+                                                        props: {
+                                                            id: `${ data.props.id }-button-${ parseInt(key) + 1 }-image`,
+                                                            classList: ['gallery-button-image'],
+                                                            src: data.props.images[key],
+                                                            name: 'Image genereted with htmlcreator/Gallery',
+                                                        },
+                                                    }],
+                                                ],
+                                            }],
+                                            (data.state.hasOwnProperty('order') && data.state.hasOwnProperty('order') != null)
+                                                ? ['label', {
+                                                    children: ':D',
+                                                }]
+                                                : [],
+                                        ],
+                                    });
+                                }
+                            }
+                            return items;
+                        })(),
+                    }],
+                ],
+            }], ['img', {
+                props: {
+                    id: `${ data.props.id }-image`,
+                    classList: ['gallery-image'],
+                    src: [...data.props.images].shift(),
+                    name: 'Image genereted with htmlcreator/Gallery',
+                },
+            }],
+        ]
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/index.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Aside": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Aside_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   "Button": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   "Cell": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_20__["default"]),
+/* harmony export */   "Creator": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Creator_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "Div": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Div_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "Figure": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Figure_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   "Footer": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Footer_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   "Form": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Form_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   "Header": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Header_js__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   "Icon": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Visuals_Icon_js__WEBPACK_IMPORTED_MODULE_26__["default"]),
+/* harmony export */   "Image": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_27__["default"]),
+/* harmony export */   "Input": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_15__["default"]),
+/* harmony export */   "Italic": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Texts_Italic_js__WEBPACK_IMPORTED_MODULE_21__["default"]),
+/* harmony export */   "Item": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   "Label": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Label_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   "Line": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Visuals_Line_js__WEBPACK_IMPORTED_MODULE_28__["default"]),
+/* harmony export */   "LineBreak": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Texts_LineBreak_js__WEBPACK_IMPORTED_MODULE_22__["default"]),
+/* harmony export */   "Link": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Buttons_Link_js__WEBPACK_IMPORTED_MODULE_16__["default"]),
+/* harmony export */   "List": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   "Main": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Main_js__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   "Nav": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   "Option": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   "Paragraph": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Texts_Paragraph_js__WEBPACK_IMPORTED_MODULE_23__["default"]),
+/* harmony export */   "Row": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_19__["default"]),
+/* harmony export */   "Section": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Boxes_Section_js__WEBPACK_IMPORTED_MODULE_13__["default"]),
+/* harmony export */   "Span": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_24__["default"]),
+/* harmony export */   "Table": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Table_Table_js__WEBPACK_IMPORTED_MODULE_17__["default"]),
+/* harmony export */   "Title": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Texts_Title_js__WEBPACK_IMPORTED_MODULE_25__["default"]),
+/* harmony export */   "TPart": () => (/* reexport safe */ _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_18__["default"]),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Creator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Creator.js */ "./node_modules/@juancruzagb/htmlcreator/js/Creator.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Aside_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Aside.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Aside.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Div_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Div.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Div.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Figure_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Figure.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Figure.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Footer.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Footer.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Form.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Form.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Header.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Header.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Item.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Item.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Label_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Label.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Label.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/List.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/List.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Main_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Main.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Main.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Nav.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Nav.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Option.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Option.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Section_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Section.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Section.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Button.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Button.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Input.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Input.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Link_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Link.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Link.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Table_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Table.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Table.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/TPart.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/TPart.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Row.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Cell.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Italic_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Italic.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Italic.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_LineBreak_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/LineBreak.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/LineBreak.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Paragraph_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Paragraph.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Paragraph.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Span.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Span.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Title_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Title.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Title.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Icon_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Icon.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Icon.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Image.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Line_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Line.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Line.js");
+// ? JuanCruzAGB | HTMLCreator repository
+
+
+// ? Boxes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ? Buttons
+
+
+
+
+// ? Table
+
+
+
+
+
+// ? Texts
+
+
+
+
+
+
+// ? Visuals
+
+
+
+
+/**
+ * @module HTMLCreator
+ */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_juancruzagb_htmlcreator_js_Creator_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Aside.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Aside.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Aside)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Aside creates an excellent <aside>.
+ * @export
+ * @class Aside
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Aside extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Aside.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='aside-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Aside
+     */
+    constructor (data = {
+        props: {
+            id: 'aside-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Aside.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Aside.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Aside.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Aside.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Aside
+     */
+    static props = {
+        id: 'aside-1',
+        classList: [],
+        nodeName: 'ASIDE',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Aside
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Aside
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Aside
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Div.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Div.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Div)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Div creates an excellent <div>.
+ * @export
+ * @class Div
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Div extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Div.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='div-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Div
+     */
+    constructor (data = {
+        props: {
+            id: 'div-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Div.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Div.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Div.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Div.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        // this.createHTML(this.props.nodeName);
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Div
+     */
+    static props = {
+        id: 'div-1',
+        classList: [],
+        nodeName: 'DIV',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Div
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Div
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Div
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Figure.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Figure.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Figure)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Figure creates an excellent <figure>.
+ * @export
+ * @class Figure
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Figure extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Figure.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='figure-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Figure
+     */
+    constructor (data = {
+        props: {
+            id: 'figure-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Figure.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Figure.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Figure.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Figure.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Figure
+     */
+    static props = {
+        id: 'figure-1',
+        classList: [],
+        nodeName: 'FIGURE',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Figure
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Aside
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Aside
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Footer.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Footer.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Footer)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Footer creates an excellent <footer>.
+ * @export
+ * @class Footer
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Footer extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Footer.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='footer-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Footer
+     */
+    constructor (data = {
+        props: {
+            id: 'footer-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Footer.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Footer.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Footer.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Footer.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Footer
+     */
+    static props = {
+        id: 'footer-1',
+        classList: [],
+        nodeName: 'FOOTER',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Footer
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Footer
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Footer
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Form.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Form)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Form creates an excellent <form>.
+ * @export
+ * @class Form
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Form extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Form.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='form-1'] Primary key.
+     * @param {string} [data.props.action='#']
+     * @param {string} [data.props.method='post']
+     * @param {string|false} [data.props.enctype=false]
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.submit=true] If the HTML Element should be submited.
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object} [data.callbacks]
+     * @param {function} [data.callbacks.submit]
+     * @param {function} [data.callbacks.submit.function]
+     * @param {object} [data.callbacks.submit.params]
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Form
+     */
+    constructor (data = {
+        props: {
+            id: 'form-1',
+            action: '#',
+            method: 'post',
+            enctype: false,
+            classList: [],
+        }, state: {
+            id: false,
+            submit: true,
+        }, callbacks: {
+            submit: {
+                function: (params) => { /* console.log('params') */ },
+                params: {}
+            },
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Form.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Form.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Form.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Form.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Form
+     */
+    setHTMLAttributes () {
+        this.setAttribute('action', this.props.action);
+        this.setAttribute('method', this.props.method);
+        if (this.props.enctype) {
+            this.setAttribute('enctype', this.props.enctype);
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Form
+     */
+    static props = {
+        id: 'form-1',
+        action: '#',
+        method: 'post',
+        enctype: false,
+        classList: [],
+        nodeName: 'FORM',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Form
+     */
+    static state = {
+        id: false,
+        submit: true,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Form
+     */
+    static callbacks = {
+        submit: {
+            function: (params) => { /* console.log('params') */ },
+            params: {}
+        },
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Form
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Header.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Header.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Header creates an excellent <header>.
+ * @export
+ * @class Header
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Header extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Header.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='header-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Header
+     */
+    constructor (data = {
+        props: {
+            id: 'header-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Header.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Header.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Header.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Header.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Header
+     */
+    static props = {
+        id: 'header-1',
+        classList: [],
+        nodeName: 'HEADER',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Header
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Form
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Header
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Item.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Item.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Item creates an excellent <li>.
+ * @export
+ * @class Item
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Item extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Item.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='li-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Item
+     */
+    constructor (data = {
+        props: {
+            id: 'li-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Item.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Item.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Item.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Item.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Item
+     */
+    static props = {
+        id: 'li-1',
+        classList: [],
+        nodeName: 'LI',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Item
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Item
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Item
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Label.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Label.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Label)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Label creates an excellent <label>.
+ * @export
+ * @class Label
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Label extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Label.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='label-1'] Primary key.
+     * @param {string|false} [data.props.for=false] HTML for <input> primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Label
+     */
+    constructor (data = {
+        props: {
+            id: 'label-1',
+            for: false,
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Label.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Label.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Label.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Label.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Label
+     */
+    setHTMLAttributes () {
+        if (this.props.for) {
+            this.setAttribute('for', this.props.for);
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Label
+     */
+    static props = {
+        id: 'label-1',
+        for: false,
+        classList: [],
+        nodeName: 'LABEL',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Label
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Label
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Label
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/List.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/List.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ List)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Item.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Item.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+// ? Core
+
+
+/**
+ * * List creates an excellent <ul> or <ol>.
+ * @export
+ * @class List
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class List extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__["default"] {
+    /**
+     * * Creates an instance of List.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='list-1'] Primary key.
+     * @param {string} [data.props.type='unordered']
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object[]} [data.items] Array of <li>.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof List
+     */
+    constructor (data = {
+        props: {
+            id: 'list-1',
+            type: 'unordered',
+            classList: [],
+        }, state: {
+            id: false,
+        }, items: [],
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...List.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...List.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...List.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setItems((data && data.hasOwnProperty('items')) ? data.items : []);
+    }
+
+    /**
+     * * Set the List Items.
+     * @param {object[]} [items] List Items.
+     * @memberof List
+     */
+    setItems (items = []) {
+        if (!this.items) {
+            this.items = [];
+        }
+        for (const key in items) {
+            if (Object.hasOwnProperty.call(items, key)) {
+                let data = items[key];
+                if (!data) {
+                    data = {};
+                }
+                if (!data.hasOwnProperty('props')) {
+                    data.props = {};
+                }
+                data.props.id = `${ this.props.id }-item-${ parseInt(key) + 1 }`;
+                let item = new _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_0__["default"]({
+                    ...data,
+                });
+                this.items.push(item);
+                this.html.appendChild(item.html);
+            }
+        }
+    }
+
+    /**
+     * * Get a List Item.
+     * @param {string} id_item Item primary key.
+     * @returns {Item|false}
+     * @memberof List
+     */
+    getItem (id_item = false) {
+        if (id_item) {
+            for (const item of this.items) {
+                if (item.props.id == id_item) {
+                    return item;
+                }
+            }
+            return false;
+        }
+        if (!id_item) {
+            console.error('Item primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a List Item.
+     * @param {string} id_item Item primary key.
+     * @returns {boolean}
+     * @memberof List
+     */
+    hasItem (id_item = false) {
+        if (id_item) {
+            for (const item of this.items) {
+                if (item.props.id == id_item) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_item) {
+            console.error('Item primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a List Item.
+     * @param {string} id_item Item primary key.
+     * @returns {Item|false}
+     * @memberof List
+     */
+    removeItem (id_item = false) {
+        if (id_item) {
+            for (const key in [...this.items]) {
+                if (Object.hasOwnProperty.call(this.items, key)) {
+                    const item = this.items[key];
+                    if (item.props.id == id_item) {
+                        item.removeHTML();
+                        delete this.items[key];
+                        return item;
+                    }
+                }
+            }
+            return false;
+        }
+        if (!id_item) {
+            console.error('Item primary key is required');
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof List
+     */
+    static props = {
+        id: 'list-1',
+        type: 'unordered',
+        classList: [],
+        nodeName: 'UL',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof List
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof List
+     */
+    static callbacks = {
+        // 
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Main.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Main.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Main)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Main creates an excellent <main>.
+ * @export
+ * @class Main
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Main extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Main.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='main-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Main
+     */
+    constructor (data = {
+        props: {
+            id: 'main-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Main.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Main.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Main.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Main.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Main
+     */
+    static props = {
+        id: 'main-1',
+        classList: [],
+        nodeName: 'MAIN',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Main
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Main
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Main
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Nav.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Nav.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Nav)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Nav creates an excellent <nav>.
+ * @export
+ * @class Nav
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Nav extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Nav.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='nav-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Nav
+     */
+    constructor (data = {
+        props: {
+            id: 'nav-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Nav.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Nav.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Nav.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Nav.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Nav
+     */
+    static props = {
+        id: 'nav-1',
+        classList: [],
+        nodeName: 'NAV',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Nav
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Nav
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Nav
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Option.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Option.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Option)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Option creates an excellent <option>.
+ * @export
+ * @class Option
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Option extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Option.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='option-1'] Primary key.
+     * @param {string} [data.props.defaultValue]
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.disabled=false] If the HTML Element should be disabled.
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {boolean} [data.state.selected=false] If the HTML Element should be selected.
+     * @memberof Option
+     */
+    constructor (data = {
+        props: {
+            id: 'option-1',
+            defaultValue: '',
+            classList: [],
+        }, state: {
+            disabled: false,
+            id: false,
+            selected: false,
+        },
+    }) {
+        super({
+            props: {
+                ...Option.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Option.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Option.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            },
+        });
+        this.setHTMLAttributes();
+        this.checkState();
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Option
+     */
+    setHTMLAttributes () {
+        this.setAttribute('value', this.props.defaultValue);
+    }
+
+    /**
+     * * Check the Option state.
+     * @memberof Option
+     */
+    checkState () {
+        this.checkDisabledState();
+        this.checkSelectedState();
+    }
+
+    /**
+     * * Check the Option disabled state.
+     * @memberof Option
+     */
+    checkDisabledState () {
+        if (this.state.disabled) {
+            this.setAttribute('disabled', true);
+        }
+    }
+
+    /**
+     * * Check the Option selected state.
+     * @memberof Option
+     */
+    checkSelectedState () {
+        if (this.state.selected) {
+            this.setAttribute('selected', true);
+        }
+        if (!this.state.selected) {
+            this.removeAttribute('selected');
+        }
+    }
+
+    /**
+     * * Select the <option>.
+     * @returns {boolean}
+     * @memberof Option
+     */
+    select () {
+        if (!this.state.selected) {
+            this.setState('selected', true);
+            this.checkSelectedState();
+        }
+    }
+
+    /**
+     * * Unselect the <option>.
+     * @returns {boolean}
+     * @memberof Option
+     */
+    unselect () {
+        if (this.state.selected) {
+            this.setState('selected', false);
+            this.checkSelectedState();
+        }
+    }
+
+    /**
+     * * Generates & returns an Order array.
+     * @static
+     * @param {array} [options]
+     * @returns {Option[]}
+     * @memberof Option
+     */
+    static generate (options = []) {
+        let collection = [];
+        for (const data of options) {
+            collection.push(new this(data));
+        }
+        return collection;
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Option
+     */
+    static props = {
+        id: 'option-1',
+        defaultValue: '',
+        classList: [],
+        nodeName: 'OPTION',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Option
+     */
+    static state = {
+        disabled: false,
+        id: false,
+        selected: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Option
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Option
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Section.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Boxes/Section.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Section)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreatorository
+
+
+/**
+ * * Section creates an excellent <section>.
+ * @export
+ * @class Section
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Section extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Section.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='section-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Section
+     */
+    constructor (data = {
+        props: {
+            id: 'section-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Section.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Section.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Section.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Section.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Section
+     */
+    static props = {
+        id: 'section-1',
+        classList: [],
+        nodeName: 'SECTION',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Section
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Section
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Section
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Button.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Buttons/Button.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Button)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Button creates an excellet <button>.
+ * @export
+ * @class Button
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Button extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Button.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='button-1'] Primary key.
+     * @param {string|false} [data.props.title=false]
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.preventDefault=true] If the Click event should execut prevent default.
+     * @param {boolean} [data.state.disabled=false] If the HTML Element should be disabled.
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object} [data.callbacks]
+     * @param {function} [data.callbacks.click]
+     * @param {function} [data.callbacks.click.function]
+     * @param {object} [data.callbacks.click.params]
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Button
+     */
+    constructor (data = {
+        props: {
+            id: 'button-1',
+            title: false,
+            classList: [],
+        }, state: {
+            disabled: false,
+            id: false,
+            preventDefault: true,
+            parentNode: false,
+        }, callbacks: {
+            click: {
+                function: (params) => { /* console.log(params) */ },
+                params: {}
+            },
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Button.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Button.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Button.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Button.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+        this.checkState();
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Button
+     */
+    setHTMLAttributes () {
+        if (this.props.title) {
+            this.setAttribute('title', this.props.title);
+        }
+    }
+
+    /**
+     * * Check the Button state.
+     * @memberof Button
+     */
+    checkState () {
+        this.checkDisabledState();
+    }
+
+    /**
+     * * Check the BUtton disabled state.
+     * @memberof Button
+     */
+    checkDisabledState () {
+        if (this.state.disabled) {
+            this.setAttribute('disabled', true);
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Button
+     */
+    static props = {
+        id: 'button-1',
+        title: false,
+        classList: [],
+        nodeName: 'BUTTON',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Button
+     */
+    static state = {
+        disabled: false,
+        id: false,
+        preventDefault: true,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Button
+     */
+    static callbacks = {
+        click: {
+            function: (params) => { /* console.log(params) */ },
+            params: {}
+        },
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Button
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Input.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Buttons/Input.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Input)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Option.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Option.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+// ? Core
+
+
+/**
+ * * Input creates an excellent <input>.
+ * @export
+ * @class Input
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Input extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__["default"] {
+    /**
+     * * Creates an instance of Input.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='input-1'] Primary key.
+     * @param {string} [data.props.name='input-1']
+     * @param {string} [data.props.type='text']
+     * @param {string} [data.props.defaultValue]
+     * @param {string} [data.props.placeholder]
+     * @param {string[]} [data.props.accept] Mimetype of files accepted.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.checked=false] If the HTML Element should be checked.
+     * @param {boolean} [data.state.disabled=false] If the HTML Element should be disabled.
+     * @param {boolean} [data.state.hidden=false] If the HTML Element should be hidden.
+     * @param {boolean} [data.state.multiple=false] If the HTML Element should accepts multiple files.
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {number|false} [data.state.selectedIndex=false] Input select selected Option index.
+     * @param {object} [data.callbacks]
+     * @param {object} [data.callbacks.change]
+     * @param {function} [data.callbacks.change.function]
+     * @param {*} [data.callbacks.change.params]
+     * @param {object} [data.callbacks.focusout]
+     * @param {function} [data.callbacks.focusout.function]
+     * @param {*} [data.callbacks.focusout.params]
+     * @param {array} [data.options] Array of <options>
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Input
+     */
+    constructor (data = {
+        props: {
+            id: 'input-1',
+            name: 'input-1',
+            type: 'text',
+            defaultValue: '',
+            placeholder: '',
+            accept: [],
+            classList: [],
+        }, state: {
+            checked: false,
+            disabled: false,
+            hidden: false,
+            multiple: false,
+            id: false,
+            selectedIndex: false,
+        }, callbacks: {
+            change: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            }, click: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            }, focusout: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            },
+        }, options: [],
+        parentNode: false,
+    }) {
+        if (data) {
+            if (data.hasOwnProperty('props')) {
+                if (data.props.hasOwnProperty('type')) {
+                    if (data.props.type.toUpperCase() == 'SELECT') {
+                        data.props.nodeName = 'SELECT';
+                    }
+                    if (data.props.type.toUpperCase() == 'TEXTAREA') {
+                        data.props.nodeName = 'TEXTAREA';
+                    }
+                }
+            }
+        }
+        super({
+            props: {
+                ...Input.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Input.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Input.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+        if (this.props.type.toUpperCase() == 'SELECT' && data && data.hasOwnProperty('options') && options.length) {
+            this.setOptions(data.options);
+        }
+        this.checkState();
+    }
+
+    /**
+     * * Saves the Input value.
+     * @param {*} value
+     * @memberof Image
+     */
+    set value (value) {
+        this.setProps('value', value);
+        this.setAttribute('value', this.props.value);
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Input
+     */
+    setHTMLAttributes () {
+        this.setAttribute('name', this.props.name);
+        if (this.props.type.toUpperCase() != 'SELECT' && this.props.type.toUpperCase() != 'TEXTAREA') {
+            this.setAttribute('type', this.props.type);
+        }
+        switch (this.props.type.toUpperCase()) {
+            case 'FILE':
+                if (this.props.accept) {
+                    this.setAttribute('accept', this.props.accept.join());
+                }
+                break;
+        }
+        if (this.props.defaultValue || this.props.defaultValue == 0) {
+            this.setProps('value', this.props.defaultValue);
+            this.setAttribute('value', this.props.defaultValue);
+        }
+        if (this.props.placeholder || this.props.placeholder == 0) {
+            this.setAttribute("placeholder", this.props.placeholder);
+        }
+    }
+
+    /**
+     * * Set the <select> <ptions>.
+     * @memberof Input
+     */
+    setOptions (options = []) {
+        this.options = _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_0__["default"].generate(options);
+        for (const option of this.options) {
+            this.appendChild(option.html);
+        }
+    }
+
+    /**
+     * * Check the Input state.
+     * @memberof Input
+     */
+    checkState () {
+        this.checkCheckedState();
+        this.checkDisabledState();
+        this.checkHiddenState();
+        this.checkMultipleState();
+        this.checkSelectedIndexState();
+    }
+
+    /**
+     * * Check the Input checked state.
+     * @memberof Input
+     */
+    checkCheckedState () {
+        if (this.state.checked) {
+            this.setAttribute('checked', true);
+        }
+    }
+
+    /**
+     * * Check the Input disabled state.
+     * @memberof Input
+     */
+    checkDisabledState () {
+        if (this.state.disabled) {
+            this.setAttribute('disabled', true);
+        }
+    }
+
+    /**
+     * * Check the Input hidden state.
+     * @memberof Input
+     */
+    checkHiddenState () {
+        if (this.state.hidden) {
+            this.setAttribute('hidden', true);
+        }
+    }
+
+    /**
+     * * Check the Input multiple state.
+     * @memberof Input
+     */
+    checkMultipleState () {
+        if (this.state.multiple) {
+            this.setAttribute('multiple', true);
+        }
+    }
+
+    /**
+     * * Check the Input selected option index state.
+     * @memberof Input
+     */
+    checkSelectedIndexState () {
+        if (this.props.type.toUpperCase() == 'SELECT') {
+            if (this.state.selectedIndex) {
+                for (const key in this.options) {
+                    if (Object.hasOwnProperty.call(this.options, key)) {
+                        const option = this.options[key];
+                        if (key == this.state.selectedIndex.index) {
+                            option.select();
+                        }
+                        if (key != this.state.selectedIndex.index) {
+                            option.unselect();
+                        }
+                    }
+                }
+            } else {
+                for (const option of this.options) {
+                    option.unselect();
+                }
+            }
+        }
+    }
+
+    /**
+     * * Check the Input.
+     * @param {boolean} [check=true] New Input checked state
+     * @returns {boolean}
+     * @memberof Input
+     */
+    check (check = true) {
+        this.setState('checked', check);
+        this.checkCheckedState();
+    }
+
+    /**
+     * * Select an Option.
+     * @param {number} selectedIndex
+     * @returns {boolean}
+     * @memberof Input
+     */
+    select (selectedIndex = false) {
+        if (selectedIndex) {
+            this.setState('selectedIndex', {
+                index: selectedIndex,
+                option: this.options[selectedIndex],
+            });
+            this.checkSelectedIndexState();
+        }
+        this.setState('selectedIndex', false);
+        this.checkSelectedIndexState();
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Input
+     */
+    static props = {
+        id: 'input-1',
+        name: 'input-1',
+        type: 'text',
+        defaultValue: '',
+        placeholder: '',
+        accept: [],
+        classList: [],
+        nodeName: 'INPUT',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Input
+     */
+    static state = {
+        checked: false,
+        disabled: false,
+        hidden: false,
+        multiple: false,
+        id: false,
+        selectedIndex: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callback.
+     * @memberof Input
+     */
+    static callbacks = {
+        change: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        }, click: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        }, focusout: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        },
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Input
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Link.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Buttons/Link.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Link)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Link creates an excellet <link>.
+ * @export
+ * @class Link
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Link extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Link.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {string} [data.props.id='link-1'] Primary key.
+     * @param {string|boolean} [data.props.target=false]
+     * @param {string} [data.props.url='#'] Redirection url.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {boolean} [data.state.preventDefault=true] If the Click event should execut prevent default.
+     * @param {object} [data.callbacks]
+     * @param {object} [data.callbacks.click]
+     * @param {function} [data.callbacks.click.function]
+     * @param {object} [data.callbacks.click.params]
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Link
+     */
+    constructor (data = {
+        props: {
+            classList: [],
+            id: 'link-1',
+            target: false,
+            url: '#',
+        }, state: {
+            id: false,
+            preventDefault: false,
+        }, callbacks: {
+            click: {
+                function: (params) => { /* console.log(params) */ },
+                params: {},
+            },
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Link.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Link.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Link.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Link.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Link
+     */
+    setHTMLAttributes () {
+        this.setAttribute('href', this.props.url);
+        if (this.props.target) {
+            this.setAttribute('target', this.props.target);
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Link
+     */
+    static props = {
+        id: 'link-1',
+        url: '#',
+        classList: [],
+        nodeName: 'A',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Link
+     */
+    static state = {
+        id: false,
+        preventDefault: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Link
+     */
+    static callbacks = {
+        click: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        },
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Link
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Core/Attribute.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Core/Attribute.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Attribute)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * Attribute controls the Html attributes.
+ * @export
+ * @class Attribute
+ * @extends {Class}
+ * @author JuanCruzAGB <juan.cruz.armentia@gmail.com>
+ */
+class Attribute extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Attribute.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='attribute-1'] Primary key.
+     * @param {string} [data.props.name='id']
+     * @param {*} [data.props.value='attribute-1']
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.visible=false] If the Attribute should be visible.
+     * @param {HTMLElement|false} [data.html] Attribute HTML Element.
+     * @memberof Attribute
+     */
+    constructor (data = {
+        props: {
+            id: 'attribute-1',
+            name: 'id',
+            value: 'attribute-1',
+        }, state: {
+            visible: false,
+        }, html: false,
+    }) {
+        super({
+            props: {
+                ...Attribute.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props: {},
+            }, state: {
+                ...Attribute.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state: {},
+            },
+        });
+        if (data && data.hasOwnProperty('html')) {
+            this.setHTML(data.html);
+            this.set();
+        }
+    }
+
+    set value (value) {
+        this.setProps('value', value);
+        if (this.state.visible) {
+            this.set();
+        }
+    }
+
+    /**
+     * * Remove the Attribute from the DOM.
+     * @memberof Attribute
+     */
+    remove () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.hasAttribute(this.props.name)) {
+                this.html.removeAttribute(this.props.name);
+                this.setState('visible', false);
+            }
+        }
+    }
+
+    /**
+     * * Set the Attribute in the DOM.
+     * @memberof Attribute
+     */
+    set () {
+        if (this.hasOwnProperty('html')) {
+            switch (typeof this.props.value) {
+                case 'boolean':
+                    if (this.props.value) {
+                        if (!this.html.hasAttribute(this.props.name)) {
+                            this.html.setAttribute(this.props.name, '');
+                            this.setState('visible', true);
+                        } else {
+                            this.html[this.props.name] = true;
+                            this.setState('visible', true);
+                        }
+                    }
+                    break;
+                default:
+                    if (!this.html.hasAttribute(this.props.name)) {
+                        this.html.setAttribute(this.props.name, this.props.value);
+                        this.setState('visible', true);
+                    } else {
+                        this.html[this.props.name] = this.props.value;
+                        this.setState('visible', true);
+                    }
+                    break;
+            }
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Attribute
+     */
+    static props = {
+        id: 'attribute-1',
+        name: 'id',
+        value: 'attribute-1',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Attribute
+     */
+    static state = {
+        visible: false,
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Core/ClassName.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Core/ClassName.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ClassName)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * ClassName controls the Html class names.
+ * @export
+ * @class ClassName
+ * @extends {Class}
+ * @author JuanCruzAGB <juan.cruz.armentia@gmail.com>
+ */
+class ClassName extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of ClassName.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='className-1'] Primary key.
+     * @param {*} [data.props.value='something']
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.visible=false] If the ClassName should be visible.
+     * @param {HTMLElement|false} [data.html] ClassName HTML Element.
+     * @memberof ClassName
+     */
+    constructor (data = {
+        props: {
+            id: 'className-1',
+            value: 'something',
+        }, state: {
+            visible: false,
+        }, html: false,
+    }) {
+        super({
+            props: {
+                ...ClassName.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props: {},
+            }, state: {
+                ...ClassName.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state: {},
+            },
+        });
+        if (data && data.hasOwnProperty('html')) {
+            this.setHTML(data.html);
+            this.set();
+        }
+    }
+
+    /**
+     * * Add the ClassName in the DOM.
+     * @memberof ClassName
+     */
+    set () {
+        if (this.hasOwnProperty('html')) {
+            if (!this.html.classList.contains(this.props.value)) {
+                this.html.classList.add(this.props.value);
+            }
+            this.setState('visible', true);
+        }
+    }
+
+    /**
+     * * Remove the ClassName from the DOM.
+     * @memberof ClassName
+     */
+    remove () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.classList.contains(this.props.value)) {
+                this.html.classList.remove(this.props.value);
+            }
+            this.setState('visible', false);
+        }
+    }
+
+    /**
+     * * Toogle the ClassName from the DOM.
+     * @memberof ClassName
+     */
+    toggle () {
+        if (this.hasOwnProperty('html')) {
+            this.html.classList.toggle(this.props.value);
+            this.setState('visible', this.html.classList.contains(this.props.value));
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof ClassName
+     */
+    static props = {
+        id: 'className-1',
+        value: 'something',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof ClassName
+     */
+    static state = {
+        visible: false,
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Core/Dataset.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Core/Dataset.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dataset)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * Dataset controls the Html datasets.
+ * @export
+ * @class Dataset
+ * @extends {Class}
+ * @author JuanCruzAGB <juan.cruz.armentia@gmail.com>
+ */
+class Dataset extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Dataset.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='data-1'] Primary key.
+     * @param {string} [data.props.name='id']
+     * @param {*} [data.props.value='data-1']
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.visible=false] If the Dataset should be visible.
+     * @param {HTMLElement|false} [data.html] Dataset HTML Element.
+     * @memberof Dataset
+     */
+    constructor (data = {
+        props: {
+            id: 'data-1',
+            name: 'id',
+            value: 'data-1',
+        }, state: {
+            visible: false,
+        }, html: false,
+    }) {
+        super({
+            props: {
+                ...Dataset.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props: {},
+            }, state: {
+                ...Dataset.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state: {},
+            },
+        });
+        if (data && data.hasOwnProperty('html')) {
+            this.setHTML(data.html);
+            this.set();
+        }
+    }
+
+    /**
+     * * Remove the Dataset from the DOM.
+     * @memberof Dataset
+     */
+    remove () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.dataset[this.props.name]) {
+                delete this.html.dataset[this.props.name];
+                this.setState('visible', false);
+            }
+        }
+    }
+
+    /**
+     * * Set the Dataset in the DOM.
+     * @memberof Dataset
+     */
+    set () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.dataset[this.props.name]) {
+                this.html.dataset[this.props.name] = this.props.value;
+                this.setState('visible', true);
+            }
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Dataset
+     */
+    static props = {
+        id: 'data-1',
+        name: 'id',
+        value: 'data-1',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Dataset
+     */
+    static state = {
+        visible: false,
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Html)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Creator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Creator.js */ "./node_modules/@juancruzagb/htmlcreator/js/Creator.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Attribute_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Attribute.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Attribute.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_ClassName_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/ClassName.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/ClassName.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Dataset_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Dataset.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Dataset.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Style_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Style.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Style.js");
+// ? JuanCruzAGB repository
+
+
+// ? HTMLCreator repository
+
+
+// ? Core
+
+
+
+
+
+/**
+ * * Html controls a class object.
+ * @export
+ * @class Html
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Class
+ */
+ class Html extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Html.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {array} [data.props.classList] Html class list.
+     * @param {object} [data.props.dataset] Html data attributes.
+     * @param {string} [data.props.nodeName='DIV'] Html node name.
+     * @param {string} [data.props.id='html-1'] Html primary key.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {boolean} [data.state.preventDefault=false] If the Html events should prevent default.
+     * @param {boolean} [data.state.stopPropagation=false] If the Html events should stop propagation.
+     * @param {object} [data.callbacks]
+     * @param {array} [data.children] Html children.
+     * @param {HTMLElement|false} [data.parentNode] Parent Html Element.
+     * @memberof Html
+     */
+    constructor (data = {
+        props: {
+            classList: [],
+            dataset: {},
+            nodeName: 'DIV',
+            id: 'html-1',
+        }, state: {
+            id: false,
+            preventDefault: false,
+            stopPropagation: false,
+        }, callbacks: {},
+        children: [],
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            },
+        });
+        this.setCallbacks({
+            ...Html.callbacks,
+            ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+        });
+        if (this.hasProp('nodeName')) {
+            this.create();
+        }
+        this.setChildren((data && data.hasOwnProperty('children')) ? data.children : []);
+        this.setParent((data && data.hasOwnProperty('parentNode')) ? data.parentNode : false);
+    }
+
+    /**
+     * * Set an Html Attributes.
+     * @param {string|array} name Attribute name.
+     * @param {string|boolean} value Attribute value.
+     * @memberof Html
+     */
+    setAttribute (name, value) {
+        if (!this.attributes) {
+            this.attributes = [];
+        }
+        if (name != undefined && value != undefined) {
+            let attributes = {};
+            if (typeof name == 'string') {
+                attributes[name] = value;
+            }
+            if (name && name instanceof Object && !Array.isArray(name)) {
+                attributes = name;
+            }
+            for (name in attributes) {
+                if (Object.hasOwnProperty.call(attributes, name)) {
+                    let attribute = new _juancruzagb_htmlcreator_js_Core_Attribute_js__WEBPACK_IMPORTED_MODULE_2__["default"]({
+                        props: {
+                            id: `attribute-${ this.attributes.length + 1 }`,
+                            name: name,
+                            value: attributes[name],
+                        }, html: this.html,
+                    });
+                    attribute.set();
+                    this.attributes.push(attribute);
+                }
+            }
+        }
+        if (name == undefined) {
+            console.error('Html Element attribute name is required');
+        }
+        if (value == undefined) {
+            console.error(`Html Element attribute value is required`);
+        }
+    }
+
+    /**
+     * * Check if the Html has an Attribute.
+     * @param {string|array} name Attribute name.
+     * @param {*} [value=false] Attribute value.
+     * @returns {boolean}
+     * @memberof Html
+     */
+    hasAttribute (name, value = false) {
+        if (name != undefined) {
+            for (let attribute of this.attributes) {
+                if (attribute.props.name == name) {
+                    if (value) {
+                        if (attribute.props.value == value) {
+                            return true;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        if (name == undefined) {
+            console.error('Html Element attribute name is required');
+        }
+    }
+
+    /**
+     * * Removes an Html Attributes.
+     * @param {string|array} name Attribute name.
+     * @memberof Html
+     */
+    removeAttribute (name) {
+        if (name != undefined) {
+            for (const attribute of this.attributes) {
+                if (attribute.props.name == name) {
+                    attribute.remove();
+                }
+            }
+        }
+        if (name == undefined) {
+            console.error('Html Element attribute name is required');
+        }
+    }
+
+    /**
+     * * Set an Html class list.
+     * @param {string|array} classList
+     * @memberof Html
+     */
+    setClassList (classList = []) {
+        if (!this.classList) {
+            this.classList = {};
+        }
+        if (typeof classList == 'string' || Array.isArray(classList)) {
+            if (typeof classList == 'string') {
+                classList = [
+                    classList,
+                ];
+            }
+            for (let className of classList) {
+                className = new _juancruzagb_htmlcreator_js_Core_ClassName_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
+                    props: {
+                        id: `className-${ Object.keys(this.classList).length + 1 }`,
+                        value: className,
+                    }, html: this.html,
+                });
+                className.set();
+                this.classList[className.props.value] = className;
+            }
+        } else {
+            console.error('Html Element class name is required');
+        }
+    }
+
+    /**
+     * * Check if the Html has a ClassName.
+     * @param {string|array} value ClassName value.
+     * @returns {boolean}
+     * @memberof Html
+     */
+    hasClassName (value) {
+        if (value != undefined) {
+            for (const key in this.classList) {
+                if (Object.hasOwnProperty.call(this.classList, key)) {
+                    const className = this.classList[key];
+                    if (className.props.value == value) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        if (value == undefined) {
+            console.error('Html Element class name value is required');
+        }
+    }
+
+    /**
+     * * Saves the Html children.
+     * @param {array} children
+     * @memberof Html
+     */
+    setChildren (children = []) {
+        if (!this.children) {
+            this.children = [];
+        }
+        for (const child of children) {
+            this.appendChild(child);
+        }
+    }
+
+    /**
+     * * Set an Html dataset.
+     * @param {string|array} name Data name.
+     * @param {string|boolean} value Data value.
+     * @memberof Html
+     */
+    setDataset (name, value) {
+        if (!this.dataset) {
+            this.dataset = [];
+        }
+        if (name != undefined && value != undefined) {
+            let dataset = {};
+            if (typeof name == 'string') {
+                dataset[name] = value;
+            }
+            if (name && name instanceof Object && !Array.isArray(name)) {
+                dataset = name;
+            }
+            for (name in dataset) {
+                if (Object.hasOwnProperty.call(dataset, name)) {
+                    let data = new _juancruzagb_htmlcreator_js_Core_Dataset_js__WEBPACK_IMPORTED_MODULE_4__["default"]({
+                        props: {
+                            id: `data-${ this.dataset.length + 1 }`,
+                            name: name,
+                            value: dataset[name],
+                        }, html: this.html,
+                    });
+                    data.set();
+                    this.dataset.push(data);
+                }
+            }
+        }
+        if (name == undefined) {
+            console.error('Html Element data name is required');
+        }
+        if (value == undefined) {
+            console.error(`Html Element data value is required`);
+        }
+    }
+
+    /**
+     * * Saves the Html parent node.
+     * @param {HTMLElement|Html} parentNode
+     * @memberof Html
+     */
+    setParent (parentNode) {
+        if (parentNode instanceof HTMLElement) {
+            parentNode.appendChild(this.html);
+        }
+        if (parentNode instanceof Html) {
+            parentNode.appendChild(this.html);
+        }
+        if (Array.isArray(parentNode)) {
+            console.warn('Parent constructor is not supported yet.');
+        }
+        this.parentNode = parentNode;
+    }
+
+    /**
+     * * Set an Html style.
+     * @param {string|array} name Style name.
+     * @param {string|boolean} value Style value.
+     * @memberof Html
+     */
+    setStyle (name, value) {
+        if (!this.style) {
+            this.style = [];
+        }
+        if (name != undefined && value != undefined) {
+            let styles = {};
+            if (typeof name == 'string') {
+                styles[name] = value;
+            }
+            if (name && name instanceof Object && !Array.isArray(name)) {
+                styles = name;
+            }
+            for (name in styles) {
+                if (Object.hasOwnProperty.call(styles, name)) {
+                    let style = new _juancruzagb_htmlcreator_js_Core_Style_js__WEBPACK_IMPORTED_MODULE_5__["default"]({
+                        props: {
+                            id: `style-${ this.style.length }`,
+                            name: name,
+                            value: styles[name],
+                        }, html: this.html,
+                    });
+                    style.set();
+                    this.style.push(style);
+                }
+            }
+        }
+        if (name == undefined) {
+            console.error('Html Element style name is required');
+        }
+        if (value == undefined) {
+            console.error(`Html Element style value is required`);
+        }
+    }
+
+    /**
+     * * Creates the Html Element.
+     * @memberof Html
+     */
+    create () {
+        this.setHTML(document.createElement(this.props.nodeName.toUpperCase()));
+        if (this.hasProp('id') && this.hasState('id') && this.state.id) {
+            this.setAttribute('id', this.props.id);
+        }
+        if (this.hasProp('classList') && this.props.classList.length) {
+            this.setClassList(this.props.classList);
+        }
+        if (this.hasProp('dataset') && this.props.dataset.length) {
+            this.setDataset(this.props.dataset);
+        }
+        if (this.hasProp('styles') && this.props.styles.length) {
+            this.setStyles(this.props.styles);
+        }
+        for (const name in this.callbacks) {
+            if (Object.hasOwnProperty.call(this.callbacks, name)) {
+                this.setEventListener(name, this.callbacks[name]);
+            }
+        }
+    }
+
+    /**
+     * * Removes the Html Element.
+     * @memberof Html
+     */
+    remove () {
+        this.parentNode.removeChild(this.html);
+    }
+
+    /**
+     * * Append an Html Element.
+     * @param {string|HTMLElement} HTML New child.
+     * @memberof Html
+     */
+    appendChild (child = false) {
+        if (!this.children) {
+            this.children = [];
+        }
+        if (typeof child == 'string') {
+            this.html.innerText = child;
+        }
+        if (child instanceof HTMLElement) {
+            this.html.appendChild(child);
+        }
+        if (child instanceof Object && Array.isArray(child)) {
+            if (child.length == 1) {
+                child.push({});
+            }
+            if (child.length == 2 && !child[1].hasOwnProperty('props')) {
+                child[1].props = {};
+            }
+            if (!child[1].props.hasOwnProperty('id')) {
+                child[1].props.id = `${ this.props.id }-child-${ this.children.length + 1 }`;
+            }
+            if (!child[1].hasOwnProperty('parentNode')) {
+                child[1].parentNode = this.html;
+            }
+            child = new _juancruzagb_htmlcreator_js_Creator_js__WEBPACK_IMPORTED_MODULE_1__["default"](...child);
+        }
+        if (child instanceof Html) {
+            this.html.appendChild(child.html);
+        }
+        this.children.push(child);
+    }
+
+    /**
+     * * Insert an Html Element before another.
+     * @param {HTMLElement} newChild New child.
+     * @param {HTMLElement} oldChild New child.
+     * @memberof Html
+     */
+    insertBefore (newChild = false, oldChild = false) {
+        // TODO
+        console.warn('Insert before is not supported yet.');
+    }
+
+    /**
+     * * Removes an Html Element.
+     * @param {HTMLElement} child Child.
+     * @memberof Html
+     */
+    removeChild (child = false) {
+        // TODO
+        console.warn('Remoce child is not supported yet.');
+    }
+
+    /**
+     * * Set an Html event listener.
+     * @param {string} [name='click']
+     * @memberof Html
+     */
+    setEventListener (name = 'click') {
+        if (!this[name]) {
+            console.error(`${ name } callback event is not supported`);
+            return false;
+        }
+        this.html.addEventListener(name, (e) => {
+            if (this.hasState('preventDefault') && this.state.preventDefault) {
+                e.preventDefault();
+            }
+            if (this.hasState('stopPropagation') && this.state.stopPropagation) {
+                e.stopPropagation();
+            }
+            this[name]();
+        });
+        return true;
+    }
+
+    /**
+     * * Active the Html.
+     * @param {*} [params={}] Active callback function optional params.
+     * @memberof Html
+     */
+    active (params = {}) {
+        this.setState('active', true);
+        if (!this.hasClassName('active')) {
+            this.setClassList(['active']);
+        }
+        this.classList.active.set();
+        this.execute('active', {
+            ...this.hasCallback('active') ? this.callbacks.active.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Switch a state.
+     * @param {string} name State name.
+     * @memberof Html
+     */
+    switch (name = false) {
+        if (name) {
+            if (this.hasState(name)) {
+                this.setState(name, !name);
+            }
+            if (this.html.hasAttribute(name)) {
+                this.html.setAttribute(name, !this.html.getAttribute(name));
+            }
+        }
+        if (!name) {
+            console.error('State name is required');
+        }
+    }
+
+    /**
+     * * Html blur callback.
+     * @param {*} value
+     * @param {*} [params={}] Blur callback function optional params.
+     * @memberof Html
+     */
+    blur (params = {}) {
+        this.execute('blur', {
+            ...this.hasCallback('blur') ? this.callbacks.blur.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html change callback.
+     * @param {*} [params={}] Change callback function optional params.
+     * @memberof Html
+     */
+    change (params = {}) {
+        switch (this.props.nodeName.toUpperCase()) {
+            case 'INPUT':
+            case 'SELECT':
+            case 'TEXTAREA':
+                switch (this.props.type.toUpperCase()) {
+                    case 'DATE':
+                    case 'NUMBER':
+                    case 'PASSWORD':
+                    case 'TEXT':
+                    case 'TEXTAREA':
+                        this.setProps('prevValue', this.props.value);
+                        this.setProps('value', this.html.value);
+                        params.value = this.html.value;
+                        break;
+                    case 'CHECKBOX':
+                        this.setState('checked', this.html.checked);
+                        params.checked = {
+                            [this.html.name]: this.html.checked
+                        };
+                        break;
+                    case 'FILE':
+                        this.setProps('files', this.html.files);
+                        params.files = this.html.files;
+                        break;
+                    case 'RADIO':
+                        this.setState('checked', this.html.checked);
+                        params.checked = this.html.name;
+                        break;
+                    case 'SELECT':
+                        this.setState('selectedIndex', {
+                            index: this.html.selectedIndex,
+                            option: this.options[this.html.selectedIndex],
+                        });
+                        params.selected = {
+                            index: this.html.selectedIndex,
+                            option: this.options[this.html.selectedIndex],
+                        };
+                        break;
+                    default:
+                        console.error(`Input type ${ this.props.type } is not supported`);
+                        break;
+                }
+                break;
+        }
+        this.execute('change', {
+            ...this.hasCallback('change') ? this.callbacks.change.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html click callback.
+     * @param {*} [params={}] Click callback function optional params.
+     * @memberof Html
+     */
+    click (params = {}) {
+        this.execute('click', {
+            ...this.hasCallback('click') ? this.callbacks.click.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html dblclick callback.
+     * @param {*} [params={}] Double click callback function optional params.
+     * @memberof Html
+     */
+    dblclick (params = {}) {
+        this.execute('dblclick', {
+            ...this.hasCallback('dblclick') ? this.callbacks.dblclick.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html focus in callback.
+     * @param {*} value
+     * @param {*} [params={}] Foucin callback function optional params.
+     * @memberof Html
+     */
+    focusin (params = {}) {
+        this.execute('focusin', {
+            ...this.hasCallback('focusin') ? this.callbacks.focusin.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html focus out callback.
+     * @param {*} value
+     * @param {*} [params={}] Foucout callback function optional params.
+     * @memberof Html
+     */
+    focusout (params = {}) {
+        this.execute('focusout', {
+            ...this.hasCallback('focusout') ? this.callbacks.focusout.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Inactive the Html.
+     * @param {*} [params={}] Inactive callback function optional params.
+     * @memberof Html
+     */
+    inactive (params = {}) {
+        this.setState('active', false);
+        if (!this.hasClassName('active')) {
+            this.setClassList(['active']);
+        }
+        this.classList.active.remove();
+        this.execute('inactive', {
+            ...this.hasCallback('inactive') ? this.callbacks.inactive.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * * Html submit callback.
+     * @param {*} [params={}] Submit callback function optional params.
+     * @memberof Html
+     */
+    submit (params = {}) {
+        this.execute('submit', {
+            ...this.hasCallback('submit') ? this.callbacks.submit.params : {},
+            ...params,
+            Html: this,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Html
+     */
+    static callbacks = {
+        active: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        }, inactive: {
+            function: (params) => { /* console.log(params) */ },
+            params: {},
+        }
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Core/Style.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Core/Style.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ style)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * style controls the Html styles.
+ * @export
+ * @class style
+ * @extends {Class}
+ * @author JuanCruzAGB <juan.cruz.armentia@gmail.com>
+ */
+class style extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of style.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='style-1'] Primary key.
+     * @param {string} [data.props.name='id']
+     * @param {*} [data.props.value='style-1']
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.visible=false] If the style should be visible.
+     * @param {HTMLElement|false} [data.html] style HTML Element.
+     * @memberof style
+     */
+    constructor (data = {
+        props: {
+            id: 'style-1',
+            name: 'id',
+            value: 'style-1',
+        }, state: {
+            visible: false,
+        }, html: false,
+    }) {
+        super({
+            props: {
+                ...style.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props: {},
+            }, state: {
+                ...style.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state: {},
+            },
+        });
+        if (data && data.hasOwnProperty('html')) {
+            this.setHTML(data.html);
+            this.set();
+        }
+    }
+
+    /**
+     * * Remove the style from the DOM.
+     * @memberof style
+     */
+    remove () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.style[this.props.name]) {
+                this.html.style[this.props.name] = null;
+                this.setState('visible', false);
+            }
+        }
+    }
+
+    /**
+     * * Set the style in the DOM.
+     * @memberof style
+     */
+    set () {
+        if (this.hasOwnProperty('html')) {
+            if (this.html.style[this.props.name]) {
+                this.html.style[this.props.name] = this.props.value;
+                this.setState('visible', true);
+            }
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof style
+     */
+    static props = {
+        id: 'style-1',
+        name: 'id',
+        value: 'style-1',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof style
+     */
+    static state = {
+        visible: false,
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Creator.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Creator.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Creator)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Aside_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Aside.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Aside.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Div_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Div.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Div.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Figure_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Figure.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Figure.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Footer.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Footer.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Form.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Form.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Header.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Header.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Item.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Item.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Label_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Label.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Label.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/List.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/List.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Main_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Main.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Main.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Nav.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Nav.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Option.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Option.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Boxes_Section_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Boxes/Section.js */ "./node_modules/@juancruzagb/htmlcreator/js/Boxes/Section.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Button.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Button.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Input.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Input.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Buttons_Link_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Buttons/Link.js */ "./node_modules/@juancruzagb/htmlcreator/js/Buttons/Link.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Table_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Table.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Table.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/TPart.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/TPart.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Row.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Cell.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Italic_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Italic.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Italic.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_LineBreak_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/LineBreak.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/LineBreak.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Paragraph_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Paragraph.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Paragraph.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Span.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Span.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Texts_Title_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Texts/Title.js */ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Title.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Icon_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Icon.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Icon.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Image.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Visuals_Line_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Visuals/Line.js */ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Line.js");
+// ? JuanCruzAGB repository
+
+
+// ? HTMLCreator repository
+
+// ? Boxes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ? Buttons
+
+
+
+
+// ? Table
+
+
+
+
+
+// ? Texts
+
+
+
+
+
+
+// ? Visuals
+
+
+
+
+/**
+ * * Creator creates multiple HTMLElement.
+ * @export
+ * @class Creator
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Class
+ */
+class Creator extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Creator.
+     * @param {string} [query]
+     * @param {object} [data]
+     * @memberof Creator
+     */
+    constructor (query = 'DIV', data = {}) {
+        super();
+        if (/#/.exec(query) || / /.exec(query)) {
+            console.log(this.query(query));
+        }
+        switch (query.toUpperCase()) {
+        // ? Boxes
+            case 'ASIDE':
+                return new _juancruzagb_htmlcreator_js_Boxes_Aside_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+            case 'DIV':
+                return new _juancruzagb_htmlcreator_js_Boxes_Div_js__WEBPACK_IMPORTED_MODULE_2__["default"](data);
+            case 'FIGURE':
+                return new _juancruzagb_htmlcreator_js_Boxes_Figure_js__WEBPACK_IMPORTED_MODULE_3__["default"](data);
+            case 'FOOTER':
+                return new _juancruzagb_htmlcreator_js_Boxes_Footer_js__WEBPACK_IMPORTED_MODULE_4__["default"](data);
+            case 'FORM':
+                return new _juancruzagb_htmlcreator_js_Boxes_Form_js__WEBPACK_IMPORTED_MODULE_5__["default"](data);
+            case 'HEADER':
+                return new _juancruzagb_htmlcreator_js_Boxes_Header_js__WEBPACK_IMPORTED_MODULE_6__["default"](data);
+            case 'LI':
+                return new _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_7__["default"](data);
+            case 'LABEL':
+                return new _juancruzagb_htmlcreator_js_Boxes_Label_js__WEBPACK_IMPORTED_MODULE_8__["default"](data);
+            case 'OL':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'ordered';
+                }
+            case 'UL':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'unordered';
+                }
+                return new _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_9__["default"](data);
+            case 'MAIN':
+                return new _juancruzagb_htmlcreator_js_Boxes_Main_js__WEBPACK_IMPORTED_MODULE_10__["default"](data);
+            case 'NAV':
+                return new _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_11__["default"](data);
+            case 'OPTION':
+                return new _juancruzagb_htmlcreator_js_Boxes_Option_js__WEBPACK_IMPORTED_MODULE_12__["default"](data);
+            case 'SECTION':
+                return new _juancruzagb_htmlcreator_js_Boxes_Section_js__WEBPACK_IMPORTED_MODULE_13__["default"](data);
+        // ? Buttons
+            case 'BUTTON':
+                return new _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_14__["default"](data);
+            case 'SELECT':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'select';
+                }
+            case 'TEXTAREA':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'textarea';
+                }
+            case 'INPUT':
+                return new _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_15__["default"](data);
+            case 'A':
+                return new _juancruzagb_htmlcreator_js_Buttons_Link_js__WEBPACK_IMPORTED_MODULE_16__["default"](data);
+        // ? Table
+            case 'TABLE':
+                return new _juancruzagb_htmlcreator_js_Table_Table_js__WEBPACK_IMPORTED_MODULE_17__["default"](data);
+            case 'TBODY':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'body';
+                }
+            case 'THEAD':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'head';
+                }
+                return new _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_18__["default"](data);
+            case 'TR':
+                return new _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_19__["default"](data);
+            case 'TD':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'normal';
+                }
+            case 'TH':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('type')) {
+                    data.props.type = 'header';
+                }
+                return new _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_20__["default"](data);
+        // ? Texts
+            case 'BR':
+                return new _juancruzagb_htmlcreator_js_Texts_LineBreak_js__WEBPACK_IMPORTED_MODULE_22__["default"](data);
+            case 'I':
+                return new _juancruzagb_htmlcreator_js_Texts_Italic_js__WEBPACK_IMPORTED_MODULE_21__["default"](data);
+            case 'P':
+                return new _juancruzagb_htmlcreator_js_Texts_Paragraph_js__WEBPACK_IMPORTED_MODULE_23__["default"](data);
+            case 'SPAN':
+                return new _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_24__["default"](data);
+            case 'H1':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 1;
+                }
+            case 'H2':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 2;
+                }
+            case 'H3':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 3;
+                }
+            case 'H4':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 4;
+                }
+            case 'H5':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 5;
+                }
+            case 'H6':
+                if (data.hasOwnProperty('props') && !data.props.hasOwnProperty('level')) {
+                    data.props.level = 6;
+                }
+                return new _juancruzagb_htmlcreator_js_Texts_Title_js__WEBPACK_IMPORTED_MODULE_25__["default"](data);
+        // ? Visuals
+            case 'ICON':
+                return new _juancruzagb_htmlcreator_js_Visuals_Icon_js__WEBPACK_IMPORTED_MODULE_26__["default"](data);
+            case 'IMG':
+                return new _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_27__["default"](data);
+            case 'HR':
+                return new _juancruzagb_htmlcreator_js_Visuals_Line_js__WEBPACK_IMPORTED_MODULE_28__["default"](data);
+        // ? CustomInput
+            case 'CUSTOMINPUT':
+            case 'GALLERY':
+                return this.import(query, data);
+            default:
+                console.warn(`HTMLCreator does not support ${ query } yet`);
+                break;
+        }
+    }
+
+    /**
+     * * Import the Creator extensions.
+     * @async
+     * @param {string} [query='DIV']
+     * @param {object} [data={}]
+     * @returns {class}
+     * @memberof Creator
+     */
+    async import (query = 'DIV', data = {}) {
+        let file = false;
+
+        switch (query.toUpperCase()) {
+        // ? CustomInput
+            case 'CUSTOMINPUT':
+                file = "@juancruzagb/CustomInput/js/CustomInput.js";
+                break;
+            case 'GALLERY':
+                file = "@juancruzagb/gallery/js/Gallery.js";
+                break;
+            default:
+                console.warn(`HTMLCreator extension ${ query } does not exist yet`);
+                break;
+        }
+
+        if (file) {
+            // const Module = await import(file);
+            
+            return new require(file).default(data);
+        }
+    }
+
+    /**
+     * * Returns all node element that match selectors.
+     * @param {string} [query='DIV']
+     * @returns {NodeList}
+     * @memberof Creator
+     */
+    query (query = 'DIV') {
+        let nodeList = [];
+
+        for (const nodeElement of document.querySelectorAll(query)) {
+            nodeList.push(nodeElement);
+        }
+
+        return nodeList;
+    }
+
+    /**
+     * @static
+     * @var {Aside} Aside Aside class child.
+     * @memberof Creator
+     */
+    static Aside = _juancruzagb_htmlcreator_js_Boxes_Aside_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+    /**
+     * @static
+     * @var {Div} Div Div class child.
+     * @memberof Creator
+     */
+    static Div = _juancruzagb_htmlcreator_js_Boxes_Div_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+    /**
+     * @static
+     * @var {Figure} Figure Figure class child.
+     * @memberof Creator
+     */
+    static Figure = _juancruzagb_htmlcreator_js_Boxes_Figure_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+
+    /**
+     * @static
+     * @var {Footer} Footer Footer class child.
+     * @memberof Creator
+     */
+    static Footer = _juancruzagb_htmlcreator_js_Boxes_Footer_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+    /**
+     * @static
+     * @var {Form} Form Form class child.
+     * @memberof Creator
+     */
+    static Form = _juancruzagb_htmlcreator_js_Boxes_Form_js__WEBPACK_IMPORTED_MODULE_5__["default"];
+
+    /**
+     * @static
+     * @var {Header} Header Header class child.
+     * @memberof Creator
+     */
+    static Header = _juancruzagb_htmlcreator_js_Boxes_Header_js__WEBPACK_IMPORTED_MODULE_6__["default"];
+
+    /**
+     * @static
+     * @var {Item} Item Item class child.
+     * @memberof Creator
+     */
+    static Item = _juancruzagb_htmlcreator_js_Boxes_Item_js__WEBPACK_IMPORTED_MODULE_7__["default"];
+
+    /**
+     * @static
+     * @var {Label} Label Label class child.
+     * @memberof Creator
+     */
+    static Label = _juancruzagb_htmlcreator_js_Boxes_Label_js__WEBPACK_IMPORTED_MODULE_8__["default"];
+
+    /**
+     * @static
+     * @var {List} List List class child.
+     * @memberof Creator
+     */
+    static List = _juancruzagb_htmlcreator_js_Boxes_List_js__WEBPACK_IMPORTED_MODULE_9__["default"];
+
+    /**
+     * @static
+     * @var {Main} Main Main class child.
+     * @memberof Creator
+     */
+    static Main = _juancruzagb_htmlcreator_js_Boxes_Main_js__WEBPACK_IMPORTED_MODULE_10__["default"];
+
+    /**
+     * @static
+     * @var {Nav} Nav Nav class child.
+     * @memberof Creator
+     */
+    static Nav = _juancruzagb_htmlcreator_js_Boxes_Nav_js__WEBPACK_IMPORTED_MODULE_11__["default"];
+
+    /**
+     * @static
+     * @var {Section} Section Section class child.
+     * @memberof Creator
+     */
+    static Section = _juancruzagb_htmlcreator_js_Boxes_Section_js__WEBPACK_IMPORTED_MODULE_13__["default"];
+    
+    /**
+     * @static
+     * @var {Button} Button Button class child.
+     * @memberof Creator
+     */
+    static Button = _juancruzagb_htmlcreator_js_Buttons_Button_js__WEBPACK_IMPORTED_MODULE_14__["default"];
+
+    /**
+     * @static
+     * @var {Input} Input Input class child.
+     * @memberof Creator
+     */
+    static Input = _juancruzagb_htmlcreator_js_Buttons_Input_js__WEBPACK_IMPORTED_MODULE_15__["default"];
+
+    /**
+     * @static
+     * @var {Link} Link Link class child.
+     * @memberof Creator
+     */
+    static Link = _juancruzagb_htmlcreator_js_Buttons_Link_js__WEBPACK_IMPORTED_MODULE_16__["default"];
+    
+    /**
+     * @static
+     * @var {Table} Table Table class child.
+     * @memberof Creator
+     */
+    static Table = _juancruzagb_htmlcreator_js_Table_Table_js__WEBPACK_IMPORTED_MODULE_17__["default"];
+
+    /**
+     * @static
+     * @var {TPart} TPart TPart class child.
+     * @memberof Creator
+     */
+    static TPart = _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_18__["default"];
+
+    /**
+     * @static
+     * @var {Row} Row Row class child.
+     * @memberof Creator
+     */
+    static Row = _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_19__["default"];
+
+    /**
+     * @static
+     * @var {Cell} Cell Cell class child.
+     * @memberof Creator
+     */
+    static Cell = _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_20__["default"];
+    
+    /**
+     * @static
+     * @var {Paragraph} Paragraph Paragraph class child.
+     * @memberof Creator
+     */
+    static Paragraph = _juancruzagb_htmlcreator_js_Texts_Paragraph_js__WEBPACK_IMPORTED_MODULE_23__["default"];
+
+    /**
+     * @static
+     * @var {Span} Span Span class child.
+     * @memberof Creator
+     */
+    static Span = _juancruzagb_htmlcreator_js_Texts_Span_js__WEBPACK_IMPORTED_MODULE_24__["default"];
+
+    /**
+     * @static
+     * @var {Title} Title Title class child.
+     * @memberof Creator
+     */
+    static Title = _juancruzagb_htmlcreator_js_Texts_Title_js__WEBPACK_IMPORTED_MODULE_25__["default"];
+
+    /**
+     * @static
+     * @var {LineBreak} LineBreak LineBreak class child.
+     * @memberof Creator
+     */
+    static LineBreak = _juancruzagb_htmlcreator_js_Texts_LineBreak_js__WEBPACK_IMPORTED_MODULE_22__["default"];
+    
+    /**
+     * @static
+     * @var {Icon} Icon Icon class child.
+     * @memberof Creator
+     */
+    static Icon = _juancruzagb_htmlcreator_js_Visuals_Icon_js__WEBPACK_IMPORTED_MODULE_26__["default"];
+
+    /**
+     * @static
+     * @var {Image} Image Image class child.
+     * @memberof Creator
+     */
+    static Image = _juancruzagb_htmlcreator_js_Visuals_Image_js__WEBPACK_IMPORTED_MODULE_27__["default"];
+
+    /**
+     * @static
+     * @var {Line} Line Line class child.
+     * @memberof Creator
+     */
+    static Line = _juancruzagb_htmlcreator_js_Visuals_Line_js__WEBPACK_IMPORTED_MODULE_28__["default"];
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Cell)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Cell creates an excellent <td> or <th>.
+ * @export
+ * @class Cell
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Cell extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Cell.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='cell-1'] Primary key.
+     * @param {string} [data.props.type='normal']
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Cell
+     */
+    constructor (data = {
+        props: {
+            id: 'cell-1',
+            type: 'normal',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        props.nodeName = ((props.type === 'header') ? 'TH' : 'TD');
+        super({
+            props: {
+                ...Cell.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Cell.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Cell.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Cell.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Cell
+     */
+    static props = {
+        id: 'cell-1',
+        type: 'normal',
+        classList: [],
+        nodeName: 'TD',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Cell
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Cell
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Cell
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Row)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Cell.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+// ? Core
+
+
+/**
+ * * Row creates an excellent <tr>.
+ * @export
+ * @class Row
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Row extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_1__["default"] {
+    /**
+     * * Creates an instance of Row.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='row-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object[]} [data.cells] Array of <td> and/or <th>.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Row
+     */
+    constructor (data = {
+        props: {
+            id: 'row-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, cells: [],
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Row.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Row.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Row.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setCells(cells);
+        this.setChilds();
+    }
+
+    /**
+     * * Set the HTML Element child nodes.
+     * @memberof Row
+     */
+    setChilds () {
+        for (const cell of this.cells) {
+            this.appendChild(cell.html);
+        }
+    }
+
+    /**
+     * * Set the Row Rows.
+     * @param {object[]} [cells] Row Cells.
+     * @memberof Row
+     */
+    setCells (cells = []) {
+        if (!this.cells) {
+            this.cells = [];
+        }
+        for (const key in cells) {
+            if (Object.hasOwnProperty.call(cells, key)) {
+                let data = cells[key];
+                let cell = new _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__["default"]({
+                    ...data,
+                    id: `${ this.props.id }-cell-${ parseInt(key) + 1 }`,
+                });
+                this.cells.push(cell);
+                this.appendChild(cell.html);
+            }
+        }
+    }
+
+    /**
+     * * Get a Row Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof Row
+     */
+    getCell (id_cell = false) {
+        if (id_cell) {
+            for (const cell of this.cells) {
+                if (cell.props.id == id_cell) {
+                    return cell;
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a Row Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {boolean}
+     * @memberof Row
+     */
+    hasCell (id_cell = false) {
+        if (id_cell) {
+            for (const cell of this.cells) {
+                if (cell.props.id == id_cell) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a Row Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof Row
+     */
+    removeCell (id_cell = false) {
+        if (id_cell) {
+            for (const key in [...this.cells]) {
+                if (Object.hasOwnProperty.call(this.cells, key)) {
+                    const cell = this.cells[key];
+                    if (cell.props.id == id_cell) {
+                        cell.removeHTML();
+                        delete this.cells[key];
+                        return cell;
+                    }
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Row
+     */
+    static props = {
+        id: 'row-1',
+        classList: [],
+        nodeName: 'TR',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Row
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Row
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {Cell} Cell Cell class child.
+     * @memberof Row
+     */
+    static Cell = _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Table/TPart.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Table/TPart.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ TPart)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Cell.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Row.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+
+// ? Core
+
+
+/**
+ * * TPart creates an excellent <tbody> or <thead>.
+ * @export
+ * @class TPart
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class TPart extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_2__["default"] {
+    /**
+     * * Creates an instance of TPart.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='tbody-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {object} [data.rows] Array of <tr>.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof TPart
+     */
+    constructor (data = {
+        props: {
+            id: 'tbody-1',
+            type: 'body',
+            classList: [],
+        }, state: {
+            id: false,
+        }, rows: [],
+        parentNode: false,
+    }) {
+        if (props.type == 'head') {
+            props.nodeName = 'THEAD';
+        }
+        super({
+            props: {
+                ...TPart.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...TPart.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...TPart.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setRows(rows);
+    }
+
+    /**
+     * * Set the TPart Rows.
+     * @param {object[]} [rows] Row Rows.
+     * @memberof TPart
+     */
+    setRows (rows = []) {
+        if (!this.rows) {
+            this.rows = [];
+        }
+        for (const key in rows) {
+            if (Object.hasOwnProperty.call(rows, key)) {
+                let data = rows[key];
+                let row = new _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__["default"]({
+                    ...data,
+                    id: `${ this.props.id }-row-${ parseInt(key) + 1 }`,
+                });
+                this.rows.push(row);
+                this.appendChild(row.html);
+            }
+        }
+    }
+
+    /**
+     * * Get a TPart Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof TPart
+     */
+    getCell (id_cell = false) {
+        if (id_cell) {
+            for (const row of this.rows) {
+                if (row.hasCell(id_cell)) {
+                    return row.getCell(id_cell);
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Get a TPart Row.
+     * @param {string} id_row Row primary key.
+     * @returns {Row|false}
+     * @memberof TPart
+     */
+    getRow (id_row = false) {
+        if (id_row) {
+            for (const row of this.rows) {
+                if (row.props.id == id_row) {
+                    return row;
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a TPart Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {boolean}
+     * @memberof TPart
+     */
+    hasCell (id_cell = false) {
+        if (id_cell) {
+            for (const row of this.rows) {
+                if (row.hasCell(id_cell)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a TPart Row.
+     * @param {string} id_row Row primary key.
+     * @returns {boolean}
+     * @memberof TPart
+     */
+    hasRow (id_row = false) {
+        if (id_row) {
+            for (const row of this.rows) {
+                if (row.props.id == id_row) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a TPart Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof TPart
+     */
+    removeCell (id_cell = false) {
+        if (id_cell) {
+            for (const row of this.rows) {
+                return row.removeCell(id_cell);
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a TPart Row.
+     * @param {string} id_row Row primary key.
+     * @returns {Row|false}
+     * @memberof TPart
+     */
+    removeRow (id_row = false) {
+        if (id_row) {
+            for (const key in [...this.rows]) {
+                if (Object.hasOwnProperty.call(this.rows, key)) {
+                    const row = this.rows[key];
+                    if (row.props.id == id_row) {
+                        row.removeHTML();
+                        delete this.rows[key];
+                        return row;
+                    }
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof TPart
+     */
+    static props = {
+        id: 'tbody-1',
+        classList: [],
+        nodeName: 'TBODY',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof TPart
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof TPart
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {Cell} Cell Cell class child.
+     * @memberof TPart
+     */
+    static Cell = _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+
+    /**
+     * @static
+     * @var {Row} Row Row class child.
+     * @memberof TPart
+     */
+    static Row = _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Table/Table.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Table/Table.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Table)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Cell.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Cell.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/Row.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/Row.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Table/TPart.js */ "./node_modules/@juancruzagb/htmlcreator/js/Table/TPart.js");
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+
+
+// ? Core
+
+
+/**
+ * * Table creates an excellent <table>.
+ * @export
+ * @class Table
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Table extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
+    /**
+     * * Creates an instance of Table.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='table-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array} [data.structure] Array of <thead>, <tbody>, <tr>, <td> and/or <th>.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Table
+     */
+    constructor (data = {
+        props: {
+            id: 'table-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, structure: [],
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Table.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Table.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Table.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setStructure(structure);
+    }
+
+    /**
+     * * Set the Table structure.
+     * @param {object[]} [structure] Table structure.
+     * @memberof Table
+     */
+    setStructure (structure = []) {
+        if (!this.structure) {
+            this.structure = [];
+        }
+        let { body, head } = this.parseStructure(structure);
+        if (typeof head == 'object') {
+            this.setHead(head);
+        }
+        if (typeof body == 'object') {
+            this.setBody(body);
+        }
+        if (typeof head != 'object' && typeof body != 'object') {
+            this.setRows(structure);
+        }
+    }
+
+    /**
+     * * Set the Table Body.
+     * @param {object} [tbody] Body structure.
+     * @memberof Table
+     */
+    setBody (tbody = []) {
+        if (!this.structure) {
+            this.structure = [];
+        }
+        this.structure.tbody = new _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_2__["default"]({
+            ...tbody,
+            id: `${ this.props.id }-body`,
+        });
+        this.appendChild(this.structure.tbody.html);
+    }
+
+    /**
+     * * Set the Table Head.
+     * @param {object} [thead] Head structure.
+     * @memberof Table
+     */
+    setHead (thead = {}) {
+        if (!this.structure) {
+            this.structure = [];
+        }
+        this.structure.thead = new _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_2__["default"]({
+            ...thead,
+            id: `${ this.props.id }-head`,
+        });
+        this.appendChild(this.structure.thead.html);
+    }
+
+    /**
+     * * Set the Table Rows.
+     * @param {object[]} [structure] Row structure.
+     * @memberof Table
+     */
+    setRows (structure = []) {
+        if (!this.structure) {
+            this.structure = [];
+        }
+        let { body, head } = this.parseStructure(structure);
+        if (typeof head == 'object' && this.structure.hasOwnProperty('thead')) {
+            this.structure.thead.setRows(head);
+        }
+        if (typeof body == 'object' && this.structure.hasOwnProperty('tbody')) {
+            this.structure.tbody.setRows(body);
+        }
+        if ((typeof head != 'object' || !this.structure.hasOwnProperty('thead')) && (typeof body != 'object' || !this.structure.hasOwnProperty('tbody'))) {
+            this.structure.rows = [];
+            for (const key in structure) {
+                if (Object.hasOwnProperty.call(structure, key)) {
+                    let data = structure[key];
+                    let row = new _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__["default"]({
+                        ...data,
+                        id: `row-${ parseInt(key) + 1 }`,
+                    });
+                    this.structure.rows.push(row);
+                    this.appendChild(row.html);
+                }
+            }
+        }
+    }
+
+    /**
+     * * Get a Table Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof Table
+     */
+    getCell (id_cell = false) {
+        if (id_cell) {
+            if (this.structure.hasOwnProperty('thead')) {
+                return this.structure.thead.getCell(id_cell);
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                return this.structure.tbody.getCell(id_cell);
+            }
+            if (!this.structure.hasOwnProperty('thead') && !this.structure.hasOwnProperty('tbody')) {
+                for (const row of this.structure.rows) {
+                    return row.getCell(id_cell);
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Get a Table Row.
+     * @param {string} id_row Row primary key.
+     * @returns {Row|false}
+     * @memberof Table
+     */
+    getRow (id_row = false) {
+        if (id_row) {
+            if (this.structure.hasOwnProperty('thead')) {
+                return this.structure.thead.getRow(id_row);
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                return this.structure.tbody.getRow(id_row);
+            }
+            if (!this.structure.hasOwnProperty('thead') && !this.structure.hasOwnProperty('tbody')) {
+                for (const row of this.structure.rows) {
+                    if (row.props.id == id_row) {
+                        return row;
+                    }
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a Table Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {boolean}
+     * @memberof Table
+     */
+    hasCell (id_cell = false) {
+        if (id_cell) {
+            if (this.structure.hasOwnProperty('thead')) {
+                if (this.structure.thead.hasCell(id_cell)) {
+                    return true;
+                }
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                if (this.structure.tbody.hasCell(id_cell)) {
+                    return true;
+                }
+            }
+            for (const row of this.rows) {
+                if (row.hasCell(id_cell)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Check if there is a Table Row.
+     * @param {string} id_row Row primary key.
+     * @returns {boolean}
+     * @memberof Table
+     */
+    hasRow (id_row = false) {
+        if (id_row) {
+            if (this.structure.hasOwnProperty('thead')) {
+                if (this.structure.thead.hasRow(id_row)) {
+                    return true;
+                }
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                if (this.structure.tbody.hasRow(id_row)) {
+                    return true;
+                }
+            }
+            for (const row of this.rows) {
+                if (row.props.id == id_row) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a Table Cell.
+     * @param {string} id_cell Cell primary key.
+     * @returns {Cell|false}
+     * @memberof Table
+     */
+    removeCell (id_cell = false) {
+        if (id_cell) {
+            if (this.structure.hasOwnProperty('thead')) {
+                return this.structure.thead.removeCell(id_cell);
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                return this.structure.tbody.removeCell(id_cell);
+            }
+            if (!this.structure.hasOwnProperty('thead') && !this.structure.hasOwnProperty('tbody')) {
+                for (const row of this.structure.rows) {
+                    return row.removeCell(id_cell);
+                }
+            }
+            return false;
+        }
+        if (!id_cell) {
+            console.error('Cell primary key is required');
+        }
+    }
+
+    /**
+     * * Removes a Table Row.
+     * @param {string} id_row Row primary key.
+     * @returns {Row|false}
+     * @memberof Table
+     */
+    removeRow (id_row = false) {
+        if (id_row) {
+            if (this.structure.hasOwnProperty('thead')) {
+                return this.structure.thead.removeRow(id_cell);
+            }
+            if (this.structure.hasOwnProperty('tbody')) {
+                return this.structure.tbody.removeRow(id_cell);
+            }
+            if (!this.structure.hasOwnProperty('thead') && !this.structure.hasOwnProperty('tbody')) {
+                for (const key in [...this.structure.rows]) {
+                    if (Object.hasOwnProperty.call(this.structure.rows, key)) {
+                        const row = this.structure.rows[key];
+                        if (row.props.id == id_row) {
+                            row.removeHTML();
+                            delete this.structure.rows[key];
+                            return row;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        if (!id_row) {
+            console.error('Row primary key is required');
+        }
+    }
+
+    /**
+     * * Parse the a Table structure.
+     * @param {object[]} [structure] Table structure.
+     * @returns {object}
+     * @memberof Table
+     */
+    parseStructure (structure = []) {
+        let body = false, head = false;
+        for (const key in structure) {
+            if (Object.hasOwnProperty.call(structure, key)) {
+                if (key == 'tbody') {
+                    body = structure[key];
+                }
+                if (key == 'thead') {
+                    head = structure[key];
+                }
+            }
+        }
+        return { body, head };
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Table
+     */
+    static props = {
+        id: 'table-1',
+        classList: [],
+        nodeName: 'TABLE',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Table
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Table
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {Cell} Cell Cell class child.
+     * @memberof Table
+     */
+    static Cell = _juancruzagb_htmlcreator_js_Table_Cell_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+
+    /**
+     * @static
+     * @var {Row} Row Row class child.
+     * @memberof Table
+     */
+    static Row = _juancruzagb_htmlcreator_js_Table_Row_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+
+    /**
+     * @static
+     * @var {TPart} TPart TPart class child.
+     * @memberof Table
+     */
+    static TPart = _juancruzagb_htmlcreator_js_Table_TPart_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Italic.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Texts/Italic.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Italic)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Italic creates an excellent <i>.
+ * @export
+ * @class Italic
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Italic extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Italic.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='italic-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Italic
+     */
+    constructor (data = {
+        props: {
+            id: 'italic-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Italic.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Italic.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Italic.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Italic.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Italic
+     */
+    static props = {
+        id: 'italic-1',
+        classList: [],
+        nodeName: 'I',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Italic
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Italic
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Italic
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Texts/LineBreak.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Texts/LineBreak.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LineBreak)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * LineBreak creates an excellent <br>.
+ * @export
+ * @class LineBreak
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class LineBreak extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of LineBreak.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='line-break-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof LineBreak
+     */
+    constructor (data = {
+        props: {
+            id: 'line-break-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, parentNode: false,
+    }) {
+        super({
+            props: {
+                ...LineBreak.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...LineBreak.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...LineBreak.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof LineBreak
+     */
+    static props = {
+        id: 'line-break-1',
+        classList: [],
+        nodeName: 'BR',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof LineBreak
+     */
+    static state = {
+        id: false,
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Paragraph.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Texts/Paragraph.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Paragraph)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Paragraph creates an excellent <p>.
+ * @export
+ * @class Paragraph
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Paragraph extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Paragraph.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='paragraph-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Paragraph
+     */
+    constructor (data = {
+        props: {
+            id: 'paragraph-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Paragraph.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Paragraph.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Paragraph.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Paragraph.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Paragraph
+     */
+    static props = {
+        id: 'paragraph-1',
+        classList: [],
+        nodeName: 'P',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Paragraph
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Paragraph
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Paragraph
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Span.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Texts/Span.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Span)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Span creates an excellent <span>.
+ * @export
+ * @class Span
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Span extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Span.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='span-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Span
+     */
+    constructor (data = {
+        props: {
+            id: 'span-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Span.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Span.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Span.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Span.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Span
+     */
+    static props = {
+        id: 'span-1',
+        classList: [],
+        nodeName: 'SPAN',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Span
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Span
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Span
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Texts/Title.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Texts/Title.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Title)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Title creates an excellent <h1>, <h2>...
+ * @export
+ * @class Title
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Title extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Title.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='title-1'] Primary key.
+     * @param {number} [data.props.level=1]
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {array|false} [data.children=false] HTML Element childrens.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Title
+     */
+    constructor (data = {
+        props: {
+            id: 'title-1',
+            level: 1,
+            classList: [],
+        }, state: {
+            id: false,
+        }, children: false,
+        parentNode: false,
+    }) {
+        data.props.nodeName = `H${ data.props.level }`;
+        super({
+            props: {
+                ...Title.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Title.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Title.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, children: [
+                ...Title.children,
+                ...(data && data.hasOwnProperty('children')) ? data.children : [],
+            ], parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Title
+     */
+    static props = {
+        id: 'title-1',
+        level: 1,
+        classList: [],
+        nodeName: 'H1',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Title
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Title
+     */
+    static callbacks = {
+        // 
+    }
+
+    /**
+     * @static
+     * @var {array} children Default children.
+     * @memberof Title
+     */
+    static children = [
+        // 
+    ]
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Icon.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Visuals/Icon.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Icon)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Icon creates an excellent <icon>.
+ * @export
+ * @class Icon
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Icon extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Icon.
+     * @param {object} [data]
+     * @param {object} [data.props]
+     * @param {string} [data.props.id='icon-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Icon
+     */
+    constructor (data = {
+        props: {
+            id: 'icon-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Icon.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Icon.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Icon.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Icon
+     */
+    static props = {
+        id: 'icon-1',
+        classList: [],
+        nodeName: 'I',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Icon
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Icon
+     */
+    static callbacks = {
+        // 
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Visuals/Image.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Image)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Image creates an excellent <img>.
+ * @export
+ * @class Image
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Image extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Image.
+     * @param {object} [data.data]
+     * @param {object} [data.data.props]
+     * @param {string} [data.props.id='image-1'] Primary key.
+     * @param {string|false} [data.props.src=false] File src.
+     * @param {string} [data.props.name='Image genereted with HTMLCreator']
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Image
+     */
+    constructor (data = {
+        props: {
+            id: 'image-1',
+            src: false,
+            name: 'Image genereted with HTMLCreator',
+            classList: [],
+        }, state: {
+            id: false,
+        }, parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Image.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Image.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Image.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+        this.setHTMLAttributes();
+    }
+
+    /**
+     * * Saves a new Image URL.
+     * @param {string} source
+     * @memberof Image
+     */
+    set src (source) {
+        this.setProps('src', source);
+        for (const attribute of this.attributes) {
+            if (attribute.props.name == 'src') {
+                attribute.value = source;
+            }
+        }
+    }
+
+    /**
+     * * Set the HTML Element attributes.
+     * @memberof Image
+     */
+    setHTMLAttributes () {
+        this.setAttribute('src', this.props.src);
+        this.setAttribute('alt', this.props.name);
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Image
+     */
+    static props = {
+        id: 'image-1',
+        src: false,
+        name: 'Image genereted with HTMLCreator',
+        classList: [],
+        nodeName: 'IMG',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Image
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Image
+     */
+    static callbacks = {
+        // 
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/htmlcreator/js/Visuals/Line.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@juancruzagb/htmlcreator/js/Visuals/Line.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Line)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/htmlcreator/js/Core/Html.js */ "./node_modules/@juancruzagb/htmlcreator/js/Core/Html.js");
+// ? HTMLCreator repository
+
+
+/**
+ * * Line creates an excellent <hr>.
+ * @export
+ * @class Line
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ * @extends Html
+ */
+class Line extends _juancruzagb_htmlcreator_js_Core_Html_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of Line.
+     * @param {object} [data.data]
+     * @param {object} [data.data.props]
+     * @param {string} [data.props.id='line-1'] Primary key.
+     * @param {string[]} [data.props.classList] Class list.
+     * @param {object} [data.state]
+     * @param {boolean} [data.state.id=false] If the Html should print the id attribute.
+     * @param {HTMLElement} [data.parentNode] Html Element parent.
+     * @memberof Line
+     */
+    constructor (data = {
+        props: {
+            id: 'line-1',
+            classList: [],
+        }, state: {
+            id: false,
+        }, parentNode: false,
+    }) {
+        super({
+            props: {
+                ...Line.props,
+                ...(data && data.hasOwnProperty('props')) ? data.props : {},
+            }, state: {
+                ...Line.state,
+                ...(data && data.hasOwnProperty('state')) ? data.state : {},
+            }, callbacks: {
+                ...Line.callbacks,
+                ...(data && data.hasOwnProperty('callbacks')) ? data.callbacks : {},
+            }, parentNode: (data && data.hasOwnProperty('parentNode')) ? data.parentNode : false,
+        });
+    }
+
+    /**
+     * @static
+     * @var {object} props Default properties.
+     * @memberof Line
+     */
+    static props = {
+        id: 'line-1',
+        classList: [],
+        nodeName: 'HR',
+    }
+
+    /**
+     * @static
+     * @var {object} state Default state.
+     * @memberof Line
+     */
+    static state = {
+        id: false,
+    }
+
+    /**
+     * @static
+     * @var {object} callbacks Default callbacks.
+     * @memberof Line
+     */
+    static callbacks = {
+        // 
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/src/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/@juancruzagb/src/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Class": () => (/* reexport safe */ _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "Fetch": () => (/* reexport safe */ _juancruzagb_src_js_providers_FetchServiceProvider_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   "LocalStorage": () => (/* reexport safe */ _juancruzagb_src_js_providers_LocalStorageServiceProvider_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "URL": () => (/* reexport safe */ _juancruzagb_src_js_providers_URLServiceProvider_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+/* harmony import */ var _juancruzagb_src_js_providers_FetchServiceProvider_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @juancruzagb/src/js/providers/FetchServiceProvider.js */ "./node_modules/@juancruzagb/src/js/providers/FetchServiceProvider.js");
+/* harmony import */ var _juancruzagb_src_js_providers_LocalStorageServiceProvider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @juancruzagb/src/js/providers/LocalStorageServiceProvider.js */ "./node_modules/@juancruzagb/src/js/providers/LocalStorageServiceProvider.js");
+/* harmony import */ var _juancruzagb_src_js_providers_URLServiceProvider_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @juancruzagb/src/js/providers/URLServiceProvider.js */ "./node_modules/@juancruzagb/src/js/providers/URLServiceProvider.js");
+// ? JuanCruzAGB | Source repository
+
+
+// ? JuanCruzAGB | Providers
+
+
+
+
+/**
+ * @module src
+ */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/src/js/Class.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@juancruzagb/src/js/Class.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Class)
+/* harmony export */ });
+/**
+ * * Class controls a class object.
+ * @export
+ * @class Class
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ */
+class Class {
+    /**
+     * * Creates an instance of Class.
+     * @param {object} [data] Class data.
+     * @param {object} [data.props] Class properties.
+     * @param {object} [data.state] Class state
+     * @memberof Class
+     */
+    constructor (data = {
+        props: {},
+        state: {},
+    }) {
+        this.setProps((data && data.hasOwnProperty('props')) ? data.props : {});
+        this.setState((data && data.hasOwnProperty('state')) ? data.state : {});
+    }
+
+    /**
+     * * Set the Class callbacks.
+     * @param {object} [callbacks] Class success & error callbacks.
+     * @memberof Class
+     */
+    setCallbacks (callbacks = {
+        default: {
+            function: (params) => { console.log(params); },
+            params: {},
+        },
+    }) {
+        if (!this.callbacks) {
+            this.callbacks = {};
+        }
+        for (const name in callbacks) {
+            if (Object.hasOwnProperty.call(callbacks, name)) {
+                const callback = callbacks[name];
+                this.callbacks[name] = {
+                    function: callback.hasOwnProperty('function') ? callback.function : (params) => {
+                        // console.log(params);
+                    }, params: callback.hasOwnProperty('params') ? callback.params : {},
+                };
+            }
+        }
+    }
+
+    /**
+     * * Set the Class HTML Element.
+     * @memberof Class
+     */
+    setHTML (query) {
+        if (typeof query == 'string') {
+            if (document.querySelector(query)) {
+                this.html = document.querySelector(query);
+            } else {
+                console.warn(`${ query } did not find matches`);
+            }
+        } else if (typeof query == 'object') {
+            this.html = query;
+        } else {
+            console.error('Class HTML Element is required');
+            throw new Error('Class HTML Element is required');
+        }
+    }
+
+    /**
+     * * Set the Class properties.
+     * @param {object|string} props Class properties.
+     * @param {*} [value=null] Class property value.
+     * @memberof Class
+     */
+    setProps (props = {}, value = null) {
+        if (!this.hasOwnProperty('props')) {
+            this.props = {};
+        }
+        if (typeof props == 'string') {
+            this.props[props] = value;
+        } else if (Object.entries(props)) {
+            for (const key in props) {
+                if (Object.hasOwnProperty.call(props, key)) {
+                    const value = props[key];
+                    this.props[key] = value;
+                }
+            }
+        } else {
+            console.warn('You are not setting any prop');
+        }
+    }
+
+    /**
+     * * Set the Class state.
+     * @param {object|string} props Class state.
+     * @param {*} [value=null] Class state value.
+     * @memberof Class
+     */
+    setState (state = {}, value = null) {
+        if (!this.hasOwnProperty('state')) {
+            this.state = {};
+        }
+        if (typeof state == 'string') {
+            this.state[state] = value;
+        } else if (Object.entries(state)) {
+            for (const key in state) {
+                if (Object.hasOwnProperty.call(state, key)) {
+                    const value = state[key];
+                    this.state[key] = value;
+                }
+            }
+        } else {
+            console.warn('You are not setting any state');
+        }
+    }
+
+    /**
+     * * Check if there is a prop in the Class.
+     * @param {string} name Class property name.
+     * @throws {string}
+     * @returns {boolean}
+     * @memberof Class
+     */
+    hasProp (name) {
+        if (name != undefined) {
+            if (typeof name == 'string') {
+                if (this.props.hasOwnProperty(name)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                console.error('Prop name must be a string');
+                throw new Error('Prop name must be a string');
+            }
+        } else {
+            console.error('Prop name is required');
+            throw new Error('Prop name is required');
+        }
+    }
+
+    /**
+     * * Check if there is a state in the Class.
+     * @param {string} name Class state name.
+     * @throws {string}
+     * @returns {boolean}
+     * @memberof Class
+     */
+    hasState(name){
+        if (name != undefined) {
+            if (typeof name == 'string') {
+                if (this.state.hasOwnProperty(name)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                console.error('State name must be a string');
+                throw new Error('State name must be a string');
+            }
+        } else {
+            console.error('State name is required');
+            throw new Error('State name is required');
+        }
+    }
+
+    /**
+     * * Executes a Class callback.
+     * @param {string} name Class callback name.
+     * @param {object} [params={}] Class callback optional params.
+     * @memberof Class
+     */
+    execute (name, params = {}) {
+        if (typeof name == 'string') {
+            if (this.callbacks.hasOwnProperty(name)) {
+                if (Object.entries(params)) {
+                    params = {
+                        ...this.callbacks[name].params,
+                        ...params,
+                    };
+                } else {
+                    params = {
+                        ...this.callbacks[name].params,
+                    };
+                }
+                this.callbacks[name].function(params);
+            } else {
+                console.error('Class callback was not found');
+                throw new Error('Class callback was not found');
+            }
+        } else {
+            console.error('Class callback name is required');
+            throw new Error('Class callback name is required');
+        }
+    }
+
+    /**
+     * * Check if there is a callback in the Class.
+     * @param {string} name Class callback name.
+     * @throws {string}
+     * @returns {boolean}
+     * @memberof Class
+     */
+    hasCallback (name) {
+        if (name != undefined) {
+            if (typeof name == 'string') {
+                if (this.callbacks.hasOwnProperty(name)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                console.error('Callback name must be a string');
+                throw new Error('Callback name must be a string');
+            }
+        } else {
+            console.error('Callback name is required');
+            throw new Error('Callback name is required');
+        }
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/src/js/providers/FetchServiceProvider.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@juancruzagb/src/js/providers/FetchServiceProvider.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FetchServiceProvider)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * FetchServiceProvider gives an excellent fetch service.
+ * @export
+ * @class FetchServiceProvider
+ * @extends Class
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com>
+ */
+class FetchServiceProvider extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of FetchServiceProvider.
+     * @param {object} [data]
+     * @param {object} [data.request]
+     * @param {object} [data.request.body]
+     * @param {object} [data.request.credentials="same-origin"]
+     * @param {object} [data.request.headers]
+     * @param {string} [data.request.method="GET"]
+     * @param {string} [data.request.url="/api"]
+     * @memberof FetchServiceProvider
+     */
+    constructor (data = {
+        request: {
+            body: {},
+            credentials: "same-origin",
+            headers: {},
+            method: "GET",
+            url: "/api",
+        },
+    }) {
+        super();
+        this.setRequest({ ...FetchServiceProvider.request, ...((data && data.hasOwnProperty("request")) ? data.request : {}) });
+    }
+
+    /**
+     * * Set the FetchServiceProvider request.
+     * @param {object|string} request
+     * @param {*} [value=null] FetchServiceProvider request property value.
+     * @memberof Class
+     */
+    setRequest (request = {
+        body: {},
+        credentials: "same-origin",
+        headers: {},
+        method: "GET",
+        url: "/api",
+    }, value = null) {
+        if (!this.hasOwnProperty("request")) {
+            this.request = {
+                body: {},
+                credentials: "same-origin",
+                headers: {},
+                method: "GET",
+                url: "/api",
+            };
+        }
+        if (typeof request == "string") {
+            this.request[request] = value;
+            return true;
+        }
+        if (request instanceof Object) {
+            for (const key in request) {
+                if (Object.hasOwnProperty.call(request, key)) {
+                    const value = request[key];
+                    this.request[key] = value;
+                }
+            }
+            return true;
+        }
+        console.warn("You are not setting any request property");
+        return false;
+    }
+
+    /**
+     * * Set the FetchServiceProvider response.
+     * @param {object|string} response
+     * @param {*} [value=null] FetchServiceProvider response property value.
+     * @memberof Class
+     */
+    setResponse (response = {}, value = null) {
+        if (!this.hasOwnProperty("response")) {
+            this.response = {};
+        }
+        if (typeof response == "string") {
+            this.response[response] = value;
+            return true;
+        }
+        if (response instanceof Object) {
+            for (const key in response) {
+                if (Object.hasOwnProperty.call(response, key)) {
+                    const value = response[key];
+                    this.response[key] = value;
+                }
+            }
+            return true;
+        }
+        console.warn("You are not setting any response property");
+        return false;
+    }
+
+    async query () {
+        if (this.request.url != null) {
+            if (["DELETE", "GET", "PATCH", "POST", "PUT"].indexOf(this.request.method.toUpperCase())) {
+                this.setState("query", false);
+                await fetch(this.request.url, {
+                    body: JSON.stringify(this.request.body),
+                    credentials: this.request.credentials,
+                    headers: this.request.headers,
+                    method: this.request.method.toUpperCase(),
+                }).then(response => {
+                    this.setState("query", true);
+                    console.log(response);
+                }).catch(error => {
+                    this.setState("query", true);
+                    console.log(error);
+                });
+                return true;
+            }
+            console.error("The method is not supported");
+            return false;
+        }
+        if (this.request.url == null) {
+            console.error("The URL is required");
+            return false;
+        }
+    }
+
+    /**
+     * * Get data from an specific URL.
+     * @async
+     * @static
+     * @param {string} URL Fetch URL to get data.
+     * @param {*} headers Fetch URL headers.
+     * @returns {FetchServiceProvider}
+     * @memberof FetchServiceProvider
+     */
+    static async get (URL, headers = {}) {
+        let instance = new this({
+            url: URL,
+            method: "GET"
+        });
+        if (URL != null) {
+            let withHeaders = false;
+            for (const key in headers) {
+                if (headers.hasOwnProperty(key)) {
+                    withHeaders = true;
+                    break;
+                }
+            }
+            if (withHeaders) {
+                await fetch(URL, {
+                    headers: headers,
+                    credentials: "same-origin",
+                    method: "GET",
+                }).then(response => response.json())
+                    .then(data => {
+                        instance.setResponse(data);
+                    }).catch(error => console.error(error));
+            } else {
+                await fetch(URL).then(response => response.json())
+                    .then(data => {
+                        instance.setResponse(data);
+                    }).catch(error => console.error(error));
+            }
+        } else {
+            console.error("The URL is required");
+        }
+        return instance;
+    }
+
+    /**
+     * * Send data from an specific URl.
+     * @async
+     * @static
+     * @param {object} props FetchServiceProvider properties:
+     * @param {string} props.url Fetch URL.
+     * @param {string} props.method Fetch method.
+     * @param {*} headers Fetch URL headers.
+     * @param {FormData} formdata Data to send.
+     * @returns {FetchServiceProvider}
+     * @memberof FetchServiceProvider
+     */
+    static async send (props = {
+        url: "",
+        method: "",
+    }, headers = {}, formdata = []) {
+        let parsedFormData = {};
+        for (const input of formdata) {
+            parsedFormData[input[0]] = input[1];
+        }
+        let instance = new this({
+            url: props.url,
+            method: props.method
+        });
+        if (instance.props.url != "" && instance.props.method != "GET") {
+            await fetch(instance.props.url, {
+                headers: headers,
+                credentials: "same-origin",
+                method: instance.props.method,
+                body: JSON.stringify(parsedFormData),
+            }).then(response => response.json())
+                .then(data => {
+                    instance.setResponse(data);
+                }).catch(error => console.error(error));
+        } else {
+            console.error("The URL & Method are required");
+        }
+        return instance;
+    }
+
+    /**
+     * @static
+     * @var {object} request Default request.
+     */
+    static request = {
+        body: {},
+        credentials: "same-origin",
+        headers: {},
+        method: "GET",
+        url: "/api",
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/src/js/providers/LocalStorageServiceProvider.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@juancruzagb/src/js/providers/LocalStorageServiceProvider.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LocalStorageServiceProvider)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/** @var {object} defaultProps Default props. */
+let defaultProps = {
+    name: 'something',
+};
+
+/**
+ * * LocalStorageServiceProvider gives an excellet LocalStorage Service.
+ * @export
+ * @class LocalStorageServiceProvider
+ * @extends Class
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com
+ */
+class LocalStorageServiceProvider extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of LocalStorageServiceProvider.
+     * @param {object} [props] LocalStorageServiceProvider properties:
+     * @param {string} [props.name='something'] LocalStorage data name.
+     * @param {*} [data=''] Data saved in the LocalStorage.
+     * @memberof LocalStorageServiceProvider
+     */
+    constructor (props = {
+        name: 'something',
+    }, data = '') {
+        super({ ...defaultProps, ...props });
+        this.setData(data);
+    }
+
+    /**
+     * * Set the LocalStorageServiceProvider data.
+     * @param {*} [data=''] Data in the LocalStorage.
+     * @memberof LocalStorageServiceProvider
+     */
+    setData (data = '') {
+        this.data = data;
+    }
+
+    /**
+     * * Get data from the LocalStorage.
+     * @static
+     * @param {string} name Name of the data to get.
+     * @returns {LocalStorageServiceProvider}
+     * @memberof LocalStorageServiceProvider
+     */
+    static get (name = '') {
+        let instance = new this({
+            name: name,
+        });
+        if (name && name != '' && this.has(name)) {
+            instance.setData(JSON.parse(localStorage.getItem(name)));
+        } else {
+            console.error('The Name is required');
+        }
+        return instance;
+    }
+
+    /**
+     * * Save data in the LocalStorage.
+     * @static
+     * @param {string} name Name of the data to save.
+     * @param {*} data Data to save.
+     * @param {boolean} overwrite If the LocalStorageServiceProvider must overwrite the data.
+     * @returns {LocalStorageServiceProvider}
+     * @memberof LocalStorageServiceProvider
+     */
+    static set (name = '', data = [], overwrite = false) {
+        data = JSON.stringify(data);
+        let instance = new this({
+            name: name,
+        }, data);
+        if (name && name != '') {
+            let previousData = false;
+            if (name && name != '' && this.has(name)) {
+                previousData = true;
+            }
+            if (previousData) {
+                if (overwrite) {
+                    console.log(data);
+                    localStorage.setItem(name, data);
+                } else {
+                    let msg = 'There is previous data in the LocalStorage';
+                    instance.setState({ warning: msg });
+                }
+            } else {
+                localStorage.setItem(name, data);
+            }
+        } else {
+            console.error('The Name is required');
+        }
+        return instance;
+    }
+
+    /**
+     * * Remove data from the LocalStorage.
+     * @static
+     * @param {string} name Name of the data to get.
+     * @returns {LocalStorageServiceProvider}
+     * @memberof LocalStorageServiceProvider
+     */
+    static remove (name = '') {
+        let instance = new this({
+            name: name,
+        });
+        if (name && name != '' && this.has(name)) {
+            instance.setData('');
+            localStorage.removeItem(name);
+        } else {
+            console.error('The Name is required');
+        }
+        return instance;
+    }
+
+    /**
+     * * Check if LocalStorage has a data.
+     * @static
+     * @param {string} name Name of the data to check.
+     * @returns {boolean}
+     * @memberof LocalStorageServiceProvider
+     */
+    static has (name = '') {
+        if (name && name != '') {
+            if (localStorage.getItem(name) !== null) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            console.error('The Name attribute is required');
+        }
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@juancruzagb/src/js/providers/URLServiceProvider.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@juancruzagb/src/js/providers/URLServiceProvider.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ URLServiceProvider)
+/* harmony export */ });
+/* harmony import */ var _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @juancruzagb/src/js/Class.js */ "./node_modules/@juancruzagb/src/js/Class.js");
+// ? JuanCruzAGB repository
+
+
+/**
+ * * URLServiceProvider gives an excellent URL service.
+ * @export
+ * @class URLServiceProvider
+ * @author Juan Cruz Armentia <juan.cruz.armentia@gmail.com
+ */
+class URLServiceProvider extends _juancruzagb_src_js_Class_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    /**
+     * * Creates an instance of URLServiceProvider.
+     * @param {string} [route=window.location.href]
+     * @memberof URLServiceProvider
+     */
+    constructor (route = window.location.href) {
+        super({
+            props: {
+                hash: URLServiceProvider.hash(route),
+                host: URLServiceProvider.host(route),
+                href: URLServiceProvider.href(route),
+                origin: URLServiceProvider.origin(route),
+                params: URLServiceProvider.params(false, route),
+                pathname: URLServiceProvider.pathname(route),
+                protocol: URLServiceProvider.protocol(route),
+            },
+        });
+    }
+
+    /**
+     * * Returns the URL #hash parameter if exist.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string|false}
+     * @memberof URLServiceProvider
+     */
+    static hash (route = window.location.href) {
+        let hash = /#/
+        if (!hash.exec(route)) {
+            return false;
+        }
+        return route.split('#').pop().split('?').shift();
+    }
+
+    /**
+     * * Returns the URL host.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string}
+     * @memberof URLServiceProvider
+     */
+    static host (route = window.location.href) {
+        return route.split('//').pop().split('/').shift().split('#').shift().split('?').shift();
+    }
+
+    /**
+     * * Returns the complete route.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string}
+     * @memberof URLServiceProvider
+     */
+    static href (route = window.location.href) {
+        return route;
+    }
+
+    /**
+     * * Returns the URL origin.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string}
+     * @memberof URLServiceProvider
+     */
+    static origin (route = window.location.href) {
+        return [route.split('//').shift(), route.split('//').pop().split('/').shift().split('#').shift().split('?').shift()].join('//');
+    }
+
+    /**
+     * * Returns the URL parameters or an specific parameter.
+     * @static
+     * @param {string} [name]
+     * @param {string} [route=window.location.href]
+     * @returns {array|string}
+     * @memberof URLServiceProvider
+     */
+    static params (name = false, route = window.location.href) {
+        let result = []
+        for (let param of route.split('?').pop().split('&')) {
+            param = {
+                key: param.split('=').shift(),
+                value: param.split('=').pop()
+            };
+            if (name && param.key == name) {
+                return param.value;
+            }
+            result.push(param);
+        }
+        return result;
+    }
+
+    /**
+     * * Returns the route path name without the #hash.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string}
+     * @memberof URLServiceProvider
+     */
+    static pathname (route = window.location.href) {
+        route = route.split('//').pop().split('#').shift().split('?').shift().split('/');
+        route[0] = '';
+        return route.join('/');
+    }
+
+    /**
+     * * Returns the URL protocol.
+     * @static
+     * @param {string} [route=window.location.href]
+     * @returns {string}
+     * @memberof URLServiceProvider
+     */
+    static protocol (route = window.location.href) {
+        return route.split('//').shift();
+    }
+}
+
+/***/ }),
+
+/***/ "./node_modules/axios/package.json":
+/*!*****************************************!*\
+  !*** ./node_modules/axios/package.json ***!
+  \*****************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;

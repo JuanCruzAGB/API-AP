@@ -1,0 +1,40 @@
+#panel-tab-menu.tab-menu .tab-content-list li.tab-content .content-table tr :where(td.actions, th.actions) {
+    max-width: 7rem;
+    min-width: 7rem;
+}
+
+li#propiedades .content-table > section {
+    max-width: 100vw;
+    overflow-x: scroll;
+}
+
+/* ? MD */
+@media (min-width: 768px) {
+    #panel-tab-menu.tab-menu .tab-content-list li.tab-content .content-table tr :where(td.actions, th.actions) {
+        max-width: 8rem;
+        min-width: 8rem;
+    }
+}
+
+/* ? LG */
+@media (min-width: 1024px) {
+    #panel-tab-menu.tab-menu .tab-content-list li.tab-content .content-table tr :where(td.actions, th.actions) {
+        max-width: revert;
+        min-width: revert;
+    }
+}
+
+/* ? XL */
+@media (min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media (min-width: 1536px) {
+    /*  */
+}
+
+/* ? 3XL */
+@media (min-width: 1920px) {
+    /*  */
+}

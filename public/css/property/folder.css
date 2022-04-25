@@ -1,0 +1,62 @@
+li#propiedad .content-form .files .file {
+    position: relative;
+}
+
+li#propiedad .content-form .files .file figure img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    object-position: center;
+}
+
+li#propiedad .content-form .files .file label {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+li#propiedad .content-form .files .file:hover .btn.btn-icon {
+    background-color: var(--bg-color, var(---color-red));
+    color: var(--color, var(--color-white));
+}
+
+li#propiedad .content-form .files .file input[type=checkbox] {
+    display: none;
+}
+
+li#propiedad .content-form .files .file input[type=checkbox] + .btn.btn-icon {
+    --color: var(--color-white);
+    --color-alt: var(--color-grey);
+    --bg-color: var(--color-red);
+    --bg-color-alt: transparent;
+}
+
+li#propiedad .content-form .files .file input[type=checkbox]:checked + .btn.btn-icon {
+    background-color: var(--bg-color, var(---color-red));
+    color: var(--color, var(--color-white));
+}
+
+/* ? MD */
+@media (min-width: 768px) {
+    /*  */
+}
+
+/* ? LG */
+@media (min-width: 1024px) {
+    /*  */
+}
+
+/* ? XL */
+@media (min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media (min-width: 1536px) {
+    /*  */
+}
+
+/* ? 3XL */
+@media (min-width: 1920px) {
+    /*  */
+}

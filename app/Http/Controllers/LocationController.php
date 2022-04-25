@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Auth;
     use Cviebrock\EloquentSluggable\Services\SlugService;
     use Illuminate\Http\Request;
 
@@ -10,6 +11,18 @@
          * @var \App\Models\Location
          */
         protected $model = \App\Models\Location::class;
+
+        /**
+         * * Control the table page.
+         * @return \Illuminate\Http\Response
+         */
+        public function table () {
+            $locations = $this->model::orderBy('updated_at', 'desc')->get();
+
+            return view('location.table', [
+                'locations' => $locations,
+            ]);
+        }
 
         /**
          * * Control the "show create" page of Location.
@@ -33,9 +46,11 @@
             
             $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
 
+            $input->id_created_by = Auth::user()->id_user;
+
             $location = $this->model::create((array) $input);
             
-            return redirect('/panel#ubicaciones')->with('status', [
+            return redirect()->route('location.showUpdate', $location->slug)->with('status', [
                 'code' => 200,
                 'message' => "Ubicación: \"$location->name\" creada correctamente.",
             ]);
@@ -63,7 +78,7 @@
         public function doUpdate (Request $request, string $slug) {
             $input = (object) $request->all();
 
-            $validator = Validator::make($request->all(), $this->model::$validation['update']['rules'], $this->model::$validation['update']['messages'][$this->lang]);
+            $request->validate($this->model::$validation['update']['rules'], $this->model::$validation['update']['messages'][$this->lang]);
             
             $location = $this->model::bySlug($slug)->first();
             
@@ -71,7 +86,7 @@
             
             $location->update((array) $input);
             
-            return redirect('/panel#ubicaciones')->with('status', [
+            return redirect()->route('location.showUpdate', $location->slug)->with('status', [
                 'code' => 200,
                 'message' => "Ubicación: \"$location->name\" actualizada correctamente.",
             ]);
@@ -86,13 +101,13 @@
         public function doDelete (Request $request, string $slug) {
             $input = (object) $request->all();
 
-            $validator = Validator::make($request->all(), $this->model::$validation['delete']['rules'], $this->model::$validation['delete']['messages'][$this->lang]);
+            $request->validate($this->model::$validation['delete']['rules'], $this->model::$validation['delete']['messages'][$this->lang]);
 
             $location = $this->model::bySlug($slug)->first();
 
             $location->delete();
             
-            return redirect('/panel#ubicaciones')->with('status', [
+            return redirect()->route('location.table')->with('status', [
                 'code' => 200,
                 'message' => 'Ubicación eliminada correctamente.',
             ]);
@@ -107,7 +122,7 @@
         public function doFav (Request $request, string $slug) {
             $input = (object) $request->all();
 
-            $validator = Validator::make($request->all(), $this->model::$validation['fav']['rules'], $this->model::$validation['fav']['messages'][$this->lang]);
+            $request->validate($this->model::$validation['fav']['rules'], $this->model::$validation['fav']['messages'][$this->lang]);
 
             $location = $this->model::bySlug($slug)->first();
 
@@ -115,21 +130,9 @@
                 'favorite' => !$location->favorite,
             ]);
             
-            return redirect('/panel#ubicaciones')->with('status', [
+            return redirect()->route('location.table')->with('status', [
                 'code' => 200,
                 'message' => $location->favorite ? "$location->name se agrego de favoritos" : "$location->name se quito de favoritos",
-            ]);
-        }
-
-        /**
-         * * Control the table page.
-         * @return \Illuminate\Http\Response
-         */
-        public function table () {
-            $locations = $this->model::orderBy('name')->get();
-
-            return view('location.table', [
-                'locations' => $locations,
             ]);
         }
     }

@@ -1,4 +1,7 @@
-
+li#categorias .content-table > section {
+    max-width: 100vw;
+    overflow-x: scroll;
+}
 
 /* ? MD */
 @media (min-width: 768px) {
@@ -16,11 +19,11 @@
 }
 
 /* ? 2XL */
-@media(min-width: 1536px){
+@media (min-width: 1536px) {
     /*  */
 }
 
 /* ? 3XL */
-@media(min-width: 1920px){
+@media (min-width: 1920px) {
     /*  */
 }

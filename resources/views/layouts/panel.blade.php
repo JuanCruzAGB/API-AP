@@ -2,7 +2,7 @@
 
 @section("head")
     {{-- Layout CSS --}}
-    <link href={{ asset("css/layouts/panel.css") }} rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/layouts/panel.css') }}">
 
     {{-- Section CSS --}}
     @yield("css")
@@ -16,13 +16,16 @@
             <a href="#panel-sidebar" class="sidebar-button panel-sidebar open left">
                 <i class="fas fa-bars"></i>
             </a>
+
             <a href="/home">
                 <picture>
-                    <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
+                    <source srcset="{{ asset('img/resources/logo/02-regular-white.png') }}"
                         media="(min-width: 768px)"/>
-                    <img src="{{ asset("img/resources/logo/04-small-white.png") }}" 
+
+                    <img src="{{ asset('img/resources/logo/04-small-white.png') }}" 
                         alt="Armentia Propiedades Logo"/>
                 </picture>
+
                 <h1 class="hidden">Armentia Propiedades</h1>
             </a>
         </header>
@@ -32,13 +35,16 @@
                 <header class="tab-header sidebar-header">
                     <a href="/home" class="sidebar-title">
                         <picture>
-                            <source srcset="{{ asset("img/resources/logo/02-regular-white.png") }}"
+                            <source srcset="{{ asset('img/resources/logo/02-regular-white.png') }}"
                                 media="(min-width: 768px)"/>
-                            <img src="{{ asset("img/resources/logo/04-small-white.png") }}" 
+                                
+                            <img src="{{ asset('img/resources/logo/04-small-white.png') }}" 
                                 alt="Armentia Propiedades Logo"/>
                         </picture>
+
                         <h1 class="hidden">Armentia Propiedades</h1>
                     </a>
+
                     <a href="#_" class="sidebar-button panel-sidebar close left hidden">
                         <span>Close</span>
                     </a>
@@ -54,12 +60,20 @@
                             </a>
                         </li>
                     </ul>
+                    
+                    @if ($button)
+                        <aside class="panel floating-menu bottom right">
+                            <a href="/{{ $section }}/create" title="Agregar" class="tab panel-tab-menu tab-button add-data floating-button btn btn-red btn-background round">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </aside>
+                    @endif
                 </section>
             </main>
         </section>
 
         <section class="tab-content-list">
-            <ul class="py-8 lg:py-20 overflow-x-hidden">
+            <ul class="list py-8 lg:py-20 overflow-x-hidden">
                 @yield("tab-content-list")
             </ul>
         </section>
@@ -68,7 +82,7 @@
 
 @section("extras")
     {{-- Layout CSS --}}
-    <script src={{ asset("js/layouts/panel.js") }}></script>
+    <script type="module" src="{{ asset('js/layouts/panel.js') }}"></script>
 
     {{-- Section JS --}}
     @yield("js")

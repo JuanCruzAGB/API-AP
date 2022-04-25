@@ -1,0 +1,35 @@
+.shortcuts {
+    margin-bottom: 2rem;
+}
+
+.shortcuts .btn {
+    min-width: 100%;
+    font-size: .75rem;
+}
+
+/* ? MD */
+@media (min-width: 768px) {
+    /*  */
+}
+
+/* ? LG */
+@media (min-width: 1024px) {
+    /*  */
+}
+
+/* ? XL */
+@media (min-width: 1200px) {
+    main#dashboard {
+        padding-inline: 8rem;
+    }
+}
+
+/* ? 2XL */
+@media (min-width: 1536px) {
+    /*  */
+}
+
+/* ? 3XL */
+@media (min-width: 1920px) {
+    /*  */
+}

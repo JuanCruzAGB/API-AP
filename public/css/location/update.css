@@ -1,0 +1,37 @@
+.tab-content-list .list {
+    padding-top: 4rem;
+}
+
+li#ubicacion .title .actions form .input-group .input-field {
+    min-height: revert;
+    font-size: .75rem;
+}
+
+li#ubicacion .title .actions form .btn {
+    border-radius: .25rem;
+}
+
+/* ? MD */
+@media (min-width: 768px) {
+    /*  */
+}
+
+/* ? LG */
+@media (min-width: 1024px) {
+    /*  */
+}
+
+/* ? XL */
+@media (min-width: 1200px) {
+    /*  */
+}
+
+/* ? 2XL */
+@media (min-width: 1536px) {
+    /*  */
+}
+
+/* ? 3XL */
+@media (min-width: 1920px) {
+    /*  */
+}

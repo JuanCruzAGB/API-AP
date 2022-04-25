@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Auth;
     use Cviebrock\EloquentSluggable\Services\SlugService;
     use Illuminate\Http\Request;
 
@@ -10,6 +11,18 @@
          * @var \App\Models\Category
          */
         protected $model = \App\Models\Category::class;
+
+        /**
+         * * Control the table page.
+         * @return \Illuminate\Http\Response
+         */
+        public function table () {
+            $categories = $this->model::orderBy('updated_at', 'desc')->get();
+
+            return view('category.table', [
+                'categories' => $categories,
+            ]);
+        }
 
         /**
          * * Control the "show create" page of Category.
@@ -33,9 +46,11 @@
             
             $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
 
+            $input->id_created_by = Auth::user()->id_user;
+
             $category = $this->model::create((array) $input);
             
-            return redirect('/panel#categorias')->with('status', [
+            return redirect()->route('category.showUpdate', $category->slug)->with('status', [
                 'code' => 200,
                 'message' => "Categoría: \"$category->name\" creada correctamente.",
             ]);
@@ -71,7 +86,7 @@
 
             $category->update((array) $input);
             
-            return redirect('/panel#categorias')->with('status', [
+            return redirect()->route('category.showUpdate', $category->slug)->with('status', [
                 'code' => 200,
                 'message' => "Categoría: \"$category->name\" actualizada correctamente.",
             ]);
@@ -92,21 +107,9 @@
 
             $category->delete();
             
-            return redirect('/panel#categorias')->with('status', [
+            return redirect()->route('category.table')->with('status', [
                 'code' => 200,
                 'message' => 'Categoría eliminada correctamente.',
-            ]);
-        }
-
-        /**
-         * * Control the table page.
-         * @return \Illuminate\Http\Response
-         */
-        public function table () {
-            $categories = $this->model::orderBy('name')->get();
-
-            return view('category.table', [
-                'categories' => $categories,
             ]);
         }
     }

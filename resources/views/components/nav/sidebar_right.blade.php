@@ -4,6 +4,7 @@
             <section class="sidebar-title">
                 <img src="{{asset('img/resources/logo/03-small.png')}}" alt="Armentia Propiedades Logo"/>
             </section>
+            
             <a href="#_" class="sidebar-filters sidebar-button close">
                 <i class="fas fa-times"></i>
             </a>

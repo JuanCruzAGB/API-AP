@@ -36,7 +36,9 @@
 
 /* ? XL */
 @media(min-width: 1200px) {
-    /*  */
+    .favorites ul.locations li.location header.title {
+        margin-inline: 8rem;
+    }
 }
 
 /* ? 2XL */

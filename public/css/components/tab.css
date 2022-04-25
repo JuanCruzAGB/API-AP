@@ -28,7 +28,7 @@
 .tab-menu .tabs .tab-footer .btn {
     min-width: 100%;
     margin: 0;
-    min-height: 4.6rem;
+    min-height: var(--nav-menu-height);
 }
 
 a.waves-effect, a.waves-light {

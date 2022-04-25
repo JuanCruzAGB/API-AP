@@ -1,14 +1,5 @@
 @import url("./components/styles.css");
 
-:root {
-    --color-red: #C11B34;
-    --color-red-alt: #DB0C19;
-    --color-grey: #A39B99;
-    --color-grey-alt: #CCC4BF;
-    --color-white: #FAF4F0;
-    --color-black: #1C1F22;
-}
-
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -25,7 +16,7 @@ body {
 }
 
 .main {
-    min-height: calc(100vh - 4.6rem);
+    min-height: calc(100vh - var(--nav-menu-height));
 }
 
 .input-group .input-field {
@@ -61,11 +52,11 @@ body {
 }
 
 /* ? 2XL */
-@media(min-width: 1536px){
+@media (min-width: 1536px) {
     /*  */
 }
 
 /* ? 3XL */
-@media(min-width: 1920px){
+@media (min-width: 1920px) {
     /*  */
 }

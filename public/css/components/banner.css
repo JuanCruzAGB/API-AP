@@ -45,7 +45,7 @@
 /* ? LG */
 @media(min-width: 1024px) {
     .banner {
-        --banner-height: calc(75vh - 4.6rem);
+        --banner-height: calc(75vh - var(--nav-menu-height));
     }
 
     .banner.banner-title .banner-body {

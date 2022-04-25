@@ -13,7 +13,7 @@
 @endsection
 
 @section("nav")
-    @component("components.nav.filter",[
+    @component("components.nav.filter", [
         "categories" => $categories,
         "locations" => $locations,
     ])@endcomponent

@@ -20,9 +20,13 @@
         public function contact (Request $request) {
             $input = $request->input();
 
-            $request->validate($this->model::$validation['contact']['rules'], $this->model::$validation['contact']['messages'][$this->lang]);
+            try {
+                $request->validate($this->model::$validation['contact']['rules'], $this->model::$validation['contact']['messages'][$this->lang]);
+            } catch (\Throwable $th) {
+                return redirect('/home#contact')->withInput($request->except('key'));
+            }
 
-            $this->model->send('contact', [
+            $this->model::send('contact', [
                 'from' => [
                     'email' => $input['email'],
                     'name' => (isset($input['name']) && $input['name']) ? $input['name'] : 'Alguien',
@@ -50,7 +54,7 @@
             
             $request->validate($this->model::$validation['query']['rules'], $this->model::$validation['query']['messages'][$this->lang]);
 
-            $this->model->send('query', [
+            $this->model::send('query', [
                 'from' => [
                     'name' => (isset($input['name']) && $input['name']) ? $input['name'] : 'Alguien',
                     'email' => $input['email'],

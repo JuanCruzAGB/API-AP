@@ -1,5 +1,5 @@
 .banner {
-    min-height: calc(100vh - 4.6rem);
+    min-height: calc(100vh - var(--nav-menu-height));
 }
 
 .banner .banner-content {

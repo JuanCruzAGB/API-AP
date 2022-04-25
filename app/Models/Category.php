@@ -48,6 +48,17 @@
                 ]
             ];
         }
+
+        /**
+         * * Returns the Category by the slug.
+         * @static
+         * @param  \Illuminate\Database\Eloquent\Builder  $query
+         * @param  string $slug
+         * @return \Illuminate\Database\Eloquent\Builder
+         */
+        public static function scopeBySlug ($query, string $slug) {
+            return $query->where('slug', $slug);
+        }
         
         /**
          * * Validation messages and rules.

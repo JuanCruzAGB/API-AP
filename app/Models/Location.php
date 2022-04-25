@@ -75,6 +75,17 @@
         public static function scopeFavorites ($query) {
             return $query->where('favorite', 1);
         }
+
+        /**
+         * * Returns the Location by the slug.
+         * @static
+         * @param  \Illuminate\Database\Eloquent\Builder  $query
+         * @param  string $slug
+         * @return \Illuminate\Database\Eloquent\Builder
+         */
+        public static function scopeBySlug ($query, string $slug) {
+            return $query->where('slug', $slug);
+        }
         
         /**
          * * Validation messages and rules.

@@ -36,9 +36,9 @@
     @endif
 
     <script>
-        const validation = @json([
-            'mail' => \App\Models\Mail::$validation,
-        ]);
+        const validation = [{
+            mail: @json(\App\Models\Mail::$validation),
+        }];
     </script>
 
     <script type="module" src="{{ asset("js/web/home.js") }}"></script>

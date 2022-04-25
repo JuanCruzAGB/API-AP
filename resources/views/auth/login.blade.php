@@ -9,8 +9,7 @@
 @endsection
 
 @section('nav')
-    @component('components.nav.auth')
-    @endcomponent
+    @component('components.nav.auth')@endcomponent
 @endsection
 
 @section('main')
@@ -37,5 +36,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/auth/login.js')}}"></script>
+    <script src="{{ asset('js/auth/login.js') }}"></script>
 @endsection

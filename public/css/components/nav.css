@@ -30,7 +30,9 @@
 
 /* ? XL */
 @media(min-width: 1200px) {
-    /*  */
+    .nav-menu {
+        padding-inline: 8rem;
+    }
 }
 
 /* ? 2XL */

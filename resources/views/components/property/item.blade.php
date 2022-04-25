@@ -5,9 +5,11 @@
                 <figure class="card-image">
                     <img src="{{ asset('storage/' . $property->files[0]) }}" alt="{{ $property->name }}">
                 </figure>
+
                 <header class="card-title p-4 Work-Sans color-white bg-red">
-                    <h3 class="text-center">{{ $property->name }}</h3>
+                    <h1 class="text-center">{{ $property->name }}</h1>
                 </header>
+
                 <div class="card-icon color-red">
                     <i class="fas fa-sign-in-alt"></i>
                 </div>

@@ -8,11 +8,12 @@
     class Mail extends Model {
         /**
          * * Sends a Mail.
+         * @static
          * @param string $type
          * @param array $data
          * @return void
          */
-        public function send (string $type, array $data) {
+        public static function send (string $type, array $data) {
             switch ($type) {
                 case 'contact':
                     Mailer::to($data['to']['email'])->send(new \App\Mail\Contact($data));
@@ -34,7 +35,7 @@
                     'name' => 'nullable|min:2',
                     'email' => 'required|email',
                     'phone' => 'required',
-                    'g-recaptcha-response' => 'required',
+                    // 'g-recaptcha-response' => 'required',
                 ], 'messages' => [
                     'es' => [
                         'name.min' => 'El nombre no puede tener menos de :min caracteres', 

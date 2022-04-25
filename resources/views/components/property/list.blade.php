@@ -1,8 +1,7 @@
 <ul class="properties cards">
     @component("components.property.item", [
         "properties" => $properties,
-    ])
-    @endcomponent
+    ])@endcomponent
 </ul>
 
 {{-- @if(Route::current()->getName() === "property.list")

@@ -19,6 +19,7 @@
     font-weight: bold;
     transition: 500ms;
 }
+.btn.btn-background.active,
 .btn.btn-background:hover {
     background-color: var(--bg-color-alt, var(--color-red-alt));
 }
@@ -31,6 +32,7 @@
     font-size: 1.2rem;
     transition: 500ms;
 }
+.btn.btn-icon.active,
 .btn.btn-icon:hover {
     background-color: var(--bg-color, var(---color-red));
     color: var(--color, var(--color-white));
@@ -44,6 +46,7 @@
     font-size: 1.2rem;
     transition: 500ms;
 }
+.btn.btn-icon-bg.active,
 .btn.btn-icon-bg:hover {
     background-color: var(--bg-color-alt, var(---color-red-alt));
     color: var(--color, var(--color-white));

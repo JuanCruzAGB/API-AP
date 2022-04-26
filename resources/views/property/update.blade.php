@@ -97,19 +97,19 @@
                         </section>
 
                         <section class="input-group grid gap-4">
-                            <label for="property-id_category" class="input-name Work-Sans">Categoría:</label>
+                            <label for="property-categories" class="input-name Work-Sans">Categoría:</label>
 
-                            <select class="form-input input-field" name="id_category" id="property-id_category">
-                                <option selected disabled>Elegir categoría</option>
+                            <select class="form-input input-field" name="categories[]" id="property-categories" multiple>
+                                <option disabled>Elegir categoría</option>
 
                                 @foreach ($categories as $category)
-                                    <option @if (old('id_category', $property->id_category) == $category->id_category) selected @endif value="{{ $category->id_category }}">{{ $category->name }}</option>
+                                    <option @if (is_array(old('categories')) && in_array($category->id_category, old('categories'))) selected @elseif (!is_array(old('categories')) && $property->categories->contains($category)) selected @endif value="{{ $category->id_category }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
 
-                            <span class="Work-Sans support support-box support-id_category {{ !$errors->has("id_category") ? "hidden" : "visible" }}">
-                                @if($errors->has("id_category"))
-                                    {{ $errors->first("id_category") }}
+                            <span class="Work-Sans support support-box support-categories {{ !$errors->has("categories") ? "hidden" : "visible" }}">
+                                @if($errors->has("categories"))
+                                    {{ $errors->first("categories") }}
                                 @endif
                             </span>
                         </section>

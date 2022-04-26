@@ -27,6 +27,11 @@ body {
     color: var(--color-black);
 }
 
+.input-group select.input-field option[selected] {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
 ::selection {
     background-color: var(--color-red);
     color: var(--color-white);

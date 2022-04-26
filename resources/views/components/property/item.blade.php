@@ -3,7 +3,7 @@
         <li class="property card">
             <a href="/properties/{{ $property->slug }}/details" class="card-body grid">
                 <figure class="card-image">
-                    <img src="{{ asset('storage/' . $property->files[0]) }}" alt="{{ $property->name }}">
+                    <img src="{{ $property->files ? asset('storage/' . $property->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $property->name }}">
                 </figure>
 
                 <header class="card-title p-4 Work-Sans color-white bg-red">

@@ -3,6 +3,7 @@
 
     use App\Models\Category;
     use App\Models\File;
+    use App\Models\ForeignCategoryProperty;
     use App\Models\Location;
     use Cviebrock\EloquentSluggable\Sluggable;
     use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
@@ -29,23 +30,35 @@
          * @var array
          */
         protected $fillable = [
-            'name', 'description', 'favorite', 'folder', 'id_category', 'id_location', 'slug', 'id_created_by',
+            'name', 'description', 'favorite', 'folder', 'id_location', 'slug', 'id_created_by',
         ];
         
         /**
          * * Get the files from the folder.
-         * @return \Illuminate\Support\Collection
+         * @return \Illuminate\Support\Collection|null
          */
         public function getFilesAttribute () {
-            return File::all($this->folder);
+            if ($this->original['folder']) {
+                return File::all($this->original['folder']);
+            }
+
+            return null;
+        }
+
+        /**
+         * * Get all of the categories for the Property.
+         * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+         */
+        public function categories () {
+            return $this->hasManyThrough(Category::class, ForeignCategoryProperty::class, 'id_property', 'id_category', 'id_property', 'id_category');
         }
         
         /**
-         * * Get the Category that owns the Property.
-         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         * * Get the ForeignCategory that owns the Property.
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */
-        public function category () {
-            return $this->belongsTo(Category::class, 'id_category', 'id_category');
+        public function foreign_categories () {
+            return $this->hasMany(ForeignCategoryProperty::class, 'id_property', 'id_property');
         }
         
         /**
@@ -109,16 +122,14 @@
                 'rules' => [
                     'name' => 'required',
                     'description' => 'required',
-                    'id_category' => 'required',
-                    'id_location' => 'required',
+                    'categories' => 'required',
                     'files' => 'required',
                     'files.*' => 'mimetypes:image/jpeg,image/png',
                 ], 'messages' => [
                     'es' => [
                         'name.required' => 'El Nombre es obligatorio.',
                         'description.required' => 'La Descripción es obligatoria.',
-                        'id_category.required' => 'La Categoría es obligatoria.',
-                        'id_location.required' => 'La Ubicación es obligatoria.',
+                        'categories.required' => 'Al menos una Categoría es obligatoria.',
                         'files.required' => 'Al menos una imagen es obligatoria.',
                         'files.*.mimetypes' => 'Las imágenes tienen que ser formato JPEG/JPG o PNG.',
                     ],
@@ -136,14 +147,12 @@
                 'rules' => [
                     'name' => 'required',
                     'description' => 'required',
-                    'id_category' => 'required',
-                    'id_location' => 'required',
+                    'categories' => 'required',
                 ], 'messages' => [
                     'es' => [
                         'name.required' => 'El Nombre es obligatorio.',
                         'description.required' => 'La Descripción es obligatoria.',
-                        'id_category.required' => 'La Categoría es obligatoria.',
-                        'id_location.required' => 'La Ubicación es obligatoria.',
+                        'categories.required' => 'Al menos una Categoría es obligatoria.',
                     ],
                 ],
             ], 'folder' => [

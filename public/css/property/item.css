@@ -71,10 +71,6 @@
         padding-right: 8rem;
     }
 
-    #property.property .details .description {
-        column-count: 3;
-    }
-
     .gallery .gallery-menu-list {
         padding: 0;
         padding-right: 1rem;

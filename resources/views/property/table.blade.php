@@ -67,11 +67,15 @@
                                     </td>
 
                                     <td class="md:col-span-2 Work-Sans">
-                                        <p>{{ $property->category->name }}</p>
+                                        <p>
+                                            @foreach ($property->categories as $category)
+                                                {{ $category->name . " " }}
+                                            @endforeach
+                                        </p>
                                     </td>
 
                                     <td class="md:col-span-2 Work-Sans">
-                                        <p>{{ $property->location->name }}</p>
+                                        <p>{{ $property->id_location ? $property->location->name : "" }}</p>
                                     </td>
 
                                     <td class="updated_at Work-Sans">{{ $property->updated_at->format('d/m/Y') }}</td>

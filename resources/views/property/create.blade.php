@@ -81,13 +81,13 @@
                         </section>
 
                         <section class="input-group grid gap-4">
-                            <label for="property-id_category" class="input-name Work-Sans">Categoría:</label>
+                            <label for="property-categories" class="input-name Work-Sans">Categoría:</label>
 
-                            <select class="form-input input-field" name="id_category" id="property-id_category">
-                                <option selected disabled>Elegir categoría</option>
+                            <select class="form-input input-field" name="categories[]" id="property-categories" multiple>
+                                <option disabled>Elegir categoría</option>
 
                                 @foreach ($categories as $category)
-                                    <option @if (old('id_category') == $category->id_category) selected @endif value="{{ $category->id_category }}">{{ $category->name }}</option>
+                                    <option @if (is_array(old('categories')) && in_array($category->id_category, old('categories'))) selected @endif value="{{ $category->id_category }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
 

@@ -59,19 +59,21 @@
                         </section>
 
                         <ul class="files grid md:grid-cols-2 xl:grid-cols-3 col-span-2 gap-4">
-                            @foreach ($property->files as $key => $file)
-                                <li class="file">
-                                    <figure>
-                                        <img src='{{ asset("storage/$file") }}' alt="{{ $property->name }} image">
-                                    </figure>
-                                    <label>
-                                        <input type="checkbox" name="list[{{ $key }}]">
-                                        <span class="btn btn-icon p-2" title="Eliminar">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                    </label>
-                                </li>
-                            @endforeach
+                            @if ($property->files)
+                                @foreach ($property->files as $key => $file)
+                                    <li class="file">
+                                        <figure>
+                                            <img src='{{ asset("storage/$file") }}' alt="{{ $property->name }} image">
+                                        </figure>
+                                        <label>
+                                            <input type="checkbox" name="list[{{ $key }}]">
+                                            <span class="btn btn-icon p-2" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                        </label>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </main>
                 </form>

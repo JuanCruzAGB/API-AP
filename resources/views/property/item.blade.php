@@ -15,40 +15,42 @@
 @endsection
 
 @section("main")
-    <section id="property" class="property grid gap-4">
-        <header class="title mx-4 mt-8 xl:mx-0">
+    <section id="property" class="property grid lg:grid-cols-6 gap-4">
+        <header class="title lg:col-span-4 mx-4 mt-8 xl:mx-0">
             <h2 class="MontereyFLF mb-0">{{ $property->name }}</h2>
         </header>
 
-        <main class="grid gap-4">
-            <section id="gallery-item" class="gallery vertical">
+        <main class="grid lg:col-span-6 lg:grid-cols-6 gap-4">
+            <section id="gallery-item" class="gallery vertical lg:col-span-4">
                 <nav class="gallery-nav">
                     <ul class="gallery-menu-list">
-                        @foreach ($property->files as $key => $image)
-                            <li>
-                                @if ($key == 0)
-                                    <button class="gallery-item gallery-button active">
-                                @else
-                                    <button class="gallery-item gallery-button">
-                                @endif
-                                    <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
-                                </button>
-                            </li>
-                        @endforeach
+                        @if ($property->files)
+                            @foreach ($property->files as $key => $image)
+                                <li>
+                                    <button class="gallery-item gallery-button {{ $key == 0 ? "active" : "" }}">
+                                        <img src="{{ asset("storage/$image") }}" alt="{{ $property->name }} - Image {{ $key }}">
+                                    </button>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                 </nav>
 
-                <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ asset("storage/" . $property->files[0]) }}" alt="{{ $property->name }} - Image selected">
+                <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ $property->files ? asset('storage/' . $property->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $property->name }} - Image selected">
             </section>
 
-            <section class="details px-4 xl:px-0">
+            <section class="details lg:col-span-2 px-4 xl:px-0">
                 <header class="header mb-3">
                     <h3 class="h5 text-left MontereyFLF mb-0 mt-4 mt-md-0">
-                        <span class="category color-red">{{ $property->category->name }}</span>
+                        @foreach ($property->categories as $category)
+                            <span class="category color-red">{{ $category->name }}</span>
 
-                        <br>
+                            <br>
+                        @endforeach
 
-                        <span class="location color-grey">{{ $property->location->name }}</span>
+                        @if ($property->id_location)
+                            <span class="location color-grey">{{ $property->location->name }}</span>
+                        @endif
                     </h3>
                 </header>
                 

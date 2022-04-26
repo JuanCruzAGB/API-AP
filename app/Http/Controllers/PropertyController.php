@@ -2,6 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Category;
+    use App\Models\ForeignCategoryProperty;
     use App\Models\Location;
     use Auth;
     use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -113,6 +114,13 @@
                 Storage::put($filepath, (string) $file->encode());
             }
             
+            foreach ($input->categories as $id_category) {
+                ForeignCategoryProperty::create([
+                    'id_category' => intval($id_category),
+                    'id_property' => $property->id_property,
+                ]);
+            }
+            
             return redirect()->route('property.showUpdate', $property->slug)->with('status', [
                 'code' => 200,
                 'message' => "Propiedad: \"$property->name\" creada correctamente.",
@@ -153,6 +161,17 @@
             $input->slug = SlugService::createSlug($this->model, 'slug', $input->name);
 
             $property->update((array) $input);
+            
+            foreach ($property->foreign_categories as $foreign) {
+                $foreign->delete();
+            }
+            
+            foreach ($input->categories as $id_category) {
+                ForeignCategoryProperty::create([
+                    'id_category' => intval($id_category),
+                    'id_property' => $property->id_property,
+                ]);
+            }
             
             return redirect()->route('property.showUpdate', $property->slug)->with('status', [
                 'code' => 200,

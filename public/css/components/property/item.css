@@ -49,6 +49,10 @@
     opacity: .8;
 }
 
+.properties.cards .property.card .card-title {
+    min-height: 5rem;
+}
+
 /* ? MD */
 @media(min-width: 768px) {
     .properties.cards .property.card .card-image img,

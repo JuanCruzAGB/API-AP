@@ -36,7 +36,7 @@
                     </ul>
                 </nav>
 
-                <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ $property->files && $property->files->count() ? asset('storage/' . $property->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $property->name }} - Image selected">
+                <img class="gallery-item gallery-image md:mr-4 xl:mr-0" src="{{ $property->files && count($property->files) ? asset('storage/' . $property->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $property->name }} - Image selected">
             </section>
 
             <section class="details lg:col-span-2 px-4 xl:px-0">

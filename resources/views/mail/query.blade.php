@@ -24,7 +24,7 @@
 							</header>
 
 							<figure>
-								<img style="width: 100%; height: 10rem; object-fit: cover;" src="{{ $data['property']->files && $data['property']->files->count() ? asset('storage/' . $data['property']->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $data['property']->name }} image" />
+								<img style="width: 100%; height: 10rem; object-fit: cover;" src="{{ $data['property']->files && count($data['property']->files) ? asset('storage/' . $data['property']->files[0]) : asset('img/resources/sample.png') }}" alt="{{ $data['property']->name }} image" />
 							</figure>
 						</a>
 						

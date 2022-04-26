@@ -2,6 +2,12 @@
 import Dropdown from "../submodules/DropdownJS/js/Dropdown.js";
 import NavMenu from "../submodules/NavMenuJS/js/NavMenu.js";
 
+document.addEventListener("keypress", function (e) {
+    if (e.keyCode == 80 && e.shiftKey) {
+        window.location = "/panel";
+    }
+});
+
 document.addEventListener('DOMContentLoaded', e => {
     if (document.querySelector('#nav-global')) {
         new NavMenu({

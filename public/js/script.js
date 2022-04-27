@@ -2,9 +2,12 @@
 import Dropdown from "../submodules/DropdownJS/js/Dropdown.js";
 import NavMenu from "../submodules/NavMenuJS/js/NavMenu.js";
 
+// ? Components
+import { addPasswordSwitchEvent } from "./components/functions.js";
+
 document.addEventListener("keypress", function (e) {
-    if (e.keyCode == 80 && e.shiftKey) {
-        window.location = "/panel";
+    if (e.keyCode == 80 && e.shiftKey && ['INPUT', 'TEXTAREA'].indexOf(e.path[0].nodeName) < 0) {
+        window.location = `${ window.location.origin }/panel`;
     }
 });
 
@@ -36,4 +39,6 @@ document.addEventListener('DOMContentLoaded', e => {
             });
         }
     }
+
+    addPasswordSwitchEvent();
 });

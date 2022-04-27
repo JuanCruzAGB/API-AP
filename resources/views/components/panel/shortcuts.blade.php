@@ -1,6 +1,6 @@
 <section class="shortcuts grid gap-4">
     <header class="title pb-2">
-        <h1 class="MontereyFLF">Accesos directos</h1>
+        <h2 class="MontereyFLF">Accesos directos</h2>
     </header>
 
     <main>

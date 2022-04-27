@@ -3,6 +3,8 @@
         <header class="sidebar-header">
             <section class="sidebar-title">
                 <img src="{{asset('img/resources/logo/03-small.png')}}" alt="Armentia Propiedades Logo"/>
+
+                <h2 class="none">Armentia Propiedades</h2>
             </section>
 
             <a href="#_" class="sidebar-menu sidebar-button close">

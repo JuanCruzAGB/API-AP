@@ -24,7 +24,7 @@
             <section id="gallery-item" class="gallery vertical lg:col-span-4">
                 <nav class="gallery-nav">
                     <ul class="gallery-menu-list">
-                        @if ($property->files)
+                        @if ($property->files && count($property->files))
                             @foreach ($property->files as $key => $image)
                                 <li>
                                     <button class="gallery-item gallery-button {{ $key == 0 ? "active" : "" }}">
@@ -32,6 +32,12 @@
                                     </button>
                                 </li>
                             @endforeach
+                        @else
+                            <li>
+                                <button class="gallery-item gallery-button active">
+                                    <img src="{{ asset('img/resources/sample.png') }}" alt="{{ $property->name }} - Sample image">
+                                </button>
+                            </li>
                         @endif
                     </ul>
                 </nav>

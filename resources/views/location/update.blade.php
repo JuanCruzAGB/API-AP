@@ -34,7 +34,7 @@
     <li id="ubicacion" class="tab-content opened">
         <section class="grid gap-4">
             <header class="title flex items-end justify-between mx-4">
-                <h1 class="MontereyFLF">{{ $location->name }}</h1>
+                <h2 class="MontereyFLF">{{ $location->name }}</h2>
 
                 <section class="actions flex gap-4 pb-1">
                     <form action="/locations/{{ $location->slug }}/delete" method="post">

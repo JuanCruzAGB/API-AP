@@ -6,7 +6,7 @@
     <main class="banner-body color-white">
         <section>
             <header class="banner-header">
-                <h1 class="MontereyFLF">{{ $title }}</h1>
+                <h2 class="MontereyFLF">{{ $title }}</h2>
             </header>
             
             <main class="banner-main">

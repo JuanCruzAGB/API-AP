@@ -7,7 +7,13 @@
                 </figure>
 
                 <header class="card-title p-4 Work-Sans color-white bg-red">
-                    <h1 class="text-center">{{ $property->name }}</h1>
+                    @if (array_search(Route::current()->getName(), ['web.index', 'web.home']))
+                        <h3 class="text-center">{{ $property->name }}</h3>
+                    @endif
+
+                    @if (Route::current()->getName() == 'property.list')
+                        <h2 class="text-center">{{ $property->name }}</h2>
+                    @endif
                 </header>
 
                 <div class="card-icon color-red">

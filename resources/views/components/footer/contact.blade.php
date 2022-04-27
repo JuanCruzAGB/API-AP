@@ -2,7 +2,7 @@
     <main class="grid md:grid-cols-2 gap-4">
         <section class="form grid gap-4 p-4 py-8 xl:ml-32">
             <header>
-                <h1 class="text-center MontereyFLF">Contacto</h1>
+                <h2 class="text-center MontereyFLF">Contacto</h2>
             </header>
 
             @component("components.forms.contact")@endcomponent

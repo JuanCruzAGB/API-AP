@@ -27,8 +27,7 @@
         @yield('footer')
     </footer>
         
-    @component('components.floating.whatsapp')
-    @endcomponent
+    @component('components.floating.whatsapp')@endcomponent
 @endsection
 
 @section('extras')

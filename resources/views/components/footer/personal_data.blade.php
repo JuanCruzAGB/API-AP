@@ -1,11 +1,11 @@
 <section class="personal-data p-4 px-8">
     <main class="grid gap-4 p-4 px-8 xl:mr-32 rounded bg-white">
         <header class="pb-2 border-grey">
-            <h1 class="text-center MontereyFLF">
+            <h3 class="text-center MontereyFLF">
                 <span class="color-red">Información</span> 
 
                 <span class="color-grey">de contacto</span>
-            </h1>
+            </h3>
         </header>
 
         <section>

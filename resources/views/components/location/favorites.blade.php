@@ -8,7 +8,7 @@
                             <a href="/properties?ubicaciones={{ $location->slug }}" class="flex items-center">
                                 <i class="fas fa-angle-right"></i>
 
-                                <h1 class="MontereyFLF">{{ $location->name }}</h1>
+                                <h2 class="MontereyFLF">{{ $location->name }}</h2>
                             </a>
                         </header>
 
@@ -22,7 +22,7 @@
             <ul class="locations grid gap-4">
                 <li class="location">
                     <header class="title">
-                        <h1 class="MontereyFLF">No hay ubicaciones recomendadas</h3>
+                        <h2 class="MontereyFLF">No hay ubicaciones recomendadas</h2>
                     </header>
                 </li>
             </ul>

@@ -34,7 +34,7 @@
     <li id="ubicacion" class="tab-content opened">
         <section class="grid gap-4">
             <header class="title mx-4">
-                <h1 class="MontereyFLF">Ubicación</h1>
+                <h2 class="MontereyFLF">Ubicación</h2>
             </header>
 
             <main class="content-form pb-4 mx-4">

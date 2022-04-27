@@ -35,7 +35,7 @@
     <li id="categorias" class="tab-content opened">
         <section class="grid gap-4">
             <header class="title mx-4">
-                <h1 class="MontereyFLF">Categorías</h1>
+                <h2 class="MontereyFLF">Categorías</h2>
             </header>
 
             <main class="content-table pb-4">

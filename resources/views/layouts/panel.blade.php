@@ -42,7 +42,7 @@
                                 alt="Armentia Propiedades Logo"/>
                         </picture>
 
-                        <h1 class="hidden">Armentia Propiedades</h1>
+                        <h2 class="hidden">Armentia Propiedades</h2>
                     </a>
 
                     <a href="#_" class="sidebar-button panel-sidebar close left hidden">

@@ -34,11 +34,11 @@
     <li id="propiedad" class="item tab-content opened">
         <section class="grid gap-4">
             <header class="title flex items-end justify-between mx-4">
-                <h1 class="MontereyFLF">
+                <h2 class="MontereyFLF">
                     <a href="/properties/{{ $property->slug }}/details" target="_blank" class="btn btn-text btn-black">
                         <span>{{ $property->name }}</span>
                     </a>
-                </h1>
+                </h2>
 
                 <section class="actions flex gap-4 pb-1">
                     <a href="/properties/{{ $property->slug }}/folder" class="btn btn-icon btn-red p-2" title="Actualizar">

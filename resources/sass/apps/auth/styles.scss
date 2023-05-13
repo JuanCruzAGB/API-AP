@@ -1,0 +1,11 @@
+@import "../../background-color.scss";
+@import "../../button.scss";
+@import "../../color.scss";
+@import "../../font.scss";
+@import "../../menus/float.scss";
+
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--color-dark);
+}

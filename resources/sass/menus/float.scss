@@ -1,0 +1,26 @@
+.float-menu {
+  position: fixed;
+  width: 4.6rem;
+  height: 4.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  &.top {
+    top: 0;
+  }
+  &.right {
+    right: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}

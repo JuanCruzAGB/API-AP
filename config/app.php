@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -174,8 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
+        // Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
     ],
 
     /*
@@ -228,7 +228,19 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        // 'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+    ],
+
+    'auth' => [
+        'url' => env('AUTH_URL', 'http://localhost'),
+    ],
+
+    'catalog' => [
+        'url' => env('CATALOG_URL', 'http://localhost'),
+    ],
+
+    'panel' => [
+        'url' => env('PANEL_URL', 'http://localhost'),
     ],
 
 ];

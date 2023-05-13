@@ -20,7 +20,7 @@
     public function contact (Request $request) {
       $input = $request->input();
 
-      $request->validate($this->model::$validation['contact']['rules'], $this->model::$validation['contact']['messages'][$this->lang]);
+      $request->validate($this->model::$validation['contact']['rules'], $this->model::$validation['contact']['messages'][config('app.locale')]);
 
       $this->model::send('contact', [
         'from' => [
@@ -54,7 +54,7 @@
     public function query (Request $request, string $slug) {
       $input = $request->input();
 
-      $request->validate($this->model::$validation['query']['rules'], $this->model::$validation['query']['messages'][$this->lang]);
+      $request->validate($this->model::$validation['query']['rules'], $this->model::$validation['query']['messages'][config('app.locale')]);
 
       $this->model::send('query', [
         'from' => [

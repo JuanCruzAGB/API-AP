@@ -1,12 +1,20 @@
 <?php
   use Illuminate\Support\Facades\Route;
 
+  /*
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+  */
+
 // * Controller - Controls the web in general.
   Route::get('/', 'Controller@index')
     ->name('index');
-
-  Route::get('/panel', 'Controller@panel')
-    ->name('panel');
 
 // * MailController - Controls the sending mails.
   Route::post('/mail/contact', 'MailController@contact')
@@ -19,86 +27,86 @@
     });
 
 // * Auth \ LoginController - Controls the authentication.
-  Route::get('/login', 'Auth\LoginController@showLogin')
-    ->name('auth.login.show');
+  Route::post('/login', 'Auth\LoginController@login')
+    ->name('auth.login');
 
-  Route::post('/login', 'Auth\LoginController@doLogin')
-    ->name('auth.login.do');
+  Route::post('/login/check', 'Auth\LoginController@check')
+    ->name('auth.check');
 
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/logout', 'Auth\LoginController@doLogout')
-        ->name('auth.logout.do');
+      Route::get('/logout', 'Auth\LoginController@logout')
+        ->name('auth.logout');
     });
 
-// * API \ CategoryController - Controls the Category.
+// * CategoryController - Controls the Category.
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/api/categories', 'API\CategoryController@index')
-        ->name('panel.category.index');
+      Route::get('/categories', 'CategoryController@list')
+        ->name('panel.category.list');
 
-      Route::post('/api/categories/create', 'API\CategoryController@doCreate')
-        ->name('panel.category.create.do');
+      Route::post('/categories/create', 'CategoryController@create')
+        ->name('panel.category.create');
 
       Route::middleware('category')
         ->group(function () {
-          Route::get('/api/categories/{slug}', 'API\CategoryController@details')
-            ->name('panel.category.details');
+          Route::get('/categories/{slug}', 'CategoryController@read')
+            ->name('panel.category.read');
 
-          Route::put('/api/categories/{slug}/update', 'API\CategoryController@doUpdate')
-            ->name('panel.category.update.do');
+          Route::put('/categories/{slug}/update', 'CategoryController@update')
+            ->name('panel.category.update');
 
-          Route::delete('/api/categories/{slug}/delete', 'API\CategoryController@doDelete')
-            ->name('panel.category.delete.do');
+          Route::delete('/categories/{slug}/delete', 'CategoryController@delete')
+            ->name('panel.category.delete');
         });
     });
 
-// * API \ LocationController - Controls the Location.
+// * LocationController - Controls the Location.
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/api/locations', 'API\LocationController@index')
-        ->name('panel.location.index');
+      Route::get('/locations', 'LocationController@list')
+        ->name('panel.location.list');
 
-      Route::post('/api/locations/create', 'API\LocationController@doCreate')
-        ->name('panel.location.create.do');
+      Route::post('/locations/create', 'LocationController@create')
+        ->name('panel.location.create');
 
       Route::middleware('location')
         ->group(function () {
-          Route::get('/api/locations/{slug}', 'API\LocationController@details')
-            ->name('panel.location.details');
+          Route::get('/locations/{slug}', 'LocationController@read')
+            ->name('panel.location.read');
 
-          Route::put('/api/locations/{slug}/update', 'API\LocationController@doUpdate')
-            ->name('panel.location.update.do');
+          Route::put('/locations/{slug}/update', 'LocationController@update')
+            ->name('panel.location.update');
 
-          Route::delete('/api/locations/{slug}/delete', 'API\LocationController@doDelete')
-            ->name('panel.location.delete.do');
+          Route::delete('/locations/{slug}/delete', 'LocationController@delete')
+            ->name('panel.location.delete');
 
-          Route::put('/api/locations/{slug}/favorite', 'API\LocationController@doFav')
-            ->name('panel.location.fav.do');
+          Route::put('/locations/{slug}/favorite', 'LocationController@fav')
+            ->name('panel.location.fav');
         });
     });
 
-// * API \ PropertyController - Controls the Property.
+// * PropertyController - Controls the Property.
   Route::middleware('auth')
     ->group(function () {
-    Route::get('/api/properties', 'API\PropertyController@index')
-      ->name('panel.property.index');
+    Route::get('/properties', 'PropertyController@list')
+      ->name('panel.property.list');
 
-    Route::post('/api/properties/create', 'API\PropertyController@doCreate')
-      ->name('panel.property.create.do');
+    Route::post('/properties/create', 'PropertyController@create')
+      ->name('panel.property.create');
 
     Route::middleware('property')
       ->group(function () {
-        Route::get('/api/properties/{slug}', 'API\PropertyController@details')
-          ->name('panel.property.details');
+        Route::get('/properties/{slug}', 'PropertyController@read')
+          ->name('panel.property.read');
 
-        Route::put('/api/properties/{slug}/update', 'API\PropertyController@doUpdate')
-          ->name('panel.property.update.do');
+        Route::put('/properties/{slug}/update', 'PropertyController@update')
+          ->name('panel.property.update');
 
-        Route::delete('/api/properties/{slug}/delete', 'API\PropertyController@doDelete')
-          ->name('panel.property.delete.do');
+        Route::delete('/properties/{slug}/delete', 'PropertyController@delete')
+          ->name('panel.property.delete');
 
-        Route::put('/api/properties/{slug}/favorite', 'API\PropertyController@doFav')
-          ->name('panel.property.fav.do');
+        Route::put('/properties/{slug}/favorite', 'PropertyController@fav')
+          ->name('panel.property.fav');
       });
   });

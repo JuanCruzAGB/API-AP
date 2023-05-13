@@ -31,6 +31,7 @@
      */
     protected $fillable = [
       'description',
+      'enabled',
       'favorite',
       'folder',
       'id_created_by',

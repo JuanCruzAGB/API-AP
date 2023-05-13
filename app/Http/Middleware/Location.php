@@ -12,7 +12,8 @@
      * @return mixed
      */
     public function handle ($request, Closure $next) {
-      if (!\App\Models\Location::bySlug($request->slug)->first()) abort(404, 'Location does not exist.');
+      if (!\App\Models\Location::bySlug($request->slug)->first())
+        abort(404, 'Location does not exist.');
 
       return $next($request);
     }

@@ -1,6 +1,7 @@
 <?php
   namespace App\Http\Controllers\Auth;
 
+  use Auth;
   use Illuminate\Http\Request;
   use Illuminate\Support\Facades\Validator;
 
@@ -9,34 +10,19 @@
      * * The Controller Model.
      * @var \App\Models\Auth
      */
-    protected $model = \App\Models\Auth::class;
+    protected $model = \App\Models\User::class;
 
     /**
-     * * Control the "log in" page.
-     * @return \Illuminate\Http\Response
-     */
-    function showLogin () {
-      if ($this->model::check())
-        return redirect()
-          ->route('panel');
-
-      else
-        return view('auth', [
-          // ? Return variables.
-        ]);
-    }
-
-    /**
-     * * Executes the "log in".
+     * * Check if the User can log in.
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    function doLogin (Request $request) {
+    function check (Request $request) {
       $input = (object) $request->all();
 
-      $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][$this->lang]);
+      $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
 
-      if (!$this->model::attempt([
+      if (!Auth::attempt([
         'email' => $input->email,
         'password' => $input->password,
       ], true))
@@ -46,22 +32,51 @@
             'message' => 'Correo y/o contraseña incorrectos.',
           ]);
 
-      return redirect()
-        ->route('panel');
+      return response()
+        ->json([
+          'code' => 200,
+          'message' => 'El usuario está autenticado correctamente.',
+        ]);
     }
 
     /**
-     * * Executes the "log out".
+     * * Log the User in.
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    function doLogout () {
+    function login (Request $request) {
+      $input = (object) $request->all();
+
+      $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
+
+      if (!Auth::attempt([
+        'email' => $input->email,
+        'password' => $input->password,
+      ], true))
+        return response()
+          ->json([
+            'code' => 404,
+            'message' => 'Correo y/o contraseña incorrectos.',
+          ]);
+
+      return response()
+        ->json([
+          'code' => 200,
+          'message' => 'Sesión iniciada.',
+        ]);
+    }
+
+    /**
+     * * Log the User out.
+     * @return \Illuminate\Http\Response
+     */
+    function logout () {
       $this->model::logout();
 
-      return redirect()
-        ->route('index')
-        ->with('status', [
+      return response()
+        ->json([
           'code' => 200,
-          'message' => 'Sesión Cerrada.',
+          'message' => 'Sesión cerrada.',
         ]);
     }
   }

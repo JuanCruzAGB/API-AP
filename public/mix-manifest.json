@@ -1,9 +1,5 @@
 {
-    "/build/js/auth.js": "/build/js/auth.js",
-    "/build/css/auth.css": "/build/css/auth.css",
-    "/build/css/catalog.css": "/build/css/catalog.css",
-    "/build/css/panel.css": "/build/css/panel.css",
-    "/build/css/tailwind.css": "/build/css/tailwind.css",
-    "/build/js/catalog.js": "/build/js/catalog.js",
-    "/build/js/panel.js": "/build/js/panel.js"
+    "/build/js/app.js": "/build/js/app.js",
+    "/build/css/app.css": "/build/css/app.css",
+    "/build/css/tailwind.css": "/build/css/tailwind.css"
 }

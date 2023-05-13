@@ -12,7 +12,8 @@
      * @return mixed
      */
     public function handle ($request, Closure $next) {
-      if (!\App\Models\Property::bySlug($request->slug)->first()) abort(404, 'Property does not exist.');
+      if (!\App\Models\Property::bySlug($request->slug)->first())
+        abort(404, 'Property does not exist.');
 
       return $next($request);
     }

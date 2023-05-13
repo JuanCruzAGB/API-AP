@@ -1,7 +1,7 @@
 <?php
   namespace App\Http\Controllers;
 
-  use App\Models\Location;
+  use Auth;
   use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
   use Illuminate\Foundation\Bus\DispatchesJobs;
   use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -21,17 +21,9 @@
      * @return \Illuminate\Http\Response
      */
     public function index () {
-      return view('catalog', [
-        // ? Return variables.
-      ]);
-    }
+      if (Auth::check()) ddd(true);
 
-    /**
-     * * Returns the panel page.
-     * @return \Illuminate\Http\Response
-     */
-    public function panel () {
-      return view('panel', [
+      return view('index', [
         // ? Return variables.
       ]);
     }

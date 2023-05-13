@@ -24,6 +24,6 @@
 
 <style lang="scss" scoped>
   .app {
-    font-family: var(--font);
+    // 
   }
 </style>

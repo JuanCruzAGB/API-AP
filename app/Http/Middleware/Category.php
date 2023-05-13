@@ -11,7 +11,8 @@
      * @return mixed
      */
     public function handle ($request, Closure $next) {
-      if (!\App\Models\Category::bySlug($request->slug)->first()) abort(404, 'Category does not exist.');
+      if (!\App\Models\Category::bySlug($request->slug)->first())
+        abort(404, 'Category does not exist.');
 
       return $next($request);
     }

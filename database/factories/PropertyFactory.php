@@ -14,6 +14,7 @@
       'id_category' => App\Models\Category::all()->random()->id_category,
       'id_location' => App\Models\Location::all()->random()->id_location,
       'favorite' => $faker->randomElement([0, 1]),
+      'enabled' => $faker->randomElement([0, 1]),
       'slug' => SlugService::createSlug(Property::class, "slug", $name),
       'id_created_by' => 1,
       'created_at' => now(),

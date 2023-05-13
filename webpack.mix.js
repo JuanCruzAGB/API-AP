@@ -12,14 +12,8 @@ const mix = require('laravel-mix');
  */
 
 // * Apps
-mix.js('resources/js/apps/auth', 'public/build/js')
-  .sass('resources/sass/apps/auth/styles.scss', 'public/build/css/auth.css')
-
-  .js('resources/js/apps/catalog', 'public/build/js')
-  .sass('resources/sass/apps/catalog/styles.scss', 'public/build/css/catalog.css')
-
-  .js('resources/js/apps/panel', 'public/build/js')
-  .sass('resources/sass/apps/panel/styles.scss', 'public/build/css/panel.css')
+mix.js('resources/js/app.js', 'public/build/js')
+  .sass('resources/sass/app.scss', 'public/build/css')
 
 // * Tailwind
   .postCss("resources/css/tailwind.css", "public/build/css", [

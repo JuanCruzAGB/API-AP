@@ -1,66 +1,104 @@
 <?php
-    use Illuminate\Support\Facades\Route;
-    
-// * AuthController - Controls the authentication.
-    Route::get('/login', 'AuthController@showLogin')->name('auth.showLogin');
-    Route::post('/login', 'AuthController@doLogin')->name('auth.doLogin');
-    Route::middleware('auth')->group(function () {
-        Route::get('/dashboard', 'AuthController@dashboard')->name('auth.dashboard');
-        Route::get('/logout', 'AuthController@doLogout')->name('auth.doLogout');
-        Route::get('/panel', 'AuthController@dashboard')->name('auth.panel');
-    });
-    
-// * CategoryController - Controls the Category.
-    Route::middleware('auth')->group(function () {
-        Route::get('/categories/table', 'CategoryController@table')->name('category.table');
-        Route::get('/categories/create', 'CategoryController@showCreate')->name('category.showCreate');
-        Route::post('/categories/create', 'CategoryController@doCreate')->name('category.doCreate');
-        Route::middleware('category')->group(function () {
-            Route::get('/categories/{slug}/update', 'CategoryController@showUpdate')->name('category.showUpdate');
-            Route::put('/categories/{slug}/update', 'CategoryController@doUpdate')->name('category.doUpdate');
-            Route::delete('/categories/{slug}/delete', 'CategoryController@doDelete')->name('category.doDelete');
-        });
-    });
-    
+  use Illuminate\Support\Facades\Route;
+
 // * Controller - Controls the web in general.
-    Route::get('/', 'Controller@index')->name('web.index');
-    Route::get('/home', 'Controller@home')->name('web.home');
-    Route::get('/coming-soon', 'Controller@comingSoon')->name('web.coming_soon');
-    Route::get('/thank-you', 'Controller@thanks')->name('web.thanks');
-    
-// * LocationController - Controls the Location.
-    Route::middleware('auth')->group(function () {
-        Route::get('/locations/table', 'LocationController@table')->name('location.table');
-        Route::get('/locations/create', 'LocationController@showCreate')->name('location.showCreate');
-        Route::post('/locations/create', 'LocationController@doCreate')->name('location.doCreate');
-        Route::middleware('location')->group(function () {
-            Route::get('/locations/{slug}/update', 'LocationController@showUpdate')->name('location.showUpdate');
-            Route::put('/locations/{slug}/update', 'LocationController@doUpdate')->name('location.doUpdate');
-            Route::delete('/locations/{slug}/delete', 'LocationController@doDelete')->name('location.doDelete');
-            Route::put('/locations/{slug}/favorite', 'LocationController@doFav')->name('location.doFav');
-        });
-    });
-    
+  Route::get('/', 'Controller@index')
+    ->name('index');
+
+  Route::get('/panel', 'Controller@panel')
+    ->name('panel');
+
 // * MailController - Controls the sending mails.
-    Route::post('/contact', 'MailController@contact')->name('mail.contact');
-    Route::middleware('property')->group(function () {
-        Route::post('/query/properties/{slug}', 'MailController@query')->name('mail.query');
+  Route::post('/mail/contact', 'MailController@contact')
+    ->name('mail.contact');
+
+  Route::middleware('property')
+    ->group(function () {
+      Route::post('/mail/query/properties/{slug}', 'MailController@query')
+        ->name('mail.query');
     });
 
-// * PropertyController - Controls the Property.
-    Route::get('/properties', 'PropertyController@list')->name('property.list');
-    Route::middleware('property')->group(function () {
-        Route::get('/properties/{slug}/details', 'PropertyController@item')->name('property.item');
+// * Auth \ LoginController - Controls the authentication.
+  Route::get('/login', 'Auth\LoginController@showLogin')
+    ->name('auth.login.show');
+
+  Route::post('/login', 'Auth\LoginController@doLogin')
+    ->name('auth.login.do');
+
+  Route::middleware('auth')
+    ->group(function () {
+      Route::get('/logout', 'Auth\LoginController@doLogout')
+        ->name('auth.logout.do');
     });
-    Route::middleware('auth')->group(function () {
-        Route::get('/properties/table', 'PropertyController@table')->name('property.table');
-        Route::get('/properties/create', 'PropertyController@showCreate')->name('property.showCreate');
-        Route::post('/properties/create', 'PropertyController@doCreate')->name('property.doCreate');
-        Route::middleware('property')->group(function () {
-            Route::get('/properties/{slug}/folder', 'PropertyController@showFolder')->name('property.showFolder');
-            Route::put('/properties/{slug}/folder/update', 'PropertyController@doFolder')->name('property.doFolder');
-            Route::get('/properties/{slug}/update', 'PropertyController@showUpdate')->name('property.showUpdate');
-            Route::put('/properties/{slug}/update', 'PropertyController@doUpdate')->name('property.doUpdate');
-            Route::delete('/properties/{slug}/delete', 'PropertyController@doDelete')->name('property.doDelete');
+
+// * API \ CategoryController - Controls the Category.
+  Route::middleware('auth')
+    ->group(function () {
+      Route::get('/api/categories', 'API\CategoryController@index')
+        ->name('panel.category.index');
+
+      Route::post('/api/categories/create', 'API\CategoryController@doCreate')
+        ->name('panel.category.create.do');
+
+      Route::middleware('category')
+        ->group(function () {
+          Route::get('/api/categories/{slug}', 'API\CategoryController@details')
+            ->name('panel.category.details');
+
+          Route::put('/api/categories/{slug}/update', 'API\CategoryController@doUpdate')
+            ->name('panel.category.update.do');
+
+          Route::delete('/api/categories/{slug}/delete', 'API\CategoryController@doDelete')
+            ->name('panel.category.delete.do');
         });
     });
+
+// * API \ LocationController - Controls the Location.
+  Route::middleware('auth')
+    ->group(function () {
+      Route::get('/api/locations', 'API\LocationController@index')
+        ->name('panel.location.index');
+
+      Route::post('/api/locations/create', 'API\LocationController@doCreate')
+        ->name('panel.location.create.do');
+
+      Route::middleware('location')
+        ->group(function () {
+          Route::get('/api/locations/{slug}', 'API\LocationController@details')
+            ->name('panel.location.details');
+
+          Route::put('/api/locations/{slug}/update', 'API\LocationController@doUpdate')
+            ->name('panel.location.update.do');
+
+          Route::delete('/api/locations/{slug}/delete', 'API\LocationController@doDelete')
+            ->name('panel.location.delete.do');
+
+          Route::put('/api/locations/{slug}/favorite', 'API\LocationController@doFav')
+            ->name('panel.location.fav.do');
+        });
+    });
+
+// * API \ PropertyController - Controls the Property.
+  Route::middleware('auth')
+    ->group(function () {
+    Route::get('/api/properties', 'API\PropertyController@index')
+      ->name('panel.property.index');
+
+    Route::post('/api/properties/create', 'API\PropertyController@doCreate')
+      ->name('panel.property.create.do');
+
+    Route::middleware('property')
+      ->group(function () {
+        Route::get('/api/properties/{slug}', 'API\PropertyController@details')
+          ->name('panel.property.details');
+
+        Route::put('/api/properties/{slug}/update', 'API\PropertyController@doUpdate')
+          ->name('panel.property.update.do');
+
+        Route::delete('/api/properties/{slug}/delete', 'API\PropertyController@doDelete')
+          ->name('panel.property.delete.do');
+
+        Route::put('/api/properties/{slug}/favorite', 'API\PropertyController@doFav')
+          ->name('panel.property.fav.do');
+      });
+  });

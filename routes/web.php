@@ -46,19 +46,22 @@
     });
 
 // * CategoryController - Controls the Category.
+  Route::get('/categories', [ CategoryController::class, 'list', ])
+  ->name('panel.category.list');
+
+  Route::middleware('category')
+    ->group(function () {
+      Route::get('/categories/{slug}', [ CategoryController::class, 'read', ])
+        ->name('panel.category.read');
+    });
+
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/categories', [ CategoryController::class, 'list', ])
-        ->name('panel.category.list');
-
       Route::post('/categories/create', [ CategoryController::class, 'create', ])
         ->name('panel.category.create');
 
       Route::middleware('category')
         ->group(function () {
-          Route::get('/categories/{slug}', [ CategoryController::class, 'read', ])
-            ->name('panel.category.read');
-
           Route::put('/categories/{slug}/update', [ CategoryController::class, 'update', ])
             ->name('panel.category.update');
 
@@ -68,19 +71,22 @@
     });
 
 // * LocationController - Controls the Location.
+  Route::get('/locations', [ LocationController::class, 'list', ])
+    ->name('panel.location.list');
+
+  Route::middleware('location')
+    ->group(function () {
+      Route::get('/locations/{slug}', [ LocationController::class, 'read', ])
+        ->name('panel.location.read');
+    });
+
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/locations', [ LocationController::class, 'list', ])
-        ->name('panel.location.list');
-
       Route::post('/locations/create', [ LocationController::class, 'create', ])
         ->name('panel.location.create');
 
       Route::middleware('location')
         ->group(function () {
-          Route::get('/locations/{slug}', [ LocationController::class, 'read', ])
-            ->name('panel.location.read');
-
           Route::put('/locations/{slug}/update', [ LocationController::class, 'update', ])
             ->name('panel.location.update');
 
@@ -93,19 +99,22 @@
     });
 
 // * PropertyController - Controls the Property.
+  Route::get('/properties', [ PropertyController::class, 'list', ])
+    ->name('panel.property.list');
+
+  Route::middleware('property')
+    ->group(function () {
+      Route::get('/properties/{slug}', [ PropertyController::class, 'read', ])
+        ->name('panel.property.read');
+    });
+
   Route::middleware('auth')
     ->group(function () {
-    Route::get('/properties', [ PropertyController::class, 'list', ])
-      ->name('panel.property.list');
-
     Route::post('/properties/create', [ PropertyController::class, 'create', ])
       ->name('panel.property.create');
 
     Route::middleware('property')
       ->group(function () {
-        Route::get('/properties/{slug}', [ PropertyController::class, 'read', ])
-          ->name('panel.property.read');
-
         Route::put('/properties/{slug}/update', [ PropertyController::class, 'update', ])
           ->name('panel.property.update');
 

@@ -21,8 +21,6 @@
      * @return \Illuminate\Http\Response
      */
     public function index () {
-      if (Auth::check()) ddd(true);
-
       return view('index', [
         // ? Return variables.
       ]);

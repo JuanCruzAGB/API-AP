@@ -1,11 +1,11 @@
 <?php
-  namespace App\Http\Controllers\Auth;
+    namespace App\Http\Controllers\Auth;
 
-  use Auth;
-  use Illuminate\Http\Request;
-  use Illuminate\Support\Facades\Validator;
+    use App\Http\Controllers\Controller;
+    use Auth;
+    use Illuminate\Http\Request;
 
-  class AuthController extends Controller {
+    class LoginController extends Controller {
     /**
      * * The Controller Model.
      * @var \App\Models\Auth
@@ -71,7 +71,7 @@
      * @return \Illuminate\Http\Response
      */
     function logout () {
-      $this->model::logout();
+      Auth::logout();
 
       return response()
         ->json([

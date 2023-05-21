@@ -1,5 +1,5 @@
 <?php
-  namespace App\Http\Controllers\API;
+  namespace App\Http\Controllers;
 
   use Auth;
   use Cviebrock\EloquentSluggable\Services\SlugService;

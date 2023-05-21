@@ -54,6 +54,18 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'development' => [
+        'url' => env('APP_DEVELOPMENT_URL', 'http://localhost'),
+    ],
+
+    'local' => [
+        'url' => env('APP_LOCAL_URL', 'http://localhost'),
+    ],
+
+    'production' => [
+        'url' => env('APP_PRODUCTION_URL', 'http://localhost'),
+    ],
+
     'asset_url' => env('ASSET_URL', null),
 
     /*

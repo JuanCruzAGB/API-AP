@@ -24,6 +24,23 @@
     <link href={{ asset("build/css/app.css") }}
       rel="stylesheet">
 
+    {{-- Global variables --}}
+    <script>
+      const auth = "{{ Auth::check() }}";
+
+      const env = "{{ config('app.env') }}";
+      const url = "{{ config('app.url') }}";
+      const development_url = "{{ config('app.development.url') }}";
+      const local_url = "{{ config('app.local.url') }}";
+      const production_url = "{{ config('app.production.url') }}";
+
+      const auth_url = "{{ config('app.auth.url') }}";
+
+      const catalog_url = "{{ config('app.catalog.url') }}";
+
+      const panel_url = "{{ config('app.panel.url') }}";
+    </script>
+
     {{-- Section CSS --}}
     @hasSection ('head')
       @yield("head")

@@ -1,5 +1,11 @@
 export default {
   /**
+   * * Authenticate the User.
+   */
+  authenticate ({ commit, }) {
+    commit('setAuth', true);
+  },
+  /**
    * * Resize the application.
    */
   resize ({ commit, }) {
@@ -14,5 +20,11 @@ export default {
     commit('setMedia', media);
 
     commit('setWidth', width);
+  },
+  /**
+   * * Unauthenticate the User.
+   */
+  unauthenticate ({ commit, }) {
+    commit('setAuth', false);
   },
 };

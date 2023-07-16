@@ -97,7 +97,20 @@
     public static function scopeBySlug ($query, string $slug) {
       return $query->where('slug', $slug);
     }
-    
+
+    /**
+     * * Returns the Locations filtered.
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  object $filters
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function scopeFilter ($query, object $filters) {
+      if (isset($filters->favorite) && $filters->favorite)
+        return $query->where('favorite', $filters->favorite);
+
+      return $query;
+    }
+
     /**
      * * Validation messages and rules.
      * @static

@@ -8,6 +8,7 @@
   use Cviebrock\EloquentSluggable\Sluggable;
   use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
   use Illuminate\Database\Eloquent\Model;
+  use Illuminate\Http\Request;
   use Storage;
 
   class Property extends Model {
@@ -126,6 +127,17 @@
     }
 
     /**
+     * * Returns the Properties by the Category foreign key.
+     * @static
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  int $id_category
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function scopeByCategory ($query, int $id_category) {
+      return $query->where('id_category', $id_category);
+    }
+
+    /**
      * * Returns the Properties by the Location foreign key.
      * @static
      * @param  \Illuminate\Database\Eloquent\Builder  $query
@@ -146,7 +158,33 @@
     public static function scopeBySlug ($query, string $slug) {
       return $query->where('slug', $slug);
     }
-    
+
+    /**
+     * * Returns the Properties filtered by a Request.
+     * @param \Illuminate\Database\Eloquent\Builder  $query
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function scopeFilter ($query, Request $request) {
+      $input = (object) $request->all();
+
+      if (isset($input->id_category)) {
+        $query = $query->whereHas('foreign_categories.category', function ($query) use ($input) {
+          $query->where('id_category', $input->id_category);
+        });
+      }
+
+      if (isset($input->id_location)) {
+        $query = $query->where('id_location', $input->id_location);
+      }
+
+      if (isset($input->search)) {
+        $query = $query->where('name', 'LIKE', "%$input->search%");
+      }
+
+      return $query;
+    }
+
     /**
      * * Validation messages and rules.
      * @static

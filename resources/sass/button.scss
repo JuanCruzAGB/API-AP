@@ -144,153 +144,153 @@
     }
   }
   &.btn-black {
-    --bg-color: var(--color-black);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-black);
+    --bg-color: var(--black);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--grey);
+    --color: var(--white);
+    --color-alt: var(--black);
   }
   @media (min-width: 768px) {
     &.md\:btn-black {
-      --bg-color: var(--color-black) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-black) !important;
+      --bg-color: var(--black) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--black) !important;
     }
   }
   @media (min-width: 1024px) {
     &.lg\:btn-black {
-      --bg-color: var(--color-black) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-black) !important;
+      --bg-color: var(--black) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--black) !important;
     }
   }
   &.btn-grey {
-    --bg-color: var(--color-grey);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-light-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-grey);
+    --bg-color: var(--grey);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--lightgrey);
+    --color: var(--white);
+    --color-alt: var(--grey);
   }
   @media (min-width: 768px) {
     &.md\:btn-grey {
-      --bg-color: var(--color-grey) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-light-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-grey) !important;
+      --bg-color: var(--grey) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--lightgrey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--grey) !important;
     }
   }
   @media (min-width: 1024px) {
     &.lg\:btn-grey {
-      --bg-color: var(--color-grey) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-light-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-grey) !important;
+      --bg-color: var(--grey) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--lightgrey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--grey) !important;
     }
   }
-  &.btn-light-grey {
-    --bg-color: var(--color-light-grey);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-light-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-light-grey);
+  &.btn-lightgrey {
+    --bg-color: var(--lightgrey);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--lightgrey);
+    --color: var(--white);
+    --color-alt: var(--lightgrey);
   }
   @media (min-width: 768px) {
-    &.md\:btn-light-grey {
-      --bg-color: var(--color-light-grey) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-light-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-light-grey) !important;
+    &.md\:btn-lightgrey {
+      --bg-color: var(--lightgrey) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--lightgrey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--lightgrey) !important;
     }
   }
   @media (min-width: 1024px) {
-    &.lg\:btn-light-grey {
-      --bg-color: var(--color-light-grey) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-light-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-light-grey) !important;
+    &.lg\:btn-lightgrey {
+      --bg-color: var(--lightgrey) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--lightgrey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--lightgrey) !important;
     }
   }
   &.btn-maroon {
-    --bg-color: var(--color-maroon);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-maroon);
+    --bg-color: var(--maroon);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--grey);
+    --color: var(--white);
+    --color-alt: var(--maroon);
   }
   @media (min-width: 768px) {
     &.md\:btn-maroon {
-      --bg-color: var(--color-maroon) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-maroon) !important;
+      --bg-color: var(--maroon) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--maroon) !important;
     }
   }
   @media (min-width: 1024px) {
     &.lg\:btn-maroon {
-      --bg-color: var(--color-maroon) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-maroon) !important;
+      --bg-color: var(--maroon) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--maroon) !important;
     }
   }
   &.btn-red {
-    --bg-color: var(--color-red);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-red);
+    --bg-color: var(--red);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--grey);
+    --color: var(--white);
+    --color-alt: var(--red);
   }
   @media (min-width: 768px) {
     &.md\:btn-red {
-      --bg-color: var(--color-red) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-red) !important;
+      --bg-color: var(--red) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--red) !important;
     }
   }
   @media (min-width: 1024px) {
     &.lg\:btn-red {
-      --bg-color: var(--color-red) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-red) !important;
+      --bg-color: var(--red) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--red) !important;
     }
   }
   &.btn-white {
-    --bg-color: var(--color-black);
-    --bg-color-alt: var(--color-white);
-    --bg-disabled: var(--color-grey);
-    --color: var(--color-white);
-    --color-alt: var(--color-black);
+    --bg-color: var(--black);
+    --bg-color-alt: var(--white);
+    --bg-disabled: var(--grey);
+    --color: var(--white);
+    --color-alt: var(--black);
   }
   @media (min-width: 768px) {
     &.md\:btn-white {
-      --bg-color: var(--color-black) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-black) !important;
+      --bg-color: var(--black) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--black) !important;
     }
   }
   @media (min-width: 1024px) {
     &.lg\:btn-white {
-      --bg-color: var(--color-black) !important;
-      --bg-color-alt: var(--color-white) !important;
-      --bg-disabled: var(--color-grey) !important;
-      --color: var(--color-white) !important;
-      --color-alt: var(--color-black) !important;
+      --bg-color: var(--black) !important;
+      --bg-color-alt: var(--white) !important;
+      --bg-disabled: var(--grey) !important;
+      --color: var(--white) !important;
+      --color-alt: var(--black) !important;
     }
   }
 

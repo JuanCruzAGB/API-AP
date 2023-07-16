@@ -1,8 +1,8 @@
 <template>
-  <div :class="positions"
-    class="float menu">
+  <aside class="float menu"
+    :class="positions">
     <slot />
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -19,15 +19,20 @@
     },
     computed: {
       positions () {
-        let positions = !Array.isArray(this.position)
-          ? [ this.position, ]
-          : this.position;
+        let positions = [];
 
-        return positions.reduce((position, key) => {
-          position[key] = true;
+        if (!Array.isArray(this.position))
+          positions = [ this.position, ];
 
-          return position;
-        }, {});
+        else
+          positions = [ ...this.position, ];
+
+        return positions
+          .reduce((position, key) => {
+            position[key] = true;
+
+            return position;
+          }, {});
       },
     },
   };

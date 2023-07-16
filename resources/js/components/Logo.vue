@@ -1,10 +1,10 @@
 <template>
-  <RouterLink :to="{
-      name: 'Home',
-    }"
-    class="logo">
+  <RouterLink class="logo"
+    :to="{
+      name: 'Layout',
+    }">
     <img :alt="`${ name } logo`"
-      :src="logo">
+      :src="logo" />
 
     <template v-if="showName">
       {{ name }}
@@ -25,19 +25,16 @@
     },
     data () {
       return {
-        name: 'API | Armentia Propiedades',
+        name,
       };
     },
     computed: {
-      ...mapGetters([ 'media', ]),
+      ...mapGetters([ 'isDesktop', ]),
       logo () {
-        switch (this.media) {
-          case 'desktop':
-            return this._provided.images.logo.regular.default;
+        if (this.isDesktop)
+          return this._provided.images.logo.regular.default;
 
-          default:
-            return this._provided.images.logo.small.default;
-        }
+        return this._provided.images.logo.small.default;
       },
     },
   }

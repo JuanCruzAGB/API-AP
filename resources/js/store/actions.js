@@ -13,9 +13,11 @@ export default {
 
     let width = window.innerWidth;
 
-    if (width >= 1024) media = 'desktop';
+    if (width >= 1024)
+      media = 'desktop';
 
-    else if (width >= 768) media = 'tablet';
+    else if (width >= 768)
+      media = 'tablet';
 
     commit('setMedia', media);
 

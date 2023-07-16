@@ -1,10 +1,11 @@
 <?php
-  use App\Http\Controllers\Auth\LoginController;
   use App\Http\Controllers\CategoryController;
+  use App\Http\Controllers\ContactController;
   use App\Http\Controllers\Controller;
   use App\Http\Controllers\LocationController;
   use App\Http\Controllers\MailController;
   use App\Http\Controllers\PropertyController;
+  use App\Http\Controllers\Auth\LoginController;
   use Illuminate\Support\Facades\Route;
 
   /*
@@ -21,6 +22,9 @@
 // * Controller - Controls the web in general.
   Route::get('/', [ Controller::class, 'index', ])
     ->name('index');
+
+  Route::get('/contact', [ ContactController::class, 'read', ])
+    ->name('contact.read');
 
 // * MailController - Controls the sending mails.
   Route::post('/mail/contact', [ MailController::class, 'contact', ])

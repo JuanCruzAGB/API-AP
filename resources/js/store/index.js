@@ -14,9 +14,11 @@ export default new Vuex.Store({
     media: 'mobile',
     url: {
       auth: auth_url,
+      catalog: catalog_url,
       current: url,
       development: development_url,
       local: local_url,
+      panel: panel_url,
     },
     width: 0,
   },

@@ -1,33 +1,11 @@
 :root {
-  --color-black: #1C1F22;
-  --color-grey: #A39B99;
-  --color-maroon: #C11B34;
-  --color-light-grey: #CCC4BF;
-  --color-red: #DB0C19;
-  --color-white: #FAF4F0;
-  --gradient: linear-gradient(45deg, var(--color-red), var(--color-maroon));
-}
-
-.color-black {
-  color: var(--color-black);
-}
-
-.color-grey {
-  color: var(--color-grey);
-}
-
-.color-maroon {
-  color: var(--color-maroon);
-}
-
-.color-light-grey {
-  color: var(--color-light-grey);
-}
-
-.color-red {
-  color: var(--color-red);
-}
-
-.color-white {
-  color: var(--color-white);
+  --black: #1C1F22;
+  --dark: #000000;
+  --grey: #A39B99;
+  --maroon: #C11B34;
+  --light: #FFFFFF;
+  --lightgrey: #CCC4BF;
+  --red: #DB0C19;
+  --white: #FAF4F0;
+  --gradient: linear-gradient(45deg, var(--red, red), var(--maroon, maroon));
 }

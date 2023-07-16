@@ -124,7 +124,9 @@
      * @return \Illuminate\Http\Response
      */
     public function list (Request $request) {
-      $properties = $this->model::orderBy('updated_at', 'desc')->get();
+      $properties = $this->model::orderBy('updated_at', 'desc')
+        ->filter($request)
+        ->get();
 
       return response()
         ->json([
@@ -139,6 +141,7 @@
      */
     public function read (string $slug) {
       $property = $this->model::bySlug($slug)
+        ->with([ 'categories', 'location', ])
         ->first();
 
       return response()

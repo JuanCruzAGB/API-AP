@@ -87,10 +87,18 @@
 
     /**
      * * Returns the Model list.
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function list () {
-      $locations = $this->model::orderBy('updated_at', 'desc')
+    public function list (Request $request) {
+      $query = (object) $request->all();
+
+      if (isset($query->favorite))
+        $query->favorite = filter_var($query->favorite, FILTER_VALIDATE_BOOLEAN);
+
+      $locations = $this->model::filter($query)
+        ->with([ 'properties', ])
+        ->orderBy('updated_at', 'desc')
         ->get();
 
       return response()

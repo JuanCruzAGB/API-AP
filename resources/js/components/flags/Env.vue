@@ -41,17 +41,17 @@
 <style lang="scss" scoped>
   .flag {
     &.development {
-      --color-background: var(--color-grey, grey);
+      --bg-color: var(--grey, grey);
     }
     &.local {
-      --color-background: var(--color-green, green);
+      --bg-color: var(--color-green, green);
     }
     &.production {
-      --color-background: var(--color-red, red);
+      --bg-color: var(--red, red);
     }
 
     * {
-      color: var(--color-white, #FFFFFF);
+      color: var(--white, white);
       text-transform: lowercase;
       &::first-letter {
         text-transform: uppercase;

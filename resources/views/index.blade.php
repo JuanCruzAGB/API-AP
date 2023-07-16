@@ -13,7 +13,7 @@
       name="asset">
 
     {{-- Font Awesome --}}
-    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
       rel="stylesheet">
 
     {{-- Tailwind --}}
@@ -29,6 +29,7 @@
       const auth = "{{ Auth::check() }}";
 
       const env = "{{ config('app.env') }}";
+      const name = "{{ config('app.name') }}";
       const url = "{{ config('app.url') }}";
       const development_url = "{{ config('app.development.url') }}";
       const local_url = "{{ config('app.local.url') }}";

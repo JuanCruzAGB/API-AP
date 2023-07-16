@@ -4,17 +4,25 @@
       'not-auth': !auth,
     }">
     <template v-if="auth">
-      <button @click="logout">
-        <span>
+        <span v-if="isMobile">
+          Auth
+        </span>
+
+        <span v-else>
           Authenticated
         </span>
       </button>
     </template>
 
     <template v-else>
-      <a :href="url.auth">
-        <span>
-          Not authenticated
+      <a class="crossed"
+        :href="url.auth">
+        <span v-if="isMobile">
+          Auth
+        </span>
+
+        <span v-else>
+          Authenticated
         </span>
       </a>
     </template>
@@ -38,19 +46,21 @@
       };
     },
     computed: {
-      ...mapGetters([ 'auth', 'url', ]),
+      ...mapGetters([ 'auth', 'isMobile', 'url', ]),
     },
     methods: {
       ...mapActions([ 'unauthenticate', ]),
       logout () {
         if (this.auth)
-          axios.get(`${ this.url.current }/logout`, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }).then(response => {
-            this.unauthenticate();
-          });
+          axios
+            .get(`${ this.url.current }/logout`, {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            })
+            .then(response => {
+              this.unauthenticate();
+            });
       },
     },
   };
@@ -59,14 +69,14 @@
 <style lang="scss" scoped>
   .flag {
     &.auth {
-      --color-background: var(--color-green, green);
+      --bg-color: var(--color-green, green);
     }
     &.not-auth {
-      --color-background: var(--color-grey, grey);
+      --bg-color: var(--grey, grey);
     }
 
     * {
-      color: var(--color-white, #FFFFFF);
+      color: var(--white, white);
       text-transform: lowercase;
       &::first-letter {
         text-transform: uppercase;
@@ -74,6 +84,10 @@
       &:hover {
         text-decoration: none;
       }
+    }
+
+    .crossed {
+      text-decoration: 1px line-through var(--black, black);
     }
   }
 </style>

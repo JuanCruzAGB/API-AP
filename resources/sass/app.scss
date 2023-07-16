@@ -2,10 +2,15 @@
 @import "./button.scss";
 @import "./color.scss";
 @import "./font.scss";
-@import "./menus/float.scss";
 
 :root {
-  --height: 4.6rem;
+  --height: 6rem;
+  --padding-inline: 1rem;
+}
+
+::selection {
+  background-color: var(--maroon, maroon);
+  color: var(--light, #FFFFFF);
 }
 
 @media(min-width: 768px) {
@@ -13,7 +18,9 @@
 }
 
 @media(min-width: 1024px) {
-  /*  */
+  :root {
+    --padding-inline: 5rem;
+  }
 }
 
 @media(min-width: 1200px) {

@@ -1,82 +1,91 @@
 <?php
-    namespace App\Http\Controllers\Auth;
 
-    use App\Http\Controllers\Controller;
-    use Auth;
-    use Illuminate\Http\Request;
+namespace App\Http\Controllers\Auth;
 
-    class LoginController extends Controller {
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Auth;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class LoginController extends Controller
+{
     /**
      * * The Controller Model.
-     * @var \App\Models\Auth
+     * @var User
      */
-    protected $model = \App\Models\User::class;
+    protected $model = User::class;
 
     /**
      * * Check if the User can log in.
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return JsonResponse
      */
-    function check (Request $request) {
-      $input = (object) $request->all();
+    function check(Request $request): JsonResponse
+    {
+        $input = (object) $request->all();
 
-      $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
+        $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
 
-      if (!Auth::attempt([
-        'email' => $input->email,
-        'password' => $input->password,
-      ], true))
+        if (!Auth::attempt([
+            'email' => $input->email,
+            'password' => $input->password,
+        ], true)) {
+            return response()
+                ->json([
+                    'code' => 404,
+                    'message' => 'Correo y/o contraseña incorrectos.',
+                ]);
+        }
+
         return response()
-          ->json([
-            'code' => 404,
-            'message' => 'Correo y/o contraseña incorrectos.',
-          ]);
-
-      return response()
-        ->json([
-          'code' => 200,
-          'message' => 'El usuario está autenticado correctamente.',
-        ]);
+            ->json([
+                'code' => 200,
+                'message' => 'El usuario está autenticado correctamente.',
+            ]);
     }
 
     /**
      * * Log the User in.
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return JsonResponse
      */
-    function login (Request $request) {
-      $input = (object) $request->all();
+    function login(Request $request): JsonResponse
+    {
+        $input = (object) $request->all();
 
-      $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
+        $request->validate($this->model::$validation['login']['rules'], $this->model::$validation['login']['messages'][config('app.locale')]);
 
-      if (!Auth::attempt([
-        'email' => $input->email,
-        'password' => $input->password,
-      ], true))
+        if (!Auth::attempt([
+            'email' => $input->email,
+            'password' => $input->password,
+        ], true)) {
+            return response()
+                ->json([
+                    'code' => 404,
+                    'message' => 'Correo y/o contraseña incorrectos.',
+                ]);
+        }
+
         return response()
-          ->json([
-            'code' => 404,
-            'message' => 'Correo y/o contraseña incorrectos.',
-          ]);
-
-      return response()
-        ->json([
-          'code' => 200,
-          'message' => 'Sesión iniciada.',
-        ]);
+            ->json([
+                'code' => 200,
+                'message' => 'Sesión iniciada.',
+            ]);
     }
 
     /**
      * * Log the User out.
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
-    function logout () {
-      Auth::logout();
+    function logout(): JsonResponse
+    {
+        Auth::logout();
 
-      return response()
-        ->json([
-          'code' => 200,
-          'message' => 'Sesión cerrada.',
-        ]);
+        return response()
+            ->json([
+                'code' => 200,
+                'message' => 'Sesión cerrada.',
+            ]);
     }
-  }
+}

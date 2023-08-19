@@ -4,6 +4,7 @@
       'not-auth': !auth,
     }">
     <template v-if="auth">
+      <button @click="logout">
         <span v-if="isMobile">
           Auth
         </span>
@@ -39,11 +40,6 @@
     name: 'Auth',
     components: {
       Flag,
-    },
-    data () {
-      return {
-        // 
-      };
     },
     computed: {
       ...mapGetters([ 'auth', 'isMobile', 'url', ]),

@@ -4,11 +4,13 @@
       name: 'Layout',
     }">
     <img :alt="`${ name } logo`"
-      :src="logo" />
+      :src="logo">
 
-    <template v-if="showName">
+    <h1 :class="{
+        hidden: !showName,
+      }">
       {{ name }}
-    </template>
+    </h1>
   </RouterLink>
 </template>
 
@@ -31,8 +33,9 @@
     computed: {
       ...mapGetters([ 'isDesktop', ]),
       logo () {
-        if (this.isDesktop)
+        if (this.isDesktop) {
           return this._provided.images.logo.regular.default;
+        }
 
         return this._provided.images.logo.small.default;
       },
@@ -42,6 +45,9 @@
 
 <style lang="scss" scoped>
   .logo {
-    /*  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 </style>

@@ -1,13 +1,15 @@
 <?php
-  namespace App\Models;
 
-  use Auth;
-  use Cviebrock\EloquentSluggable\Sluggable;
-  use Illuminate\Contracts\Auth\MustVerifyEmail;
-  use Illuminate\Foundation\Auth\User as Authenticatable;
-  use Illuminate\Notifications\Notifiable;
+namespace App\Models;
 
-  class User extends Authenticatable {
+use Auth;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
     use Notifiable, Sluggable;
 
     /**
@@ -27,10 +29,10 @@
      * @var array
      */
     protected $fillable = [
-      'email',
-      'name',
-      'password',
-      'slug',
+        'email',
+        'name',
+        'password',
+        'slug',
     ];
 
     /**
@@ -38,7 +40,7 @@
      * @var array
      */
     protected $hidden = [
-      'password',
+        'password',
     ];
 
     /**
@@ -46,20 +48,21 @@
      * @var array
      */
     protected $casts = [
-      'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime',
     ];
 
     /**
      * * The Sluggable configuration for the Model.
      * @return array
      */
-    public function sluggable () {
-      return [
-        'slug' => [
-          'onUpdate' => true,
-          'source' => 'name',
-        ],
-      ];
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'onUpdate' => true,
+                'source' => 'name',
+            ],
+        ];
     }
 
     /**
@@ -68,17 +71,17 @@
      * @var array
      */
     public static $validation = [
-      'login' => [
-        'rules' => [
-          'email' => 'required',
-          'password' => 'required|min:4',
-        ], 'messages' => [
-          'es' => [
-            'email.required' => 'El correo es obligatorio.',
-            'password.required' => 'La contraseña es obligatoria.',
-            'password.min' => 'La contraseña no puede tener menos de :min caracteres.',
-          ],
+        'login' => [
+            'rules' => [
+                'email' => 'required',
+                'password' => 'required|min:4',
+            ], 'messages' => [
+                'es' => [
+                    'email.required' => 'El correo es obligatorio.',
+                    'password.required' => 'La contraseña es obligatoria.',
+                    'password.min' => 'La contraseña no puede tener menos de :min caracteres.',
+                ],
+            ],
         ],
-      ],
     ];
-  }
+}

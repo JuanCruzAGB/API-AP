@@ -21,11 +21,11 @@
       positions () {
         let positions = [];
 
-        if (!Array.isArray(this.position))
+        if (!Array.isArray(this.position)) {
           positions = [ this.position, ];
-
-        else
+        } else {
           positions = [ ...this.position, ];
+        }
 
         return positions
           .reduce((position, key) => {

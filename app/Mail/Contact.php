@@ -1,12 +1,14 @@
 <?php
-  namespace App\Mail;
 
-  use Illuminate\Bus\Queueable;
-  use Illuminate\Contracts\Queue\ShouldQueue;
-  use Illuminate\Mail\Mailable;
-  use Illuminate\Queue\SerializesModels;
+namespace App\Mail;
 
-  class Contact extends Mailable {
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class Contact extends Mailable
+{
     use Queueable, SerializesModels;
 
     /**
@@ -18,20 +20,23 @@
     /**
      * * Create a new message instance.
      * @param array $data.
+     * @return void
      */
-    public function __construct (array $data) {
-      $this->data = $data;
+    public function __construct(array $data)
+    {
+        $this->data = $data;
     }
 
     /**
      * * Build the message.
-     * @return Contact
+     * @return $this
      */
-    public function build () {
-      $subject = 'Contacto a travez del formulario web';
+    public function build()
+    {
+        $subject = 'Contacto a travez del formulario web';
 
-      return $this->view('mail.contact')
-        ->from($this->data['from']['email'], $this->data['from']['name'])
-        ->subject($subject);
+        return $this->view('mail.contact')
+            ->from($this->data['from']['email'], $this->data['from']['name'])
+            ->subject($subject);
     }
-  }
+}

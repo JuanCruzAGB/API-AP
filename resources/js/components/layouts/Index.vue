@@ -14,16 +14,14 @@
       </ul>
     </FloatMenu>
 
-    <main>
-      <RouterView />
-    </main>
+    <RouterView />
 
     <Footer />
   </div>
 </template>
 
 <script>
-  import { mapActions, mapGetters, } from "vuex";
+  import { mapGetters, } from "vuex";
 
   import Footer from "../Footer.vue";
   import Header from "../Header.vue";
@@ -41,13 +39,10 @@
       Header,
     },
     computed: {
-      ...mapGetters([ 'env', 'url', ]),
+      ...mapGetters([ 'env', ]),
       showFlags () {
         return [ 'development', 'local' ].includes(this.env);
       },
-    },
-    methods: {
-      ...mapActions([ 'authenticate', ]),
     },
   }
 </script>
@@ -60,6 +55,11 @@
 
     .float.menu {
       padding: .5rem 0;
+      z-index: 2;
+    }
+
+    .view {
+      background-color: var(--white, white);
     }
   }
 </style>

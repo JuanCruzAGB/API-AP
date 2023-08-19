@@ -1,11 +1,5 @@
 export default {
   /**
-   * * Authenticate the User.
-   */
-  authenticate ({ commit, }) {
-    commit('setAuth', true);
-  },
-  /**
    * * Resize the application.
    */
   resize ({ commit, }) {
@@ -13,11 +7,11 @@ export default {
 
     let width = window.innerWidth;
 
-    if (width >= 1024)
+    if (width >= 1024) {
       media = 'desktop';
-
-    else if (width >= 768)
+    } else if (width >= 768) {
       media = 'tablet';
+    }
 
     commit('setMedia', media);
 

@@ -1,11 +1,13 @@
 <?php
-  namespace App\Models;
 
-  use App\Models\Category;
-  use App\Models\Property;
-  use Illuminate\Database\Eloquent\Model;
+namespace App\Models;
 
-  class ForeignCategoryProperty extends Model {
+use App\Models\Category;
+use App\Models\Property;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class ForeignCategoryProperty extends Model
+{
     /**
      * * The table name.
      * @var string
@@ -23,31 +25,34 @@
      * @var array
      */
     protected $fillable = [
-      'id_category',
-      'id_property',
+        'id_category',
+        'id_property',
     ];
     
     /**
      * * Get the Category that owns the Property.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function category () {
-      return $this->belongsTo(Category::class, 'id_category', 'id_category');
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'id_category', 'id_category');
     }
 
     /**
      * * Get the Property that owns the Property.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function property () {
-      return $this->belongsTo(Property::class, 'id_property', 'id_property');
+    public function property(): BelongsTo
+    {
+        return $this->belongsTo(Property::class, 'id_property', 'id_property');
     }
 
     /**
      * * Purge the Model.
      * @return void
      */
-    public function purge () {
-      $this->delete();
+    public function purge(): void
+    {
+        $this->delete();
     }
-  }
+}

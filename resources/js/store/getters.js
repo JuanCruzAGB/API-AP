@@ -2,6 +2,9 @@ export default {
   auth (state) {
     return state.auth;
   },
+  contact (state) {
+    return state.contact;
+  },
   env (state) {
     return state.env;
   },

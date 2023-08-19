@@ -40,6 +40,8 @@
       const catalog_url = "{{ config('app.catalog.url') }}";
 
       const panel_url = "{{ config('app.panel.url') }}";
+
+      const contact = @json($contact);
     </script>
 
     {{-- Section CSS --}}

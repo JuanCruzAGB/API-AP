@@ -1,12 +1,16 @@
 <?php
-  namespace App\Models;
 
-  use App\Models\Property;
-  use Cviebrock\EloquentSluggable\Sluggable;
-  use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
-  use Illuminate\Database\Eloquent\Model;
+namespace App\Models;
 
-  class Location extends Model {
+use App\Models\Property;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Location extends Model
+{
     use Sluggable, SluggableScopeHelpers;
 
     /**
@@ -14,7 +18,7 @@
      * @var string
      */
     protected $table = 'locations';
-    
+
     /**
      * * The table primary key name.
      * @var string
@@ -26,89 +30,99 @@
      * @var array
      */
     protected $fillable = [
-      'favorite',
-      'id_created_by',
-      'name',
-      'slug',
+        'favorite',
+        'id_created_by',
+        'name',
+        'slug',
     ];
 
     /**
      * * Get all of the Properties favorites for the Location.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function favorite_properties () {
-      return $this->hasMany(Property::class, 'id_location', 'id_location')->where('favorite', '=', 1);
+    public function favorite_properties(): HasMany
+    {
+        return $this->hasMany(Property::class, 'id_location', 'id_location')
+            ->where('favorite', '=', 1);
     }
 
     /**
      * * Get all of the Properties for the Location.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function properties () {
-      return $this->hasMany(Property::class, 'id_location', 'id_location');
+    public function properties(): HasMany
+    {
+        return $this->hasMany(Property::class, 'id_location', 'id_location');
     }
 
     /**
      * * Purge the Model.
      * @return void
      */
-    public function purge () {
-      $this->delete();
+    public function purge(): void
+    {
+        $this->delete();
     }
 
     /**
      * * Get the User that owns the Location.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function user () {
-      return $this->belongsTo(User::class, 'id_created_by', 'id_user');
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'id_created_by', 'id_user');
     }
 
     /**
      * * The Sluggable configuration for the Model.
      * @return array
      */
-    public function sluggable () {
-      return [
-        'slug' => [
-          'onUpdate' => true,
-          'source' => 'name',
-        ],
-      ];
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'onUpdate' => true,
+                'source' => 'name',
+            ],
+        ];
     }
 
     /**
      * * Returns all the favorite Locations.
      * @static
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
-    public static function scopeFavorites ($query) {
-      return $query->where('favorite', 1);
+    public static function scopeFavorites($query): Builder
+    {
+        return $query->where('favorite', 1);
     }
 
     /**
      * * Returns the Location by the slug.
      * @static
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  Builder  $query
      * @param  string $slug
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
-    public static function scopeBySlug ($query, string $slug) {
-      return $query->where('slug', $slug);
+    public static function scopeBySlug($query, string $slug): Builder
+    {
+        return $query->where('slug', $slug);
     }
 
     /**
      * * Returns the Locations filtered.
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  Builder  $query
      * @param  object $filters
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
-    public static function scopeFilter ($query, object $filters) {
-      if (isset($filters->favorite) && $filters->favorite)
-        return $query->where('favorite', $filters->favorite);
+    public static function scopeFilter ($query, object $filters): Builder
+    {
+        if (isset($filters->favorite) && $filters->favorite) {
+            return $query->where('favorite', $filters->favorite);
+        }
 
-      return $query;
+        return $query;
     }
 
     /**
@@ -117,39 +131,39 @@
      * @var array
      */
     public static $validation = [
-      'create' => [
-        'rules' => [
-          'name' => 'required',
-        ], 'messages' => [
-          'es' => [
-            'name.required' => 'El Nombre es obligatorio.',
-          ],
+        'create' => [
+            'rules' => [
+                'name' => 'required',
+            ], 'messages' => [
+                'es' => [
+                    'name.required' => 'El Nombre es obligatorio.',
+                ],
+            ],
+        ], 'delete' => [
+            'rules' => [
+                'message' => 'required|regex:/^BORRAR$/',
+            ], 'messages' => [
+                'es' => [
+                    'message.required' => 'El Mensaje de confirmación es obligatorio.',
+                    'message.regex' => 'El Mensaje no es correcto.',
+                ],
+            ],
+        ], 'fav' => [
+            'rules' => [
+                // ? Rules
+            ], 'messages' => [
+                'es' => [
+                    // ? Messages
+                ],
+            ],
+        ], 'update' => [
+            'rules' => [
+                'name' => 'required',
+            ], 'messages' => [
+                'es' => [
+                    'name.required' => 'El Nombre es obligatorio.',
+                ],
+            ],
         ],
-      ], 'delete' => [
-        'rules' => [
-          'message' => 'required|regex:/^BORRAR$/',
-        ], 'messages' => [
-          'es' => [
-            'message.required' => 'El Mensaje de confirmación es obligatorio.',
-            'message.regex' => 'El Mensaje no es correcto.',
-          ],
-        ],
-      ], 'fav' => [
-        'rules' => [
-          // ? Rules
-        ], 'messages' => [
-          'es' => [
-            // ? Messages
-          ],
-        ],
-      ], 'update' => [
-        'rules' => [
-          'name' => 'required',
-        ], 'messages' => [
-          'es' => [
-            'name.required' => 'El Nombre es obligatorio.',
-          ],
-        ],
-      ],
     ];
-  }
+}

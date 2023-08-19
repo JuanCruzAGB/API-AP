@@ -18,11 +18,6 @@
     components: {
       Flag,
     },
-    data () {
-      return {
-        // 
-      };
-    },
     computed: {
       ...mapGetters([ 'env', 'url', ]),
       href () {

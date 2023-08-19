@@ -1,11 +1,16 @@
 <?php
-  namespace App\Models;
 
-  use Cviebrock\EloquentSluggable\Sluggable;
-  use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
-  use Illuminate\Database\Eloquent\Model;
+namespace App\Models;
 
-  class Category extends Model {
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+
+class Category extends Model
+{
     use Sluggable, SluggableScopeHelpers;
 
     /**
@@ -25,68 +30,75 @@
      * @var array
      */
     protected $fillable = [
-      'id_created_by',
-      'name',
-      'slug',
+        'id_created_by',
+        'name',
+        'slug',
     ];
 
     /**
      * * Get all of the properties for the Property.
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     * @return HasManyThrough
      */
-    public function properties () {
-      return $this->hasManyThrough(Property::class, ForeignCategoryProperty::class, 'id_category', 'id_property', 'id_category', 'id_property');
+    public function properties(): HasManyThrough
+    {
+        return $this->hasManyThrough(Property::class, ForeignCategoryProperty::class, 'id_category', 'id_property', 'id_category', 'id_property');
     }
 
     /**
      * * Get the ForeignCategory that owns the Property.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function foreign_properties () {
-      return $this->hasMany(ForeignCategoryProperty::class, 'id_category', 'id_category');
+    public function foreign_properties(): HasMany
+    {
+        return $this->hasMany(ForeignCategoryProperty::class, 'id_category', 'id_category');
     }
 
     /**
      * * Purge the Model.
      * @return void
      */
-    public function purge () {
-      foreach ($this->foreign_properties as $foreign)
-        $foreign->purge();
+    public function purge(): void
+    {
+        foreach ($this->foreign_properties as $foreign) {
+            $foreign->purge();
+        }
 
-      $this->delete();
+        $this->delete();
     }
 
     /**
      * * The Sluggable configuration for the Model.
      * @return array
      */
-    public function sluggable () {
-      return [
-        'slug' => [
-          'onUpdate' => true,
-          'source' => 'name',
-        ],
-      ];
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'onUpdate' => true,
+                'source' => 'name',
+            ],
+        ];
     }
 
     /**
-      * * Get the User that owns the Category.
-      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-      */
-    public function user () {
-      return $this->belongsTo(User::class, 'id_created_by', 'id_user');
+     * * Get the User that owns the Category.
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'id_created_by', 'id_user');
     }
 
     /**
      * * Returns the Category by the slug.
      * @static
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  Builder  $query
      * @param  string $slug
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
-    public static function scopeBySlug ($query, string $slug) {
-      return $query->where('slug', $slug);
+    public static function scopeBySlug($query, string $slug): Builder
+    {
+        return $query->where('slug', $slug);
     }
     
     /**
@@ -95,31 +107,31 @@
      * @var array
      */
     public static $validation = [
-      'create' => [
-        'rules' => [
-          'name' => 'required',
-        ], 'messages' => [
-          'es' => [
-            'name.required' => 'El Nombre es obligatorio.',
-          ],
+        'create' => [
+            'rules' => [
+                'name' => 'required',
+            ], 'messages' => [
+                'es' => [
+                    'name.required' => 'El Nombre es obligatorio.',
+                ],
+            ],
+        ], 'update' => [
+            'rules' => [
+                'name' => 'required',
+            ], 'messages' => [
+                'es' => [
+                    'name.required' => 'El Nombre es obligatorio.',
+                ],
+            ],
+        ], 'delete' => [
+            'rules' => [
+                'message' => 'required|regex:/^BORRAR$/',
+            ], 'messages' => [
+                'es' => [
+                    'message.required' => 'El Mensaje de confirmación es obligatorio.',
+                    'message.regex' => 'El Mensaje no es correcto.',
+                ],
+            ],
         ],
-      ], 'update' => [
-        'rules' => [
-          'name' => 'required',
-        ], 'messages' => [
-          'es' => [
-            'name.required' => 'El Nombre es obligatorio.',
-          ],
-        ],
-      ], 'delete' => [
-        'rules' => [
-          'message' => 'required|regex:/^BORRAR$/',
-        ], 'messages' => [
-          'es' => [
-            'message.required' => 'El Mensaje de confirmación es obligatorio.',
-            'message.regex' => 'El Mensaje no es correcto.',
-          ],
-        ],
-      ],
     ];
-  }
+}

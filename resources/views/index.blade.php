@@ -7,7 +7,7 @@
       name="viewport">
 
     <meta content="{{ csrf_token() }}"
-      name="csrf-token">
+      name="csrf_token">
 
     <meta content="{{ asset("") }}"
       name="asset">

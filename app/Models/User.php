@@ -5,6 +5,7 @@ namespace App\Models;
 use Auth;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -71,15 +72,17 @@ class User extends Authenticatable
      * @var array
      */
     public static $validation = [
-        'login' => [
-            'rules' => [
-                'email' => 'required',
-                'password' => 'required|min:4',
-            ], 'messages' => [
-                'es' => [
-                    'email.required' => 'El correo es obligatorio.',
-                    'password.required' => 'La contraseña es obligatoria.',
-                    'password.min' => 'La contraseña no puede tener menos de :min caracteres.',
+        'sign' => [
+            'in' => [
+                'rules' => [
+                    'email' => 'required',
+                    'password' => 'required|min:4',
+                ], 'messages' => [
+                    'es' => [
+                        'email.required' => 'El correo es obligatorio.',
+                        'password.required' => 'La contraseña es obligatoria.',
+                        'password.min' => 'La contraseña no puede tener menos de :min caracteres.',
+                    ],
                 ],
             ],
         ],

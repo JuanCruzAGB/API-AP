@@ -1,11 +1,11 @@
 <?php
+  use App\Http\Controllers\AuthController;
   use App\Http\Controllers\CategoryController;
   use App\Http\Controllers\ContactController;
   use App\Http\Controllers\Controller;
   use App\Http\Controllers\LocationController;
   use App\Http\Controllers\MailController;
   use App\Http\Controllers\PropertyController;
-  use App\Http\Controllers\Auth\LoginController;
   use Illuminate\Support\Facades\Route;
 
   /*
@@ -36,17 +36,14 @@
         ->name('mail.query');
     });
 
-// * Auth \ LoginController - Controls the authentication.
-  Route::post('/login', [ LoginController::class, 'login', ])
-    ->name('auth.login');
-
-  Route::post('/login/check', [ LoginController::class, 'check', ])
-    ->name('auth.check');
+// * AuthController - Controls the authentication.
+  Route::post('/sign-in', [ AuthController::class, 'in', ])
+    ->name('auth.in');
 
   Route::middleware('auth')
     ->group(function () {
-      Route::get('/logout', [ LoginController::class, 'logout', ])
-        ->name('auth.logout');
+      Route::get('/sign-out', [ AuthController::class, 'out', ])
+        ->name('auth.out');
     });
 
 // * CategoryController - Controls the Category.

@@ -4,7 +4,7 @@
       'not-auth': !auth,
     }">
     <template v-if="auth">
-      <button @click="logout">
+      <button @click="signout">
         <span v-if="isMobile">
           Auth
         </span>
@@ -46,10 +46,10 @@
     },
     methods: {
       ...mapActions([ 'unauthenticate', ]),
-      logout () {
-        if (this.auth)
+      signout () {
+        if (this.auth) {
           axios
-            .get(`${ this.url.current }/logout`, {
+            .get(`${ this.url.auth }/sign-out`, {
               headers: {
                 'Content-Type': 'application/json',
               },
@@ -57,6 +57,7 @@
             .then(response => {
               this.unauthenticate();
             });
+        }
       },
     },
   };

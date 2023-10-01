@@ -1,4 +1,6 @@
 <?php
+  namespace Database\Seeders;
+
   use App\Models\Category;
   use App\Models\ForeignCategoryProperty;
   use Cviebrock\EloquentSluggable\Services\SlugService;
